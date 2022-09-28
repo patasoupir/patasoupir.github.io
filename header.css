@@ -1,0 +1,15 @@
+header
+{
+    text-align: center;
+    color: white;
+    display: flex;
+    font-size: 20px;
+    background-color: blue;
+    padding: 10px;
+}
+
+header a
+{
+    color: white;
+    flex: 1;
+}
