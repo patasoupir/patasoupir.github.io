@@ -4,7 +4,7 @@ header
     color: white;
     display: flex;
     font-size: 20px;
-    background-color: blue;
+    background-image: url("img/tichip.jpg");
     padding: 10px;
 }
 
