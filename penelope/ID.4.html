@@ -9,30 +9,34 @@
 body
 {
     font-family: arial;
-    background-image: url("img/Halfs.png");
-   background-size: contain;
+    background-image: url("img/halfs.png");
+   background-size: 100px;
+   font-size: 18pt;
 }
 a
 {text-decoration: none;
 color: black;}
+
 img
 {width: 100px;
   position: relative;
   left: 20%;}
 
-p{display: flex;align-items: center;}
+.boite{position: absolute;display: flex;align-items: center;flex-direction: raw;}
+
+.ahou
+{padding: 30px;}
 
 </style>
 
 
 <body>
-<p>
-<img src="img/icône.png" alt="oui" usemap="#workmap">
-<map name="workmap">
-  <area shape="circle" coords="45,15,15" alt="Computer" href="ID.icone.html">
-</map>
-<a href="ID.5.html">conversation</a>
-</p>
+
+<div class="boite">
+<div class="ahou"><img src="img/icône.png" alt="oui" usemap="#workmap"><map name="workmap"><area shape="circle" coords="45,15,15" alt="Computer" href="ID.icone.html"></map></div>
+<div class="ahou"><a href="ID.5.html">conversation</a></div>
+</div>
+
 </body>
 
 </html>
