@@ -9,49 +9,103 @@
 body
 {
     font-family: arial;
-    background-image: url(img/Mantez2.png);
+    background-image: url(img/plaisir.png);
     background-size: cover;
-    text-align: center;
-    font-size: small;
+    overflow: hidden;
 }
 
-img 
-{width: 30%;}
-
-.boite1
-{position: center;
-display: flex;
-flex-wrap: wrap;
-flex-direction:row;
-justify-content: space-between;
-margin: auto;
+.boite1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
 }
+.imageun
+{ animation: imageun 4s linear infinite;}
 
-a
-{text-decoration: none;
-color: black;
-text-align: center;}
+@keyframes imageun {
+0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(100px, 100px);
+      }
+      50% {
+        transform: translate(200px, 0);
+      }
+      75% {
+        transform: translate(100px, -100px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .imagedeux
+{ animation: imagedeux 1s alternate-reverse infinite;}
+
+@keyframes imagedeux {
+0% {
+        transform: translate(0, 0);
+      }
+      45% {
+        transform: translate(0, 50%);
+      }
+     
+      50% {
+        transform: translate(200%, 0);
+      }
+      75% {
+        transform: translate(100%, -100%);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
 
 
-.photo
-{padding:}
+    .imagetrois
+{animation: imagetrois 1s alternate-reverse infinite;}
+@keyframes imagetrois {
+0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(0%, 100%);
+      }
+      50% {
+        transform: translate(200px, 0);
+      }
+      75% {
+        transform: translate(100px, -100px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
 
-.rien
-{margin-top: 30%;margin-left: 70%;}
+  .imagequatre
+{ animation: imagequatre 10s linear 3;}
 
+@keyframes imagequatre {
+0%{
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(100%);
+      }
+    }
 
 </style>
 
 
 <body>
 <div class="boite1">
- <div class="photo photo1"><a href=".html"><img src="img/323421JUMnb7.png" alt="att" title="att"/></a></div>
- <div class="photo photo1"><a href=".html"><img src="img/323421JUMnb7.png" alt="att" title="att"/></a></div>
- <div class="photo photo1"><a href=".html"><img src="img/323421JUMnb7.png" alt="att" title="att"/></a></div>
- <div class="photo photo1"><a href=".html"><img src="img/323421JUMnb7.png" alt="att" title="att"/></a></div>
+ <div class="imageun"><a href=".html"><img src="img/323421JUMnb10.png" width="50%"></a> </div>
+ <div class="imagedeux"><a href=".html"><img src="img/323421JUMnb10.png" width="50%"></a></div>
+ <div class="imagetrois"><a href=".html"><img src="img/323421JUMnb10.png" width="50%"></a></div>
+ <div class="imagequatre"><a href=".html"><img src="img/323421JUMnb12.png" width="50%"></a></div>
  </div>
-
- <div class="rien"><a href="ID.2.Premierspatients.html">sort d'ici</a></div>
 
 </body>
 
