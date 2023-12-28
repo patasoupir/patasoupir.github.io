@@ -6,44 +6,45 @@
     <title>here</title>
     <link rel="stylesheet" type="text/css" href="header.css"/>
     <style type="text/css">
-
-img
-{
-    max-width: 100%;
-}
-
 body
 {
 font-size: large;
 background-image: url("img/mix.jpg");
-color: black;
+background-size: 100%;
 text-align: center;
+font-family: arial;
+color: black;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+padding: 20%;
 }
 
-article
-{
-color: white;
-text-align:center;
-font-size: xx-small;
-}
+header{font-size: 40pt;}
+footer
+{font-size: 7pt; text-align: center;}
 
-audio
-{height: 400px;
-width: 700px;}
-
+div{padding: 3%;}
 
     </style>
+
+<script>
+    document.addEventListener('click', function() {
+        var audio = document.querySelector('audio');
+        audio.play();
+    });
+</script>
+
     </head>
 
     <body>
-</br></br></br></br></br></br>
-<article>j'ai pensé à toi ce matin, et je me suis mise à pleurer, car je te hais</article>
-    <audio src="son/sadhuman.mp3" controls></audio>
-    
-   </div>
 
-</div>
+<header><div>tu as gagné</div></header>
 
+  <footer>
+    <div><p>ce n'est pas grave</p></div>
+    <div class=audio><audio><source src="son/sadhuman.mp3" ></audio>
+  </footer>
 
   </body>
 
