@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8" />
+    <title>à la prochaine...</title>
+    <style type="text/css">
+    
+body
+{color: black; font-family: arial;padding: 5%;text-align: center;}
+
+@keyframes moveanddisapp {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.puréedepois
+{; font-size: 30pt; animation: moveanddisapp 15s linear forwards;}
+
+.puréedepied{display: none ;animation: appear 60s forwards;}
+
+a
+{text-decoration: none;
+color: black;font-size:10pt;}
+
+</style>
+
+<body>
+    <div class="container">
+    <div class="puréedepois">oh non, je ne sais plus plus plus du tout, j'ai perdu, j'ai perdu mon âne, pardon je l'aurais retrouvé, j'ai cru qu'il était en Ardèche, mais non non non, IL EST DANS LE PIANO, et je ne l'ai jamais vu, je ne pourrais jamais le trouver, pardon pour ton âne je voulais te l'offrir je voulais dire au revoir et pardon pour tout, tu le retrouveras, c'est ton âne après tout, je voulais te le trouver il est en haut de la montagne je suis désolée je suis désolée je suis désolée je suis désolée je suis désolée de n'être pas ton âne et ta monture et tes chevilles et tes habits, et tes joues et ton protège-dents et tes artères, fermes, fermées, bouchées, les bouches de ton cholestérol, les tendons, les tendons d'âne maintenant parti, et le troupeau de caillous là-haut...
+    </div>
+    <div class="puréedepied"><a href="Z.tampoo.html"><img src="img/île.montagne.png" width="50%"></a></div>
+  </div>
+  <script>
+    const container = document.querySelector('.container');
+    const puréedepied = document.querySelector('.puréedepied');
+    document.querySelector('.puréedepois').addEventListener('animationend', () => {
+    container.removeChild(document.querySelector('.puréedepois')); 
+    puréedepied.style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

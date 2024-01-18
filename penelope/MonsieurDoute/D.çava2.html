@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8" />
+    <title>MAGIC</title>
+    <style type="text/css">
+    
+body
+{
+  background-color: darkblue;
+    background-image: url("img/montagne.png");
+    background-size: 50%;
+    color: white;
+    height: 100%;
+    display: flex;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }}
+
+.merde span {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: appear 15s forwards;
+    font-family: courier new;
+    font-size: 10pt;
+}
+
+@keyframes appear {
+  from {
+    width: 0; 
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.boite{padding: 10%;}
+.merde span:not(:last-child) {
+  animation-delay: calc(1s * (var(--i) + 1));
+}
+
+a{text-decoration: none;}
+
+ 
+</style>
+
+<body>
+<div class="boite"><a href="D.montagne.html"><img src="img/montagne.png"width="50%"></a>
+</div>
+<div class="merde"><span><a href="img/smile.png">pardon</a></span></div>
+</body>
+
+</html>
