@@ -8,39 +8,48 @@
 
 a
 {text-decoration: none;
-color: black;}
+color: black;
+cursor: cell;}
 
 body
-{background-image: url("img/nemun3.png");
+{
 background-size: cover;
+background-image: url("img/nemun2.png");
 background-color: black;
+background-size: 1%;
 color: white;
 font-family: arial;
 text-align: center;
 display: flex;
 flex-direction: column;
 padding: 3%;
+overflow: hidden;
 }
 
 .image1
 {position: absolute;
 top: 15%;
-left: 70%;}
+left: 70%;
+transition: transform 1000ms;
+&:hover{transform:scale(2);}}
 
 .image2
 {top: 30%;
 left: 12%;
-width: 20%;}
+width: 20%; transform: scale(3);transition: transform 3s;
+&:hover{transform:scale(1);}}
 
 .image3
 {position: absolute;
 top: 30%;
-left: 12%;}
+left: 12%; transition: transform 6s;
+&:hover{transform:scale(1,5);}}
 
 .image4
 {position: absolute;
 top: 80%;
-left: 80%;}
+left: 80%;transform: scale(1,3);transition: transform;
+&:hover{transform:scale(0,3);}}
 
 
 </style>
@@ -49,9 +58,9 @@ left: 80%;}
 
 <div class="image1"><a href="B.léa.html"><img src="img/323421_1.png" alt="Lélélé" title="les a les a" width="30%"></a></div>
 
-<div class="image2"><a href="A.you.html"><img src="img/humain.png" alt="je ne me souviens plus" title="qui qui qui" width="45%"></a><a href="IDDD.prout"><img src="img/humain.png" alt="je ne me souviens plus" title="lelelequel est" width="30%"></a></div>
+<div class="image2"><a href="A.you.html"><img src="img/humain.png" alt="je ne me souviens plus" title="qui qui qui" width="45%"></a><a href="IDDD.prout"><img src="img/humain.png" alt="je ne me souviens plus" title="lelelequel est" width="20%"></a></div>
 
-<div class="image3"><a href="C.nico.html"><img src="img/nicol_2.png" alt="°°°°°°" title="__________" width="80%"></a></div>
+<div class="image3"><a href="C.nico.html"><img src="img/nicol_2.png" alt="°°°°°°" title="__________" width="70%"></a></div>
 
 <div class="image4"><a href="D.âne.html"><img src="img/nicolass1.png" width="30%"></a></div>
 
