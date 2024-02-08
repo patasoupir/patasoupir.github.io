@@ -4,30 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <style type="text/css">
-      body{background-image: url("img/mains.png");background-size: 80%;}
-      div{display:flex; color : white; flex-direction : raw; font: arial;left: 60%;top :60%;
-    }
-      button{position: absolute;left: 40%;top: 20%; font: arial;color: blue;}
+    
+body
+  {background-image: url("img/mains.png");background-size: 80%;font-family: arial;color: blue;display: grid; grid-template-columns: 1fr 1fr; height:100vh; }
+
+#left{width: 100%;}
+#right{display: flex;flex-direction: column;}
+
+div 
+{display: flex;
+color:blue;
+flex-direction: column;
+font-family: 'Arial';}
+
+button
+  {color: blue;border: solid blue 5px;border-radius: 10px;}
+
     </style>
-    <title>Apply JavaScript example</title>
-     </head>
-       <script>// java script goes here:
+
+<script>
     document.addEventListener("DOMContentLoaded", function () {
   function createParagraph() {
     let para = document.createElement("p");
-    para.textContent = "j'aime ! j'aime ! j'aime ! j'aime ! j'aime ! j'aime ! j'aime !";
-    document.body.appendChild(para);
+    para.textContent = "j'aime ! j'aime ! j'aime !";
+    document.getElementById("right").appendChild(para);
   }
-
   const buttons = document.querySelectorAll("button");
-
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", createParagraph);
   }
 });
-    </script>
+</script>
 
   <body>
-   <button>aime</button><a href="ID.1.Monsieurdoute.html"><img src="img/mains.png"></a>
+    <div id="left"><img src="img/mains.png"width="70%"/></div>
+    <div id="right">
+      <button>aime</button></div>
   </body>
 </html>

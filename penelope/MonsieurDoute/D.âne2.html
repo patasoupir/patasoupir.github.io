@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width"/>
     <meta charset="utf-8" />
-    <title>Bonjour !</title>
+    <title>ânânânânâ - sry ?</title>
     <style type="text/css">
     
 body
@@ -13,12 +13,24 @@ a
 {text-decoration: none;
 color: white;}
 
+.oui{
+text-align: justify;font-size: 9pt;
+transition: transform 300ms;
+&:hover
+{transform: scale(1,5);}}
+
+.non{
+text-align: center;font-size: 9pt;
+transition: transform 300ms;
+&:hover
+{transform: scale(2);}}
+
 .text{font-size: 10pt;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);padding: %; border: 200px solid transparent;
             border-image-source: url("img/jip.png");
             border-image-slice: 500 fill; }
 
 h6{text-align:right; font-size: 10pt;}
-.non{text-align: center;font-size: 9pt;}
+
 
 </style>
 
@@ -26,7 +38,7 @@ h6{text-align:right; font-size: 10pt;}
  <div class="text">
   <p>Monsieur, excusez-moi pour le retard, je cherchais mon âne...</p>
   <h6>L'avez-vous retrouvé ?</h6></br></br>
-  <p><a href="D.âneOUI.html">Oui</a></p></br></br></br>
+  <div class="oui"><a href="D.âneOUI.html">Oui</a></div></br></br></br>
   <div class="non"><a href="D.âneNON.html">Non</a></div>
  </div>
   

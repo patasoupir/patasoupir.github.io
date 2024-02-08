@@ -9,46 +9,125 @@
 body
 {
     font-family: arial;
-    background-image: url(img/La.Chanson.de.Léa.png);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-image: url("img/La.Chanson.de.Léa1.png");
     background-size: cover;
 }
 
-.joue{text-align: center;
-  color: white;
-  padding: 3%;
-font-size: 40pt;
-animation: Joue 4s infinite alternate;}
+.joue
+{color: white;
+padding: 10%;
+font-size:15pt; color: blue; letter-spacing: 7px; 
+animation: Joue 4s infinite alternate ease;}
 
-@keyframes Joue{from{left: 0%;}to{margin-left: 3%;}}
+@keyframes Joue{from{left: -100%;}to{margin-left: 30%;}}
 
+.boite1{text-align: center;display: grid; grid-template-columns: 1fr 1fr; height:100vh;}
 
-.boite1
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.image{width: 30%;}
+
+.image-container{position: relative;margin-bottom: 500px;border-image: 30px;}
+
+.overlay {
+    position: absolute;
+    top: -20%;
+    left: 0%;
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 1s ease; 
+}
+.overlay:hover {
+    opacity:1;
 }
 
 
-.photo{margin: 2%;}
+.again {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 0,1s ease; 
+}
+.again:hover {
+    opacity:1;
+}
+.prout{
+    position: absolute;
+    top: -20%;
+    left: 0%;
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 3s ease; 
+}
+.prout:hover {
+    opacity:1;
+}
+.link{
+    width:50%;
+}
 </style>
 
 <body>
-  <div class="joue">Joue joue joue joue !</div>
+  <div class="joue">joue joue joue joue joue joue joue joue joue</div>
+</br></br></br>
 <div class="boite1">
- <div class="photo"><a href="img/copains4.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/deb.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/nicolas.png"><img src="img/La.Chanson.de.Léa.png"></a></div>
- <div class="photo"><a href="B.léaaa.html"><img src="img/La.Chanson.de.Léa.png"></a></div>
- <div class="photo"><a href="img/Léa100.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/323421.png"><img src="img/La.Chanson.de.Léa.png"></a></div>
- <div class="photo "><a href="img/nicol.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/nicolas.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="?"><img src="img/La.Chanson.de.Léa.png"></a></div>
- <div class="photo"><a href="img/323421.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/JUL.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
- <div class="photo"><a href="img/JUL.png"><img src="img/La.Chanson.de.Léa.png" ></a></div>
+   
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="overlay">
+      <a><img class="link" src="img/Léa1001.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="overlay">
+      <a><img class="link" src="img/Léa1001.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="prout">
+      <a><img class="link" src="img/Léa1001.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="prout">
+      <img class="link" src="img/Léa1001.png">
+      <div class="again"><a href="B.léaaa.html"><img src="img/wouhoufaitpeur.png"></a>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="prout">
+      <a><img class="link" src="img/Léa1001.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="overlay">
+      <a><img class="link" src="img/Léa1001.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="prout">
+      <a><img class="link" src="img/léabar.png"></a></div>
+    </div>
+
+    <div class="image-container">
+      <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
+      <div class="overlay">
+      </div>
+    </div>
+
+
 </div>
 </body>
 

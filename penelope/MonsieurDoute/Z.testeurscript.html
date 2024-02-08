@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8" />
+    <title>ânânnnnnôn</title>
+    <style type="text/css">
+    
+body
+{color: white; font-family:arial; background-color: black;letter-spacing: 1px;}
+
+a
+{text-decoration: none;
+color: white;}
+
+.animal
+{cursor: crosshair; transition: opacity 400ms ease;}
+.animal:hover
+{opacity: 0;}
+
+ input {
+            width: 50px;
+            transition: width ;
+        }
+</style>
+
+    <script>
+        function resizeInput(input) {
+            const textWidth = input.value.length * 6;
+            input.style.width = `${textWidth}px`;
+        }
+    </script>
+
+
+<body>
+ <div class="text">
+   <div>
+    <img src="img/animal1.png" width="30%" class="animal"></img>
+    <label for="déluge">le déluge est un zoo, n'as tu pas remarqué ?</label>
+    <input id="?" type="text" width="infinite"oninput="resizeInput(this)"/>
+ </div>
+
+</body>
+
+</html>

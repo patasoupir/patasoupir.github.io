@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width"/>
     <meta charset="utf-8" />
-    <title>non</title>
+    <title>ânânnnnnôn</title>
     <style type="text/css">
     
 body
@@ -13,17 +13,31 @@ a
 {text-decoration: none;
 color: white;}
 
-main{background-color: black;font-size: 15pt;margin: auto;display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top: 30%;}
+main{font-size: 12pt;margin: auto;display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top: 30%; width: 50%;}
 .text div{padding:2%;}
+
+.test
+{border: 10px solid black;
+border-radius: 30px;transition: all 400ms;cursor: crosshair;
+&:active{transform scale(2); border: 15px solid black;}}
+
 </style>
+
+<script>
+    document.addEventListener('click', function() {
+        var audio = document.querySelector('audio');
+        audio.play();
+    });
+</script>
 
 <body>
 <main>
  <div class="text">
-   <div><p>C'est normal, c'est tout petit, l'âne.</p>
-   Il a du se perdre dans l’étable et les autres animaux lui ont sans doute marché dessus. Il y avait des flaques.</div>
-   <div>Ne sois pas triste. Seul un prophète peut prévenir des crimes. Connais-tu le nombre d’accidents empêchés par Noé ? Ne pas courir, ne pas sauter, ne pas dévorer la nourriture de ou ses compagnons. L’arche saturée vogue dans la tension de la discipline. Le déluge est un <a href="D.âneZOO.html">zoo</a>, n’as-tu pas remarqué ?</div>
-
+   <div class="test">clique clique clique clique</div>
+   <div>
+    <audio loop><source src="son/rangesteschambres.mp3"></audio>
+    <img src="img/animal1.png" width="30%" class="animal"></img>
+    <input type="nom" name="login"></div>
  </div>
 </main>
 </body>
