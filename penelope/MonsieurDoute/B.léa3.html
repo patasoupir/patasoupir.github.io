@@ -22,13 +22,13 @@ padding: 10%;
 font-size:15pt; color: blue; letter-spacing: 7px; 
 animation: Joue 4s infinite alternate ease;}
 
-@keyframes Joue{from{left: -100%;}to{margin-left: 30%;}}
+@keyframes Joue{from{margin-left: -100%;}to{margin-left: 30%;}}
 
-.boite1{text-align: center;display: grid; grid-template-columns: 1fr 1fr; height:100vh;}
+.boite1{text-align: center;display: grid; grid-template-columns: 1fr 1fr; }
 
 .image{width: 30%;}
 
-.image-container{position: relative;margin-bottom: 500px;border-image: 30px;}
+.image-container{position: relative;margin-bottom: 50%;}
 
 .overlay {
     position: absolute;
@@ -42,12 +42,11 @@ animation: Joue 4s infinite alternate ease;}
     opacity:1;
 }
 
-
 .again {
     position: absolute;
     top: 5%;
     left: 0%;
-    width: 100%; 
+    width: 50%; 
     opacity: 0;
     transition: opacity 0,1s ease; 
 }
@@ -89,7 +88,7 @@ animation: Joue 4s infinite alternate ease;}
 
     <div class="image-container">
       <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
-      <div class="prout">
+      <div class="overlay">
       <a><img class="link" src="img/Léa1001.png"></a></div>
     </div>
 
@@ -101,11 +100,9 @@ animation: Joue 4s infinite alternate ease;}
     </div>
     </div>
     </div>
-
-
     <div class="image-container">
       <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
-      <div class="prout">
+      <div class="overlay">
       <a><img class="link" src="img/Léa1001.png"></a></div>
     </div>
 
@@ -117,7 +114,7 @@ animation: Joue 4s infinite alternate ease;}
 
     <div class="image-container">
       <img class="image" src="img/La.Chanson.de.Léa.png" alt="Image">
-      <div class="prout">
+      <div class="overlay">
       <a><img class="link" src="img/léabar.png"></a></div>
     </div>
 
