@@ -17,8 +17,8 @@ main
 
 a{color: white;}
 
-.left{display: flex;flex-direction: column;width: 50vh;}
-.right{display: flex;flex-direction: column;width: 50vh;}
+.left{display: flex;flex-direction: column;}
+.right{display: flex;flex-direction: column;}
 .menu{display: flex;flex-direction: column;font-size: 3vh;}
 .menu0{display: flex;flex-direction: row;font-size: 3vh;letter-spacing: 3px;}
 
@@ -27,6 +27,9 @@ a{color: white;}
 .menon{font-size: 6vh;}
 footer{padding: 5px; text-align: center;}
 
+@media screen and (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
 </style>
 </head> 
 
