@@ -1,15 +1,21 @@
 header
 {
-    text-align: center;
-    color: white;
     display: flex;
-    font-size: 20px;
-    background-image: url("img/voiture.jpg");
-    padding: 10px;
+    flex-direction: column;
+    font-family: arial;
 }
 
 header a
 {
     color: white;
     flex: 1;
+    text-decoration: none;
 }
+
+header .patasoupir{
+    font-size: 70pt; text-align: center;
+    letter-spacing: 3px;
+    color: white;
+    font-family: arial;background-image: url("img/voistu.jpg");background-size: 100%; }
+
+header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;padding: 10px;font-size: 16pt;background-image: url("img/voiture2.jpg");}
