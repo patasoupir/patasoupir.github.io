@@ -18,4 +18,4 @@ header .patasoupir{
     color: white;
     font-family: arial;background-image: url("img/voistu.jpg");background-size: 100%; }
 
-header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;font-size: 11pt;background-image: url("img/voiture2.jpg");}
+header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;font-size: 10pt;background-image: url("img/voiture2.jpg");}
