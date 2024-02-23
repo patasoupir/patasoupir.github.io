@@ -12,12 +12,12 @@ body{background-image: url("img/voiture2.jpg");background-size: cover;}
 main
 {display: grid; grid-template-columns: 1fr 1fr; height:100vh; }
 
-a{color : white; text-decoration: none;}
-
 #left
-{display: flex;flex-direction: column;background-color: black;}
-#leftbox{font-family: times;font-size: 12pt; color: white;padding: 10px;}
-
+{display: flex;flex-direction: column;background-color: black;text-align: center;}
+#leftbox{font-family: arial;font-size: 3vh; color: white;padding: 3px;}
+#penelopemenu{font-size: 18pt ;letter-spacing :2px;}
+#penelopemenu a {text-decoration: underline; color: white;}
+#penelopemenu div {margin-top: 10%;}
 #right{display: flex;flex-direction: column; color: white; font-family: arial;font-size: 18pt ;letter-spacing :2px; text-align: center;}
 #right {border: dashed blue 18px;}
 </style>
@@ -36,11 +36,15 @@ a{color : white; text-decoration: none;}
 </div>
 </header>
 <div id="leftbox">
-<div>entrée paillasson, début d'une idée, stupididée</div>
-    <div><em>bruit d'un grenier qui tremble. brrr vibreur</em>, bruit sec pour essuyer la cervelle, comme quand on est petit et qu'on nous sèche après la douche ou la mer.</div>
-    <div><a href="penelope/portfolio2.html"><em>bruit encore mais qu'est-ce que c'est ?</em>
- <h3><a href="missing/missing.html">HELP</a></h3>
-    <a href="penelope/penelope.html">+ carton d'invitation</a></div></div></a></div>
+<div>entrée paillasson - début d'une idée stupididée</div>
+    <div><em>bruit d'un grenier qui tremble. brrr vibreur</em> bruit sec pour essuyer la cervelle</br>comme quand on est petit et qu'on nous sèche après la douche ou la mer</div>
+    <div id="penelopemenu">
+    <div class="item"><a href="portfolio2.html">DU BRUIT ENCORE MAIS QU'EST-CE QUE C'EST ?</a></div>
+    <div class="item"><a href="penelope/penelope.html"><img src="img/Léa100.png" width="100%"></a></br></div>
+    <div class="poule"><img src="img/lapoule.png" width="10%"><img src="img/lapoule.png" width="10%"><img src="img/lapoule.png" width="10%"></a></div>
+  </div>
+</div>
+</div>
 
  <div id="right">
     <div id="headeright"></div></div>
