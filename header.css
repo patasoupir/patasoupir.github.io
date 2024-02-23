@@ -13,9 +13,9 @@ header a
 }
 
 header .patasoupir{
-    font-size: 12pt; text-align: center;
+    font-size: 20pt; text-align: center;
     letter-spacing: 3px;
     color: white;
     font-family: arial;background-image: url("img/voistu.jpg");background-size: 100%; }
 
-header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;padding: 10px;font-size: 16pt;background-image: url("img/voiture2.jpg");}
+header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;padding: 10px;font-size: 11pt;background-image: url("img/voiture2.jpg");}
