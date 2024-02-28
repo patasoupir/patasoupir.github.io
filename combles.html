@@ -16,12 +16,28 @@ font-family: arial;
 }
 
 a{cursor: grab;}
-.titre{font-size: 40pt; background-image: url("img/gant4.jpg"); background-position: center; text-align: right;color: transparent;}
 
 main{display: grid; grid-template-columns: 1fr 3fr; height:100vh; font-family: arial; text-align: justify;padding: 5px;}
 
 #left, #right{display: flex;flex-direction: column;overflow-y: auto;
-  scrollbar-width: none;margin: 10px;padding: 5px;}
+  scrollbar-width: none;padding: 5px;}
+
+  @media screen and (max-width: 600px) {
+      body {
+        font-size: 10pt;
+      }
+      main {
+        grid-template-columns: 1fr 3fr;
+      }
+      #left {
+        width: 100%; 
+        margin: 0;
+      }
+      #right {
+        width: 100%;
+      }
+      img{width: 20%;}
+  }
 </style>
 </head>
 
@@ -58,7 +74,7 @@ main{display: grid; grid-template-columns: 1fr 3fr; height:100vh; font-family: a
 
 
 <div id="right">
-<div class="titre">patate sous pierre, mais patate = pierre donc lapidation végétale et épluchures machiniques, même conclusion finalement</div>
+<div>patate sous pierre, mais patate = pierre donc lapidation végétale et épluchures machiniques, même conclusion finalement</div>
 <br/><br/>
 <div> tu voudrais retourner au menu ? mais c'est trop tard nabot nabine babine et baba naine, tu n'irais plus que dans le reflonkan de droite, de ratoufleur d'ispendul ptn c l'anneau seigneur !
     <div class="super"><p>𓁉 <a href="bonus.html"> une liste de sites (chouettos) </a> parlons en OS, car c'est tout ce qui restera de notre corps entre les grumeaux de la terre à moins que ce soit une bonne raison d'éviter le suffixe hein par déni ???%£%£</p><br/><br/></div>
