@@ -3,27 +3,47 @@
   <head>
     <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>PORTAIL</title>
+    <title>PATASOUPIR</title>
     <link rel="stylesheet" type="text/css" href="header.css"/>   
     <style type="text/css">
 
-body{background-color: black;font-family: arial;color: white;overflow: hidden;}
+body{font-family: arial;color: white;background-color: black;background-image: url("img/voiture2.jpg");background-size: cover;}
 
 main
-{display: grid; grid-template-columns: 1fr 1fr; height:100vh;font-family: arial;text-align: justify-all;}
-mark{background-image: url("img/voiture2.jpg");color: white;padding: 5px;background-size: stretch;}
-#left,#right
-{text-align: center; margin: auto;font-size: 30pt;}
- @media (min-width: 600px) {
-      main {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+{
+  text-align: justify;
+  display: flex; flex-direction: column;text-align: center;}
+.meno, .more {display: flex;flex-direction: column; font-size: 3vh; margin-top: 5px;margin-bottom: 5px;}
+
+
+.après{font-size: 2vh; margin-top: 10px;}
+footer{padding: 5px; text-align: center;margin-top :100vh; font-size: 4vh;}
+img{transition: opacity 0.3s ease;}
+img:hover{opacity: 0.5;}
+
+.imgcool{transition: opacity 2s ease;}
+.imgcool:hover{opacity: 0;}
 </style>
 </head> 
 
 <body>
 <main>
-<div id="left"><a href="patasoupir.html"><mark>PATASOUPIR</mark></a></div><div id="right"><a href="penelope/penelope.html">PENELOPE</a></main>
+   <header>
+<div class="patasoupir">PATASOUPIR</a></div>
+<div class="menu">
+    <a href="images.html">images</a>
+    <a href="ODIO.html">sons</a>
+    <a href="combles.html">combles</a>
+    <a href="https://matias.ma/nsfw/">?</a> 
+</div>
+</header>
+    <div class="poule">
+      <a href="penelope/portfolio2.html" title="portfolio - son - 2023"><img src="img/lapoule.png" width="20%"></img></a>
+      <a href="missing/missing.html" title="HELP"><img src="img/lapoule.png" width="20%"></a>
+        <img src="img/lapoule.png" width="20%"></a></div>
+      <div class="imgcool"><a href="penelope/penelope.html"><img src="img/Léa100.png" alt="Lélélé"width="30%" title="PENELOPE"></a></div>
+   </main>
+
+<footer>QUE LA BOUE VOUS BÉNISSE</footer>
 </body>
 </html>
