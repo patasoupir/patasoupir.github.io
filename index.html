@@ -9,14 +9,25 @@
 
 body{font-family: arial;color: white;background-color: black;background-image: url("img/voiture2.jpg");background-size:2800px;}
 
-.meno, .more {display: flex;flex-direction: column; font-size: 3vh; margin-top: 5px;margin-bottom: 5px;
-}
-
-p{text-align: justify;letter-spacing: 2px;}
+p{text-align: justify-all;}
 
 article
-{
-  font-size: 1em;
+{font-size: 1.3em; }
+.papa{animation: moveanddisapp 6s linear forwards;}
+.popo{animation: moveanddisapp 9s linear forwards;letter-spacing: 3px;}
+.pipi{animation: moveanddisapp 11s linear forwards;}
+.poule a {display: block;padding: 3px;}
+article div{padding: 2%;}
+@keyframes moveanddisapp {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 footer{padding: 5px; text-align: center; font-size: 2vh; margin-top: 100vh;}
 img{transition: opacity 0.3s ease;}
@@ -37,11 +48,12 @@ img:hover{opacity: 0.5;}
     <a href="https://matias.ma/nsfw/">?</a> 
 </div>
 </header>
-<article><p><strong>entrée paillasson</p></strong><p>on s'essuie bien les pieds</strong></br>comme petits, après la douche ou la mer</strong></p>
+<article><div class="papa"><p>on s'essuie bien les pieds</div><div class="pipi">comme à la mer</p></div>
     <div class="poule">
-      <a href="penelope/portfolio2.html" title="AAAH"><img src="img/lapoule.png" width="35%"></img></a>
-      <a href="missing/missing.html" title="HELP"><img src="img/lapoule.png" width="17%"></a>
-      <a href="penelope/MonsieurDoute/Z.chemin.html"><img src="img/lapoule.png" width="28%"></a></div>
+      <a href="penelope/portfolio2.html" title="AAAH">du bruit encore mais qu'est-ce que c'est</a>
+      <a href="zut" title="HELP">OUPS</a>
+      <a href="penelope/MonsieurDoute/Z.chemin.html">premier pas</a></div><div>
+      <a href="missing/missing.html"><img src="img/lapoule.png" width="10%"></img></a></div>
 </article>
 
 
