@@ -7,49 +7,23 @@
     <link rel="stylesheet" type="text/css" href="header.css"/>   
     <style type="text/css">
 
-body{background-image: url("img/voiture2.jpg");background-size: cover;font-family: arial;color: white;}
+body{background-color: black;font-family: arial;color: white;overflow: hidden;}
 
 main
-{
-  text-align: justify;
-  border: dashed blue 18px;
-  color: white;display: flex; flex-direction: column;padding: 5px;}
-
-a{color: white;}
-
-.left{display: flex;flex-direction: column;}
-.menu{display: flex;flex-direction: column;font-size: 3vh;}
-.menu0{display: flex;flex-direction: row;font-size: 3vh;letter-spacing: 3px;}
-.box{font-size: 6vh; letter-spacing: 6px;margin-bottom: 20px;}
-.meno{display: flex;flex-direction: column;font-size: 2vh;}
-.menon{font-size: 6vh;text-align: right;}
-footer{padding: 5px; text-align: center;}
-
+{display: grid; grid-template-columns: 1fr 1fr; height:100vh;font-family: arial;text-align: justify-all;}
+mark{background-image: url("img/voiture2.jpg");color: white;padding: 5px;background-size: stretch;}
+#left,#right
+{text-align: center; margin: auto;font-size: 30pt;}
+ @media (min-width: 600px) {
+      main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 </style>
 </head> 
 
 <body>
 <main>
-<div class="left">
-<div class="box">PATASOUPIR</div>
-<header><div class="menu">
-    <a href="images.html">images</a>
-    <a href="ODIO.html">sons</a>
-    <a href="combles.html">combles</a>
-    <a href="https://matias.ma/nsfw/">?</a></div></header>
-</div></br></br></br>
-<div class="box">PENELOPE</div>
-<div class="meno">
-    entrée paillasson </br>début d'une idée stupididée</br>
-    <em>bruit d'un grenier qui tremble. brrr vibreur</em> bruit sec pour essuyer la cervelle</br>comme quand on est petit et qu'on nous sèche après la douche ou la mer</br></br>
-    <a href="penelope/portfolio2.html">DU BRUIT ENCORE MAIS QU'EST-CE QUE C'EST ?</a></div>
-    <div class="poule"><img src="img/lapoule.png" width="10%"><img src="img/lapoule.png" width="10%"><img src="img/lapoule.png" width="10%"></a></div>
-  </div>
-</div>
-</main>
-<footer>
-<div class="menu"><a href="penelope/penelope.html"><img src="img/Léa100.png" width="100%"></a></div>
-</footer>
-<div class="menon"><strong>QUE LA BOUE VOUS BENISSE !</strong></div>
+<div id="left"><a href="patasoupir.html"><mark>PATASOUPIR</mark></a></div><div id="right"><a href="penelope/penelope.html">PENELOPE</a></main>
 </body>
 </html>

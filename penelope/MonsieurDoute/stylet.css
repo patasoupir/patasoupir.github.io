@@ -1,0 +1,5 @@
+a{color: white;text-decoration: none;}
+a:hover{text-decoration: underline;}
+
+a.sans{text-decoration: none;}
+a.sans:hover{text-decoration: none;}
