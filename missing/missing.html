@@ -10,7 +10,7 @@ img
 body{background-color: red;}
 main{padding: 15px;display: flex;flex-direction: column;color: red; text-align: center;margin: auto;color: red;font-family:arial; width : 60%; border: solid red 3px; background-color: white;}
 
-audio{background-color: red; padding: 30px; border-radius: 1em;}
+audio{background-color: red; padding: 13px; border-radius: 1em; max-width: 200px;}
 a{color: red;text-decoration: none;}
 a:hover{text-decoration: underline;}
 
@@ -22,8 +22,22 @@ a:hover{text-decoration: underline;}
 .tres
 {font-size: 50pt;}
 
-.nom{fon}
+@media (max-width: 600px) {
+        .titre {
+          font-size: 25pt;
+        }
+        .text {
+          font-size: 13pt;
+        }
+        .second {
+          font-size: 20pt;
+        }
+        .tres {
+          font-size: 22pt;
+        }
+      }
 </style>
+</head>
 
 <main>
 <div class="titre"><strong>MISSING</div>
