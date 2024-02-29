@@ -8,18 +8,18 @@
     
 body
 {color: white; font-family:arial; background-color: black;letter-spacing: 1px;}
-
+img{width: 100%; max-width: 400px;}
 a
 {text-decoration: none;
 color: white;}
 .text{display: inline-block;}
-.img-responsive
+.animal
 {cursor: crosshair; transition: opacity 400ms ease;}
-.img-responsive:hover
+.animal:hover
 {opacity: 0;}
 
  input {
-            width: 50px;
+            width: 80px;
             transition: width ;
         }
 </style>
@@ -34,7 +34,7 @@ color: white;}
 
 <body>
  <div class="text">
-    <div id="animal"><img class="img-responsive" src="img/animal1.png"></img>
+    <img src="img/animal1.png" class="animal"></img>
     <label for="déluge">le déluge est un zoo, n'as tu pas remarqué ?</label>
     <input id="?" type="text" width="infinite"oninput="resizeInput(this)"/>
  </div>

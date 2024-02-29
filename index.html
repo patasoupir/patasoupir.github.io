@@ -2,68 +2,124 @@
 <html>
   <head>
     <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>PATASOUPIR</title>
-    <link rel="stylesheet" type="text/css" href="header.css"/>   
+    <link rel="stylesheet" type="text/css" href="header.css" />
     <style type="text/css">
+      body {
+        font-family: arial;
+        color: white;
+        background-color: black;
+        background-image: url("img/voiture2.jpg");
+        background-size: 2800px;
+      }
 
-body{font-family: arial;color: white;background-color: black;background-image: url("img/voiture2.jpg");background-size:2800px;}
+      .chelou {
+        display: inline;
+        font-size: 11pt;
+        text-align: justify-all;
+        color: blue;
+      }
+      .papa {
+        animation: moveanddisapp 6s linear forwards;
+      }
+      .popo {
+        animation: moveanddisapp 9s linear forwards;
+      }
+      .pipi {
+        animation: moveanddisapp 11s linear forwards;
+      }
+      .penelope {
+        letter-spacing: 4px;
+        font-size: 15pt;
+        font-weight: bolder;
+        padding-bottom: 1%;
+      }
+      .poule div {
+        display: block;
+        padding: 1%;
+      }
+      .poule {
+        font-size: 11pt;
+      }
+      @keyframes moveanddisapp {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      footer {
+        padding: 5px;
+        text-align: center;
+        font-size: 2vh;
+        margin-top: 100vh;
+      }
+      img {
+        transition: opacity 0.3s ease;
+      }
+      img:hover {
+        opacity: 0.5;
+      }
 
+      .imgcool {
+        transition: opacity 2s ease;
+      }
+      .imgcool:hover {
+        opacity: 0;
+      }
+    </style>
+  </head>
 
-.chelou{display : inline ; font-size: 11pt;text-align: justify-all;color: blue;}
-.papa{animation: moveanddisapp 6s linear forwards; }
-.popo{animation: moveanddisapp 9s linear forwards; }
-.pipi{animation: moveanddisapp 11s linear forwards; }
-.penelope{letter-spacing: 4px; font-size: 15pt; font-weight: bolder;padding-bottom: 1%;}
-.poule div {display: block;padding: 1%;}
-.poule{font-size: 11pt;}
-@keyframes moveanddisapp {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-footer{padding: 5px; text-align: center; font-size: 2vh; margin-top: 100vh;}
-img{transition: opacity 0.3s ease;}
-img:hover{opacity: 0.5;}
+  <body>
+    <header>
+      <div class="patasoupir">PATASOUPIR</div>
+      <div class="menu">
+        <a href="images.html">images</a>
+        <a href="ODIO.html">sons</a>
+        <a href="combles.html">combles</a>
+        <a href="https://matias.ma/nsfw/">?</a>
+      </div>
+    </header>
 
-.imgcool{transition: opacity 2s ease;}
-.imgcool:hover{opacity: 0;}
-</style>
-</head> 
-
-<body>
-   <header>
-<div class="patasoupir">PATASOUPIR</a></div>
-<div class="menu">
-    <a href="images.html">images</a>
-    <a href="ODIO.html">sons</a>
-    <a href="combles.html">combles</a>
-    <a href="https://matias.ma/nsfw/">?</a> 
-</div>
-</header>
-
-<article>
     <div class="chelou">
-      <div class="papa">et et on fait bien attention à s'essuyer autant les pieds</div><div class="popo">sur ce paillasson</div><div class="pipi">que sur la mer</div>
+      <div class="papa">
+        et et on fait bien attention à s'essuyer autant les pieds
+      </div>
+      <div class="popo">sur ce paillasson</div>
+      <div class="pipi">que sur la mer</div>
     </div>
-    <div class="penelope">PENELOPE ?</div></article>
+    <div class="penelope">PENELOPE ?</div>
     <main>
-    <div class="poule">
-    <div><a href="penelope/portfolio2.html" title="AAAH">DU BRUIT ENCORE</a></div>
-    <div><a href="zut" title="HELP">OUPS</a></div>
-    <div><a href="penelope/MonsieurDoute/Z.chemin.html">PAS PREMIER</a></div>
-    <div class="imgcool"><a href="penelope/1penelope.html"><img src="img/Léa100.png" title="PENELOPE" width="30%"></a></div></br></br>
-    <div><a href="missing/missing.html"><img src="img/lapoule.png" width="10%"></img></a></div>
-  </div>
-</main>
+      <div class="poule">
+        <div>
+          <a href="penelope/portfolio2.html" title="AAAH">DU BRUIT ENCORE</a>
+        </div>
+        <div><a href="zut" title="HELP">OUPS</a></div>
+        <div>
+          <a href="penelope/MonsieurDoute/Z.chemin.html">PAS PREMIER</a>
+        </div>
+        <div class="imgcool">
+          <a href="penelope/1penelope.html"
+            ><img src="img/Léa100.png" title="PENELOPE" width="30%"
+          /></a>
+        </div>
+        <br /><br />
+        <div>
+          <a href="missing/missing.html"
+            ><img src="img/lapoule.png" width="10%"
+          /></a>
+        </div>
+      </div>
+    </main>
 
-
-<footer>QUE LA BOUE VOUS BÉNISSE</footer>
-</body>
+    <footer>QUE LA BOUE VOUS BÉNISSE</footer>
+  </body>
 </html>
