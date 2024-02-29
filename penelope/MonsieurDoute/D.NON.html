@@ -12,10 +12,10 @@ body
 a
 {text-decoration: none;
 color: white;}
-
-.animal
+.text{display: inline-block;}
+.img-responsive
 {cursor: crosshair; transition: opacity 400ms ease;}
-.animal:hover
+.img-responsive:hover
 {opacity: 0;}
 
  input {
@@ -34,8 +34,7 @@ color: white;}
 
 <body>
  <div class="text">
-   <div>
-    <img src="img/animal1.png" width="30%" class="animal"></img>
+    <div id="animal"><img class="img-responsive" src="img/animal1.png"></img>
     <label for="déluge">le déluge est un zoo, n'as tu pas remarqué ?</label>
     <input id="?" type="text" width="infinite"oninput="resizeInput(this)"/>
  </div>
