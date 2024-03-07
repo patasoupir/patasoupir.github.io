@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>ânânânânâ - sry ?</title>
     <style type="text/css">
-    
-body
-{color: white; font-family: courier new; background-color: black;}
+      body {
+        color: white;
+        font-family: courier new;
+        background-color: black;
+      }
 
-a
-{text-decoration: none;
-color: white;}
+      a {
+        text-decoration: none;
+        color: white;
+      }
 
-.oui{
-text-align: justify;font-size: 9pt;
-transition: transform 300ms;
-&:hover
-{transform: scale(1,5);}}
+      .oui {
+        text-align: justify;
+        font-size: 9pt;
+        transition: transform 300ms;
+        &:hover {
+          transform: scale(1, 5);
+        }
+      }
 
-.non{
-text-align: center;font-size: 9pt;
-transition: transform 300ms;
-&:hover
-{transform: scale(2);}}
+      .non {
+        text-align: center;
+        font-size: 9pt;
+        transition: transform 300ms;
+        &:hover {
+          transform: scale(2);
+        }
+      }
 
-.text{font-size: 10pt;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);padding: %; border: 200px solid transparent;
-            border-image-source: url("img/jip.png");
-            border-image-slice: 500 fill; }
+      .text {
+        font-size: 10pt;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 3%;
+        border: 200px solid transparent;
+        border-image-source: url("img/jip.png");
+        border-image-slice: 500 fill;
+      }
 
-h6{text-align:right; font-size: 10pt;}
-
-
-</style>
-
-<body>
- <div class="text">
-  <p>Monsieur, excusez-moi pour le retard, je cherchais mon âne...</p>
-  <h6>L'avez-vous retrouvé ?</h6></br></br>
-  <div class="oui"><a href="D.OUI.html">Oui</a></div></br></br></br>
-  <div class="non"><a href="D.NON.html">Non</a></div>
- </div>
-  
-</div>
-</body>
-
+      h6 {
+        text-align: right;
+        font-size: 10pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <p>Monsieur, excusez-moi pour le retard, je cherchais mon âne...</p>
+      <h6>L'avez-vous retrouvé ?</h6>
+      <br /><br />
+      <div class="oui"><a href="D.OUI.html">Oui</a></div>
+      <br /><br /><br />
+      <div class="non"><a href="D.NON.html">Non</a></div>
+    </div>
+  </body>
 </html>

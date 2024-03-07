@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>HEART</title>
+    <style type="text/css">
+      body {
+        font-family: arial;
+        background-color: black;
+      }
+      .main-box {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 70%;
+        height: 70%;
+        transform: translate(-50%, -50%);
+      }
+      .img {
+        width: 100%;
+        animation: blink 0.1s infinite;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="main-box">
+        <img src="img/124.png" class="img" />
+      </div>
+      <footer></footer>
+    </main>
+  </body>
+</html>

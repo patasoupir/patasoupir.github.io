@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <style type="text/css">
-    
-body
-  {background-image: url("img/mains.png");background-size: 80%;font-family: arial;color: blue;display: grid; grid-template-columns: 1fr 1fr; height:100vh; }
+      body {
+        background-image: url("img/mains.png");
+        background-size: 80%;
+        font-family: arial;
+        color: blue;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+      }
 
-#left{width: 30%;background-color: blue; height: 28%;}
-#right{display: flex;flex-direction: column;}
+      #left {
+        width: 30%;
+        background-color: blue;
+        height: 28%;
+      }
+      #right {
+        display: flex;
+        flex-direction: column;
+      }
 
-div 
-{display: flex;
-color:blue;
-flex-direction: column;
-font-family: 'Arial';}
+      div {
+        display: flex;
+        color: blue;
+        flex-direction: column;
+        font-family: "Arial";
+      }
 
-button
-  {color: blue;border: solid blue 5px;border-radius: 10px;}
-
+      button {
+        color: blue;
+        border: solid blue 5px;
+        border-radius: 10px;
+      }
     </style>
-    </head> 
-<script>
+  </head>
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
-  function createParagraph() {
-    let para = document.createElement("p");
-    para.textContent = "j'aime ! j'aime ! j'aime !";
-    document.getElementById("right").appendChild(para);
-  }
-  const buttons = document.querySelectorAll("button");
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", createParagraph);
-  }
-});
-</script>
+      function createParagraph() {
+        let para = document.createElement("p");
+        para.textContent = "j'aime ! j'aime ! j'aime !";
+        document.getElementById("right").appendChild(para);
+      }
+      const buttons = document.querySelectorAll("button");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", createParagraph);
+      }
+    });
+  </script>
 
   <body>
-    <div id="left"><img src="img/mains.png"width="100%"/></div>
+    <div id="left"><img src="img/mains.png" width="100%" /></div>
     <div id="right">
-      <button>aime</button></div>
+      <button>aime</button>
+    </div>
   </body>
 </html>

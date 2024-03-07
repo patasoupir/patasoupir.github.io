@@ -1,123 +1,199 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>déjà soigné</title>
     <style type="text/css">
+      a {
+        text-decoration: none;
+        color: black;
+        cursor: grab;
+      }
 
-a
-{text-decoration: none;
-color: black;
-cursor: grab;}
+      body {
+        background-size: cover;
+        background-image: url("img/nembis2.png");
+        background-color: black;
+        background-size: 10%;
+        color: white;
+        font-family: arial;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+      }
 
-body
-{
-background-size: cover;
-background-image: url("img/nembis2.png");
-background-color: black;
-background-size: 10%;
-color: white;
-font-family: arial;
-text-align: center;
-display: flex;
-flex-direction: column;
-padding: 3%;
-}
+      .image1 {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transition: transform 1s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image1
-{position: absolute;
-top: 15%;
-left: 50%;
-transition: transform 1s;
-&:hover{transform:scale(0);}}
+      .image2 {
+        top: 30%;
+        left: 12%;
+        width: 40%;
+      }
 
-.image2
-{top: 30%;
-left: 12%;
-width: 40%;}
+      .image3 {
+        position: absolute;
+        top: 70%;
+        left: 32%;
+        transition: transform 15s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image3
-{position: absolute;
-top: 70%;
-left: 32%;transition: transform 15s;
-&:hover{transform:scale(0);}}
+      .image4 {
+        position: absolute;
+        top: 82%;
+        left: 80%;
+        transform: scale(1);
+        transition: transform;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image4
-{position: absolute;
-top: 82%;
-left: 80%;transform: scale(1);transition: transform;
-&:hover{transform:scale(0);}}
+      .image5 {
+        position: absolute;
+        top: 286%;
+        left: 2%;
+        width: 50%;
+        transition: transform 15s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image5
-{position: absolute;top: 286%;
-left: 2%;
-width: 50%;
-transition: transform 15s;
-&:hover{transform:scale(0);}
-}
+      .image6 {
+        position: absolute;
+        top: 225%;
+        left: 130%;
+        transition: transform 10ms;
+        &:hover {
+          transform: scale(2);
+        }
+      }
 
-.image6
-{position: absolute;
-top: 225%;
-left: 130%;
-transition: transform 10ms;
-&:hover{transform:scale(2);}}
+      .image7 {
+        position: absolute;
+        top: 180%;
+        left: 12%;
+        width: 40%;
+        transition: transform 3s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image7
-{position: absolute;top: 180%;
-left: 12%;
-width: 40%;transition: transform 3s;
-&:hover{transform:scale(0);}
-}
+      .image8 {
+        position: absolute;
+        top: 200%;
+        left: 32%;
+        transition: transform 1s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image8
-{position: absolute;
-top: 200%;
-left: 32%;transition: transform 1s;
-&:hover{transform:scale(0);}}
+      .image9 {
+        position: absolute;
+        top: 282%;
+        left: 80%;
+        transition: transform 5s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image9
-{position: absolute;
-top: 282%;
-left: 80%;transition: transform 5s;
-&:hover{transform:scale(0);}}
+      .image10 {
+        position: absolute;
+        top: 500%;
+        left: 30%;
+        width: 70%;
+        transition: transform 0, 3s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image10
-{position: absolute;top: 500%;
-left: 30%;
-width: 70%;
-transition: transform 0,3s;
-&:hover{transform:scale(0);}
-}
+      .image11 {
+        position: absolute;
+        top: 550%;
+        left: 42%;
+        transition: transform 0.1s;
+        &:hover {
+          transform: scale(0);
+        }
+      }
 
-.image11
-{position: absolute;top: 550%;
-left: 42%;
-transition: transform 0.1s;
-&:hover{transform:scale(0);
-}}
-
-.image12
-{position: absolute;top: 800%;
-left: 32%;}
-
-</style>
-
-<body>
-
-<div class="image1"><a href="B.léa.html"><img src="img/nembis.png" alt="Lélélé" title="plus envie de jouer" width="30%"></a></div>
-<div class="image2"><a href="A.you.html"><img src="img/nembis.png" alt="je ne me souviens plus"width="85%"></a></div><div><a href="IDDD.prout"><img src="img/nembis.png" alt="je ne me souviens plus"width="50%"></a></div>
-<div class="image3"><a href="Z.c'estcool.html"><img src="img/nembis.png" alt="°°°°°°" width="60%"></a></div>
-<div class="image4"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image5"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image6"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image7"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image8"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image9"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image10"><a href="D.âne.html"><img src="img/nembis.png" width="40%"></a></div>
-<div class="image11"><a href=""><img src="img/nembis.png" width="40%"></a></div>
-<div class="image12"><a href="looser.html"><img src="img/nemter.png" title="vous pouvez m'avoir"width="100%"></a></div>
-</body>
-
+      .image12 {
+        position: absolute;
+        top: 800%;
+        left: 32%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image1">
+      <a href="B.léa.html"
+        ><img
+          src="img/nembis.png"
+          alt="Lélélé"
+          title="plus envie de jouer"
+          width="30%"
+      /></a>
+    </div>
+    <div class="image2">
+      <a href="A.you.html"
+        ><img src="img/nembis.png" alt="je ne me souviens plus" width="85%"
+      /></a>
+    </div>
+    <div>
+      <a href="IDDD.prout"
+        ><img src="img/nembis.png" alt="je ne me souviens plus" width="50%"
+      /></a>
+    </div>
+    <div class="image3">
+      <a href="Z.c'estcool.html"
+        ><img src="img/nembis.png" alt="°°°°°°" width="60%"
+      /></a>
+    </div>
+    <div class="image4">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image5">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image6">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image7">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image8">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image9">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image10">
+      <a href="D.âne.html"><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image11">
+      <a href=""><img src="img/nembis.png" width="40%" /></a>
+    </div>
+    <div class="image12">
+      <a href="looser.html"
+        ><img src="img/nemter.png" title="vous pouvez m'avoir" width="100%"
+      /></a>
+    </div>
+  </body>
 </html>

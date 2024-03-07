@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>ânânânânânânânânânânânânânânânânânânânâ</title>
     <style type="text/css">
-    
-body
-{color: white; font-family: courier new; background-color: black; display: block; overflow: hidden;text-align:center;margin: auto;}
+      body {
+        color: white;
+        font-family: courier new;
+        background-color: black;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        margin: auto;
+      }
 
-a
-{text-decoration: none;}
+      a {
+        text-decoration: none;
+      }
 
-.text{flex: 1;left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);position: absolute;}
-.text img{animation: blink 1s infinite;}
+      .text {
+        flex: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      .text img {
+        animation: blink 1s infinite;
+      }
 
+      img {
+        width: 100%;
+        max-width: 400px;
+      }
 
-img{width: 100%;max-width: 400px;}
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>
-</head>
-
-<body>
-  <div class="text">
-  <a href="D.âne2.html"><img src="img/stress.png"></a></div>
-
-</body>
-
+  <body>
+    <div class="text">
+      <a href="D.âne2.html"><img src="img/stress.png" /></a>
+    </div>
+  </body>
 </html>

@@ -2,51 +2,84 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>Mémoire courte</title>
-    <link rel="stylesheet" type="text/css" href="header.css"/>
+    <link rel="stylesheet" type="text/css" href="header.css" />
     <style type="text/css">
+      img {
+        width: 100%;
+      }
 
-img{width: 100%;}
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+        font-family: arial;
+      }
 
-main
-{display: grid; grid-template-columns: 1fr 1fr; height:100vh;font-family: arial;}
+      #left {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        background-color: blue;
+      }
+      #leftbox {
+        font-family: arial;
+        color: white;
+        color: white;
+      }
+      #leftbox a {
+        color: white;
+      }
+      .section80 {
+        color: orangered;
+      }
 
-#left
-{display: flex;flex-direction: column; overflow-y: scroll;
-  scrollbar-width: none;background-color: blue; }
-#leftbox{font-family: arial; color: white;color: white;}
-#leftbox a{color: white}
-.section80{color: orangered;}
+      #right {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        color: white;
+      }
+    </style>
+  </head>
 
-#right{display: flex;flex-direction: column; overflow-y: scroll;
-  scrollbar-width: none;color: white;}
+  <body>
+    <main>
+      <header>
+        <div class="patasoupir"><a href="index.html">PATASOUPIR</a></div>
+        <div class="menu">
+          <a href="images.html">images</a>
+          <a href="ODIO.html">sons</a>
+          <a href="combles.html">combles</a>
+          <a href="https://matias.ma/nsfw/">?</a>
+        </div>
+      </header>
 
-</style>
-</head> 
-
-<body>
-<main>
-<header>
-<div class="patasoupir"><a href="index.html">PATASOUPIR</a></div>
-<div class="menu">
-    <a href="images.html">images</a>
-    <a href="ODIO.html">sons</a>
-    <a href="combles.html">combles</a>
-    <a href="https://matias.ma/nsfw/">?</a> 
-</div>
-</header>
-
-<div id="leftbox">
-</div>
-<div id="right">
-<div class="text"> - Avec quoi allez - vous ?<br/>- Oh, une bonne paire de chaussures, mon très cher, des anatoles au pied, enfin de quoi ne pas voir où aller, sinon je trébuche dans mes doigts, on tombe et on s'engueule</div>
-<div class="text"><a href="img/suffer.jpg"><img src="img/suffer.jpg" alt="SUFFER LITTLE CHILDREN" title="SUFFER LITTLE CHILDREN? Pas encore trop parlé de ça, hein, pas montré à tout, hein à la nature surtout CETTE PUTAIN DE LANDE baaaah la langue pendue du clavier"/></a></div>
-<div class="img"><a href="img/ancien.jpg"><img src="img/ancien.jpg" /></a>
-<div class="img"><a href="img/ancien2.jpg"><img src="img/ancien2.jpg"></a></div>
-</div>
-    
-</main>
-</body>
-
+      <div id="leftbox"></div>
+      <div id="right">
+        <div class="text">
+          - Avec quoi allez - vous ?<br />- Oh, une bonne paire de chaussures,
+          mon très cher, des anatoles au pied, enfin de quoi ne pas voir où
+          aller, sinon je trébuche dans mes doigts, on tombe et on s'engueule
+        </div>
+        <div class="text">
+          <a href="img/suffer.jpg"
+            ><img
+              src="img/suffer.jpg"
+              alt="SUFFER LITTLE CHILDREN"
+              title="SUFFER LITTLE CHILDREN? Pas encore trop parlé de ça, hein, pas montré à tout, hein à la nature surtout CETTE PUTAIN DE LANDE baaaah la langue pendue du clavier"
+          /></a>
+        </div>
+        <div class="img">
+          <a href="img/ancien.jpg"><img src="img/ancien.jpg" /></a>
+        </div>
+        <div class="img">
+          <a href="img/ancien2.jpg"><img src="img/ancien2.jpg" /></a>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page de Commentaires</title>
+    <style>
+      /* Ajoutez du style CSS selon vos préférences */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #comments {
+        list-style-type: none;
+        padding: 0%;
+      }
+      .comment {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Commentaires</h1>
+
+    <ul id="comments"></ul>
+
+    <h2>Ajouter un Commentaire</h2>
+    <form id="commentForm">
+      <label for="name">Nom:</label>
+      <input type="text" id="name" required /><br />
+
+      <label for="comment">Commentaire:</label>
+      <textarea id="comment" rows="4" required></textarea><br />
+
+      <button type="button" onclick="addComment()">
+        Ajouter le Commentaire
+      </button>
+    </form>
+
+    <script>
+      function addComment() {
+        var name = document.getElementById("name").value;
+        var comment = document.getElementById("comment").value;
+
+        if (name && comment) {
+          var commentList = document.getElementById("comments");
+          var listItem = document.createElement("li");
+          listItem.className = "comment";
+          listItem.innerHTML = "<strong>" + name + ":</strong> " + comment;
+          commentList.appendChild(listItem);
+
+          // Réinitialiser le formulaire
+          document.getElementById("commentForm").reset();
+        } else {
+          alert("Veuillez remplir tous les champs.");
+        }
+      }
+    </script>
+  </body>
+</html>

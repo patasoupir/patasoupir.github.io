@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <meta charset="utf-8" />
     <title>que se apsse - t - il</title>
     <style type="text/css">
+      body {
+        font-family: arial;
+        background-image: url(img/plaisir.png);
+        background-size: cover;
+      }
 
-body
-{
-    font-family: arial;
-    background-image: url(img/plaisir.png);
-    background-size: cover;
-}
+      .boite1 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        height: 100vh;
+      }
 
-.boite1{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  margin: auto;
-  height: 100vh;
-}
+      .image {
+        cursor: url("img/curse.png"), auto;
+        transition: transform 4s ease;
+      }
+      .image:hover {
+        transform: scale(2);
+      }
 
-.image{cursor: url('img/curse.png'), auto;
-transition: transform 4s ease; }
-.image:hover{transform: scale(2);}
-
-.imoge{
-transition: opacity 0,4s ease; }
-.imoge:hover{opacity:0;}
-</style>
-
-</head>
-<body>
-<div class="boite1">
-<div class="image"><a href=".html"><img src="img/323421JUMnb10.png" width="40%"></a></div>
-<div class="imoge"><a href=".html"><img src="img/323421JUMnb10.png" width="40%"></a></div>
-</div>
-
-</body>
-
+      .imoge {
+        transition: opacity 0, 4s ease;
+      }
+      .imoge:hover {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boite1">
+      <div class="image">
+        <a href=".html"><img src="img/323421JUMnb10.png" width="40%" /></a>
+      </div>
+      <div class="imoge">
+        <a href=".html"><img src="img/323421JUMnb10.png" width="40%" /></a>
+      </div>
+    </div>
+  </body>
 </html>

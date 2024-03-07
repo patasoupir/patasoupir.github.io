@@ -3,58 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <title>PLEIN CADDIE</title>
-    <link rel="stylesheet" type="text/css" href="header.css"/>
-	<style type="text/css">
+    <link rel="stylesheet" type="text/css" href="header.css" />
+    <style type="text/css">
+      body {
+        background-image: url("img/super11.jpg");
+        background-size: 10%;
+      }
 
+      a {
+        color: black;
+      }
 
-body
-{
-    background-image: url("img/super11.jpg");
-    background-size: 10%;
-}
+      audio {
+        height: 100px;
+        width: 300px;
+      }
 
-a{color:black;}
+      .boite {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        font-size: 30pt;
+        text-align: center;
+        font-family: impact;
+        padding: 30px;
+        justify-content: space-between;
+        color: white;
+        width: 60%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-audio
-{
-height: 100px;
-width:  300px;
-}
-
-.boite
-{
-position: absolute;
-display: flex;
-flex-direction: column;
-font-size: 30pt;
-text-align: center;
-font-family:impact;
-padding: 30px; justify-content: space-between;
-color: white;
-width : 60%;
-height: 100%;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);}
-
-.audio
-{justify-content: space-between; margin:auto; padding:100px; background-image: url(img/super10.jpg);text-align: justify;}
-
-
-</style>
-
-<body>
-<div class="boite">
-<div class="audio pet">1</br><audio src="son/Aïe.mp3" controls></audio></div>
-<div class="audio peto">2</br><audio src="son/FUCKING REESES.mp3" controls></audio></div>
-<div class="audio peta">3</br><audio src="son/BIO.mp3" controls></audio></div>
-<div class="audio peti">4</br><audio src="son/Rue de Révébal.mp3" controls></audio></div>
-<div class="audio">5</br><audio src="son/Philippe.mp3" controls></audio></div>
-<div class="audio">6</br><audio src="son/Née hier.mp3" controls></audio></div>
-<div class="audio">7</br><audio src="son/Spanishfel.mp3" controls></audio></div>
-<div class="audio">7.1</br><audio src="son/Félixandson.mp3" controls></audio></div>
-<div class="audio">8</br><audio src="son/Cheh.mp3" controls></audio></div>
-</div>
-</body>
-
+      .audio {
+        justify-content: space-between;
+        margin: auto;
+        padding: 100px;
+        background-image: url(img/super10.jpg);
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="boite">
+        <div class="audio pet">
+          1<br /><audio src="son/Aïe.mp3" controls></audio>
+        </div>
+        <div class="audio peto">
+          2<br /><audio src="son/FUCKING REESES.mp3" controls></audio>
+        </div>
+        <div class="audio peta">
+          3<br /><audio src="son/BIO.mp3" controls></audio>
+        </div>
+        <div class="audio peti">
+          4<br /><audio src="son/Rue de Révébal.mp3" controls></audio>
+        </div>
+        <div class="audio">
+          5<br /><audio src="son/Philippe.mp3" controls></audio>
+        </div>
+        <div class="audio">
+          6<br /><audio src="son/Née hier.mp3" controls></audio>
+        </div>
+        <div class="audio">
+          7<br /><audio src="son/Spanishfel.mp3" controls></audio>
+        </div>
+        <div class="audio">
+          7.1<br /><audio src="son/Félixandson.mp3" controls></audio>
+        </div>
+        <div class="audio">
+          8<br /><audio src="son/Cheh.mp3" controls></audio>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="stylet.css"/>   
+    <link rel="stylesheet" type="text/css" href="stylet.css" />
     <title>Bienvenue !</title>
     <style type="text/css">
+      a {
+        text-decoration: none;
+        color: black;
+      }
 
+      .boite {
+        font-family: arial;
+        text-align: center;
+        color: black;
+        color: white;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        position: absolute;
+        background-color: white;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: all;
+        margin: auto;
+      }
 
-a
-{text-decoration: none;
-color: black;}
+      .titre {
+        padding: 20px;
+        font-size: large;
+      }
+      .anatole {
+        font-size: small;
+        text-align: right;
+      }
 
-
-.boite
-{font-family: arial;
-text-align: center;
-color: black;
-font-color: white;
-flex-direction: column;
-flex-wrap: wrap-reverse;
-position: absolute;
-background-color: white;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);
-width :all;
-margin: auto;}
-
-.titre
-{padding: 20px;font-size:large;}
-.anatole
-{font-size: small; text-align: right;}
-
-a .sans{text-decoration: none;}
-</style>
-
-<body>
-<div class="boite">
-  <div class="titre"><p><strong>Quelle folie !</strong></p><p>Monsieur Doute, psychologue éveillé, s'est enfin endormi.</p><p>
-  Cliquer sur <a href="3conv.html">TÊTE</a> permet de visiter ses rêves. Il suffit de cliquer pour <a href="n'existe pas encore" class="sans">toujours</a>.</p></div>
-  <div class="anatole"><p>Pour revenir en arrière, prendre le bus  <a href="../../end.html"><img src="img/62.png" title="le bus"width="30px"></a></div> 
-  
-
-</div>
-
-</body>
-
+      a .sans {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boite">
+      <div class="titre">
+        <p><strong>Quelle folie !</strong></p>
+        <p>Monsieur Doute, psychologue éveillé, s'est enfin endormi.</p>
+        <p>
+          Cliquer sur <a href="3conv.html">TÊTE</a> permet de visiter ses rêves.
+          Il suffit de cliquer pour
+          <a href="n'existe pas encore" class="sans">toujours</a>.
+        </p>
+      </div>
+      <div class="anatole">
+        <p>
+          Pour revenir en arrière, prendre le bus
+          <a href="../../end.html"
+            ><img src="img/62.png" title="le bus" width="30px"
+          /></a>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

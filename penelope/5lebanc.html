@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>LOST</title>
-	<style type="text/css">
+    <style type="text/css">
+      body {
+        background-image: url("img/banchaise.png");
+        font-family: arial;
+        color: white;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
 
-body
-{
-    background-image : url("img/banchaise.png");
-    font-family: arial;
-    color: white;
-}
-a
-{color : white; text-decoration: none;}
+      .box {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        width: 50%;
+      }
 
-.box
-{
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    width: 50%;
-}
+      .box div {
+        padding: 5%;
+      }
+      .drr {
+        width: 10%;
+        text-align: right;
+      }
+      .titre {
+        text-align: right;
+        font-size: 20pt;
+      }
+    </style>
 
-.box div{padding: 5%;}
-.drr{width: 10%; text-align: right;}
-.titre{text-align: right;font-size: 20pt;}
-
-</style>
-
-
-<script>
-    document.addEventListener('click', function() {
-        var audio = document.querySelector('audio');
+    <script>
+      document.addEventListener("click", function () {
+        var audio = document.querySelector("audio");
         audio.play();
-    });
-</script>
+      });
+    </script>
+  </head>
 
-</head>
-
-<body>
-  <div class="box">
-    <div class="drole"><a href="">ici c'est + DRÔLE</div>
-    <div class="drr">DRÔLE DRÔLE<a href=""> DRÔLE</a> DRÔLE DRÔLE DRÔLE DRÔLE DRÔLE DRÔLE</div>
-    <audio><source src="son/lebancfred.mp3" ></audio>
-        <div class="titre"><a href="5trou.html"></br>BAAAAAHHHAAHAHA TROP MARRANT</a></div>
-  </div>
-</body>
+  <body>
+    <div class="box">
+      <div class="drole"><a href="2Patients.html">ici c'est + DRÔLE</a></div>
+      <div class="drr">
+        DRÔLE DRÔLE<a href=""> DRÔLE</a> DRÔLE DRÔLE DRÔLE DRÔLE DRÔLE DRÔLE
+      </div>
+      <audio><source src="son/lebancfred.mp3" /></audio>
+      <div class="titre">
+        <a href="5trou.html"><br />BAAAAAHHHAAHAHA TROP MARRANT</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -13,37 +13,21 @@
         font-family: arial;
         color: white;
         background-color: black;
-        background-image: url("img/voiture2.jpg");
-        background-size: 2800px;
       }
 
-      .chelou {
-        display: inline;
-        font-size: 11pt;
-        text-align: justify-all;
-        color: blue;
+      .bouge {
+        animation: moveanddisapp 3s linear forwards;
       }
-      .papa {
-        animation: moveanddisapp 6s linear forwards;
-      }
-      .popo {
-        animation: moveanddisapp 9s linear forwards;
-      }
-      .pipi {
-        animation: moveanddisapp 11s linear forwards;
-      }
-      .penelope {
-        letter-spacing: 4px;
-        font-size: 15pt;
-        font-weight: bolder;
-        padding-bottom: 1%;
-      }
-      .poule div {
-        display: block;
-        padding: 1%;
-      }
-      .poule {
-        font-size: 11pt;
+      .boogie @keyframes moveanddisapp {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0;
+        }
       }
       @keyframes moveanddisapp {
         0% {
@@ -56,70 +40,94 @@
           opacity: 0;
         }
       }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .poule div {
+        display: block;
+        padding: 1%;
+      }
+
+      .titre {
+        letter-spacing: 4px;
+        font-size: 15pt;
+      }
+      .penelope {
+        display: none;
+        padding: 1%;
+
+        font-size: 11pt;
+        letter-spacing: 1px;
+        animation: appear 4s forwards;
+      }
+      .penelope div {
+        padding: 2%;
+      }
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
       footer {
         padding: 5px;
-        text-align: center;
+        text-align: right;
         font-size: 2vh;
         margin-top: 100vh;
       }
-      img {
-        transition: opacity 0.3s ease;
-      }
-      img:hover {
-        opacity: 0.5;
-      }
 
-      .imgcool {
-        transition: opacity 2s ease;
-      }
-      .imgcool:hover {
-        opacity: 0;
+      .bouge img {
+        width: 100%;
       }
     </style>
   </head>
 
   <body>
-    <header>
-      <div class="patasoupir">PATASOUPIR</div>
-      <div class="menu">
-        <a href="images.html">images</a>
-        <a href="ODIO.html">sons</a>
-        <a href="combles.html">combles</a>
-        <a href="https://matias.ma/nsfw/">?</a>
+    <div class="total">
+      <div class="bouge">
+        <a href="penelope/1penelope.html"
+          ><img src="img/Léa100.png" title="PENELOPE"
+        /></a>
       </div>
-    </header>
-
-    <div class="chelou">
-      <div class="papa">
-        et et on fait bien attention à s'essuyer autant les pieds
-      </div>
-      <div class="popo">sur ce paillasson</div>
-      <div class="pipi">que sur la mer</div>
+      <main>
+        <nav class="penelope">
+          <div class="titre">PATASOUPIR (old)</div>
+          <ul class="poule">
+            <li><a href="images.html">images</a></li>
+            <li><a href="ODIO.html">sons</a></li>
+            <li><a href="combles.html">combles</a></li>
+            <li><a href="https://matias.ma/nsfw/">?</a></li>
+          </ul>
+          <br /><br />
+          <div class="titre">PENELOPE (new water)</div>
+          <ul class="poule">
+            <li>
+              <a href="penelope/portfolio2.html" title="AAAH"
+                >du bruit encore</a
+              >
+              - <a href="2023">vous allez mourir</a>
+            </li>
+            <li><a href="missing/missing.html" title="HELP">help</a></li>
+            <li>
+              <a href="penelope/MonsieurDoute/Z.chemin.html">chut</a>
+            </li>
+          </ul>
+        </nav>
+      </main>
     </div>
-    <div class="penelope">PENELOPE ?</div>
-    <main>
-      <div class="poule">
-        <div>
-          <a href="penelope/portfolio2.html" title="AAAH">DU BRUIT ENCORE</a>
-        </div>
-        <div><a href="zut" title="HELP">OUPS</a></div>
-        <div>
-          <a href="penelope/MonsieurDoute/Z.chemin.html">PAS PREMIER</a>
-        </div>
-        <div class="imgcool">
-          <a href="penelope/1penelope.html"
-            ><img src="img/Léa100.png" title="PENELOPE" width="30%"
-          /></a>
-        </div>
-        <br /><br />
-        <div>
-          <a href="missing/missing.html"
-            ><img src="img/lapoule.png" width="10%"
-          /></a>
-        </div>
-      </div>
-    </main>
 
     <footer>QUE LA BOUE VOUS BÉNISSE</footer>
+    <script>
+      const total = document.querySelector(".total");
+      const penelope = document.querySelector(".penelope");
+      document.querySelector(".bouge").addEventListener("animationend", () => {
+        total.removeChild(document.querySelector(".bouge"));
+        penelope.style.display = "block";
+      });
+    </script>
   </body>
 </html>

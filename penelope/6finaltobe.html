@@ -2,51 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>here</title>
-    <link rel="stylesheet" type="text/css" href="header.css"/>
+    <link rel="stylesheet" type="text/css" href="header.css" />
     <style type="text/css">
-body
-{
-font-size: large;
-background-image: url("img/mix.jpg");
-background-size: 100%;
-text-align: center;
-font-family: arial;
-color: black;
-display: flex;
-justify-content: space-between;
-flex-direction: column;
-padding: 20%;
-}
+      body {
+        font-size: large;
+        background-image: url("img/mix.jpg");
+        background-size: 100%;
+        text-align: center;
+        font-family: arial;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 20%;
+      }
 
-header{font-size: 40pt;}
-footer
-{font-size: 7pt; text-align: center;}
+      header {
+        font-size: 40pt;
+      }
+      .box {
+        font-size: small;
+        text-align: center;
+      }
 
-div{padding: 3%;}
-
+      div {
+        padding: 3%;
+      }
     </style>
 
-<script>
-    document.addEventListener('click', function() {
-        var audio = document.querySelector('audio');
+    <script>
+      document.addEventListener("click", function () {
+        var audio = document.querySelector("audio");
         audio.play();
-    });
-</script>
+      });
+    </script>
+  </head>
 
-    </head>
+  <body>
+    <header><div>tu as gagné</div></header>
 
-    <body>
-
-<header><div>tu as gagné</div></header>
-
-  <footer>
-    <div><p>ce n'est pas grave</p></div>
-    <div class=audio><audio><source src="son/sadhuman.mp3" ></audio>
-  </footer>
-
+    <main>
+      <div class="box">
+        <div><p>ce n'est pas grave</p></div>
+        <div class="audio">
+          <audio><source src="son/sadhuman.mp3" /></audio>
+        </div>
+      </div>
+    </main>
   </body>
-
-
-  </html>
+</html>
