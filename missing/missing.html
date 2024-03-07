@@ -5,109 +5,136 @@
     <meta name="viewport" content="width=device-width" />
     <title>HELP</title>
     <style type="text/css">
-      img {
-        max-width: 70%;
-      }
       body {
         background-color: red;
-      }
-      main {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        color: red;
-        text-align: center;
-        margin: auto;
-        color: red;
         font-family: arial;
-        width: 70%;
+        color: white;
+      }
+      #missing {
+        animation: blink 0.8s infinite;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 40pt;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      main {
+        display: block;
+        flex-direction: column;
+        text-align: justify-all;
         border: solid red 3px;
-        background-color: white;
+        width: 100vh;
       }
-      div {
-        padding: 10px;
+      .inline {
+        display: inline;
+        flex-direction: raw;
       }
-      audio {
-        background-color: red;
-        padding: 13px;
-        border-radius: 1em;
-        max-width: 150px;
-      }
+
       a {
-        color: red;
-        text-decoration: none;
+        color: white;
       }
       a:hover {
-        text-decoration: underline;
+        text-decoration: none;
       }
       .titre {
-        font-size: 60pt;
-      }
-      .second {
         font-size: 30pt;
       }
       .text {
-        font-size: 16pt;
+        font-size: 20pt;
       }
-
-      @media (max-width: 600px) {
-        .titre {
-          font-size: 30pt;
-        }
-        .second {
-          font-size: 20pt;
-        }
-        .text {
-          font-size: 13pt;
-        }
+      .inca {
+        position: absolute;
+        left: 40%;
+        opacity: 0.3;
+      }
+      .cold {
+        max-width: 800px;
+        position: absolute;
+        top: 170vh;
+        left: 70vh;
+        opacity: 0.7;
+        animation: blink infinite 0.3s;
+      }
+      .cell {
+        max-width: 300px;
+      }
+      .love {
+        max-width: 400px;
+        opacity: 0.7;
+      }
+      audio {
+        position: absolute;
+        top: 130%;
+        left: 65%;
+        width: 350px;
+      }
+      main div {
+        line-height: 40px;
       }
     </style>
   </head>
-  <body>
-    <main>
-      <div class="titre supertitre">
-        <strong>MISSING</strong>
-      </div>
-      <div class="second"><strong>Have you seen him ?</strong></div>
 
-      <div>
-        <img src="img/lincapferret.jpg" alt="CARAMBA" title="olé olé" />
+  <body>
+    <img src="img/lincapferret.jpg" alt="CARAMBA" title="lé lé" class="inca" />
+    <main>
+      <span id="missing"><h1>MISSING</h1></span>
+      <div class="box">
+        <div class="titre">
+          <h2>Have you seen me ?</h2>
+
+          <div class="text">
+            <strong>my name's what's my name</strong><br />why do they call me
+            inca's rapist<br />
+            the beast
+            <br />huge, powerful<br />i'm so heavy<br />no where to go i come
+            from no place <br />scratch <br />
+            I scratch
+          </div>
+          <br /><br />
+          <div class="titre">
+            i'm so alone
+            <br />i'm going insane ! <br />
+            who's there FOR ME
+          </div>
+          <div class="inline">
+            <a
+              href=" https://www.google.com/maps/place/Camping+Nature+l'Airial+Soustons/@43.7538002,-1.3500567,13.23z/data=!4m8!3m7!1s0xd51579a67a26cc3:0x4eb36fe7603772db!5m2!4m1!1i2!8m2!3d43.7542648!4d-1.3519601"
+            >
+              <img
+                src="img/notfelix.jpg"
+                title="rotten cells brains"
+                class="cell"
+            /></a>
+            <img src="img/love.png" class="love" />
+          </div>
+        </div>
       </div>
+      <audio src="son/urgence.m4a" controls></audio>
       <div class="text">
-        <strong>Son nom ??? Le Violeur d'Incas !</strong><br />
-        Sexe : Bestial
-        <br />Taille : Énorme <br />Poids : Lourd <br />Race : Absente
-        <br />Poil : Piquant
-      </div>
-      <div class="second">IL EST SEUL</div>
-      <div>
-        <img src="img/ah.jpg" alt="frissons d'extase" title="le faciès HURLE" />
-      </div>
-      <div class="second">DÉMUNI</div>
-      <div>
-        <a
-          href=" https://www.google.com/maps/place/Camping+Nature+l'Airial+Soustons/@43.7538002,-1.3500567,13.23z/data=!4m8!3m7!1s0xd51579a67a26cc3:0x4eb36fe7603772db!5m2!4m1!1i2!8m2!3d43.7542648!4d-1.3519601"
-        >
-          <img src="img/notfelix.jpg" title="Une flexion du coude animale"
-        /></a>
-      </div>
-      <div class="second">PROCHE DE LA FOLIE</div>
-      <div><img src="img/love.png" /></div>
-      <div><audio src="son/urgence.m4a" controls></audio></div>
-      <div class="text">
-        Entendez-vous cette urgence ? Cette détresse ? <br />C'est la mélodie
-        d'un homme rongé par les vers de la solitude...<br /><br />
-        <strong>AIDEZ-NOUS À LE RETROUVER</strong>
-      </div>
-      <div class="text">
-        En cas de renseignements <strong>contactez le 08 91 15 04 47</strong> ou
-        <strong>participez au paiement de la rançon</strong> que la vie réclame
-        <strong>à ce lien : </strong
-        ><a href="https://www.leetchi.com/c/projet-retrouvailles">KHAGNOTTE</a>
+        <h4>
+          hear me sing - nibbled by the worms of loneliness<br />
+          and fear !<br /><br />
+          pleas help me
+          <br />
+          please contact <strong>08 91 15 04 47</strong><br />
+          or make a
+          <a href="https://www.leetchi.com/c/projet-retrouvailles">donation</a>
+        </h4>
       </div>
       <br /><br />
-      <div class="titre">
-        <strong>N'OUBLIEZ PAS</strong><br />LA BOUE CRÉE DU LIEN
+      <div class="text">
+        <strong>and do not forget --- </strong><mark> this mud connects </mark>
+        <img src="img/ah.jpg" alt="cold" title="cold brain" class="cold" />
       </div>
     </main>
   </body>
