@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Mémoire courte</title>
+
+    <style type="text/css">
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+        font-family: arial;
+      }
+
+      #left {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+      }
+      .text {
+        font-size: 10pt;
+      }
+
+      #right {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+      }
+      .hover {
+        transition: transform 0.5s;
+      }
+
+      .hover:hover {
+        transform: scale(1.1);
+      }
+      .piou {
+        transition: transform 0.5s;
+      }
+
+      .piou:hover {
+        transform: scale(0.8);
+      }
+      .border {
+        border-radius: 3em;
+        box-shadow: 3px 2px 3px #212427;
+      }
+      .bonus img {
+        border-radius: 1px;
+        box-shadow: 3px 2px 3px #212427;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div id="left">
+        <a href="egg.html"
+          ><img src="img/court6.gif" width="30%" class="border"
+        /></a>
+      </div>
+      <div id="right">
+        <div class="piou">
+          <a href="fin.html"><img src="img/enfants2.png" width="40%" /></a>
+        </div>
+        <div class="hover bonus">
+          <a href="boums.html"><img src="img/enfants209.png" width="70%" /></a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>h</title>
+    <style type="text/css">
+      body {
+        background-color: black;
+        color: white;
+        font-family: arial;
+
+        font-size: large;
+      }
+      main {
+        display: block;
+      }
+
+      #middle {
+        display: flex;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        flex-direction: column;
+
+        text-align: right;
+        cursor: grab;
+      }
+      img {
+        width: 60%;
+      }
+
+      .black {
+        background-color: black;
+      }
+      .blackwhite {
+        background-color: transparent;
+        color: black;
+      }
+      .suite img {
+        width: 100px;
+        cursor: crosshair;
+        caret-color: red;
+      }
+
+      .suite {
+        animation: appear 30s ease;
+        position: absolute;
+        top: 90%;
+        left: 90%;
+      }
+      mark {
+        background-color: black;
+        color: white;
+      }
+      .normal {
+        background-color: blue;
+      }
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @media (orientation: portrait) {
+        img {
+          width: 100%;
+        }
+        #middle {
+          font-size: medium;
+          padding: 10px;
+        }
+        .suite {
+          left: 30%;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("click", function () {
+        var audio = document.querySelector("audio");
+        audio.play();
+        audio.onended = function () {
+          window.location.href = "ftg.html";
+        };
+      });
+    </script>
+  </head>
+
+  <body>
+    <main>
+      <audio><source src="son/sameasiteverwas.mp3" /></audio>
+
+      <div id="left">
+        <div class="image"><img src="img/animalcourt.png" /></div>
+      </div>
+
+      <div id="middle">
+        <div class="enfants">
+          <mark>je suppose que c'est mieux si je fais ça</mark>
+        </div>
+        <div class="enfants">parce que sinon zou</div>
+        <br />
+        <div class="pifout">
+          zou zou <br />
+          tout était trop petit
+        </div>
+        <div>
+          parce que sinon
+          <div class="zou">zou zou</div>
+          tout est toujours pareil
+        </div>
+        <div class="zou">zou zou dégage</div>
+        <div>
+          <mark>ça a toujours été<br />comme ça<br /></mark><br /><br /><mark
+            class="normal"
+            >les petits crétins</mark
+          >
+        </div>
+      </div>
+
+      <div class="suite"><img src="img/corplus.gif" /></div>
+    </main>
+  </body>
+</html>

@@ -5,44 +5,73 @@
     <title>enterreterrenement</title>
     <link rel="stylesheet" type="text/css" href="header.css" />
     <style type="text/css">
-      img {
-        max-width: 22%;
-      }
-
-      audio {
-        height: 17px;
-        width: 600px;
-      }
-
       body {
-        text-align: center;
-        font-size: large;
+        text-align: justify;
         font-family: arial;
-        background-image: url("img/N.png");
-        background-size: cover;
+        background-color: black;
+        color: white;
       }
-
-      p {
-        padding: 10px;
+      main {
+        display: block;
+      }
+      .titre {
+        font-size: 25pt;
+      }
+      div {
+        padding: 1%;
       }
 
       a {
-        color: black;
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      audio {
+        display: none;
+      }
+      img {
+        width: 40%;
+      }
+      @media (orientation: portrait) {
+        img {
+          width: 70%;
+        }
+        .titre {
+          font-size: 70pt;
+        }
       }
     </style>
+    <script>
+      window.addEventListener("load", () => {
+        document.querySelector("#play").addEventListener("click", () => {
+          document.querySelector("audio").play();
+        });
+
+        document.querySelector("#pause").addEventListener("click", () => {
+          document.querySelector("audio").pause();
+        });
+      });
+    </script>
   </head>
 
   <body>
     <main>
-      <p>
-        <a href="7nébonssebis.html"
+      <div class="titre">
+        <a href="son/finnni.mp3"
           >a life without that in it, is a life ! can't lead</a
         >
-      </p>
-      <p><audio src="son/finnni.mp3" controls></audio></p>
-      <p>
-        <a href="img/gant6.jpg"><img src="img/N.png" alt="°)" title=")°" /></a>
-      </p>
+      </div>
+
+      <div></div>
+      <div class="image">
+        <a href="7nébonssebis.html"
+          ><img src="img/N.png" alt="°)" title=")°"
+        /></a>
+      </div>
+      <audio src="son/finnni.mp3"></audio>
     </main>
   </body>
 </html>

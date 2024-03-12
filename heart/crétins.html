@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>crétins</title>
+    <style type="text/css">
+      body {
+        color: white;
+        background-color: black;
+        background-size: 50%;
+        font-family: arial;
+        font-size: medium;
+      }
+      main {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        margin: auto;
+      }
+      .dent {
+        animation: fall 20s forwards;
+      }
+      .dents {
+        animation: fall 30s forwards;
+      }
+      @keyframes fall {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="texte">
+        mon jeu à moi seulement<br />ne sert à rien<br />
+        <div class="dents"><img src="img/dent1.png" /></div>
+        les dents tombent
+        <div class="dent"><img src="img/dent.png" /></div>
+      </div>
+    </main>
+  </body>
+</html>

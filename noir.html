@@ -11,37 +11,28 @@
       }
 
       main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+
         height: 100vh;
         font-family: arial;
       }
 
-      #left {
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        background-color: blue;
-      }
       #leftbox {
+        color: blue;
         font-family: arial;
-        color: white;
-        color: white;
+        width: 80%;
+        margin: auto;
       }
       #leftbox a {
-        color: white;
+        color: blue;
       }
-      .section80 {
-        color: orangered;
-      }
-
-      #right {
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        color: white;
+      .text {
+        padding: 30px;
+        color: black;
+        text-align: center;
+        font-size: small;
+        font-family: "Times New Roman", Times, serif;
       }
     </style>
   </head>
@@ -58,14 +49,15 @@
         </div>
       </header>
 
-      <div id="leftbox"></div>
-      <div id="right">
+      <div id="leftbox">
         <div class="text">
-          - Avec quoi allez - vous ?<br />- Oh, une bonne paire de chaussures,
-          mon très cher, des anatoles au pied, enfin de quoi ne pas voir où
-          aller, sinon je trébuche dans mes doigts, on tombe et on s'engueule
+          <em
+            >"Oh, une bonne paire de chaussures, mon très cher, des anatoles au
+            pied, enfin de quoi ne pas voir où aller, sinon je trébuche dans mes
+            doigts, on tombe et on s'engueule"</em
+          >
         </div>
-        <div class="text">
+        <div>
           <a href="img/suffer.jpg"
             ><img
               src="img/suffer.jpg"
