@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
+    <link rel="stylesheet" type="text/css" href="aside.css" />
     <title>Mémoire courte</title>
     <style type="text/css">
       html {
@@ -55,11 +56,38 @@
           left: 50px;
         }
       }
+      .arial {
+        font-family: arial;
+        line-height: 35px;
+      }
+
+      @media print {
+        main {
+          width: 50%;
+          font-size: large;
+          color: black;
+        }
+        br {
+          display: none !important;
+        }
+
+        .arial {
+          font-family: arial;
+          width: 40%;
+          left: 10%;
+        }
+      }
+      .right {
+        width: 70%;
+      }
     </style>
   </head>
 
   <body>
     <main>
+      <aside class="border">
+        <a href="mygame.html"><img src="img/court6.gif" /></a>
+      </aside>
       <div class="all">
         <div class="first">
           <div class="texte">
@@ -102,6 +130,7 @@
             IGNORED her) and she wasn't calm at all she was screaming at my face
             her fucking dirty mud. i ran off.
           </div>
+
           <div class="texte second">
             i'm thinking of moving away.<br />
             i sleep very well and eat allright really she doesn't bothers me

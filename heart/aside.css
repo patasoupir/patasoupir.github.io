@@ -1,0 +1,9 @@
+aside
+{
+    display: inline-block;
+position: absolute;
+    right:2px;
+   
+}
+
+aside img {width:30px; opacity: 0.5;  border-radius:0.4em; }
