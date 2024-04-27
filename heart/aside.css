@@ -6,4 +6,16 @@ position: absolute;
    
 }
 
-aside img {width:30px; opacity: 0.5;  border-radius:0.4em; }
+aside img {width:50px; border-radius:0.4em; animation:blink 6s infinite;}
+
+@keyframes blink {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }

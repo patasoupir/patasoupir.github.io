@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>crétins</title>
-    <link rel="stylesheet" type="text/css" href="aside.css" />
+
     <style type="text/css">
       body {
         color: white;
@@ -16,7 +16,7 @@
       main {
         position: absolute;
         left: 30%;
-        top: 50%;
+        top: 40%;
         margin: auto;
       }
       .dent {
@@ -33,6 +33,22 @@
           transform: translateY(100vh);
         }
       }
+
+      aside img {
+        animation: appear 10s forwards;
+      }
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
 
@@ -44,6 +60,21 @@
         les dents tombent
         <div class="dent"><img src="img/dent.png" /></div>
       </div>
+      <aside class="border">
+        <a href="mygame.html"><img src="enfants2.png" /></a>
+      </aside>
     </main>
+    <script>
+      // Redirection vers la page désirée après que l'animation est terminée
+      window.onload = function () {
+        // Durée de l'animation en millisecondes
+        var animationDuration = 30000; // 30 secondes
+
+        setTimeout(function () {
+          // Redirection vers la page désirée
+          window.location.href = "mygame.html";
+        }, animationDuration);
+      };
+    </script>
   </body>
 </html>
