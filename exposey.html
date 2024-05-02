@@ -8,7 +8,7 @@
 
     <style type="text/css">
       img {
-        max-width: 100%;
+        max-width: 80%;
       }
 
       body {
@@ -16,31 +16,67 @@
         text-align: center;
         font-size: 12pt;
         background-color: black;
+        color: white;
+        text-align: justify;
+      }
+      header {
+        font-size: 30pt;
       }
       main {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+        padding: 50px;
+        width: 70%;
       }
+
       main div {
-        margin: 20px;
+        padding: 50px;
       }
 
       .exposé {
         font-weight: bold;
         color: white;
       }
+      .texte {
+        color: white;
+      }
     </style>
   </head>
 
   <body>
-    <header>
-      <div class="exposé">Des grains de poussière sur la mer</div>
-    </header>
     <main>
-      <div><img src="img/étagère.png" alt="miroir peut-être" /></div>
+      <div class="track">
+        Silence track <br /><br /><audio
+          src="son/silence track.mp3"
+          controls
+          loop
+        ></audio>
+      </div>
+      <div class="track">
+        the wrong and false track <br /><br /><audio
+          src="son/wrong track.mp3"
+          controls
+          loop
+        ></audio>
+      </div>
+
+      <div class="track">
+        en fait ? <br /><br /><audio
+          src="son/en fait track.mp3"
+          controls
+          loop
+        ></audio>
+      </div>
+      <div class="track">
+        euuh je <br /><br /><audio src="son/euh je.mp3" controls loop></audio>
+      </div>
+      <div class="track">
+        beginning of the end <br /><br /><audio
+          src="son/beg.mp3"
+          controls
+          loop
+        ></audio>
+      </div>
     </main>
   </body>
 </html>
