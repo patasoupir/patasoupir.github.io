@@ -7,137 +7,186 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <title>PATASOUPIR</title>
-    <link rel="stylesheet" type="text/css" href="header.css" />
+    <link rel="stylesheet" type="text/css" />
     <style type="text/css">
-      body {
-        font-family: arial;
-        color: white;
-        background-color: black;
-      }
+            body {
+              font-family: arial;
+              color: black;
+              background-image: url("img/1242.png");
 
-      .bouge {
-        animation: moveanddisapp 3s linear forwards;
-      }
-      .boogie @keyframes moveanddisapp {
-        0% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      @keyframes moveanddisapp {
-        0% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
+              font-style: bold;
+            }
+            .patasoupir {
 
-      ul {
-        list-style-type: none;
-      }
+              font-;
+            }
+            .line {
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+            }
+            .cercleconteneur{
+              display: flex;
+        justify-content: center;
+        align-items: center;}
 
-      li {
-        padding: 3px;
-      }
+            .cercle {
+              position: fixed;
+              margin:auto;
+              text-align: center;
+              width:600px;
+              margin:auto;
 
-      .poule div {
-        display: block;
-        padding: 1%;
-      }
 
-      .titre {
-        letter-spacing: 4px;
-        font-size: 15pt;
-      }
-      .penelope {
-        display: none;
-        padding: 1%;
+            }
+            @keyframes rotate {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(360deg);
+              }
+            }
+            ul{list-style-type: none;}
+            li{padding:30px;}
 
-        font-size: 11pt;
-        letter-spacing: 1px;
-        animation: appear 4s forwards;
-      }
-      .penelope div {
-        padding: 2%;
-      }
-      @keyframes appear {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-      footer {
-        padding: 5px;
-        text-align: right;
-        font-size: 2vh;
-        margin-top: 100vh;
-      }
 
-      .bouge img {
-        width: 100%;
-      }
+            .elementcercle {
+              position: inherit;
+              font-size: x-large;
+              text-align: center;
+              border-radius: 50%;
+              animation: orbit 40s linear infinite;
+              color:black;
+            }
+
+            @keyframes orbit {
+              0% {
+                transform: rotate(0deg) translateX(250px) rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg) translateX(250px) rotate(-360deg);
+              }
+            }
+            img {
+              max-width: 200px;
+            }
+
+            .tourne {
+              animation: rotate 10s linear infinite;
+            }
+
+            footer {
+              font-size: small;
+              margin-top: 100vh;
+            }
+
+            div {
+              margin: 30px;
+            }
+
+      a{color:black; text-decoration: none;}
+      a:hover{text-decoration: underline;}
+
+      .rond{
+         border: black solid 1px;
+                    border-radius: 50%;
+                    width: 500px;
+                    height: 500px;}
+                    .rond1{
+         border: black solid 1px;
+                    border-radius: 50%;
+                    width: 700px;
+                    height: 700px;}
+                    .rond2{
+         border: black solid 1px;
+                    border-radius: 50%;
+                    width: 600px;
+                    height: 600px;}
     </style>
   </head>
 
   <body>
-    <div class="total">
-      <div class="bouge">
-        <a href="penelope/1penelope.html"
-          ><img src="img/Léa100.png" title="PENELOPE"
-        /></a>
+    <header>
+      <div class="patasoupir">
+        hello<br />
+        and welcome to my moutain. feel free to visit any cave.
       </div>
-      <main>
-        <nav class="penelope">
-          <div class="titre">PATASOUPIR (jeune)</div>
-          <ul class="poule">
-            <li><a href="images.html">images</a></li>
-            <li><a href="ODIO.html">sons</a></li>
-            <li><a href="combles.html">combles</a></li>
-            <li><a href="https://matias.ma/nsfw/">?</a></li>
-          </ul>
-          <br /><br />
-          <div class="titre">PENELOPE (plus jeune encore)</div>
-          <ul class="poule">
-            <li>
-              <a href="penelope/portfolio2.html" title="AAAH"
-                >du bruit encore</a
-              >
-              -
-              <a href="penelope/MonsieurDoute/Z.photo1.html"
-                >it's time to wake up !</a
-              >
-            </li>
-            <li><a href="missing/missing.html" title="HELP">help</a></li>
-            <li>
-              <a href="penelope/MonsieurDoute/Z.chemin.html">chut</a>
-            </li>
-            <li>
-              <a href="heart/mygame.html">tu peux tenir ça stp</a>
-            </li>
-          </ul>
-        </nav>
-      </main>
-    </div>
+    </header>
 
-    <footer>QUE LA BOUE VOUS BÉNISSE</footer>
-    <script>
-      const total = document.querySelector(".total");
-      const penelope = document.querySelector(".penelope");
-      document.querySelector(".bouge").addEventListener("animationend", () => {
-        total.removeChild(document.querySelector(".bouge"));
-        penelope.style.display = "block";
-      });
-    </script>
+    <main>
+      <div class="corps">
+        <div class="line">
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="grass/castle.html"><img src="img/13.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="heart/mygame.html"><img src="img/1241.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="penelope/1penelope.html"><img src="img/deadnature1.png" /></a>
+          </div>
+          <div class="projets">
+            <a href="missing/missing.html"><img src="img/feliheart.png" /></a>
+          </div>
+        </div>
+        <div class="cercleconteneur">
+          <div class="cercle">
+            <div class="elementcercle"><a href="https://matias.ma/nsfw/">?</a></div>
+            <div class="elementcercle"><a href="combles.html">combles</a></div>
+            <div class="elementcercle"><a href="images.html">images</a></div>
+            <div class="elementcercle"><a href="ODIO.html">sons</a></div>
+            <div class="elementcercle"><a href="penelope/portfolio2.html">d'autres sons</a></div>
+          </div>
+        </div>
+        <div class="rond"></div>
+        <div class="rond1"></div>
+        <div class="rond2"></div>
+      </div>
+    </main>
+
+    <footer><div>que dieu vous bénisse</div></footer>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector(".cercle");
+      const items = container.querySelectorAll(".elementcercle");
+      const radius = container.clientWidth / 2 - 50;
+      items.forEach((item, index) => {
+        const angle = (index / items.length) * 2 * Math.PI;
+        const x = radius * Math.cos(angle) + radius - 25;
+        const y = radius * Math.sin(angle) + radius - 25;
+        item.style.left = `${x}px`;
+        item.style.top = `${y}px`;
+        item.style.transformOrigin = `${50 - radius}px ${50 - radius}px`;
+      });
+    });
+  </script>
 </html>
