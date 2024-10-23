@@ -3,26 +3,161 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
     <title>invitation</title>
 
     <style>
+      @font-face {
+        font-family: "dragonlie";
+        src: url("/fonts/dragonlie-Regular.woff2") format("woff2"),
+          url("/fonts/dragonlie-Regular.ttf") format("truetype");
+      }
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      html {
+        animation: appear 5s linear forwards;
+      }
       body {
-        font-family: arial;
-        font-size: medium;
-        background-image: url("img/kassos.png");
-        background-size: contain;
-        color: rgb(87, 86, 86);
-        text-align: justify;
+        font-family: "dragonlauphing", sans-serif;
+        font-size: 18pt;
+        background-size: cover;
+        color: white;
+
+        line-height: 33px;
+        background-color: rgb(0, 0, 0);
+        background-image: url("img/1letter.png");
       }
-      img {
-        width: 200px;
-      }
-      main {
+
+      .container {
         display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+      }
+      .side {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        line-height: 200px;
+        font-size: 100pt;
+        margin: 1%;
+        padding: 1%;
+        color: rgb(249, 233, 12);
+        text-align: center;
+        background-image: url("img/a.png");
+        background-size: contain;
+        font-family: "segoe", sans-serif;
+        animation: backgroundopacity;
+      }
+      .one {
+        animation: blink 10s infinite, changementCouleur 2s infinite alternate;
+      }
+      .party img {
+        max-width: 100px;
+      }
+
+      .invitation {
+        text-align: justify;
+        width: 70%;
+        padding: 10%;
+      }
+      .invitation img {
+        max-width: 100px;
+        transition: transform 0.7s ease;
+      }
+
+      .invitation img:hover {
+        transform: scale(1.3);
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes changementCouleur {
+        0% {
+          color: blue;
+        }
+        100% {
+          color: rgb(255, 242, 4);
+        }
       }
     </style>
   </head>
   <body>
-    <main><img src="img/1ok.png" /><img src="img/nok.png" /></main>
+    <main>
+      <div class="container">
+        <div class="side">
+          <div class="one">P</div>
+          <div class="one">A</div>
+          <div class="one">R</div>
+          <div class="one">T</div>
+          <div class="one">Y</div>
+        </div>
+
+        <div class="invitation"></div>
+
+        <script>
+          // Texte à afficher
+          const invitation = `Helloooo<br /><br />
+    You are invited to my castle !<br /><br />
+    next tuesday<br />the 1st<br />on top of the hill<br /><br />
+    you can stay as long as u want, there's plenty of room for everyone, you may bring whatever you want<br /><br />
+    and don't worry I'll take care of everything !<br /><br />
+    be there for 6 p.m ! i can't wait to see you all !<br /><br />
+    love u <br />
+    please confirm your presence by picking up this flower :<br/> <a href="garden.html"><img src="img/geante.png" /></a>`;
+
+          const speed = 45; // Vitesse d'affichage en millisecondes
+          let i = 0;
+          let currentText = ""; // Variable pour accumuler le texte traité
+          let isTag = false;
+
+          function typeWriter() {
+            if (i < invitation.length) {
+              let char = invitation.charAt(i);
+
+              // Détecte le début et la fin d'une balise HTML
+              if (char === "<") {
+                isTag = true;
+              }
+
+              currentText += char;
+
+              if (char === ">") {
+                isTag = false;
+              }
+
+              // Si on n'est pas dans une balise, insérer le texte traité dans le DOM
+              if (!isTag) {
+                document.querySelector(".invitation").innerHTML = currentText;
+              }
+
+              i++;
+              setTimeout(typeWriter, isTag ? 0 : speed); // Appel récursif pour afficher le caractère suivant
+            }
+          }
+
+          typeWriter();
+        </script>
+      </div>
+    </main>
+    <footer>
+      <nav class="navigation"><a href="castle.html">return to the entrance</a></nav>
+    </footer>
   </body>
 </html>

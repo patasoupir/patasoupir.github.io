@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+    <title>guest book page one</title>
+  </head>
+  <style>
+    body {
+      background-size: 100%;
+      color: black;
+      font-family: "Segoe UI", sans-serif;
+      font-size: 14pt;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="text"></div>
+    </div>
+    <script>
+      const text = `I've never stretch out my hand to you<br/> and I've never wanted to grab the thousands of hands you've thrown at me<br/>i don't love you<br />i'm only pretending to
+      <br/><br/><br/>i'm sorry for yesterday and today <br/>i am really tired<br/> would you like to meet up tomorrow ?
+      <br/> <br/>yes but you can't sleep with me<br/>
+      i really apologize i am terribly embarrassed
+       <br/><br/>you have no tact glad i'm not close from my grand-father you shouldn't say things like that
+       <br/><br/><br/>you're hilarious about everything - we don't know what that means in the end<br/>that's an imprecise sentiment coming from you
+       <br/>i leave on 12 June at 4pm
+       <br/>
+       <br/>i'd like to discover and see you
+       <br/>i just want to be with you
+       <br/>
+       <br/>i think about doing the dishes, i think about sleeping
+       <br/> i am sorry ********
+       <br/><br/><br/> why tuesday and not wednesday ? `;
+
+      const speed = 45;
+      let i = 0;
+      let currentText = ""; // Variable pour accumuler le texte traité
+      let isTag = false;
+
+      function typeWriter() {
+        if (i < text.length) {
+          let char = text.charAt(i);
+
+          // Détecte le début et la fin d'une balise HTML
+          if (char === "<") {
+            isTag = true;
+          }
+
+          currentText += char;
+
+          if (char === ">") {
+            isTag = false;
+          }
+
+          if (!isTag) {
+            document.querySelector(".text").innerHTML = currentText;
+          }
+
+          i++;
+          setTimeout(typeWriter, isTag ? 0 : speed);
+        } else {
+          // Le texte est entièrement affiché, changez l'image de fond
+          document.body.style.backgroundImage = "url('img/peur.gif')";
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
+</html>

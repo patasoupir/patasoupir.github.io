@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid CSS avec défilement</title>
+    <style>
+      body {
+        font-family: SF Pro Text, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+        grid-auto-rows: 500px;
+        gap: 10px;
+        height: 100vh;
+        padding: 10px;
+        padding: 5px;
+      }
+
+      .item {
+        background-color: #fbfbfd;
+        border: 2px solid #ccc;
+        padding: 10px;
+        overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+        text-align: justify-all;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        border-radius: 3px;
+        border: #f3ecec;
+        font-size: 12pt;
+        line-height: 20px;
+        color: rgb(44, 44, 44);
+      }
+      .date {
+        font-size: 16pt;
+        margin-bottom: 10px;
+        color: rgb(0, 0, 0);
+      }
+      .titre {
+        font-weight: bold;
+        font-size: 14pt;
+        line-height: 20px;
+        color: rgb(24, 24, 24);
+      }
+
+      .icons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: grab;
+        font-size: 20px;
+        color: red;
+      }
+      .red {
+        color: red;
+      }
+      .icons:hover {
+        opacity: 0;
+      }
+      /* Personnalisation de la scrollbar */
+      .item::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .item::-webkit-scrollbar-thumb {
+        background-color: rgba(38, 1, 1, 0.445);
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .item::-webkit-scrollbar-track {
+        background-color: #f3ecec;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <div class="date">md : 21.08.24</div>
+        <p>
+          Une fois sur força bruta en larmes en larmes le vent me traverse et il le regarde faire
+          sur son canapé
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="date">22.03.24</div>
+        <p>
+          <span class="titre">
+            Sale comme un tapis d’entrée - un camouflage paillasson ne vaut pas un caméléon - fais
+            pipi dans toutes ces bouteilles, pendant trois ans, ce sera ton enfer - et des litres
+            d’eau pour laver toute cette urine et la boue méchante</span
+          >
+        </p>
+        <p>
+          Viens lave lave lave frotte la Vœu lave boue lave love viens lave et frotte la boue viens
+          frotte l’eau est sale mais frotte encore et frotte encore. Et frotte et frotte. Et frotte
+          encore. Et frotte moi et frotte cette eau sale et cette boue sera propre d’eau propre
+          après que tu aies frotté frotté et lavé et frotté encore. Et frotte le propre encore. Et
+          frotte le bien car il est très sale. FINALEMENT FUIS CA EMPESTE
+          <br /><br />Il faudra toujours laver puisque tu vis ici, il faut sans cesse essuyer
+          nettoyer décaper refaire les joints moisis dépoussiérer dépouiller démeubler déménager
+          emménager choisir des tables des chaises dans la rue à poncer et des tapis à rempoter.<br />
+          <br />
+          <span class="titre">Le paillasson se jetterait bien mais faut il le jeter ?</span><br />Et
+          puis quand est-ce qu’une éponge se lave ?
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="date">?</div>
+        <p>
+          Mon anniversaire aussi je l’ai passé dans la mort j'étais tellement heureuse pourtant en
+          me réveillant qu’est ce que j’en sais moi a-t-il vraiment raté son bus ?
+        </p>
+      </div>
+      <div class="item">
+        <span class="red titre"
+          >ALORS IL VAUT MIEUX : FAIRE LE BUS AVEC CES TEXTES (genre + ou moins ? dans une version
+          dynamique :) ou bien sortir ces textes en aléatoire. mais si tu veux pour némo t'as juste
+          à LUI FILER TON PORTABLE EN FAIT. CAR LA TOUT LE MONDE S'EN BRANLE DE CES TEXTES. JE PENSE
+          QU'EN PLUS VU QUE C'EST PAS COMME CA QUE TU LES MANIPULES CA NE RESSEMBLE MEME PAS A DES
+          ARCHIVES. C'EST UNE IMITATIO D'Archives mais elles ne sont pas intéressantes pour le jeu.
+          donc réfélchis mieux ! par exemple pareil pour le code de l'ordinateur amuse toi à recréer
+          ton ordi oui mais faut qu'on y trouve de quoi aider le joueur.
+        </span>
+      </div>
+
+      <div class="item">
+        <div class="date">recent october</div>
+        <p>
+          papa power <br />
+          half mast<br />
+          city hell<br />
+          DAÏDA janine grandiose grandis par dessus ça tellement beau le son de mes rêves quand on y
+          est ensemble pourquoi tu ne cherches pas avec moi
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="date">2.10.24</div>
+        pourquoi tu m'as abandonnée
+      </div>
+      <div class="item">
+        <div class="date">9.06.24</div>
+        <p>
+          Je suis triste comme un pou <br />
+          Voici des photos de pieds sain<br />
+          car je suis très triste
+        </p>
+      </div>
+      <div class="item">
+        <div class="date">19.08.24</div>
+        <p>
+          Je ne sais pas. Je ne sais pas si c’était une histoire, une vraie histoire, Angellina m’a
+          dit que t’étais juste un gars full paumé et que ça enlevait rien aux bons moments passés
+          ensemble. C’est joli comme explication bcp trop doux
+        </p>
+      </div>
+      <div class="item">
+        <div class="date">4.10.24</div>
+        <p>
+          reprendre TOUTES CES MERDES dans un programme TU SAIS LES IA pour générer des tonnes de
+          nouveaux messages. plein plein PLEIN de messages. C'est absurde mon histoire avec toi est
+          TELLEMENT DRÔLE MAIS LES DEUX BOUFFONS C'EST ENORME ENORME
+        </p>
+      </div>
+      <div class="item">
+        <div class="date">26.03.22</div>
+        <p>
+          <span class="titre"
+            >si on était transparent on verrait nos corps dedans le dedans fin on verrait les
+            aliments le cerveau</span
+          >
+        </p>
+      </div>
+      <div class="item">
+        <div class="date">25.10.22</div>
+        Ce qu’on entend reflète ce à quoi on prête attention<br /><br />
+
+        L’arbre sans fin :<br />
+        Elle est là, et il n’y a plus personne dedans <br />
+        Elle a un grr and trou dans son amour <br />
+        Et juste au moment où elle va pleurer pour se reposer ...
+      </div>
+      <div class="item">Texte 21 : Duis sed odio sit amet nibh vulputate cursus.</div>
+      <div class="item">
+        <div class="date">3.01.22</div>
+        En vraiment vrai ment tu pouvais pas savoir maintenant C FINI et tous les 2 vs êtes
+        responsables. Genre t’aurai « pu » comprendre avant moins lui parler mais fin c ce qu’elle
+        dit elle aurait du EXPLIQUER aussi. Toute façon cette conversation vous deviez l’avoir genre
+        toi ca devait t’aider. et puis tu lui parlais pas au début à Paris genre si g bien compris c
+        elle qui envoyait des SIGNAUX donc gros elle est perdue toi t’as pas capté ce qu’elle
+        renvoyait NORMAL DE SE FAIRE D FILMS QUAND EN FACE TAS PAS LA RÉACTION QUI LES ARRÊTE ou
+        juste même pas d films mais de vouloir des réponses CEST LOGIQUE COMPRÉHENSIBLE U NOT
+        DEBILE. juste elle a un ptn de problème de communication si elle est pas capable de te le
+        dire mais de le mettre en story. C + facile mais vasi c lache. Sauf qu’elle sait qu’elle te
+        fait du mal elle galère. Genre gros blocage c horrible, mais ça tu le savais, et tu savais
+        que tu devais lui parler coûte que coûte malgré ça. c chaud pour les crises d’angoisse
+        vraiment jsp tu dois te sentir comme une merde SAUF QUE TU PAS SAVOIR VRAIMENT tu peux pas.
+        Genre SOIT indulgent avec toi même. tu t trompé mais elle elle fuyait. Toi t’as demandé d
+        explications pour d’autres signaux qu’elle t’avait envoyé avant genre d trucs qui la faisait
+        exister alors que t’essayait de l’oublier. ÇA ME CASSE LES COUILLES POUR TOI je sais pas
+        comment tu te sens si tu t’en veux pour tout le reste
+      </div>
+      <div class="item">Texte 22 : Phasellus ultricies dolor sit amet ante rhoncus.</div>
+      <div class="item">Texte 23 : Nam rutrum, sapien in pulvinar dignissim.</div>
+      <div class="item">Texte 24 : In lacinia ligula nec odio hendrerit.</div>
+      <div class="item">Texte 25 : Morbi at neque ac leo pulvinar varius.</div>
+      <div class="item">Texte 26 : Integer volutpat nunc nec ultricies auctor.</div>
+      <div class="item">Texte 27 : Vivamus fringilla vehicula diam.</div>
+      <div class="item">Texte 28 : Nulla facilisi. Pellentesque ac dui sed ligula volutpat.</div>
+      <div class="item">Texte 29 : Donec varius, nulla nec consequat feugiat.</div>
+      <div class="item">Texte 30 : Suspendisse auctor mauris id dui placerat.</div>
+      <div class="item">
+        <p>
+          <span class="titre"
+            >Chronologie après janvier, depuis que la randonnée a commencée (on a fait 10 mètres en
+            6 mois, parce qu’il se chiait dessus c’était hyper sale)
+          </span>
+        </p>
+
+        <p>
+          1 et février : je doute <br /><br />
+          15 février : il me la met à l’envers (message) <br /><br />
+          19 février : j’envoie UN MAIL. Il est sincère et donne de l’amour - faux. Il dit “on
+          s’aime parce qu’on se connait bien”. D’abord ça n’est pas suffisant, en plus, il ne me
+          connaît pas. Bcp trop d’abnégation mais elle était de ma part aussi sincère. Nous ne
+          savons pas nous parler et j’ai pris son silence pour une bonne raison de vivre.
+          <br /><br />
+          Après ça, gère ma présence comme un poids à caler dans l’agenda. Faut voir Hugo, moi, me
+          mettre entre deux horaires, 14h à 19h il est libre, ensuite il veut aller à la boxe, puis
+          lire un livre et se lever tôt. j’ai un souvenir très vif, je sors à 17h, je suis avec des
+          gens, mais jamais avec eux. j’attends qu’il me considère. Et je reçois rien.<br /><br />
+          Période compliquée on se voit un peu, peu. C’est toujours un peu horrible en vrai. On n’a
+          pas couché ensemble, j’ai l’impression de le faire chier.<br /><br />
+          Samedi 9 mars, on se voit et jsp pk on a une conversation horrible je ne sais plus si je
+          l’ai déclenchée mais il me dit qu’il est pas amoureux, je lui demande ce qu’il pense de
+          son amoureuse d’avant, si elle est toujours là, il me dit non mais c’était quand même
+          quelque chose de mythique, il me dit qu’il a jamais montré d’amour à Hugo, que ça fait 3
+          ans que c’est nul, qu’il faudrait partir pour être mieux. Je pleure et j’ai énormément de
+          mal à parler. <br />
+          On reste ensemble car je lui demande si on peut rester ensemble. Je pense que c’est ainsi
+          que la conversation avait commencé comme d’habitude il me disait de partir de chez lui au
+          moment d’aller dormir et ça me mettait au bout de ma vie. Voilà ce que ça a été vrmt 30
+          fois au bas mot. Jamais de l’accueil, jamais envie de me voir. Je le fais chier. Et après
+          il revient vers moi pour me dire qu’il veut être avec moi. <br />
+          12 mars, je lui en veux bcp. Très énervée. Rien ne va je le fais chier. On se voit et il
+          est de nouveau gentil avec moi. Il me remercie m’envoie des blagues. En fait il fait tout
+          pour être gentil seulement après avoir ignoré <br /><br />
+          12/13 Mars m’envoie des messages gentils j’en parle avec ma forêt qui se balance je lui
+          dit comme il est horrible elle m’écoute me dit de le laisser… il a peut être juste
+          d’énormes défauts… <br />
+          C’est donc 14 mars qu’il comprend pas et qu’il me dit qu’il est PAS TOXIQUE ????<br />
+          Je lui dit, on arrête, c’est tout. Il a répondu non <br />
+          On se voit il vient là où j’apprends ça me rend très contente j’oublie tout. c’était
+          tellement simple, tu vois ? On se promène, centre commercial, je me trouve laide, il me
+          raconte qu’il a vomi le matin à cause du sable. Il peut m’en parler s’il veut je dis (en
+          vrai ça suffit peu oui je pourrais faire plus ?)<br />
+          Je rends la carte sd<br />
+          Je vais à la soirée avec giorgio. Il ne veut pas venir (compréhensible). Peut être nous
+          rejoindrons nous après. Il me fait un bisou sur la joue et s’en va. <br />
+          Je suis allée à bordeaux après à la campagne. Je ne ressentais rien. <br />
+          Il répond à mes doutes confiés par un long message où il reproche MON silence. c’est
+          soi-disant pesant<br />
+          <span class="red">on dirait un message de vieux dit par un bébé</span><br /><br />
+          19 mars je reviens, je propose avec ENTHOUSIASME qu’on se voit. Je vais voir à république
+          mumu puis ? En tout cas je le motive en mode NIQUE LA FLEMME Bouh (dans ma tête c de gros
+          efforts ça car son refus est intimidant alors je force force) <br />
+          19 mars on se rejoint, il était avec sunny bunny trompy man, oui c’est vrai ! Il voulait
+          bien parler. Nous avons parlé je crois. Je ne sais pas l’issue, ce n’était rien de clair.
+          Sans doute n’avons nous pas parlé mais sommes justes restés ensemble. <br />
+          Après je lui paie ses billets pour aller chez les fauves, 29 mars, birthday girl etc.
+          Juste il est toujours distant, peu tactile, il n’y a pas de tendresse. Je le sais bien
+          qu’il n’est pas amoureux de moi. Dans le noir et de dos.<br />
+          Après ce moment on se parle mieux quand même.<br /><br />
+          Du 8 au 13 avril je vais à marseille quelques jours. Puis on fait de plus en plus de
+          choses ensemble un peu j’ose j’espère oser on va au cinéma, mais mon apaisement viens du
+          fait qu’on ait tous 2 du travail chacun à faire du coup on s’occupe bien. <br />
+          Quel fdp je lui dis merci FACILEMENT I SUCK HIS DICK YES OF COURSE CAN I BE MORE WEAK
+          NICER CAN I STAY AT HOME AND COOK THE BREAD CONTRE LEQUEL TU VAS TE FROTTER <br />
+          27 avril je vais voir mumu c’est à peine bonjour, à peine au revoir, c’est d’ailleurs une
+          autre qui m’invitait chez lui dans la journée, c’est vexant, pas affectueux. Il m’offre
+          UNE CLOPE et on parle peu, il se casse vingt minutes après que j’arrive. Il a vu ses amis
+          c’est tout. Il est fatigué il rentre. Aucun effort, aucun don. J’existe quand il a faim.
+          Être un frigo. C’est pour ça qu’il veut que je sois son amie c’est pour ça… <br />
+          Et par messages il répond moins. <br /><br />
+          Oral du 29 avril j’ai bien pleuré avant j’étais à la boulangerie devant chez lui je ne
+          l’intéresse pas. Il était chez lui, à rien faire, au téléphone avec sa mère, j’ai besoin
+          de lui j’ai besoin de quelqu’un, j’ai vu antoine, je suis allée à l’oral, et voilà. Et
+          puis j’ai vu jb ensuite. <br /><br />
+          Je lui demande d’être là mardi soir. Il me dit la fête c’est mercredi, pas avant. Il me
+          plaisante dessus, rien n’est dramatique (je ne sais plus le croire). c’est important pour
+          moi je lui en veux de tenir si peu compte des choses. Pas assez pourtant - j’attend un
+          geste encore<br /><br />
+          Mercredi il est là avec ma reine et ses bouffons<br />
+          Je suis gênée avec lui un peu<br />
+          Il retourne travailler à 18h. Pas un message pas un cadeau, j’ai failli pleurer bouffonne
+          je rentre chez moi je n’étais pas seule (merci à elles)<br /><br />
+          Vendredi<br />
+          ENFIN je vais chez lui il ne m’a rien envoyé de la semaine je suis folle de tristesse
+          enfin mon amour qu’il aille se faire foutre. Ce serait si simple pour moi de partir. Il
+          parle me dit problème sexuel me dit aussi problème avec moi le même qu’avant, (ne pas
+          m’aimer oui merci je le vois bien.) je m’en vais.<br /><br />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          mais je m’en vais pour deux mois après. c’est si long quand JE N’AI RIEN. s’il faut
+          partir, alors je partirai bien, autant passer les 2 jours avant mon départ avec lui. j’ai
+          squatté son lit. je sors boire un verre je dis à mes amis que je veux le quitter avec mes
+          colliers que c’est fini car je l’aime, ce n’est pas réciproque, et c’est si méchant. je
+          discute avec lui le 6 il est 4h juste avant de partir tout est horrible <br />
+          et pourtant quand je l’ai eu là-bas au téléphone, j’avais des perles dans les oreilles<br />
+          Marseille (7 mai - 7 juin) j’insiste, plusieurs fois pour qu’il vienne <br />
+          On se parle au téléphone à mes yeux c’est trop bien <br />
+          Finalement billets <br />
+          Il ne vient pas (mes larmes) <br />
+          Déçue et déçue et déçue <br />
+          pour toute ma vie <br /><br /><br />
+          La semaine avant, quand j’y ai cru, était formidable de paix et d’abondance <br />
+          Deux jours à paris, je reste avec lui <br />
+          On est bien ensemble il me l’a dit aussi mais avant d’aller avec c & h (soirée) Il a
+          quelque chose à me dire <br />
+          qu’il me dit au paradis A ce moment là on communique en même temps mieux qu’avant sur
+          notre relation (on prononce le mot NOUS au moins) mais je sais moins le réjouir ? C’est
+          pas vrai <br />
+          il ne veut pas baiser pas faire de trucs de couple mais garder la même proximité
+          intellectuelle et émotionnelle <br />
+          Je suis triste je lui dit appelons nous devons nous parler de tout ça je lui dit que je
+          pourrai pas être son amie si jamais c’est ça, oui, appelons nous, une dernière fois, et je
+          n’aurais plus à te parler<br />
+          Il me dit que si on se parle plus sa vie pue la merde <br />
+          Il me raconte le retour du taillan médoc, en courant dans le noir / jaune <br />
+          Je vais à Montpellier, je l’ai appelé, j’avais besoin de lui, je raconte des trucs, il me
+          rappelle pas, me répond peu par message, me lâche un vu sur un truc encore : LA VÉRITÉ CE
+          MEC S’EN BRANLE <br /><br />
+          alors ça me fait chier encore, je raconte tout dans trois pavés - décisifs à mes yeux !!!
+          trop conne <br />
+          Je pleure tous les matins en me réveillant je m’imagine qu’il va me détester <br />
+          Non non non juste silence silence radio <br />
+          Je reviens d’Ardèche <br />
+          Deux semaines à paris pour qu’enfin on discute et qu’il n’y ait juste pas de progression
+          pas de mot pas de nouveauté <br /><br />
+          On parle à deux reprises. La première :<br />
+          : tu en as pensé quoi de mes messages ? - 5 minutes de silence (en cage john en cage)<br />
+          tu vas te taire pendant tout ce temps ? <br />
+          Il me dit que sa réponse à ma question c’est ce silence <br /><br />
+          Je dois lui expliquer, parce qu’il DEMANDE WTF, que c’est pas bien de dire jsp (ses mots à
+          peu près : “je ne comprends pas ce qui est MAUVAIS quand je te dis JE SAIS PAS CE QUE JE
+          VEUX FAIRE DE CETTE RELATION” il me demande aussi „c’est quoi le truc qui est pas bien
+          pour toi c’est l’accumulation de ce qui se passe ?“ J’ai du dire que c’était bien pire
+          c’était de ne pas se sentir aimée il a hoché la tête genre hmmm je vois je comprends)
+          (ptdr) <br />
+          j’insiste pour qu’on aille dehors se sentir bien on traîne ensemble je me demande ce qu’il
+          veut je me dis oui c vrai je l’aime pas et en une soirée je peux te mépriser <br />
+          Le lendemain on est chez lui dans son lit il est 16h je suis bien on dit pas grand chose
+          il me dit “qu’est ce qu’on fait de notre relation” <br />
+          C’est lui qui déclenche c’est bien <br />
+          Oh mon dieu vraiment il ne voulait pas de moi <br />
+          Je ne sais plus ce qu’on s’est dit ici juste j’avais que des larmes il m’a dit qu’il était
+          pas bien dans cette ville qu’il voulait partir en voyage c’est un peu tout ce qu’il disait
+          sinon y’avait rien concernant nous deux de sa part. C’est horrible. Il parle de ses
+          propres problèmes pour esquiver ceux de notre relation ou pour les justifier. Il ne
+          cherche pas de solution OUI IL A LES YEUX RIVÉS SUR LE PROBLÈME ET NE M‘AIDE JAMAIS MOI je
+          me sens juste coupable d’exister à ses côté et je tolère tout. Il ne se trouve même pas
+          malsain. <br />
+          Je lui ai demandé quelque chose comme <br />
+          Dcp tu es revenu vers moi en me disant que tu m’aimais et c’était faux c’est ça ? <br />
+          Il m’a dit c’est vrai oui <br />
+          Mais voilà c tout bête Hortense pourquoi tu t’en veux comme ça juste il t’aime pas mais ne
+          t’as jamais aimé surtout il est horrible c tout frR <br /><br />
+          Il t’as manipulé allègrement euh love bombing etc et il t’as fait te sentir comme une
+          merde, tu t’es sentie bcp coupable de pas faire progresser cette relation. Il s’est
+          victimisé et a parlé de ses problèmes personnels sans s’intéresser à toi et en omettant a
+          tout instant que
+          <span class="titre">
+            LA MAJORITÉ DU MALAISE QUE TU POUVAIS RESSENTIR CETTE ANNÉE était du à sa présence
+            grise.
+          </span>
+          Il t’as reproché ton silence quand à votre relation. Sans comprendre d’où il venait (1 de
+          l’initimidation qu’il fait ressentir a son interlocuteur lors d’une conversation qu’il
+          domine par sa pensée et ses mots, 2 finalement de ta personne facilement intimidable). Il
+          t’as menti en disant qu’il t’avait pas demandé d’aller vers lui, en faisant comme s’il te
+          laissait le choix de rester avec lui ou de partir. Quand il te proposait de sortir c’était
+          : on peut se voir SI TU VEUX. Ça me gênait à chaque fois, c’était comme s’il voulait
+          paraître vrmt gentil. Il avait l’impression de te laisser libre. Il ne te posait pas la
+          question, tu veux venir avec moi ? Il insistait sur sa bonté quand à mes désirs. Oui super
+          l’analyse de texte fdp. Ce moment là d’ailleurs, ou tu me dis qu’est ce que ça change que
+          je vienne à la gare ou que j’arrive après, oui, tu ne sais pas ce que c’est qu’un cadeau.
+          En tout cas du temps c’est mieux qu’un bouquet. Ça veut dire = tu existes pour moi j’ai
+          hâte de te voir et je te fais ce cadeau de t’attendre cinq minutes. C’est une surprise. Si
+          on se connaissait tu saurais (j‘aime bien ça les surprises les bonnes) <br /><br />
+          laisser votre relation dans le flou c’était un moyen de te laisser toi même dans le flou
+          pour ne pas que tu saches où aller. Il t’as aussi aveuglée. Retournement de cerveau. C’est
+          un être narcissique qui a besoin d’être très admiré pour vivre. Il a du charisme, donc on
+          a l’impression que c’est pour se bonnes raisons. Qu’il y a quelque chose au fond. Mais il
+          n’y a rien. Car il n’a pas violé les femmes qu’il fréquente, il se prend pour un bon
+          allié. Un gars compréhensif. Il fait du viol de la pensée plutôt. C’est le roi des
+          sophistes. Il a profité de ton amour il t’en montrait quand il avait envie et te
+          l’enlevait sans se sentir concerné. Il ne comprenait pas tes reproches, et n’appliquais
+          pas tes conseils. Il a nié tout lien plus fort, tout sentiment plus grand que les siens,
+          parce qu’il est incapable de ressentir ces puissances. il ne sait pas ce qu’aimer signifie
+          donc il met son vide au milieu des autres. Il a fait de sa relation passé un mythe
+          personnel puérile. Il ne t’as pas suivi et restait au fond je crois persuadé que tu
+          n’étais pas la bonne et que tu ne le mènerais nulle part, pas assez bien ou pas assez
+          belle. Il pensait à l’amour passé et a l’amour potentiel, à l’amour déchu, à l’amour à
+          venir, pas à toi. Il est auto-centré, manipulateur, narcissique, malheureux, misanthrope
+          (contre son gré ?), lâche, vide… et cruel. Il ne se connaît pas et prétend avoir
+          conscience. Il remet sur la personne qui ne l’a pas aimé ses problèmes personnels. Elle
+          est la source de ses maux amoureux, de ce problème avec l’amour qu’il déplore sans vouloir
+          le changer, et qu’aujourdhui je veux appeler un problème émotionnel et social, un problème
+          de son être en entier, de sa personnalité désincarnée, et il a tout mis sur elle alors
+          qu’il ne s’est peut être jamais dit qu’elle même n’avait pas voulu être avec lui parce
+          qu’il est ce qu’il est. Parce qu’il est relou et qu’il ne pense pas aux autres. Et parce
+          qu’il était un connard bien avant qu’il n’enterre des morts dans le sable. Il te faisait
+          sans le vouloir te sentir très mal de ne pas être cette personne et de ne pas lui apporter
+          ce qu’elle au moins était parvenu a faire, dans sa grande force, c a dire lui révéler ce
+          qu’est l‘amour, le vrai. Quand il est venu vers toi en juin c’est bien ce qu’il a dit : „
+          je ressens enfin, grâce a toi, les mêmes choses que je ressentais grâce a elle !“ Ça
+          aurait du me rendre très heureuse. Je réalisais doucement que c’était bizarre qu’il vienne
+          me dire ça, que c’était très déplacé, pourtant je me disais : c’est vraiment la chose que
+          j’ai toujours voulu entendre : que je pouvais être cette fille là qui te rendrait heureux.
+          Car ton bonheur est la cime. Ton bonheur est ta cime et est devenu la mienne. Moi c’est
+          parce que j‘ai appris a faire plaisir et a aimer faire plaisir que j’ai pensé ça. Quelque
+          soit l’origine, je t’adorais, avec tout ce qui est bon et mauvais. Surtout je pensais
+          qu’on était ensemble. (Dans le sens = mon gars on est ensemble !) Ton bonheur aurait donc
+          fait le mien. <br /><br />
+          Il ne te faisait pas te sentir à la hauteur. Tu n’avais pas l’impression de valoir le coup
+          (^^). Parce qu’il était insatisfait, pas amoureux, ou bien parce qu’il fallait travailler
+          plus avec moi qu’avec une personne avec laquelle il se serait parfaitement entendu. Donc
+          pas la peine de prendre de la peine pour cette personne. Donnons-en plutôt ! Le jour où il
+          a dit „des fois je me rappelle que cette fille que j’ai tant aimé elle aimait bien M“ en
+          dénigrant (comme il le fait souvent) son avis et son goût, il me donnait la clé pour
+          comprendre que ce garçon n’aurait aimé cette fille que pour des mauvaises raisons. Enfin
+          qu’il ne l’aurait pas aimée. il la JUGEAIT autant qu’il juge les autres. il en a fait, oui
+          son monstre, il en est devenu un (ça fait 4 ans…) <br /><br />
+          D’ailleurs te reprocher à toi ton silence, et parfois te dire que c’est malsain (l’année
+          dernière plutôt) de mettre autant d’affection au sein de quelqu’un, n’était-ce pas ce
+          qu’il faisait lui-même avec elle ? Encore une fois je me suis faite avoir. Factuellement,
+          elle devait avoir du mal à parler, un mal honnête, tout comme lui, mais un mal qui n’est
+          pas réglé, qui n’est pas travaillé, qui reste à l’état de problème. Il t’as peut être fait
+          subir ce que lui même lui a fait subir, de puissantes montées d’amour, des disparitions,
+          des doutes, de l‘égocentrisme. Il a juste tout reporté sur cette relation. Je ne doute ps
+          que ça lui ai fait péter un plomb. C’est trop bien d’aimer. Mais il faut rebondir après.
+          On ne peut pas, avec au moins deux personnes, mais plus en réalité (SHOUTOUT AU CADAVRE),
+          reporter autant le temps de sa réalisation. Ça se fait à 17 ans pas à 23 <br /><br />
+          c’est non seulement que ce mec a de gros défauts émotionnels qu’il ne comprend pas qu’il
+          est tant de régler (quitte à demander de l’aide et à s‘humilier pour que sur le long terme
+          il puisse cesser de se faire du mal et de faire du mal aux autres), mais surtout que la
+          personne qu’il a “le plus aimé 🏜” est une relation comme une autre a cause de laquelle,
+          puisqu’elle n’a pas fonctionné alors qu’il le voulait vraiment, il a été déçu,
+          insatisfait, qu’il a cristallisé, dont il a fantasme le génie, et par laquelle il a senti
+          une énorme frustration ou jsp quoi, enfin un truc qu’il l‘a empêché de comprendre que le
+          problème venait, comme partout, autant de lui que du monde. De là oui sans doute s’est
+          construit son raisonnement fallacieux, son assurance, enfin son impasse à se remettre en
+          question. Associons à ça les morts dans le sable, et voilà il gagne en fierté puisque
+          personne ne peut comprendre la difficulté de ce qu’il a traversé.
+          <span class="titre">RECETTE pour un mort vivant de 23 ans</span><br /><br />
+          Sauf que cette grande insatisfaction d’amour se lie je pense a un espoir intime que je
+          puisse l’être, cette personne, ce fantasme, enfin quelque chose qui l’aide mais dont il
+          n’a ps conscience, l’amour, la validation, la sécurité. Parce que que je le sois ou pas
+          peu importe, il est en quête. Il fouille mais il ne se rendra jamais compte qu’il cherche
+          quelque chose qui n’est qu’en lui. Il faut enlever la mort en lui. NG : un mort-vivant aux
+          yeux crevés qui fouille dans les vivants pour y trouver de la lumière. Il raisonne coupé
+          du monde dans une bulle qui n’est plus connectée à la réalité. Il confond ses désirs et
+          ses fantasmes, qu’il ne parvient pas à s’expliquer correctement car converser avec
+          lui-même en fonction du monde signifierait faire de très profonds voyages dans le fossé
+          qui les sépare, des voyages de plus en plus difficiles à mesure que les deux rives
+          s’éloignent, sachant qu’il n’a pas d’yeux et que des vers lui dévorent le corps. Ce
+          travail est impossible par lâcheté et par flemme sans doute, par manque de volonté
+          surtout, et pour lui c’est par manque de moyen. Il n’a pas les échelles, les cordes, les
+          poulies, il distingue mal. Son inaction, combinée à un désir “ d’aller mieux “ plutôt
+          frauduleux car peut être que cette personne n’a jamais été bien, ou depuis si longtemps
+          que ça n’a pas de sens dans ma réalité, ainsi qu’à un énorme déni, à un manque d’empathie
+          pathologique, à une assurance souveraine, ont impacté la manière dont il m’a traitée, dont
+          j’ai vécu, et dont je dois vivre maintenant. <br /><br />
+          Sa condescendance et son mépris pour toujours dans mon cœur. J’ai baisé avec un mort et
+          j’ai aimé ça. <br /><br />
+          Tu n’es pas psy c’est normal que tu puisses pas le guider. Tu peux pas sauver les autres
+          et lui, même si t’aimerais que l’amour guérisse tout et même si tu penses qu’il a besoin
+          d’amour. Il a pris tout le tien <br />c’est terrifiant. <br />
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="date">19.08.24</div>
+        <span class="titre"
+          >Liste des méchancetés que sur le coup je m’étais retenu d’écrire - pourquoi pas
+          maintenant ! Il va en manquer bien des bouts</span
+        >
+      </div>
+      <div class="item">Texte 12 : Vivamus fringilla vehicula diam.</div>
+      <div class="item">Texte 13 : Nulla facilisi. Pellentesque ac dui sed ligula volutpat.</div>
+      <div class="item">Texte 14 : Donec varius, nulla nec consequat feugiat.</div>
+      <div class="item">Texte 15 : Suspendisse auctor mauris id dui placerat.</div>
+      <div class="item">Texte 16 : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="item">
+        Texte 17 : Suspendisse potenti. Praesent fringilla euismod risus non hendrerit.
+      </div>
+      <div class="item">Texte 18 : Phasellus convallis felis ac urna commodo luctus.</div>
+      <div class="item">Texte 19 : Mauris feugiat nunc at metus sagittis.</div>
+      <div class="item">Texte 20 : Etiam feugiat, nisl ac sollicitudin blandit.</div>
+      <div class="item">Texte 21 : Duis sed odio sit amet nibh vulputate cursus.</div>
+      <div class="item">Texte 22 : Phasellus ultricies dolor sit amet ante rhoncus.</div>
+      <div class="item">Texte 23 : Nam rutrum, sapien in pulvinar dignissim.</div>
+      <div class="item">Texte 24 : In lacinia ligula nec odio hendrerit.</div>
+      <div class="item">Texte 25 : Morbi at neque ac leo pulvinar varius.</div>
+      <div class="item">Texte 26 : Integer volutpat nunc nec ultricies auctor.</div>
+      <div class="item">Texte 27 : Vivamus fringilla vehicula diam.</div>
+      <div class="item">Texte 28 : Nulla facilisi. Pellentesque ac dui sed ligula volutpat.</div>
+      <div class="item">Texte 29 : Donec varius, nulla nec consequat feugiat.</div>
+      <div class="item">Texte 30 : Suspendisse auctor mauris id dui placerat.</div>
+    </div>
+    <script>
+      // Ajouter dynamiquement les icônes à chaque élément .item
+      document.querySelectorAll(".item").forEach((item) => {
+        const icons = document.createElement("div");
+        icons.classList.add("icons");
+
+        // Ajouter les icônes (par exemple, une corbeille pour supprimer)
+        icons.innerHTML = "🗑";
+
+        item.appendChild(icons); // Ajouter les icônes dans chaque élément
+      });
+    </script>
+  </body>
+</html>

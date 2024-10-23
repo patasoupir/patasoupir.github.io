@@ -1,0 +1,136 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>love letters</title>
+
+    <style>
+      body {
+        font-family: "dragonlauphing", sans-serif;
+        color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        background-image: url(img/ouimagik.png);
+        background-size: 10px;
+      }
+      header {
+        display: flex;
+        background-position: center;
+        border: #e1e1e1;
+        border-radius: 3px;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      header img {
+        max-width: 100px;
+        background-color: black;
+        border-radius: 50px;
+      }
+      img:not(.noborder) {
+        background-color: transparent;
+      }
+
+      .titre {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        background-color: black;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 20px;
+        place-content: center;
+      }
+      .container {
+        display: flex;
+        margin: 20px;
+        height: 80vh;
+        border: 1px solid #ccc;
+        background-color: black;
+      }
+
+      .sidebar {
+        width: 20%;
+        border-right: 1px solid #ccc;
+        padding: 10px;
+        flex-shrink: 0;
+        top: 0;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 10px;
+        cursor: help;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+        font-size: 13px;
+      }
+
+      .sidebar ul li:hover {
+        background-color: #e1e1e1;
+      }
+
+      .content {
+        flex-grow: 1;
+        padding: 20px;
+        line-height: 25px;
+        font-size: 15px;
+        overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+        text-align: justify-all;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .segoe {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #note-content h2 {
+        margin-top: 0;
+      }
+
+      #note-content {
+        display: none;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style activé après sélection d'une note */
+      #note-content.active {
+        display: block;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="bedroom.html"> <img class="noborder" src="img/leftarrow.png" /></a
+      ><img src="img/flowerz.png" /><img src="img/flowerz.png" /><img src="img/flowerz.png" /><span
+        class="titre"
+        >LOVE LETTERS</span
+      ><img src="img/flowerz.png" /><img src="img/flowerz.png" /><img src="img/flowerz.png" /><img
+        src="img/flowerz.png"
+      />
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <ul id="note-list">
+          <li onclick="showNote(0)">05.07.22</li>
+          <li onclick="showNote(1)">TGGGGGGGGGGGG - 28.11.23</li>
+          <li onclick="showNote(2)">Corne œil et binaire</li>
+          <li onclick="showNote(3)">bananas</li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <div class="segoe" id="note-content"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

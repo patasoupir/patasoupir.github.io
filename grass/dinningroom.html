@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinning room</title>
+    <style>
+      body {
+        background-image: url("img/cronanberko.gif");
+        background-color: rgb(0, 0, 0);
+        background-size: 300%;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        width: 5000px;
+      }
+
+      .party {
+        justify-self: center;
+        align-self: center;
+        padding: 40px;
+        border-image: url("img/banderole.png") 350 / 4px stretch;
+      }
+
+      #P {
+        grid-column: 2 / 3;
+        grid-row: 1/2;
+      }
+      #A {
+        grid-column: 4 / 5;
+        grid-row: 1/2;
+      }
+      #R {
+        grid-column: 6 / 7;
+        grid-row: 1/2;
+      }
+      #T {
+        grid-column: 8 / 9;
+        grid-row: 1/2;
+      }
+      #Y {
+        grid-column: 10 / 11;
+        grid-row: 1/2;
+      }
+
+      .midle {
+        position: relative;
+        grid-column: 5 / 7;
+        grid-row: 4/5;
+      }
+      .pizza {
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        width: 280px;
+        height: auto;
+      }
+
+      .pizza img {
+        width: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid">
+      <div id="P" class="party"><img src="img/pgif.gif" /></div>
+      <div id="A" class="party"><img src="img/aagif.gif" /></div>
+      <div id="R" class="party"><img src="img/rrgif.gif" /></div>
+      <div id="T" class="party"><img src="img/tgif.gif" /></div>
+      <div id="Y" class="party"><img src="img/ygif.gif" /></div>
+
+      <div class="midle">
+        <img src="img/table.png" />
+        <div class="pizza"><img src="img/marguerita.png" /></div>
+      </div>
+    </div>
+  </body>
+</html>

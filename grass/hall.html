@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+    <title>hall</title>
+
+    <style>
+      html {
+        border: pink double 1em;
+        border-image: url("img/geante.png") 8 / 30px round;
+        background-image: url("img/trou.png");
+        background-size: 30px;
+        background-color: white;
+      }
+      body {
+        font-family: "dragonlie";
+        font-size: 27pt;
+        display: flex;
+        flex-direction: column;
+        background-image: url("img/ballroom2.png");
+        background-size: cover;
+        background-color: rgba(6, 6, 158, 0.562);
+        color: white;
+        border-image: url("img/trou.png") 50 / 10px round;
+        background-position: center;
+        animation: moveRightLeft 38s linear;
+        overflow-x: hidden;
+      }
+
+      @keyframes moveRightLeft {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100% 0;
+        }
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+        width: 100vw;
+        height: 100vw;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .box1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .box1 img {
+        width: 40%;
+      }
+
+      .box2 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        /* l'élément est dans la dernière colonne mais première ligne. à ;mettre au fond. start / end. Donc / 2 et / 4 = non inclus*/
+      }
+      .box2 img {
+        width: 130%;
+      }
+
+      .box3 {
+        grid-row: 3 / 4;
+        grid-column: 3 / 5;
+      }
+      .box3 img {
+        width: 80%;
+      }
+      .box4 {
+        grid-column: 1 / 4;
+        grid-row: 4/6;
+      }
+      .box4 img {
+        width: 110%;
+      }
+      .box5 {
+        grid-column: 5 / 6;
+        grid-row: 5 / 6;
+
+        background-image: url("img/.png");
+      }
+      .box5 img {
+        width: 30%;
+      }
+      img:hover {
+        transform: scale(1.3);
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!il va falloir l'adapter pour téléphone !>
+    <div class="grid">
+      <div class="box box1">
+        <a href="baths.html"><img src="img/douche.png" title="baths" /></a>
+      </div>
+      <div class="box box2">
+        <a href="bedroom.html"><img src="img/hexagone.png" title="bedrooms" /></a>
+      </div>
+      <div class="box box3">
+        <a href="kitchen"><img src="img/tiramisu.png" title="kitchen" /></a>
+      </div>
+      <div class="box box4">
+        <a href="dinningroom.html"><img src="img/table.png" title="dinning room" /><br /></a>
+      </div>
+      <div class="box box5">
+        <a href="garden.html"><img src="img/1.png" title="garden" /></a>
+      </div>
+    </div>
+    <footer>
+      <nav class="navigation">
+        <a href="castle.html">return to the entrance</a>
+      </nav>
+    </footer>
+
+    <! AMUSANT PEUT FAIRE UNE FIN LOL SI LE PANNEAU S'EN VA ET QUE SUBITEMENT BOUM GENRE LES
+    CREDITS ON DIRAIT LA FIN DU SOLITAIRE GUERANDAIS body { font-family: "dragonlie"; font-size:
+    27pt; display: flex; flex-direction: column; background-image: url("img/ballroom2.png");
+    background-size: cover; background-color: black; color: white; border-image:
+    url("img/paille.png") 50 / 10px round; background-position: center; width: 100vw; height: 100vw;
+    background-repeat: repeat-x; /* Répétition horizontale */ background-position: 0 0; animation:
+    moveBackground 5s linear infinite; } @keyframes moveBackground { from { transform:
+    translateX(0); } to { transform: translateX(-50%); } } !>
+  </body>
+</html>
