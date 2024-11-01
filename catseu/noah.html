@@ -18,13 +18,22 @@
         justify-content: space-evenly;
         gap: 10px;
       }
-
-      .left-title {
-        font-size: 17pt;
+      .title {
+        font-size: 23pt;
         padding: 15px;
-        background-color: red;
         color: white;
-        width: 1fr;
+      }
+      .left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 15px;
+        margin-bottom: 40px;
+        margin-top: 30px;
+        background-color: whitesmoke;
+        border: whitesmoke solid 1px;
+        width: 400px;
+        height: 500px;
       }
 
       .left-text {
@@ -73,11 +82,13 @@
   </head>
   <body>
     <div class="page">
+      <header><div class="title">who can speak with me ?</div></header>
+
       <div class="left">
-        <div class="left-title">who wants to speak with me ?</div>
         <div class="left-text"></div>
+        <div class="left-image"></div>
       </div>
-      <br /><br />
+
       <div class="grid-conteneur">
         <div class="grid">
           <div class="box-element">
@@ -298,19 +309,25 @@
     <script>
       const gridElements = document.querySelectorAll(".grid-element");
       const leftTextContainer = document.querySelector(".left-text");
+      const leftImageContainer = document.querySelector(".left-image");
 
-      function updateLeftContent(text, audioSrc) {
+      function updateLeftContent(text, audioSrc, imgSrc) {
+        // Ajout de imgSrc ici
         const paragraphs = text
           .split("\n")
           .map((line) => `<p>${line.trim()}</p>`)
           .join("<br>"); // Un saut entre chaque paragraphe
+
+        // Injecte l'image, le texte, et le lecteur audio
+        leftImageContainer.innerHTML = `<img src="${imgSrc}" style= "width: 150px;
+        height: 210px;">`;
         leftTextContainer.innerHTML = `
-    ${paragraphs}
-    <audio controls style="margin-top: 15px;">
-      <source src="${audioSrc}" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  `;
+          ${paragraphs}
+          <audio controls style="margin-top: 15px;">
+            <source src="${audioSrc}" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        `;
       }
 
       // Ajoute un écouteur d'événement à chaque élément de la grille
@@ -318,7 +335,8 @@
         element.addEventListener("click", () => {
           const text = element.getAttribute("data-text");
           const audioSrc = element.getAttribute("data-audio");
-          updateLeftContent(text, audioSrc);
+          const imgSrc = element.querySelector("img").src;
+          updateLeftContent(text, audioSrc, imgSrc); // Appel de la fonction avec les trois arguments
         });
       });
     </script>
