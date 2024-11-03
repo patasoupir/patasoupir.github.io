@@ -19,38 +19,74 @@
         gap: 10px;
       }
       .title {
-        font-size: 23pt;
-        padding: 15px;
+        font-size: 24pt;
+        margin: 30px;
         color: white;
       }
       .left {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         margin-left: 15px;
         margin-bottom: 40px;
         margin-top: 30px;
-        background-color: whitesmoke;
-        border: whitesmoke solid 1px;
-        width: 400px;
-        height: 500px;
+        height: 650px;
       }
 
       .left-text {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 1.6rem;
+        line-height: 1.5;
         padding: 15px;
         display: column;
-        font-size: 12pt;
-        text-align: justify;
-        line-height: 13px;
-        background-color: whitesmoke;
-        color: black;
+        text-align: left;
+        color: white;
+        border: solid 1px white;
+        overflow-y: auto;
+        scrollbar-width: thin; /* Réduit la largeur de la scrollbar pour Firefox */
+        scrollbar-color: white red; /* Barre blanche et fond rouge pour Firefox */
+      }
+
+      #speak-button {
+        padding: 10px;
+        font-size: 15pt;
+        margin-bottom: 15px;
+      }
+
+      #speak-button:hover {
+        background-color: #ddd;
+      }
+
+      /* Pour Chrome, Edge et Safari */
+      .left-text::-webkit-scrollbar {
+        width: 16px;
+      }
+
+      .left-text::-webkit-scrollbar-track {
+        background: red; /* Couleur de fond de la scrollbar */
+      }
+
+      .left-text::-webkit-scrollbar-thumb {
+        background-color: white; /* Couleur de la barre de défilement */
+        border-radius: 10px; /* Arrondir les coins */
+      }
+
+      .left-text p {
+        line-height: 1.2;
+        margin: 5px 0;
       }
 
       .left-text audio {
-        padding: 15px;
-        width: 170px;
-        background-color: transparent;
-        border: 1px black solid;
+        width: 250px;
+
+        border: 3px black solid;
+      }
+
+      .left-image img {
+        width: 450px;
+        height: 650px;
+        object-fit: cover;
       }
 
       .grid {
@@ -59,13 +95,13 @@
         grid-template-rows: repeat(5, 1fr);
         justify-items: center;
         gap: 10px;
+        margin: 15px;
       }
 
       .grid-element {
         display: flex;
         flex-direction: column;
         border: white solid 1px;
-        font-size: 11pt;
         max-width: 150px;
         max-height: 210px;
       }
@@ -82,10 +118,11 @@
   </head>
   <body>
     <div class="page">
-      <header><div class="title">who can speak with me ?</div></header>
-
+      <header><div class="title">who should I speak with ?</div></header>
       <div class="left">
-        <div class="left-text"></div>
+        <div class="left-text">
+          <button id="speak-button">read content</button>
+        </div>
         <div class="left-image"></div>
       </div>
 
@@ -94,10 +131,11 @@
           <div class="box-element">
             <div
               class="grid-element"
-              data-text="oh my god, it really stinks</br>what the fuck is this</br></br></br>oh my god what the fuck</br></br>is this ?</br></br></br></br>so dirty"
-              data-audio="audio/alexia.mp3"
+              data-text="PROUT PROUT PROUT"
+              data-type="audio"
+              data-audio-src="son/hungrycat.mp3"
             >
-              <img src="img/sir3.jpg" />
+              <img src="img/cat1.jpg" />
             </div>
             <span>alexia</span>
           </div>
@@ -107,14 +145,22 @@
             <div
               class="grid-element"
               data-text="miaouuu miaouuu
-        miae
-        miow
-        meoww
-        meoww
-        meeeeeeeeeeeeoww"
+              miae
+              miow
+              meoww
+              meoww
+              meeeeeeeeeeeeoww"
               data-audio="audio/ambre.mp3"
             >
               <img src="img/cat2.jpg" />
+            </div>
+            <span>ambre</span>
+          </div>
+
+          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
+          <div class="box-element">
+            <div class="grid-element" data-audio="audio/ambre.mp3" data-text="">
+              <img src="img/cat3.jpg" />
             </div>
             <span>angeline</span>
           </div>
@@ -122,7 +168,7 @@
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
             <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat3.jpg" />
+              <img src="img/cat4.jpg" />
             </div>
             <span>antonin</span>
           </div>
@@ -130,23 +176,27 @@
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
             <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/sir1.jpg" />
+              <img src="img/cat5.jpg" />
             </div>
             <span>bettina</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat5.jpg" />
+            <div
+              class="grid-element"
+              data-text="Hello, it's the food in your fridge. Always been sad. Always been alone. I should have more confidence in myself."
+              data-audio="audio/john.mp3"
+            >
+              <img src="img/cat6.jpg" />
             </div>
             <span>célestin</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat4.jpg" />
+            <div class="grid-element" data-text="" data-audio="audio/john.mp3">
+              <img src="img/cat7.jpg" />
             </div>
             <span>célia</span>
           </div>
@@ -154,54 +204,560 @@
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
             <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat6.jpg" />
+              <img src="img/cat8.jpg" />
             </div>
             <span>emma</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/flower.jpg" />
+            <div class="grid-element" data-text="" data-audio="audio/john.mp3">
+              <img src="img/cat9.jpg" />
             </div>
             <span>emmanuel</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/sir4.jpg" />
+            <div class="grid-element" data-text="" data-audio="audio/.mp3">
+              <img src="img/cat10.jpg" />
             </div>
             <span>étienne</span>
           </div>
 
-          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
+          <!-- pas rangé en ordre alphabétique dans mon code attention ^^ -->
           <div class="box-element">
             <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat1.jpg" />
+              <img src="img/cat11.jpg" />
+            </div>
+            <span>vasco</span>
+          </div>
+
+          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
+          <div class="box-element">
+            <div class="grid-element" data-text="" data-type="tts">
+              <img src="img/sir1.jpg" />
             </div>
             <span>eva</span>
           </div>
 
-          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
+          <!-- pas rangé en ordre alphabétique dans mon code attention ^^ -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/cat7.jpg" />
+            <div
+              class="grid-element"
+              data-text="one
+          two
+        three 
+        four 
+        five
+        six 
+        seven
+        eight
+        nine
+        ten
+        eleven
+        twelve
+        thirteen
+        fourteen
+        fifteen
+        sixteen
+        seventeen
+        eighteen
+        nineteen
+        twenty
+        twenty-one
+        twenty-two
+        twenty-three
+        twenty-four 
+        twenty-five 
+        twenty-six 
+        twenty-seven 
+        twenty-eight 
+        twenty-nine 
+        thirty
+        thirty-one 
+        thirty-two
+        thirty-three 
+        thirty-four 
+        thirty-five 
+        thirty-six 
+        thirty-seven 
+        thirty-eight 
+        thirty-nine 
+       forty 
+       forty-one 
+       forty-two 
+       forty-three 
+       forty-four 
+       forty-five 
+       forty-six 
+       forty-seven 
+       forty-eight 
+       forty-nine
+        fifty 
+        fifty-one
+        fifty-two 
+        fifty-three 
+        fifty-four 
+        fifty-five 
+        fifty-six 
+        fifty-seven 
+        fifty-eight 
+        fifty-nine 
+        sixty
+        sixty-one
+        sixty-two 
+        sixty-three 
+        sixty-four 
+        sixty-five 
+        sixty-six 
+        sixty-seven 
+        sixty-eight 
+        sixty-nine 
+        seventy 
+        seventy-one  
+        seventy-two 
+        seventy-three 
+        seventy-four 
+        seventy-five 
+        seventy-six 
+        seventy-seven 
+        seventy-eight 
+        seventy-nine 
+        eighty
+        eighty-one 
+        eighty-two 
+        eighty-three
+        ..."
+              data-audio="son/numbers.mp3"
+            >
+              <img src="img/sir2.jpg" />
             </div>
-            <span>juliette</span>
+            <span>swann</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/sir2.jpg" />
+            <div
+              class="grid-element"
+              data-text="Lets go back inside. The stench is coming towards us."
+              data-type="tts"
+            >
+              <img src="img/sir3.jpg" />
+            </div>
+            <span>juliette</span>
+          </div>
+
+          <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH -->
+          <div class="box-element">
+            <div
+              class="grid-element"
+              data-text="The other day, on my town's Facebook, I saw a pic of my cat with this caption 'abandoned, abused cat'. The photo was taken 20 meters from my house. It's my old cat, 13 years old, sick (kidney failure + probably throat cancer, diagnosed by the vet).<br><br>
+            A few days later, another post, with a comment : 'this cat needs insulin, he has mouth cancer.' which is just FALSE. <br><br>
+            But after that, couldn't find my cat anymore. The evening, the day after, she's not coming back.<br><br>I call, do researchs. I meet a neighbor who says to me:
+            “I saw someone taking your cat, and this person told me that it was to give it back to you.” <br>
+            No one gave me anything back.<br><br>
+            I have a description of the thief, I know that it is someone who claims to work for an association helping animals. Supposed to be a woman, collecting animals, and she has a cat-eating dog.
+          <br>Who helps who? Can you help me find it? Are you the one who took my cat? I just want to have it back...
+            "
+              data-type="tts"
+            >
+              <img src="img/sir4.jpg" />
             </div>
             <span>julia</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
+            <div
+              class="grid-element"
+              data-text="What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            What makes you AN OWNER ?
+            "
+              data-type="tts"
+            >
               <img src="img/sir5.jpg" />
             </div>
             <span>kiyona</span>
@@ -209,134 +765,306 @@
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="Your caring is thanked. Thank you, really. But it is not enough. You have to consider humans too to care about animals properly. I can't imagine how you live inside. It smells until the end of the street."
+              data-type="tts"
+            >
+              <img src="img/sir6.jpg" />
             </div>
             <span>lison</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/sir6.jpg" />
+            <div
+              class="grid-element"
+              data-text="I’ve been to your bedroom once and I thought I was gonna throw up. That's the reason why I couldn't come back.<br>
+              I could just feel everywhere in my body how bad it was. A mess that's impossible to clean.<br><br>
+              When I forced myself to pay attention to the details…<br><br>They pooped everywhere, on the sheats, on the floor.<br> How come you don't mind ?? Really, who are you ? And that smell... "
+              data-type="tts"
+            >
+              <img src="img/sir7.jpg" />
             </div>
             <span>martin</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="And again, you can have both syndroms at the same time, and then it's showtime ! Showtime !"
+              data-type="tts"
+            >
+              <img src="img/sir8.jpg" />
             </div>
             <span>matéo</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="oh my god it really stinks
+                        what the fuck is this oh my god
+                        what is this ?
+                        so dirty
+            "
+              data-type="tts"
+            >
+              <img src="img/sir9.jpg" />
             </div>
             <span>maxime</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="You should not be allowed to own animals. Like we KNOW you're not gonna take care of them.
+          <br>
+          I've seen a documentary about that. In Germany, the phenomenon is very common. Even in breedings it happen. Since the pandemic, people pick up some dog, and then they don't want it anymore, think they can flog them to the first refuge they find. But it doesn't work like that ! <br><br>We should make lists of the recidivists. Establish standars, maintain control. so that any time someone try to hoard a dog, or cat or a guinea pig, the vet or the refuge will say : YOU'VE ALREADY BEEN ARRESTED FOR COMPULSIVE HOARDING. IT'S TOO LATE. YOU'RE NOT ALLOWED."
+              data-type="tts"
+            >
+              <img src="img/sir10.jpg" />
             </div>
             <span>pauline</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="I just want to see the cats. I am just here for the cats. I just want to see if there allright.. Last time we saw animals… <br>The last time it happened was just horrible. I just want to see if they’re okay. You don't know what your doing
+            <br>You really don’t know"
+              data-type="tts"
+            >
+              <img src="img/spa1.jpg" />
             </div>
             <span>samuel</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="Thank you for letting us in.
+          <br>
+          You should check on the males that aren’t neutered.
+        <br>
+        We’ll figure out a financial help for you if you accept to come with us to see the vets. You have to neuter the animals otherwise the situation, which is already complicated, will become very dangerous for them and for you.
+      <br>  "
+              data-type="tts"
+            >
+              <img src="img/spa2.jpg" />
             </div>
             <span>simon</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="We'll do our best. But some of them might be euthanised after that because that's too much pain for them.
+            <br>
+           They might have ate the dead ones because they couldn’t find anything else to eat. As they live in their feces, in the dark, without their own space, out of any healthy environment, they develop physical and mental conditions that would take too long to be cured. Or simply cannot be cured."
+              data-type="tts"
+            >
+              <img src="img/spa3.jpg" />
+            </div>
+            <span>star</span>
+          </div>
+
+          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
+          <div class="box-element">
+            <div
+              class="grid-element"
+              data-text="Come on what the fuck. Sometimes this is just not true. False allegations. You're lying, or you don’t realize.
+            <br>The refuge never heard of the poursue your talking about. And half of your menagerie didn’t die last time. That's just not true. Or I haven’t heard about it, but I work in there, so I’d be aware if anything of this kind happened.
+          <br>
+          That’s what sick people often say when their ark is taken away. They’re alone, isolated. No more myth.
+        <br>But I shouldn’t tell you that. Are you interested in psychiatric assistance ?"
+              data-type="tts"
+            >
+              <img src="img/spa4.jpg" />
             </div>
             <span>sullivan</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
-            </div>
-            <span>swann</span>
-          </div>
-
-          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
-          <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
-            </div>
-            <span>vasco</span>
-          </div>
-
-          <!-- J'AJOUTE D'AUTRES ELEMENTS -->
-          <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div class="grid-element" data-text="Hey, it's John!" data-type="tts">
+              <img src="img/doctor.jpg" />
             </div>
             <span>yun-ju</span>
           </div>
 
           <!-- J'AJOUTE D'AUTRES ELEMENTS -->
           <div class="box-element">
-            <div class="grid-element" data-text="Hey, it's John!" data-audio="audio/john.mp3">
-              <img src="img/curse2.png" />
+            <div
+              class="grid-element"
+              data-text="Hello there. We don't want you any harm, we just heard some people complaining in the area. Are you ok ? Can we have a moment together so we can speak a few minutes ?"
+              data-type="tts"
+            >
+              <img src="img/spa5.jpg" />
             </div>
             <span>zuo</span>
+          </div>
+
+          <div class="box-element">
+            <div class="grid-element" data-text="hello, i'm lost" data-audio="audio/john.mp3">
+              <img src="img/owner.jpg" />
+            </div>
+            <span>hortense</span>
           </div>
         </div>
       </div>
     </div>
-
     <script>
-      const gridElements = document.querySelectorAll(".grid-element");
-      const leftTextContainer = document.querySelector(".left-text");
-      const leftImageContainer = document.querySelector(".left-image");
+      document.addEventListener("DOMContentLoaded", () => {
+        const gridContainer = document.querySelector(".grid");
+        const boxElements = Array.from(gridContainer.children);
+        const leftTextContainer = document.querySelector(".left-text");
+        const leftImageContainer = document.querySelector(".left-image");
+        const speakButton = document.getElementById("speak-button");
 
-      function updateLeftContent(text, audioSrc, imgSrc) {
-        // Ajout de imgSrc ici
-        const paragraphs = text
-          .split("\n")
-          .map((line) => `<p>${line.trim()}</p>`)
-          .join("<br>"); // Un saut entre chaque paragraphe
+        let currentText = "";
+        let currentType = "";
+        let currentAudioSrc = "";
+        let currentAudio = null;
 
-        // Injecte l'image, le texte, et le lecteur audio
-        leftImageContainer.innerHTML = `<img src="${imgSrc}" style= "width: 150px;
-        height: 210px;">`;
-        leftTextContainer.innerHTML = `
+        // Mélange les éléments
+        boxElements.sort(() => Math.random() - 0.9);
+        gridContainer.innerHTML = "";
+        boxElements.forEach((element) => gridContainer.appendChild(element));
+
+        function updateLeftContent(text, audioSrc, imgSrc, type) {
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+          }
+
+          const paragraphs = text
+            .split("\n")
+            .map((line) => `<p>${line.trim()}</p>`)
+            .join("");
+
+          leftImageContainer.innerHTML = `<img src="${imgSrc}">`;
+          leftTextContainer.innerHTML = `
+            <button id="speak-button">read content</button>
+            ${paragraphs}
+          `;
+
+          currentText = text;
+          currentType = type;
+          currentAudioSrc = audioSrc;
+
+          document.getElementById("speak-button").addEventListener("click", handleSpeak);
+        }
+
+        function cleanText(text) {
+          // Crée un élément div temporaire
+          const tempDiv = document.createElement("div");
+          // Met le texte HTML dans le div
+          tempDiv.innerHTML = text;
+          // Récupère le texte sans les balises
+          const cleanedText = tempDiv.textContent || tempDiv.innerText;
+          // Nettoie les espaces superflus et retourne le texte
+          return cleanedText.replace(/\s+/g, " ").trim();
+        }
+
+        function updateLeftContent(text, audioSrc, imgSrc, type) {
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+          }
+
+          const paragraphs = text
+            .split("\n")
+            .map((line) => `<p>${line.trim()}</p>`)
+            .join("");
+
+          leftImageContainer.innerHTML = `<img src="${imgSrc}">`;
+          leftTextContainer.innerHTML = `
+          <button id="speak-button">read content</button>
           ${paragraphs}
-          <audio controls style="margin-top: 15px;">
-            <source src="${audioSrc}" type="audio/mp3">
-            Your browser does not support the audio element.
-          </audio>
         `;
-      }
 
-      // Ajoute un écouteur d'événement à chaque élément de la grille
-      gridElements.forEach((element) => {
-        element.addEventListener("click", () => {
-          const text = element.getAttribute("data-text");
-          const audioSrc = element.getAttribute("data-audio");
-          const imgSrc = element.querySelector("img").src;
-          updateLeftContent(text, audioSrc, imgSrc); // Appel de la fonction avec les trois arguments
+          // Stocker le texte déjà nettoyé
+          currentText = cleanText(text);
+          currentType = type;
+          currentAudioSrc = audioSrc;
+
+          document.getElementById("speak-button").addEventListener("click", handleSpeak);
+        }
+
+        function handleSpeak() {
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+          }
+
+          if (currentType === "audio" && currentAudioSrc) {
+            currentAudio = new Audio(currentAudioSrc);
+            currentAudio.play();
+          } else if (currentType === "tts" && currentText) {
+            if ("speechSynthesis" in window) {
+              speechSynthesis.cancel();
+
+              const utterance = new SpeechSynthesisUtterance(currentText);
+              // Ajoutons un débit de parole légèrement plus lent pour plus de clarté
+              utterance.rate = 0.5;
+
+              const voices = speechSynthesis.getVoices();
+
+              function findEnglishVoice(voices) {
+                let voice = voices.find(
+                  (voice) => voice.lang.includes("en-GB") && voice.name.includes("Female")
+                );
+
+                if (!voice) {
+                  voice = voices.find(
+                    (voice) => voice.lang.includes("en-US") && voice.name.includes("Female")
+                  );
+                }
+
+                if (!voice) {
+                  voice = voices.find((voice) => voice.lang.includes("en"));
+                }
+
+                return voice;
+              }
+
+              let englishVoice = findEnglishVoice(voices);
+
+              if (!englishVoice) {
+                speechSynthesis.addEventListener("voiceschanged", () => {
+                  const voices = speechSynthesis.getVoices();
+                  englishVoice = findEnglishVoice(voices);
+                  if (englishVoice) {
+                    utterance.voice = englishVoice;
+                    utterance.lang = englishVoice.lang;
+                    speechSynthesis.speak(utterance);
+                  }
+                });
+              } else {
+                utterance.voice = englishVoice;
+                utterance.lang = englishVoice.lang;
+                speechSynthesis.speak(utterance);
+              }
+            }
+          }
+        }
+
+        document.querySelectorAll(".grid-element").forEach((element) => {
+          element.addEventListener("click", () => {
+            const text = element.getAttribute("data-text");
+            const audioSrc = element.getAttribute("data-audio");
+            const imgSrc = element.querySelector("img").src;
+            const type = element.getAttribute("data-type") || (audioSrc ? "audio" : "tts");
+
+            updateLeftContent(text, audioSrc, imgSrc, type);
+          });
         });
       });
     </script>
