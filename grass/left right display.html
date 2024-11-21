@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <style>
+      body {
+        background-image: url("img/flowerz.png");
+        background-size: 10px;
+        background-color: blueviolet;
+      }
+      header {
+      }
+      .center {
+        display: grid;
+        grid-template-columns: 70px auto 70px;
+        grid-template-rows: repeat(1, 100vh);
+        background-color: black;
+        border: yellow solid 2px;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10px;
+      }
+      .gridelement {
+        justify-self: center;
+        align-self: center;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-image: url("img/peur.gif");
+        background-size: auto;
+        background-color: white;
+      }
+
+      .left,
+      .right {
+        z-index: 1;
+      }
+      img {
+        animation: ease 1s;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+      .main img {
+        max-width: 700px;
+      }
+      .left img,
+      .right img {
+        max-width: 200px;
+      }
+      @media (orientation: portrait) {
+        .main img {
+          max-width: 110%;
+        }
+        .left img,
+        .right img {
+          max-width: 100px;
+        }
+      }
+
+      footer {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="gridelement left"><img src="img/left.png" /></div>
+      <main>
+        <div class="gridelement main">
+          <img src="img/flowerz.png" />
+          <p>useless pot pot pot pot</p>
+        </div>
+      </main>
+      <div class="gridelement right"><img src="img/arrowright.png" /></div>
+    </div>
+  </body>
+</html>
