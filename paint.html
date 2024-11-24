@@ -13,9 +13,8 @@
           event.preventDefault();
 
           canvas.toBlob(async (blob) => {
-            console.log(blob.size);
             const presignedUrlResponse = await fetch(
-              "https://ezzkie8ot0.execute-api.eu-west-3.amazonaws.com/prod/upload-url",
+              `https://ezzkie8ot0.execute-api.eu-west-3.amazonaws.com/prod/upload-url?size=${blob.size}`,
               {
                 headers: {
                   "x-api-key": "SL1sYyLqBW3eq7yxtrAt21TGn0kU3ur56LciB441",
