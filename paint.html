@@ -151,21 +151,25 @@
 
       @media (orientation: portrait) {
         .drawme {
-          font-size: 20pt;
-          margin: 15px;
+          display: flex;
+          margin: 0;
+
+          align-items: center;
+          font-size: 17pt;
+          text-align: center;
         }
         .police {
-          font-size: 14pt;
+          font-size: 12pt;
+          margin: 0;
         }
         .largebox {
           display: flex;
           margin: 0;
           flex-direction: column;
-
           align-items: center;
         }
         canvas {
-          max-width: 400px;
+          width: 400px;
           height: 550px;
         }
         .smallbox {
@@ -195,7 +199,7 @@
           gap: 0;
           height: 30px;
           margin: 3px;
-          font-size: 15pt;
+          font-size: 13pt;
           background-color: blue;
           white-space: nowrap;
         }
@@ -237,7 +241,6 @@
         <div class="download">
           <button id="download">
             d <span>o</span> w <span>n</span> l<span> o</span> ad<br />it<br />
-            now
           </button>
         </div>
       </div>
@@ -245,33 +248,31 @@
 
     <script>
       const canvas = document.getElementById("drawingCanvas");
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
       let isDrawing = false;
-      let color = "#000"; // Default color
-      let size = 5; // Default brush size
-      let tool = "pencil"; // Default tool
+      let color = "#000";
+      let size = 5;
+      let tool = "pencil";
       let history = [];
       let redoStack = [];
       let currentStroke = [];
 
-      // Configure canvas
+      // Configuration initiale du canvas
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
 
       function saveState() {
         const state = canvas.toDataURL();
         history.push(state);
-        redoStack = []; // Vider la pile redo
+        redoStack = [];
       }
-      // Function to restore a specific state
-      function restoreState(state) {
-        const img = new Image();
-        img.src = state.imageData;
-        img.onload = () => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(img, 0, 0);
-        };
+
+      // Fonction unifiée pour le fill tool
+      function handleFill(x, y) {
+        saveState(); // Sauvegarder l'état avant le remplissage
+        floodFill(x, y);
       }
+
       document.getElementById("colorPicker").addEventListener("input", (e) => {
         color = e.target.value;
         // On met à jour le curseur avec la nouvelle couleur
@@ -283,26 +284,26 @@
       function updateCursor() {
         if (tool === "pencil") {
           const svgString = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path d="M7 0v16 M0 8h16" stroke="${color}" stroke-width="1"/>
-            </svg>`;
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path d="M7 0v16 M0 8h16" stroke="${color}" stroke-width="1"/>
+              </svg>`;
 
           const encodedSVG = encodeURIComponent(svgString);
           canvas.style.cursor = `url("data:image/svg+xml;utf8,${encodedSVG}") 8 8, crosshair`;
         } else if (tool === "fill") {
           const svgString = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-            <text 
-                x="50" 
-                y="50" 
-                font-family="Symbols" 
-                font-size="70" 
-                text-anchor="right"
-                dominant-baseline="right"
-                fill="${color}">
-                Ÿ
-            </text>
-        </svg>`;
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+              <text
+                  x="50"
+                  y="50"
+                  font-family="Symbols"
+                  font-size="70"
+                  text-anchor="right"
+                  dominant-baseline="right"
+                  fill="${color}">
+                  Ÿ
+              </text>
+          </svg>`;
           const encodedSVG = encodeURIComponent(svgString);
           canvas.style.cursor = `url("data:image/svg+xml;utf8,${encodedSVG}") 14 14, auto`;
         }
@@ -403,18 +404,28 @@
         if (tool === "fill") {
           const x = e.offsetX;
           const y = e.offsetY;
-
-          // Save state before fill action
-          saveState("fill", { x, y, color: color });
-
-          floodFill(x, y);
+          handleFill(x, y);
         }
       });
-
       function floodFill(startX, startY) {
+        // Arrondissons les coordonnées car nous travaillons avec des pixels
+        startX = Math.floor(startX);
+        startY = Math.floor(startY);
+
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const pixelStack = [[startX, startY]];
         const startPos = (startY * canvas.width + startX) * 4;
+
+        // Ajoutons des logs de débogage
+        console.log("Starting flood fill at:", startX, startY);
+        console.log(
+          "Start color:",
+          imageData.data[startPos],
+          imageData.data[startPos + 1],
+          imageData.data[startPos + 2],
+          imageData.data[startPos + 3]
+        );
+
         const startColor = [
           imageData.data[startPos],
           imageData.data[startPos + 1],
@@ -424,12 +435,23 @@
 
         const fillColor = hexToRGBA(color);
 
+        // Vérifions si nous ne sommes pas déjà sur la couleur cible
+        if (
+          startColor[0] === fillColor[0] &&
+          startColor[1] === fillColor[1] &&
+          startColor[2] === fillColor[2] &&
+          startColor[3] === fillColor[3]
+        ) {
+          console.log("Already filled with target color");
+          return;
+        }
+
         function colorMatch(pixelPos) {
           const rDiff = Math.abs(imageData.data[pixelPos] - startColor[0]);
           const gDiff = Math.abs(imageData.data[pixelPos + 1] - startColor[1]);
           const bDiff = Math.abs(imageData.data[pixelPos + 2] - startColor[2]);
           const aDiff = Math.abs(imageData.data[pixelPos + 3] - startColor[3]);
-          const tolerance = 32; // Ajustez pour votre projet
+          const tolerance = 32;
           return (
             rDiff <= tolerance && gDiff <= tolerance && bDiff <= tolerance && aDiff <= tolerance
           );
@@ -437,9 +459,12 @@
 
         while (pixelStack.length) {
           const [x, y] = pixelStack.pop();
+
+          // Vérification des limites du canvas
           if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) continue;
 
           const pixelPos = (y * canvas.width + x) * 4;
+
           if (!colorMatch(pixelPos)) continue;
 
           imageData.data[pixelPos] = fillColor[0];
@@ -451,6 +476,7 @@
         }
 
         ctx.putImageData(imageData, 0, 0);
+        console.log("Flood fill completed");
       }
 
       function hexToRGBA(hex) {
@@ -484,13 +510,12 @@
         e.preventDefault();
       });
 
-      // Ajouter les événements tactiles
       canvas.addEventListener("touchstart", handleTouchStart);
       canvas.addEventListener("touchmove", handleTouchMove);
-      canvas.addEventListener("touchend", stopDrawing);
+      canvas.addEventListener("touchend", handleTouchEnd);
 
-      // Fonctions pour gérer les événements tactiles
       function handleTouchStart(e) {
+        e.preventDefault();
         const touch = e.touches[0];
         const rect = canvas.getBoundingClientRect();
         const x = touch.clientX - rect.left;
@@ -504,6 +529,7 @@
       }
 
       function handleTouchMove(e) {
+        e.preventDefault();
         if (!isDrawing || tool !== "pencil") return;
 
         const touch = e.touches[0];
@@ -519,6 +545,26 @@
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(x, y);
+      }
+      function handleTouchEnd(e) {
+        e.preventDefault();
+        if (tool === "fill") {
+          const touch = e.changedTouches[0];
+          const rect = canvas.getBoundingClientRect();
+          const x = touch.clientX - rect.left;
+          const y = touch.clientY - rect.top;
+
+          console.log("Touch end detected");
+          console.log("Tool:", tool);
+          console.log("Coordinates:", x, y);
+
+          handleFill(x, y);
+        }
+        isDrawing = false;
+        if (currentStroke.length > 0) {
+          saveState();
+          currentStroke = [];
+        }
       }
     </script>
   </body>
