@@ -21,7 +21,7 @@
         const currentTime = new Date().getTime();
 
         // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
-        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 15 * 60 * 1000) {
+        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 30 * 60 * 1000) {
           // Mettre à jour le timestamp
           localStorage.setItem("lastRedirectTime", currentTime);
           // Rediriger vers first-visit.html
