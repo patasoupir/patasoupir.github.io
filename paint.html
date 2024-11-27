@@ -161,12 +161,12 @@
           display: flex;
           margin: 0;
           flex-direction: column;
-          width: 100%;
+
           align-items: center;
         }
         canvas {
           max-width: 400px;
-          height: 600px;
+          height: 550px;
         }
         .smallbox {
           display: flex;
@@ -180,18 +180,27 @@
         button,
         select,
         input {
-          width: 50px;
-          height: 50px;
-          font-size: 23pt;
+          width: 42px;
+          height: 33px;
+          font-size: 20pt;
+        }
+
+        #undo,
+        #redo {
+          width: 42px;
+          height: 33px;
+          font-size: 20pt;
         }
         #download {
           gap: 0;
-          margin: 0;
           height: 30px;
           margin: 3px;
           font-size: 15pt;
           background-color: blue;
           white-space: nowrap;
+        }
+        .download {
+          margin-top: 15px;
         }
       }
       a {
@@ -467,6 +476,50 @@
       document.getElementById("clearCanvas").addEventListener("click", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       });
+      canvas.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+      });
+
+      canvas.addEventListener("touchmove", function (e) {
+        e.preventDefault();
+      });
+
+      // Ajouter les événements tactiles
+      canvas.addEventListener("touchstart", handleTouchStart);
+      canvas.addEventListener("touchmove", handleTouchMove);
+      canvas.addEventListener("touchend", stopDrawing);
+
+      // Fonctions pour gérer les événements tactiles
+      function handleTouchStart(e) {
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+
+        if (tool === "pencil") {
+          isDrawing = true;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+        }
+      }
+
+      function handleTouchMove(e) {
+        if (!isDrawing || tool !== "pencil") return;
+
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+
+        ctx.lineWidth = size;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = color;
+
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+      }
     </script>
   </body>
 </html>
