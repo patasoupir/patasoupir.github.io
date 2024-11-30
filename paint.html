@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>need</title>
     <script type="module">
       window.addEventListener("load", () => {
@@ -61,7 +61,6 @@
         color: rgb(255, 255, 255);
         font-family: "arial", sans-serif;
         font-size: 23pt;
-
         padding: 3px;
       }
 
@@ -82,7 +81,9 @@
         flex-direction: column;
         gap: 5px;
       }
-
+      #drawingCanvas {
+        box-shadow: 30px 200px 20px #3b51e1;
+      }
       canvas {
         background-color: rgb(255, 255, 255);
         width: 800px;
@@ -118,7 +119,7 @@
         height: 300px;
         color: white;
         background-color: black;
-        font-size: 40pt;
+        font-family: 14pt;
         justify-content: space-evenly;
         margin: 10px;
         font-family: arial;
@@ -129,7 +130,7 @@
         background-color: black;
       }
       #download {
-        line-height: 30px;
+        line-height: 24px;
       }
       select {
         font-family: "symbols", sans-serif;
@@ -137,10 +138,10 @@
         text-align: center;
       }
       select:hover {
-        background-color: antiquewhite;
+        background-color: rgb(108, 200, 246);
       }
       input:hover {
-        background-color: blanchedalmond;
+        background-color: rgb(110, 232, 234);
       }
       @font-face {
         font-family: "symbols";
@@ -149,29 +150,36 @@
         font-style: normal;
       }
 
-      @media (orientation: portrait) {
+      @media only screen and (max-width: 820px) {
         .drawme {
           display: flex;
           margin: 0;
-
+          padding: 0;
+          justify-content: center;
           align-items: center;
-          font-size: 17pt;
+          font-size: 16pt;
           text-align: center;
         }
         .police {
-          font-size: 12pt;
+          font-size: 13pt;
           margin: 0;
+          padding: 0;
         }
         .largebox {
           display: flex;
           margin: 0;
+          padding: 0;
           flex-direction: column;
           align-items: center;
         }
-        canvas {
-          width: 400px;
-          height: 550px;
+
+        #drawingCanvas {
+          width: 87%;
+          margin: 10px;
+          height: 67vh;
+          box-shadow: 30px 200px 20px #979798;
         }
+
         .smallbox {
           display: flex;
           flex-direction: column;
@@ -183,25 +191,21 @@
         }
         button,
         select,
-        input {
-          width: 42px;
-          height: 33px;
-          font-size: 20pt;
+        input,
+        #redo,
+        #undo {
+          width: 100%;
+          height: 7vh;
         }
 
-        #undo,
-        #redo {
-          width: 42px;
-          height: 33px;
-          font-size: 20pt;
-        }
         #download {
           gap: 0;
           height: 30px;
-          margin: 3px;
+          margin: 0;
           font-size: 13pt;
           background-color: blue;
           white-space: nowrap;
+          line-height: 167px;
         }
         .download {
           margin-top: 15px;
@@ -218,7 +222,9 @@
     </style>
   </head>
   <body>
-    <header class="drawme">DRAW <span class="police">s om esomeone you are missing</span></header>
+    <header class="drawme">
+      DRAW me<span class="police">_a chair please give me a chair</span>
+    </header>
 
     <div class="largebox">
       <canvas id="drawingCanvas"></canvas>
@@ -239,9 +245,7 @@
           <button id="redo">↻</button>
         </div>
         <div class="download">
-          <button id="download">
-            d <span>o</span> w <span>n</span> l<span> o</span> ad<br />it<br />
-          </button>
+          <button id="download">give it to<br />me ?<br /></button>
         </div>
       </div>
     </div>
