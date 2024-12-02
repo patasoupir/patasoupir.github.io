@@ -82,7 +82,7 @@
         gap: 5px;
       }
       #drawingCanvas {
-        box-shadow: 30px 200px 20px #3b51e1;
+        box-shadow: 30px 200px 20px #0523e1;
       }
       canvas {
         background-color: rgb(255, 255, 255);
@@ -157,11 +157,11 @@
           padding: 0;
           justify-content: center;
           align-items: center;
-          font-size: 16pt;
+          font-size: 18pt;
           text-align: center;
         }
         .police {
-          font-size: 13pt;
+          font-size: 15pt;
           margin: 0;
           padding: 0;
         }
@@ -177,7 +177,7 @@
           width: 87%;
           margin: 10px;
           height: 67vh;
-          box-shadow: 30px 200px 20px #979798;
+          box-shadow: 30px 200px 20px #212144;
         }
 
         .smallbox {
@@ -194,15 +194,18 @@
         input,
         #redo,
         #undo {
-          width: 100%;
+          width: 60%;
           height: 7vh;
+          z-index: 1;
+
+          gap: 5px;
         }
 
         #download {
           gap: 0;
           height: 30px;
           margin: 0;
-          font-size: 13pt;
+          font-size: 15pt;
           background-color: blue;
           white-space: nowrap;
           line-height: 167px;
@@ -233,9 +236,9 @@
         <div class="toolbar">
           <button id="pencilTool">ÿ</button>
           <select id="brushSize">
-            <option value="5">slim</option>
+            <option value="3">slim</option>
             <option value="10">mid</option>
-            <option value="25">fat</option>
+            <option value="37">fat</option>
           </select>
           <button id="fillTool">Ÿ</button>
           <input type="color" id="colorPicker" />
@@ -255,15 +258,24 @@
       const ctx = canvas.getContext("2d", { willReadFrequently: true });
       let isDrawing = false;
       let color = "#000";
-      let size = 5;
+      let size = 3;
       let tool = "pencil";
       let history = [];
       let redoStack = [];
       let currentStroke = [];
+      let hasDrawn = false;
+
+      download.disabled = true;
 
       // Configuration initiale du canvas
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Sauvegarder cet état initial dans l'historique
+      saveState();
 
       function saveState() {
         const state = canvas.toDataURL();
@@ -394,6 +406,11 @@
         ctx.moveTo(e.offsetX, e.offsetY);
 
         currentStroke.push({ x: e.offsetX, y: e.offsetY });
+
+        if (!hasDrawn) {
+          hasDrawn = true;
+          download.disabled = false; // Active le bouton dès qu'un trait est dessiné
+        }
       }
 
       function stopDrawing() {
@@ -504,7 +521,9 @@
       });
 
       document.getElementById("clearCanvas").addEventListener("click", () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        saveState();
       });
       canvas.addEventListener("touchstart", function (e) {
         e.preventDefault();
