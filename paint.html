@@ -152,12 +152,13 @@
       }
 
       @media only screen and (max-width: 820px) {
+        body {
+          overflow-y: hidden;
+        }
         .drawme {
           display: flex;
           margin: 10px;
-
           padding: 0;
-
           font-size: 16pt;
           text-align: justify-all;
           flex-direction: column;
@@ -206,7 +207,15 @@
           width: 33px;
           height: 33px;
           z-index: 1;
+        }
+        button,
+        select,
+        input {
           font-size: 16pt;
+        }
+        #redo,
+        #undo {
+          font-size: 13pt;
         }
 
         #download {
