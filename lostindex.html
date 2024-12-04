@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>PATASOUPIR</title>
+    <script>
+      window.addEventListener("load", function () {
+        // Vérifier si c'est la première visite
+        if (!localStorage.getItem("firstVisit")) {
+          localStorage.setItem("firstVisit", "done");
+          window.location.href = "paint.html";
+          return;
+        }
+
+        // Récupérer le timestamp de la dernière redirection
+        const lastRedirectTime = localStorage.getItem("lastRedirectTime");
+        const currentTime = new Date().getTime();
+
+        // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
+        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 30 * 60 * 1000) {
+          // Mettre à jour le timestamp
+          localStorage.setItem("lastRedirectTime", currentTime);
+          // Rediriger vers first-visit.html
+          window.location.href = "paint.html";
+        }
+      });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="header.css" />
+
+    <style type="text/css">
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: black;
+        background-image: url("img/1242.png");
+        background-size: 1000px;
+        background-position: left;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+      header .patasoupir {
+        background-size: 100px;
+        background-position: right;
+        z-index: 1;
+        padding: 100px;
+        font-size: 20pt;
+      }
+      header mark {
+        color: black;
+        background-color: white;
+        padding: 10px;
+      }
+      header .menu {
+        background-color: none;
+      }
+      header .menu mark {
+        background-image: url("img/nemain.png");
+      }
+
+      .corps {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-image: url("img/nemain.png");
+      }
+
+      .line {
+        width: 200px;
+        height: 1300px;
+        display: flex;
+        flex-direction: column;
+        background-image: url("img/voistu.jpg");
+        z-index: 2;
+      }
+      .line img {
+        max-width: 200px;
+      }
+      .heart img {
+        max-width: 200px;
+      }
+      .castle {
+        left: 200px;
+
+        position: absolute;
+        z-index: 1;
+      }
+      .castle img {
+        max-width: 1000px;
+      }
+      .labyrinth {
+        position: absolute;
+        top: 2000px;
+        left: -150px;
+        z-index: 1;
+      }
+      .labyrinth img {
+        max-width: 200px;
+      }
+
+      .missing img {
+        max-width: 140px;
+      }
+      .weird {
+        position: fixed;
+        top: 30%;
+        left: 20%;
+      }
+      .weird img {
+        max-width: 100px;
+      }
+      footer {
+        font-size: small;
+      }
+
+      div {
+        margin: 30px;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .image {
+        z-index: 4;
+      }
+      .image img {
+        max-width: 2000px;
+        text-align: right;
+      }
+
+      .léa {
+        font-family: "dragonlauphing", sans-serif;
+        font-size: 30pt;
+      }
+      .léa a {
+        color: blue;
+        font-size: 40pt;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="patasoupir">
+        <a href="index.html"
+          ><mark>hello<br />help me</mark></a
+        >
+      </div>
+      <div class="menu">
+        <a href="images.html"><mark>quoi</mark></a>
+        <a href="ODIO.html"><mark>quoi</mark></a>
+        <a href="combles.html"><mark>quoi</mark></a>
+        <a href="https://matias.ma/nsfw/"><mark>quoi</mark></a>
+      </div>
+    </header>
+
+    <main>
+      <div class="corps">
+        <div class="line">
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+
+          <div class="heart">
+            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
+          </div>
+        </div>
+
+        <div class="castle">
+          <a href="grass/castle.html"><img src="img/13.png" title="big party" /></a>
+        </div>
+        <div class="labyrinth">
+          <a href="penelope/1penelope.html"
+            ><img src="img/deadnature1.png" title="search and you'll find"
+          /></a>
+        </div>
+        <div class="heart missing">
+          <a href="missing/missing.html"
+            ><img src="img/feliheart.png" title="unhappy and happy moment"
+          /></a>
+        </div>
+        <div class="weird">
+          <a href="heart/mygame.html"><img src="img/craney2.gif" /></a>
+        </div>
+      </div>
+    </main>
+    <div class="image">
+      <a href="appendice/discussionfield.html"><img src="img/gant9.jpg" /></a>
+    </div>
+
+    <footer>
+      <div class="léa">ma correspondance se poursuit <a href="léa.html">ici</a></div>
+      <div>que dieu vous bénisse (eh bah merci dieu ^^)</div>
+    </footer>
+  </body>
+</html>

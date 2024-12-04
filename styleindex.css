@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "dragonlauphing";
+    src: url("fonts/dragonlauphing.woff2") format("woff2"),
+      url("fonts/dragonlauphing.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "dragonlie";
+    src: url("fonts/dragonlie.woff2") format("woff2"),
+      url("fonts/dragonlie.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: helvetica;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
+  .ENORME {
+    font-family: helvetica;
+    text-align: justify-all;
+    color: red;
+    animation: blink 3s infinite;
+    font-size: 25pt;
+    margin: 30px;
+    width:50%;
+    color: blue;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .box {
+    padding:40px;
+    background-image: url("teaser/img/exemple2.png");background-size: 100%;
+    border: blue 10px solid;
+  }
+  .FIRST { background-image: url("teaser/img/exemple2.png");background-size: 100%;}
+  .SECOND{font-size: 15pt;}
+  .THIRD{background-color: blue; color: white; display: flex;flex-direction: column;}
+  .THIRDBOXUPPERPART{display: flex; justify-content: space-around; flex-direction: row;}
+  .THIRD img {width:680px;}
+  .FOUR{background-color: red; display: flex;justify-content: space-around; color:white;}
+  .FOUR img{width:456px;}
+  .FIVE img {width:700px;}
+  .SIX {display: flex;flex-direction: column;}
+  .LEFTLIST {display: flex;flex-direction: column;}
+  .RIGHTLIST{display: flex; flex-direction:column;}
+
+
+  .EXEMPLES {background-image: url("teaser/img/exemple.png");}
+  .EXEMPLES img {width:100%;}
+ 
+  #FICHES{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    border:solide blue 5px;
+    height:70vh;
+    
+    overflow-y: scroll;
+  }
+  #FICHES img {width:400px;}
+
+  #HEARTZ{display: flex;
+    flex-direction: column;
+    text-align: right; width:auto;
+    background-color: greenyellow;
+    border:solide blue 5px;
+    width:auto;
+    color:white;
+    justify-items: center;justify-content: space-evenly}
+    
+  #FICHESHEARTZ{display: grid; grid-template-columns: 1fr 1fr;align-items: center;justify-content: center; margin:100px;height:400px;}
+
+  .DOUTES{display: flex;
+    flex-direction: column;
+    text-align: right;
+    border:solide blue 5px;
+    height:70vh;
+    width:60%;
+    overflow-y: scroll;}
+
+    .DOUTES img{width:500px;}
+
+    .NOTES {
+        display: flex;
+        margin: 40px;
+        border:solid red 34px;
+      }
+      .NOTES img {
+        width: 400px;
+      }
+ .solo{z-index: 1;text-align: center;color:white;font-family: 'Times New Roman', Times, serif;}
+
+ .midle{text-align: center;font-family: 30pt;}
+ .right{text-align: right;color:red;}
+  .weight {
+    font-style: oblique;
+    color: rgb(255, 2, 2);
+    font-size: 16pt;
+  }
+  .crass{font-size: 30pt;}
+
+  .cats{display: grid;grid-template-columns: 400px 200px 300px 100px 40px 100px ;grid-template-rows: repeat(1, 1fr); align-items: center;justify-content: center;align-items: center;padding:10px;}
+  .cats img {width:100%;}
+  .dragaulauphing {
+    font-family: "dragonlauphing", sans-serif;
+    font-size: 30pt;   
+    color: rgb(0, 0, 0);
+    
+  }
+  .dragonlie{font-family: "dragonlie", sans-serif;
+    font-size: 13pt;
+  }
+  
+.castle{color:blue; text-align: center;}
+
+  li{color:blue;}
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    font-size: 23pt;
+    font-weight: bold;
+    text-align: center;
+
+  }

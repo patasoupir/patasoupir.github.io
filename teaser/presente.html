@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: arial;
+        background-image: url("img/exemple2.png");
+        background-repeat: no-repeat;
+        margin-left: 100px;
+        margin-right: 100px;
+
+        align-items: center;
+        justify-content: center;
+      }
+      a {
+        font-size: "arial";
+      }
+
+      .ENORME {
+        text-align: center;
+        color: red;
+        animation: blink 3s infinite;
+        font-size: 35pt;
+        margin: 100px;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .PRINCIPAL {
+        color: blue;
+        font-family: arial;
+        font-size: 14pt;
+      }
+
+      .line {
+        display: flex;
+        flex-direction: column;
+        font-size: 15pt;
+        z-index: 2;
+        text-align: left;
+        font-family: arial;
+      }
+      .side {
+        display: flex;
+        flex-direction: column;
+        border: solid 10px black;
+        box-shadow: 3px 2px 5px #212144;
+        text-align: right;
+        position: absolute;
+        margin-left: 600px;
+        margin-top: 200px;
+      }
+
+      .side img {
+        width: 600px;
+      }
+      .castle {
+        left: 200px;
+        z-index: 1;
+        text-align: center;
+      }
+
+      footer {
+        font-size: small;
+      }
+
+      .fiches {
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        padding: 60px;
+      }
+      .fiches img {
+        width: 270px;
+      }
+      .principal {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .titre {
+        color: blue;
+      }
+      .administration {
+        text-align: right;
+      }
+      .weight {
+        font-style: oblique;
+        color: green;
+        font-size: 20pt;
+      }
+      .exemples {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+      }
+      .papa img {
+        width: 500px;
+      }
+
+      .pics img {
+        width: 400px;
+      }
+      .castle {
+        display: flex;
+        flex-direction: column;
+        color: blue;
+        margin: 100px;
+      }
+
+      .notes {
+        display: flex;
+        margin: 100px;
+      }
+      .notes img {
+        width: 400px;
+      }
+      .mypolice {
+        font-family: "dragonlauphing", sans-serif;
+        font-size: 30pt;
+        text-align: center;
+        margin: 30px;
+        color: rgb(0, 0, 0);
+        border-image: url("img/fiche1.png") 27 / 35px;
+        padding: 100px;
+      }
+
+      .dragonlie {
+        font-family: "dragonlie", sans-serif;
+        line-height: 13px;
+        font-weight: bold;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        font-family: "dragonaluphing", sans-serif;
+        font-size: 45pt;
+      }
+
+      @font-face {
+        font-family: "dragonlauphing";
+        src: url("fonts/dragonlauphing.woff2") format("woff2"),
+          url("fonts/dragonlauphing.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "dragonlie";
+        src: url("fonts/dragonlie.woff2") format("woff2"),
+          url("fonts/dragonlie.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <p class="ENORME titre">DR. DOUTE. QUAND VIENDRAS-TU M'4IDER MOI</p>
+      </header>
+
+      <div class="line">
+        <div class="heart">
+          <a href="PDR Long.pdf">1 - premier projet de recherche</a>
+        </div>
+        <div>
+          <a href="../penelope/MonsieurDoute/léa3.html">2 - un exemple</a>
+        </div>
+        <div class="heart">
+          <a href="../penelope/MonsieurDoute/looser.html">3 - un autre exemple</a>
+        </div>
+        <div class="heart">
+          <a href="looser.html">4 - un autre autre exemple</a>
+        </div>
+      </div>
+
+      <div class="PRINCIPAL">
+        <p class="administration">
+          A venir, quelques détails détails pratiques<br />
+          - serveur : demander les prénoms<br />
+          - serveur : demander des photos d'identité<br />
+          CSQ : c'est le nom du joueur et/ou sa photo qui s'inscrivent pour jouer<br />
+          - garder en mémoire les différents joueurs devenus patients, possible de les consulter
+          plus tard ?<br />
+          <span class="weight"
+            >OBJECTIF : une plateforme administrative et médicale qui s'enfonce dans le rêve</span
+          >
+        </p>
+      </div>
+
+      <div class="fiches">
+        <img src="img/fiche1.png" /><img src="img/fiche2.png" /><img src="img/fiche3.png" /><img
+          src="img/fiche.png"
+        />
+      </div>
+      <div class="exemples">
+        <img src="img/exemple.png" />
+        <img class="papa" src="img/exemple3.png" />
+      </div>
+
+      <div class="notes">
+        <img src="img/IMG_8302.jpg" /><img src="img/IMG_8305.jpg" /><img
+          src="img/IMG_8304.jpg"
+        /><img src="img/" />
+      </div>
+
+      <div class="mypolice">
+        I aLsO TrIED to CrEAtE mY OwN POLICE BUT it hAS a LoT oF DEfaULTs<br />
+        <span class="dragonlie"> and there is also so many versions of it</span>
+      </div>
+      <side>
+        <div class="pics">
+          <div class="doute"><img src="img/doute1.png" /></div>
+
+          <div><img src="img/doute2.png" /></div>
+
+          <div><img src="img/doute3.png" /></div>
+
+          <div><img src="img/doute4.png" /></div>
+        </div>
+      </side>
+
+      <div class="reddit">
+        <a
+          href="https://forums.madmoizelle.com/sujets/je-suis-un-cliche-mais-jaimerais-men-sortir.171859/page-2"
+          >je suis un cliché, mais ...</a
+        >
+        <a
+          href="https://fr.quora.com/Parmi-les-faits-psychologiques-quels-sont-les-plus-incroyables/answer/Nicole-Julien?ch=17&oid=96911303&share=b5b1d1df&srid=3kxpMN&target_type=answer"
+          >les faits psychologiques les plus incroyables</a
+        >
+      </div>
+
+      <div class="castle">
+        <p class="castle">
+          <span class="PRINCIPAL">BUILDING A CASTLE : A GAME WITHIN THE DREAM ?</span> <br />
+          ANOTHER PROJECT OR A CONTINUATION ???
+        </p>
+        <a href="grass/castle.html"></a>
+        <img src="../img/13.png" title="the biggest party" />
+        <img src="img/grass.png" title="THE VERY BIG PARTY YOU ARE ALL INVITED TO" />
+
+        <p class="imaginal">
+          <a href="https://imaginaldisk.world/map"><em>imaginal disk</em> = an INSPIRATION</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="léa">ma correspondance ne se poursuivra pas <a href="léa.html">ici</a></div>
+      <div class="fin">que dieu vous bénisse (eh bah merci dieu)</div>
+    </footer>
+  </body>
+</html>

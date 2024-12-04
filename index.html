@@ -1,220 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
-    <title>PATASOUPIR</title>
-    <script>
-      window.addEventListener("load", function () {
-        // Vérifier si c'est la première visite
-        if (!localStorage.getItem("firstVisit")) {
-          localStorage.setItem("firstVisit", "done");
-          window.location.href = "paint.html";
-          return;
-        }
-
-        // Récupérer le timestamp de la dernière redirection
-        const lastRedirectTime = localStorage.getItem("lastRedirectTime");
-        const currentTime = new Date().getTime();
-
-        // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
-        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 30 * 60 * 1000) {
-          // Mettre à jour le timestamp
-          localStorage.setItem("lastRedirectTime", currentTime);
-          // Rediriger vers first-visit.html
-          window.location.href = "paint.html";
-        }
-      });
-    </script>
-
-    <link rel="stylesheet" type="text/css" href="header.css" />
-
-    <style type="text/css">
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: black;
-        background-image: url("img/1242.png");
-        background-size: 1000px;
-        background-position: left;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-      }
-      header .patasoupir {
-        background-size: 100px;
-        background-position: right;
-        z-index: 1;
-        padding: 100px;
-        font-size: 20pt;
-      }
-      header mark {
-        color: black;
-        background-color: white;
-        padding: 10px;
-      }
-      header .menu {
-        background-color: none;
-      }
-      header .menu mark {
-        background-image: url("img/nemain.png");
-      }
-
-      .corps {
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        background-image: url("img/nemain.png");
-      }
-
-      .line {
-        width: 200px;
-        height: 1300px;
-        display: flex;
-        flex-direction: column;
-        background-image: url("img/voistu.jpg");
-        z-index: 2;
-      }
-      .line img {
-        max-width: 200px;
-      }
-      .heart img {
-        max-width: 200px;
-      }
-      .castle {
-        left: 200px;
-
-        position: absolute;
-        z-index: 1;
-      }
-      .castle img {
-        max-width: 1000px;
-      }
-      .labyrinth {
-        position: absolute;
-        top: 2000px;
-        left: -150px;
-        z-index: 1;
-      }
-      .labyrinth img {
-        max-width: 200px;
-      }
-
-      .missing img {
-        max-width: 140px;
-      }
-      .weird {
-        position: fixed;
-        top: 30%;
-        left: 20%;
-      }
-      .weird img {
-        max-width: 100px;
-      }
-      footer {
-        font-size: small;
-      }
-
-      div {
-        margin: 30px;
-      }
-
-      a {
-        color: black;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .image {
-        z-index: 4;
-      }
-      .image img {
-        max-width: 2000px;
-        text-align: right;
-      }
-
-      .léa {
-        font-family: "dragonlauphing", sans-serif;
-        font-size: 30pt;
-      }
-      .léa a {
-        color: blue;
-        font-size: 40pt;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="styleindex.css" />
   </head>
-
   <body>
-    <header>
-      <div class="patasoupir">
-        <a href="index.html"
-          ><mark>hello<br />help me</mark></a
-        >
-      </div>
-      <div class="menu">
-        <a href="images.html"><mark>quoi</mark></a>
-        <a href="ODIO.html"><mark>quoi</mark></a>
-        <a href="combles.html"><mark>quoi</mark></a>
-        <a href="https://matias.ma/nsfw/"><mark>quoi</mark></a>
-      </div>
-    </header>
-
     <main>
-      <div class="corps">
-        <div class="line">
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
+      <header>
+        <p class="ENORME">
+          DR. DOUTE.<br />
+          QUAND VIENDRAS-TU M'4IDER MOI
+        </p>
+      </header>
 
-          <div class="heart">
-            <a href="heart/mygame.html"><img src="img/1241.png" title="a game" /></a>
-          </div>
+      <div class="box FIRST">
+        <div class="présentation">
+          <p><a href="index.html">patasoupir.github.io</a></p>
+          <p><img src="teaser/img/qrcode.jpg" /></p>
+          <p class="administration">
+            Dessine moi des choses<br />
+            Donne moi ton prénom<br />
+            Donne moi une photo<br />
+            Pour que je puisse la TORDRE<br />
+          </p>
+          <p class="administration">
+            Quelques élément éléments pratiques à venir<br />
+            - ! serveur : demander les prénoms<br />
+            - ! serveur : demander des photos d'identité<br />
+            CSQ : c'est le nom du joueur et/ou sa photo qui s'inscrivent pour jouer<br /><br />
+            - garder en mémoire les différents joueurs devenus patients, possible de les
+            consulter<br />
+            plus tard ?<br /><br />
+            <span class="weight">objectif, une plateforme médicale qui s'enfonce dans le rêve</span>
+          </p>
+
+          <p class="administration">
+            je dois apprendre à coder mieux, oui, mais à coder comme le site ameli
+          </p>
+        </div>
+      </div>
+
+      <div class="box SECOND">
+        <div class="BOXTEXT">
+          <p>
+            j'aurai aimé me servir de vous... faire une enquête... récolter des informations...<br />
+            <br />
+            - ... des exercices de psychologues !<br />
+            - vos informations ! vos fausses informations ! donnez-moi vos témoignages, venez me
+            voir ! je ne pourrai pas vous aider
+          </p>
+          <p class="midle">PLUS TARD</p>
+          <p class="administration">
+            d'abord, donnez-moi de vous. plutôt doctolib ou réseau social ?<br />ou bien juste
+            prenez ce qu'
+          </p>
+          <p class="right">
+            à la place, j'ai récolté de ce qui a été visible<br />
+            et de ce qui doit être clôt
+          </p>
         </div>
 
-        <div class="castle">
-          <a href="grass/castle.html"><img src="img/13.png" title="big party" /></a>
+        <div class="EXEMPLES">
+          <img src="teaser/img/exemple3.png" />
+
+          <div class="BOXINSIDESECONDBOX">
+            <div id="FICHESHEARTZ">
+              <div id="FICHES">
+                <div><img src="teaser/img/fiche3.png" /></div>
+                <div><img src="teaser/img/fiche.png" /></div>
+                <div><img src="teaser/img/fiche2.png" /></div>
+                <div><img src="teaser/img/fiche1.png" /></div>
+              </div>
+
+              <div id="HEARTZ">
+                <div class="liens">
+                  <a href="PDR Long.pdf">1 - vous me le demanderez</a>
+                </div>
+                <div>
+                  <a href="penelope/MonsieurDoute/B.léa3.html">2 - un exemple</a>
+                </div>
+                <div class="liens">
+                  <a href="penelope/MonsieurDoute/Z.pardon.html">3 - un autre exemple</a>
+                </div>
+                <div class="liens">
+                  <a href="end.html">4 - un autre autre exemple</a>
+                </div>
+                <div class="liens">
+                  <a href="penelope/MonsieurDoute/C.nico.html">4 - je suis avec toi ce soir</a>
+                </div>
+              </div>
+            </div>
+            <div class="NOTES">
+              <img src="teaser/img/IMG_8302.jpg" /><img src="teaser/img/IMG_8305.jpg" /><img
+                src="teaser/img/IMG_8304.jpg"
+              /><img src="teaser/img/" />
+            </div>
+
+            <div class="DOUTES">
+              <div><img src="teaser/img/doute1.png" /></div>
+              <div><img src="teaser/img/doute2.png" /></div>
+              <div><img src="teaser/img/doute3.png" /></div>
+              <div><img src="teaser/img/doute4.png" /></div>
+            </div>
+          </div>
         </div>
-        <div class="labyrinth">
-          <a href="penelope/1penelope.html"
-            ><img src="img/deadnature1.png" title="search and you'll find"
-          /></a>
+      </div>
+
+      <div class="solo">
+        mon projet consiste en la création d'un corps entier dans lequel tu iras te promener. I need
+        pics of my head and we will DIVE into it
+      </div>
+
+      <div class="box THIRD">
+        <div class="THIRDBOXUPPERPART">
+          <div class="BOXTEXT weight">
+            <p>
+              STAR FINCH PROJECT<br />accessible
+              <a href="appendice/discussionfield.html">here/ici</a>
+            </p>
+            <p class="administration">
+              a lot to say<br />a lot of notes too<br />1ère "fiction" sur un "trouble"
+            </p>
+          </div>
+          <div><img src="teaser/img/star.jpg" /></div>
         </div>
-        <div class="heart missing">
-          <a href="missing/missing.html"
-            ><img src="img/feliheart.png" title="unhappy and happy moment"
-          /></a>
+        <div class="cats">
+          <img src="appendice/img/cat10.jpg" />
+          <img src="appendice/img/sir6.jpg" />
+          <img src="appendice/img/sir1.jpg" />
+          <img src="appendice/img/sir2.jpg" />
+          <img src="appendice/img/sir3.jpg" />
+          <img src="appendice/img/sir4.jpg" />
         </div>
-        <div class="weird">
-          <a href="heart/mygame.html"><img src="img/craney2.gif" /></a>
+        <p class="administration">...</p>
+      </div>
+
+      <div class="box FOUR">
+        <div class="LEFT">
+          <p class="police">
+            <img src="teaser/img/font1.png" />
+            <img src="teaser/img/font2.png" />
+          </p>
+          <p class="dragonlauphing">
+            I aLsO TrIED to CrEAtE mY OwN POLICE BUT it hAS a LoT oF DEfaULTs
+          </p>
+          <span class="dragonlie"> and there is many versions of it</span>
+
+          <div class="RIGHT">des sons...</div>
+        </div>
+      </div>
+
+      <div class="box FIVE castle">
+        <p>
+          <span class="administration crass">BUILDING A CASTLE : A GAME WITHIN THE DREAM ?</span>
+          <br /><br />
+          ANOTHER PROJECT OR A CONTINUATION ???
+        </p>
+        <br /><br />
+
+        <p>"<em>THE VERY BIG PARTY YOU WILL ALL BE INVITED TO</em>"</p>
+        <img src="grass/img/1.png" title="the biggest party" />
+
+        <div class="weirdo"><img src="teaser/img/grass.png" title="the biggest party" /></div>
+
+        <p>THESE IMAGES I DON'T BELONG WHAT SHOULD I DO ? PROBLEM</p>
+      </div>
+
+      <div class="box SIX">
+        <div class="LEFTLISTE">
+          <li>
+            <a
+              href="https://forums.madmoizelle.com/sujets/je-suis-un-cliche-mais-jaimerais-men-sortir.171859/page-2"
+              >je suis un cliché, mais ...</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://fr.quora.com/Parmi-les-faits-psychologiques-quels-sont-les-plus-incroyables/answer/Nicole-Julien?ch=17&oid=96911303&share=b5b1d1df&srid=3kxpMN&target_type=answer"
+              >les faits psychologiques les plus incroyables</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSep0PG9AD8MZYHZJTwTvIVQhqc6RsGKSTJL1IiT3ZDV_taaJw/viewform"
+              >merci je vous contacte au plus vite</a
+            >
+          </li>
+          <li>
+            <a href="https://www.reddit.com/r/besoindeparler/s/TTVhphLGwK">besoin de parler 1</a>
+          </li>
+          <li>
+            <a href="//www.reddit.com/r/CPTSD/s/CmyFUKgM0i">besoin de parler 2</a>
+          </li>
+          <li>
+            <a href="//www.reddit.com/r/besoindeparler/s/UP6JfLjDQC">besoin de parler 3</a>
+          </li>
+          <li>
+            <a href="https://imaginaldisk.world/map"><em>imaginal disk</em> = an INSPIRATION</a>
+          </li>
+          <li>
+            <em>la mécanique des fluides</em> (reddit etc + un sujet choisi, pas juste vague !)
+          </li>
+          <li>+ un.e prof à qui adresser mes questions ?</li>
+          <li>
+            <span class="weight"
+              >COMING SOON : les témoignages d'amour de 60 d'élèves de 4ème !</span
+            >
+          </li>
         </div>
       </div>
     </main>
-    <div class="image">
-      <a href="appendice/discussionfield.html"><img src="img/gant9.jpg" /></a>
-    </div>
 
     <footer>
-      <div class="léa">ma correspondance se poursuit <a href="léa.html">ici</a></div>
-      <div>que dieu vous bénisse (eh bah merci dieu ^^)</div>
+      <div class="léa">
+        ah oui pour léa ! ma correspondance se poursuit <a href="léa.html">ici</a>
+      </div>
+      <div class="fin">et que dieu vous bénisse (^eh bah m_erci dieu^)</div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>PERDU</title>
+    <link rel="stylesheet" type="text/css" href="header.css" />
+    <style type="text/css">
+      body {
+        text-align: center;
+        font-family: arial;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 20%;
+        background-color: white;
+        color: black;
+      }
+
+      header {
+        font-size: 35pt;
+        animation: blink 1s infinite;
+        text-align: center;
+      }
+      div {
+        padding: 3%;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      footer {
+        font-size: 7pt;
+        text-align: center;
+      }
+    </style>
+    <script>
+      document.addEventListener("click", function () {
+        var audio = document.querySelector("audio");
+        audio.play();
+      });
+    </script>
+  </head>
+
+  <body>
+    <header><div>TU DOUTES ENCORE ?</div></header>
+
+    <footer>
+      <div><p>ce n'est pas grave</p></div>
+      <div class="audio">
+        <audio><source src="son/sadhuman.mp3" /></audio>
+      </div>
+    </footer>
+  </body>
+</html>
