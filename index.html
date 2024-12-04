@@ -2,10 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="styleindex.css" />
+
+    <script>
+      window.addEventListener("load", function () {
+        // Vérifier si c'est la première visite
+        if (!localStorage.getItem("firstVisit")) {
+          localStorage.setItem("firstVisit", "done");
+          window.location.href = "paint.html";
+          return;
+        }
+
+        // Récupérer le timestamp de la dernière redirection
+        const lastRedirectTime = localStorage.getItem("lastRedirectTime");
+        const currentTime = new Date().getTime();
+
+        // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
+        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 30 * 60 * 1000) {
+          // Mettre à jour le timestamp
+          localStorage.setItem("lastRedirectTime", currentTime);
+          // Rediriger vers first-visit.html
+          window.location.href = "paint.html";
+        }
+      });
+    </script>
   </head>
+
   <body>
     <main>
       <header>
@@ -17,8 +41,7 @@
 
       <div class="box FIRST">
         <div class="présentation">
-          <p><a href="index.html">patasoupir.github.io</a></p>
-          <p><img src="teaser/img/qrcode.jpg" /></p>
+          <div class="qr"><img src="teaser/img/qrcode.jpg" /></div>
           <p class="administration">
             Dessine moi des choses<br />
             Donne moi ton prénom<br />
@@ -128,7 +151,7 @@
         </div>
         <div class="cats">
           <img src="appendice/img/cat10.jpg" />
-          <img src="appendice/img/sir6.jpg" />
+          <a href="heart/mygame.html"><img src="appendice/img/sir6.jpg" /></a>
           <img src="appendice/img/sir1.jpg" />
           <img src="appendice/img/sir2.jpg" />
           <img src="appendice/img/sir3.jpg" />
@@ -150,6 +173,11 @@
 
           <div class="RIGHT">des sons...</div>
         </div>
+      </div>
+
+      <div class="box PROBLEMS BONUS">
+        je sais comment, avec quoi, pour qui j'aimerais parler... mais toujours pas de quoi.<br />
+        les avantages d'un site web, et non d'un jeu vidéo, et non d'un jeu de plateau, etc ; un ARG
       </div>
 
       <div class="box FIVE castle">
@@ -206,9 +234,7 @@
           </li>
           <li>+ un.e prof à qui adresser mes questions ?</li>
           <li>
-            <span class="weight"
-              >COMING SOON : les témoignages d'amour de 60 d'élèves de 4ème !</span
-            >
+            <span class="weight">COMING SOON : les témoignages d'amour de 60 élèves de 4ème !</span>
           </li>
         </div>
       </div>
@@ -218,7 +244,7 @@
       <div class="léa">
         ah oui pour léa ! ma correspondance se poursuit <a href="léa.html">ici</a>
       </div>
-      <div class="fin">et que dieu vous bénisse (^eh bah m_erci dieu^)</div>
+      <div class="fin">que dieu vous bénisse (^eh bah m_erci dieu^)</div>
     </footer>
   </body>
 </html>

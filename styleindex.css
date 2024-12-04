@@ -1,14 +1,15 @@
+
 @font-face {
     font-family: "dragonlauphing";
-    src: url("fonts/dragonlauphing.woff2") format("woff2"),
-      url("fonts/dragonlauphing.woff") format("woff");
+    src: url("fonts/dragonlauphing.tff") format("tff"),
+      url("fonts/dragonlauphing.tff") format("tff");
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: "dragonlie";
-    src: url("fonts/dragonlie.woff2") format("woff2"),
-      url("fonts/dragonlie.woff") format("woff");
+    src: url("fonts/dragonlie.tff") format("tff"),
+      url("fonts/dragonlie.tff") format("tff");
     font-weight: normal;
     font-style: normal;
   }
@@ -19,9 +20,12 @@
     margin-right: 30px;
     align-items: center;
     justify-content: center;
+    background-image: url("teaser/img/exemple2.png");background-size: 100%;
+    
    
   }
-  
+  .qr {padding:10px; }
+  .qr img{width:10%;}
   .ENORME {
     font-family: helvetica;
     text-align: justify-all;
@@ -47,7 +51,6 @@
 
   .box {
     padding:40px;
-    background-image: url("teaser/img/exemple2.png");background-size: 100%;
     border: blue 10px solid;
   }
   .FIRST { background-image: url("teaser/img/exemple2.png");background-size: 100%;}
@@ -61,8 +64,6 @@
   .SIX {display: flex;flex-direction: column;}
   .LEFTLIST {display: flex;flex-direction: column;}
   .RIGHTLIST{display: flex; flex-direction:column;}
-
-
   .EXEMPLES {background-image: url("teaser/img/exemple.png");}
   .EXEMPLES img {width:100%;}
  
@@ -91,8 +92,9 @@
   .DOUTES{display: flex;
     flex-direction: column;
     text-align: right;
-    border:solide blue 5px;
+    border:solid blue 5px;
     height:70vh;
+    margin:10px;
     width:60%;
     overflow-y: scroll;}
 
@@ -106,6 +108,8 @@
       .NOTES img {
         width: 400px;
       }
+
+      .PROBLEMS{border-image: url("img/gant1000.jpg") 27 23 / 50px 30px / 1rem round space;}
  .solo{z-index: 1;text-align: center;color:white;font-family: 'Times New Roman', Times, serif;}
 
  .midle{text-align: center;font-family: 30pt;}
@@ -136,8 +140,10 @@
     display: flex;
     flex-direction: column;
     font-family: arial;
-    font-size: 23pt;
-    font-weight: bold;
+    font-size: 15pt;
+    
     text-align: center;
+    padding:10px;
 
   }
+  
