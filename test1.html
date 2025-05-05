@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+
+    <style>
+      .chat-center {
+        background-color: white;
+        font-family: helvetica;
+        color: black;
+        width: 50%;
+        margin: 0 auto;
+        border: 2px black solid;
+        padding: 10px;
+        border-radius: 15px;
+        height: 50vh;
+        justify-content: space-around;
+        filter: invert(1);
+      }
+      h1 {
+        font-size: 13pt;
+      }
+      ol {
+        margin: auto;
+      }
+      li {
+        margin: auto;
+        display: flex;
+        height: 2em;
+      }
+      button {
+        border: none;
+        background-color: white;
+        font-size: 15px;
+      }
+      button:hover {
+        color: blue;
+      }
+
+      /* BUTTONPOURLEBIEN */
+      /* BUTTONPOURLEBIEN */
+      #pointsVertsDiv {
+        display: flex;
+      }
+      .pointVert {
+        width: 10px;
+        border-radius: 10px;
+        margin: 2px;
+        background-color: rgb(7, 230, 7);
+      }
+
+      /* BUTTONPOURLEMAL */
+      /* BUTTONPOURLEMAL */
+      #pointsRougesDiv {
+        display: flex;
+        color: red;
+        text-align: right;
+        justify-content: right;
+        align-items: right;
+        font-size: 30px;
+      }
+      .pointRouge {
+        width: 10px;
+        border-radius: 10px;
+        margin: 2px;
+        background-color: rgb(230, 33, 7);
+      }
+      .boiteDuMessageVertQuiApparait {
+        color: rgb(42, 212, 8);
+      }
+      /* BUTTONPOURLESREPONSES */
+      #reponses {
+        padding: 10px;
+        border: blue;
+        border-radius: 10px;
+        background-color: yellow;
+        font-size: 10px;
+        display: none;
+      }
+
+      /* BUTTON : RAFFRAICHIR LA PAGE */
+      .footer {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="chat-center">
+      <h1 class="question">
+        Bonjour !<br />
+        Comment vous sentez-vous aujourd'hui ?
+      </h1>
+
+      <ol class="liste">
+        <li class="box une">
+          <button id="buttonPourLeBien">- bien</button>
+          <div id="pointsVertsDiv"></div>
+        </li>
+
+        <div class="box deux">
+          <li>
+            <button id="buttonPourLeMal">- mal</button>
+            <div id="pointsRougesDiv"></div>
+          </li>
+        </div>
+
+        <li>
+          <button id="buttonPourLeMoyen">- moyen</button>
+        </li>
+        <li class="box quatre">
+          <button id="buttonPourLesReponses">- autres réponses</button>
+          <p id="reponses">
+            blablablablabla<br />
+            blablablablabla<br />
+            blablabla<br />
+          </p>
+        </li>
+      </ol>
+      <div class="chat-center">
+        <h2>Imaginez que vous vouliez soigner le système de soin en France en terme de santé mentale. Comment feriez-vous ?</h2>
+        <ol>
+          <li>Parler avec un.e thérapeute</li>
+          <li>Parler avec une.e universitaire</li>
+          <li>parler avec un.e employé du système hospitalier/pscyhiatrie</li>
+        </ol>
+    </main>
+    
+    <footer class="footer">
+      <button id="refresh" onclick="document.location.reload(false)"><h2>Rafraichir</h2></button>
+    </footer>
+  </body>
+
+  <script src="jsTest1.js"></script>
+
+  <!-- toujours esquiver la conversation et le dialogue : ne jamais vouloir parler au doc. -->
+</html>
