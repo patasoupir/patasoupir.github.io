@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fiche patient.e.s</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: helvetica;
+        padding: 10px;
+      }
+      #loadData {
+        background-color: rgb(31, 206, 255);
+        color: white;
+        font-size: 15pt;
+        padding: 10px;
+        border: none;
+      }
+      #disease-block {
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+      ul {
+        list-style-type: none;
+      }
+      h1 #resultTitle {
+        font-size: large;
+        color: blue;
+      }
+      .end {
+        background-color: rgb(31, 206, 255);
+        padding: 60px;
+        /* display: flex;
+        align-items: center;
+        justify-content: space-evenly; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Recherches en santé mentale<br />Quelle est votre situation ?</h1>
+
+    <button id="loadData">Cliquez pour obtenir votre diagnostic</button>
+
+    <div id="disease-block" class="hidden">
+      <h1 id="resultTitle"></h1>
+      <h3 class="topic-head">Cette maladie se remarque par :</h3>
+      <ul id="resultClinicalSigns"></ul>
+      <h3 class="topic-head">Traitements possibles :</h3>
+      <ul id="resultatTreatment"></ul>
+      <footer class="end">
+        <h2>Le conseil du doc :</h2>
+        <h4 id="docteurGivesAdvices"></h4>
+      </footer>
+    </div>
+
+    <script>
+      let nomMaladie = [],
+        caractMaladie = [],
+        signesCli = [],
+        verbeRecommand = [],
+        actionTraitement = [],
+        ideeTraitement = [],
+        ponctuation = [],
+        verbConseil = [],
+        conseil = [];
+
+      d3.select("#loadData").on("click", function () {
+        let titre =
+          nomMaladie[Math.floor(Math.random() * nomMaladie.length)] +
+          " " +
+          caractMaladie[Math.floor(Math.random() * caractMaladie.length)] +
+          " \n ";
+
+        let nombreSignes = Math.floor(Math.random() * 5) + 1;
+        // 2. Mélanger le tableau et prendre les n premiers
+        let signesMelanges = signesCli.sort(() => 0.5 - Math.random());
+        let signesChoisis = signesMelanges.slice(0, nombreSignes);
+
+        let phraseTraitement =
+          verbeRecommand[Math.floor(Math.random() * verbeRecommand.length)] +
+          " " +
+          actionTraitement[Math.floor(Math.random() * actionTraitement.length)] +
+          " " +
+          ideeTraitement[Math.floor(Math.random() * ideeTraitement.length)] +
+          ponctuation[Math.floor(Math.random() * ponctuation.length)];
+
+        let phraseConseil =
+          verbConseil[Math.floor(Math.random() * verbConseil.length)] +
+          " " +
+          conseil[Math.floor(Math.random() * conseil.length)] +
+          ponctuation[Math.floor(Math.random() * ponctuation.length)];
+
+        d3.select("#resultTitle").text(titre);
+        d3.select("#resultatTreatment").text(phraseTraitement);
+        d3.select("#docteurGivesAdvices").text(phraseConseil);
+
+        let ul = d3.select("#resultClinicalSigns");
+        ul.html("");
+        signesChoisis.forEach((signeC) => {
+          ul.append("li").text(signeC);
+        });
+      });
+
+      // l'URL ci-dessous est le le lien de partage CSV de votre Google Sheet
+      const csvUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOoi4qBl_e_HcSjybQ0Syd_gU5NHQm8kxkBztvTXW-1LBevYxuUTEkADtmeLWAkcvJrSQ6KMZtXpRa/pub?output=csv";
+      // obtenu avec copilot :
+      d3.csv(csvUrl).then((data) => {
+        console.log(data);
+        //début de la boucle :
+        // pour chaque élément de la liste, la boucle PUSHE (envoie) les valeurs des colonnes
+        // nomDeLaMaladie et caracteristiqueDeLaMaladie
+        // mais SI la liste est vide, on ne fait rien
+
+        // data est un tableau d'objets, chaque objet représente une ligne du CSV
+        // d est un objet qui représente une ligne du CSV
+        // qu'est ce que le point ? entre d. et nomDeLaMaladie ?
+        // c'est un opérateur d'accès aux propriétés d'un objet
+        // d est un objet qui contient les données de la ligne courante
+        // et nomDeLaMaladie est une propriété de cet objet
+
+        data.forEach((d) => {
+          if (d.nomDeLaMaladie) nomMaladie.push(d.nomDeLaMaladie);
+          if (d.caracteristiqueDeLaMaladie) caractMaladie.push(d.caracteristiqueDeLaMaladie);
+          if (d.verbeDeRecommandationDeTraitement)
+            verbeRecommand.push(d.verbeDeRecommandationDeTraitement);
+          if (d.actionPourLeTraitement) actionTraitement.push(d.actionPourLeTraitement);
+          if (d.traitement) ideeTraitement.push(d.traitement);
+          if (d.signeDePonctuation) ponctuation.push(d.signeDePonctuation);
+          if (d.signesCliniques) signesCli.push(d.signesCliniques);
+          if (d.verbeCauses) verbConseil.push(d.verbeCauses);
+          if (d.causes1) conseil.push(d.causes1);
+        });
+        document.getElementById("loadData").addEventListener("click", function () {
+          // Affiche le contenu caché
+          document.getElementById("disease-block").classList.remove("hidden");
+        });
+
+        console.log(nomMaladie);
+        console.log(caractMaladie);
+        console.log(ideeTraitement);
+        console.log(conseil);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Au début du code JS :
+// l'opération fait l'aléatoire
+// concaténation avec espace
+// et met tout dans une variable titre
+// donc pour avoir le résultat du traitement, il faut faire la même chose -->
+
+<!-- sur la ligne d3.select :
+ // peux tu m'expliquer ce que fait la ligne précédente ?
+        // d3.select("#resultTitle") sélectionne l'élément HTML avec l'id resultTitle
+        // .text(titre) met le texte de cet élément à la valeur de la variable titre
+        // je voudrais faire apreil avec le paragraphe id resultatTreatment
+        // d3.select("#resultatTreatment").text(titre); -->
