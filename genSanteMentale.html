@@ -27,6 +27,9 @@
       ul {
         list-style-type: none;
       }
+      h1 {
+        font-size: large;
+      }
       h1 #resultTitle {
         font-size: large;
         color: blue;
@@ -109,6 +112,7 @@
       const csvUrl =
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOoi4qBl_e_HcSjybQ0Syd_gU5NHQm8kxkBztvTXW-1LBevYxuUTEkADtmeLWAkcvJrSQ6KMZtXpRa/pub?output=csv";
       // obtenu avec copilot :
+
       d3.csv(csvUrl).then((data) => {
         console.log(data);
         //début de la boucle :
