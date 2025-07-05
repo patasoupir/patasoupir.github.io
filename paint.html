@@ -53,13 +53,25 @@
         z-index: 1;
         padding: 20px;
         margin: 10px;
-
         border-radius: 3px;
         box-shadow: 40px 30px 100px rgb(31, 206, 255);
       }
-
+      .headerpack {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
       .policeTwo {
         color: black;
+      }
+      .petitTexte {
+        font-size: 14pt;
+        color: rgb(0, 13, 255);
+        font-family: "arial", sans-serif;
+        display: none;
+      }
+      .exception {
+        font-size: 14pt;
       }
       .largebox {
         display: flex;
@@ -119,19 +131,19 @@
       .download button {
         color: white;
         background-color: rgb(31, 206, 255);
-        font-family: 14pt;
         text-align: center;
         margin: 10px;
         font-family: arial;
         border: none;
         padding: 10px;
+        font-size: 17pt;
       }
 
       .download {
         z-index: 1;
       }
       .download button:hover {
-        color: rgba(255, 255, 255, 0.603);
+        color: rgba(29, 245, 230, 0.603);
         background-color: blue;
         cursor: help;
       }
@@ -162,11 +174,16 @@
           font-size: 14pt;
           line-height: 25px;
           overflow-x: auto;
+          text-align: center;
         }
-
-        .policeTwo {
-          display: inline-block;
-          white-space: nowrap;
+        .headerpack {
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          text-align: center;
+        }
+        .exception {
+          display: none;
         }
         .largebox {
           display: flex;
@@ -247,11 +264,21 @@
   </head>
   <body>
     <header class="drawme">
-      <h2>Wait / Attend</h2>
-      Could you draw a <span class="policeTwo">bed</span> here for me ? <br />
-      <br />
-      Pourrais-tu dessiner un <span class="policeTwo">lit</span> pour moi ? <br />on manque de lits
-      ces temps-ci
+      <h2>STOP</h2>
+      <div class="headerpack">
+        <div class="left">
+          Could you draw me a <span class="policeTwo">bed</span> please ?<br />
+          <span class="petitTexte">we can't sleep on a chair</span>
+        </div>
+        <div class="left">
+          Peux-tu dessiner un <span class="policeTwo">lit</span> pour moi ? <br />
+          <span class="petitTexte">Il y en a de moins en moins ces temps-ci</span>
+        </div>
+        <div class="left">
+          Puedes dibujarme un <span class="policeTwo">cama</span> por favor ? <br />
+          <span class="exception">Busco un lugar para dormir </span>
+        </div>
+      </div>
     </header>
 
     <div class="largebox">
@@ -275,7 +302,8 @@
         <div class="download">
           <button id="download">
             send <br />/<br />
-            envoyer<br />
+            envoyer <br />/<br />
+            enviar
           </button>
         </div>
       </div>
