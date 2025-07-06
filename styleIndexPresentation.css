@@ -1,0 +1,267 @@
+@font-face {
+  font-family: "dragonlauphing";
+  src: url("fonts/dragonlauphing.tff") format("tff"), url("fonts/dragonlauphing.tff") format("tff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dragonlie";
+  src: url("fonts/dragonlie.tff") format("tff"), url("fonts/dragonlie.tff") format("tff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: helvetica;
+  background-color: white;
+
+  background-image: url("teaser/img/exemple2.png");
+  background-size: 100%;
+}
+.qr {
+  padding: 10px;
+}
+.qr img {
+  width: 10%;
+}
+.ENORME {
+  font-family: helvetica;
+  text-align: justify-all;
+  color: red;
+  animation: blink 3s infinite;
+  font-size: 35pt;
+  width: 70%;
+  color: blue;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box {
+  padding: 40px;
+  border: blue 5px solid;
+}
+.FIRST {
+  background-image: url("teaser/img/exemple2.png");
+  background-size: 100%;
+}
+
+.THIRD {
+  background-color: blue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.THIRDBOXUPPERPART {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.THIRD img {
+  width: 680px;
+}
+.FOUR {
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.FOUR img {
+  width: 456px;
+}
+.FIVE img {
+  width: 700px;
+}
+.SIX {
+  display: flex;
+  flex-direction: column;
+}
+.LEFTLIST {
+  display: flex;
+  flex-direction: column;
+}
+.RIGHTLIST {
+  display: flex;
+  flex-direction: column;
+}
+.EXEMPLES {
+  background-image: url("teaser/img/exemple.png");
+}
+.EXEMPLES img {
+  width: 100%;
+}
+
+#FICHES {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border: solide blue 5px;
+  height: 70vh;
+  overflow-y: scroll;
+}
+#FICHES img {
+  width: 400px;
+}
+
+#HEARTZ {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 20pt;
+  color: white;
+  justify-items: center;
+  align-items: center;
+}
+
+#FICHESHEARTZ {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+  height: 400px;
+}
+
+.DOUTES {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border: solid blue 5px;
+  height: 70vh;
+  margin: 10px;
+  width: 60%;
+  overflow-y: scroll;
+}
+
+.DOUTES img {
+  width: 500px;
+}
+
+.NOTES {
+  display: flex;
+  margin: 40px;
+  border: solid red 34px;
+}
+.NOTES img {
+  width: 400px;
+}
+
+.PROBLEMS {
+  border-image: url("img/gant1000.jpg") 27 23 / 50px 30px / 1rem round space;
+}
+.solo {
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.midle {
+  text-align: center;
+  font-family: 30pt;
+}
+.right {
+  text-align: right;
+  color: red;
+}
+.weight {
+  font-style: oblique;
+  color: rgb(255, 2, 2);
+  font-size: 16pt;
+}
+.crass {
+  font-size: 30pt;
+}
+
+.cats {
+  display: grid;
+  grid-template-columns: 400px 200px 300px 100px 40px 100px;
+  grid-template-rows: repeat(1, 1fr);
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.cats img {
+  width: 100%;
+}
+.dragaulauphing {
+  font-family: "dragonlauphing", sans-serif;
+  font-size: 30pt;
+  color: rgb(0, 0, 0);
+}
+.dragonlie {
+  font-family: "dragonlie", sans-serif;
+  font-size: 13pt;
+}
+
+.castle {
+  color: blue;
+  text-align: center;
+}
+
+li {
+  color: blue;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  font-family: arial;
+  font-size: 11pt;
+
+  text-align: center;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 820px) {
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-x: hidden;
+  }
+  .NOTES {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .NOTES img {
+    width: 30%;
+  }
+  .star img {
+    width: 100%;
+  }
+  .FICHESHEARTZ img {
+    width: 90%;
+  }
+  .none {
+    display: none;
+  }
+  .cats {
+    justify-content: left;
+  }
+  .cats img {
+    width: 50%;
+  }
+  .FOUR img {
+    width: 100%;
+  }
+  .FIVE img {
+    width: 100%;
+  }
+}
+#HEARTZ {
+  text-align: left;
+  font-size: 13pt;
+
+  padding: 10px;
+  width: auto;
+}

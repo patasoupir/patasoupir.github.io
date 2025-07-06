@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <link rel="stylesheet" type="text/css" href="styleindex.css" />
+    <link rel="stylesheet" type="text/css" href="styleIndexPresentation.css" />
+    <link rel="stylesheet" type="text/css" href="styleIndexAppendice.css" />
+    <link rel="stylesheet" type="text/css" href="header.css" />
 
     <script>
       window.addEventListener("load", function () {
@@ -20,7 +22,7 @@
         const currentTime = new Date().getTime();
 
         // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
-        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 30 * 60 * 1000) {
+        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 50 * 60 * 1000) {
           // Mettre à jour le timestamp
           localStorage.setItem("lastRedirectTime", currentTime);
           // Rediriger vers first-visit.html
@@ -28,48 +30,32 @@
         }
       });
     </script>
-    <style>
-      .appendiceLenay {
-        padding: 30px;
-        background-color: red;
-        text-align: center;
-        font-size: large;
-        font-family: "Times New Roman", Times, serif;
-      }
-      .appendiceLenay a {
-        color: yellow;
-      }
-
-      .genSanteMentale button {
-        border: none;
-        background-color: rgb(31, 206, 255);
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-      .genSanteMentale button:hover {
-        background-color: rgb(0, 150, 255);
-        color: white;
-      }
-      .genSanteMentale a {
-        color: white;
-        text-decoration: none;
-      }
-    </style>
   </head>
 
   <body>
-    <main>
-      <header>
-        <p class="ENORME">
-          DR. DOUTE.<br />
-          QUAND VIENDRAS-TU M'4IDER MOI
-        </p>
-      </header>
-      <div class="genSanteMentale">
-        <a href="genSanteMentale.html"><button>Générer son diagnostic ici :)</button></a>
+    <header>
+      <div class="patasoupir"><a href="index.html">PATASOUPIR</a></div>
+      <div class="menu">
+        <a href="images.html">les images</a>
+        <a href="ODIO.html">sons</a>
+        <a href="combles.html">combles</a>
+        <a href="https://matias.ma/nsfw/">?</a>
       </div>
-      <div class="appendiceLenay">
-        <a href="appendice/mh.html">de quoi allons nous parler aujourd'hui ?</a>
+    </header>
+
+    <p class="ENORME">
+      DR. DOUTE.<br />
+      QUAND VIENDRAS-TU M'4IDER MOI
+    </p>
+
+    <main>
+      <div class="newWork">
+        <div class="genSanteMentale">
+          <a href="genSanteMentale.html"><button>Générer son diagnostic ici :)</button></a>
+        </div>
+        <div class="appendiceLenay">
+          <button><a href="appendice/mh.html">silence here de quoi ???? </a></button>
+        </div>
       </div>
 
       <div class="box FIRST">
@@ -134,7 +120,7 @@
                 <div class="liens">
                   <a href="PDR Long.pdf">1 - vous me le demanderez</a>
                 </div>
-                <div>
+                <div class="liens">
                   <a href="penelope/MonsieurDoute/B.léa3.html">2 - un exemple</a>
                 </div>
                 <div class="liens">

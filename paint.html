@@ -41,6 +41,21 @@
       body {
         background-color: rgb(223, 248, 255);
       }
+      ::-webkit-scrollbar {
+        width: 32px; /* Largeur verticale */
+        height: 12px; /* Hauteur horizontale */
+      }
+      .title {
+        animation: balancer 2s ease-in-out infinite alternate;
+      }
+      @keyframes balancer {
+        from {
+          transform: translateX(-10px);
+        }
+        to {
+          transform: translateX(10px);
+        }
+      }
       .drawme {
         font-size: 20pt;
         margin-left: 100px;
@@ -130,13 +145,15 @@
       }
       .download button {
         color: white;
-        background-color: rgb(31, 206, 255);
+        background-color: rgb(60, 255, 0);
         text-align: center;
         margin: 10px;
         font-family: arial;
-        border: none;
+        border: blue;
+        border-radius: 100px;
         padding: 10px;
         font-size: 17pt;
+        align-items: center;
       }
 
       .download {
@@ -167,14 +184,27 @@
         font-style: normal;
       }
 
-      @media only screen and (max-width: 820px) {
+      @media only screen and (max-width: 853px) {
+        .ALL {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .title {
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
         .drawme {
-          margin: 10px;
-          padding: 10px;
           font-size: 14pt;
           line-height: 25px;
           overflow-x: auto;
           text-align: center;
+          align-items: center;
+          justify-content: center;
         }
         .headerpack {
           flex-direction: column;
@@ -203,13 +233,17 @@
           display: flex;
           flex-direction: column;
           width: fit-content;
+          margin: 0;
+          padding: 0;
+          width: fit-content;
         }
         .toolbar {
           display: flex;
           flex-direction: row;
           justify-content: center;
-          flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-          gap: 5px;
+          flex-wrap: wrap;
+          gap: 0;
+          width: fit-content;
         }
         button,
         select,
@@ -224,11 +258,12 @@
           height: 33px;
           z-index: 1;
           font-size: 18pt;
+          border: ridge 1px blue;
         }
         button,
         select,
         input {
-          font-size: 22pt;
+          font-size: 18pt;
         }
         #redo,
         #undo {
@@ -246,6 +281,8 @@
           color: blue;
           white-space: nowrap;
           background-color: white;
+          border: 1px ridge rgb(108, 200, 246);
+          border-radius: 3px;
         }
         #download br {
           display: none;
@@ -263,43 +300,45 @@
     </style>
   </head>
   <body>
-    <header class="drawme">
-      <h2>STOP</h2>
-      <div class="headerpack">
-        <div class="left">
-          Could you draw me a <span class="policeTwo">bed</span> please ?<br />
-          <span class="petitTexte">we can't sleep on a chair</span>
+    <div class="ALL">
+      <header class="drawme">
+        <div class="policeTwo title">wait...</div>
+        <div class="headerpack">
+          <div class="left">
+            Could you draw me a <span class="policeTwo">bed</span> please ?<br />
+            <span class="petitTexte">we can't sleep on a chair</span>
+          </div>
+          <div class="left">
+            Peux-tu dessiner un <span class="policeTwo">lit</span> pour moi ? <br />
+            <span class="petitTexte">Il y en a de moins en moins ces temps-ci</span>
+          </div>
+          <div class="left">
+            Puedes dibujarme un <span class="policeTwo">cama</span> por favor ? <br />
+            <span class="exception">Busco un lugar para dormir </span>
+          </div>
         </div>
-        <div class="left">
-          Peux-tu dessiner un <span class="policeTwo">lit</span> pour moi ? <br />
-          <span class="petitTexte">Il y en a de moins en moins ces temps-ci</span>
-        </div>
-        <div class="left">
-          Puedes dibujarme un <span class="policeTwo">cama</span> por favor ? <br />
-          <span class="exception">Busco un lugar para dormir </span>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <div class="largebox">
-      <canvas id="drawingCanvas"></canvas>
+      <div class="largebox">
+        <canvas id="drawingCanvas"></canvas>
 
-      <div class="smallbox">
-        <div class="toolbar">
-          <button id="pencilTool">ÿ</button>
-          <select id="brushSize">
-            <option value="3">slim</option>
-            <option value="10">mid</option>
-            <option value="37">fat</option>
-          </select>
-          <button id="fillTool">Ÿ</button>
-          <input type="color" id="colorPicker" />
-          <button id="clearCanvas">clear</button>
-          <br /><br />
-          <button id="undo">↺</button>
-          <button id="redo">↻</button>
+        <div class="smallbox">
+          <div class="toolbar">
+            <button id="pencilTool">ÿ</button>
+            <select id="brushSize">
+              <option value="3">slim</option>
+              <option value="10">mid</option>
+              <option value="37">fat</option>
+            </select>
+            <button id="fillTool">Ÿ</button>
+            <input type="color" id="colorPicker" />
+            <button id="clearCanvas">clear</button>
+            <br /><br />
+            <button id="undo">↺</button>
+            <button id="redo">↻</button>
+          </div>
         </div>
-        <div class="download">
+        <div class="download title">
           <button id="download">
             send <br />/<br />
             envoyer <br />/<br />

@@ -1,26 +1,43 @@
-header
-{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+header {
+  display: flex;
+  flex-direction: column;
+  font-family: "dragonlauphing", sans-serif;
+  border: solid 1px blue;
+  padding: 10px;
 }
 
-header a
-{
-    color: white;
-    flex: 1;
-    text-decoration: none;
+header a {
+  color: white;
+  flex: 1;
+  text-decoration: none;
 }
 
-header .patasoupir{
-    font-size: 17pt; text-align: center;
-    padding-top :10px;
-    padding-bottom :10px;
-    letter-spacing: 3px;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background-image: url("img/voistu.jpg");background-size: 100%; }
+header .patasoupir {
+  font-size: 17pt;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  letter-spacing: 3px;
+  color: white;
+  font-family: "dragonlauphing", sans-serif;
+  background-image: url("img/voistu.jpg");
+  background-size: 100%;
+}
 
-header .menu{display :flex; text-align: center; flex-direction: row; flex: 1;font-size: 13pt;padding: 3px;background-image: url("img/voiture2.jpg");}
+header .menu {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  flex: 1;
+  font-size: 13pt;
+  padding: 3px;
+  background-image: url("img/voiture2.jpg");
+}
 
-a{color: white;text-decoration: none;}
-a:hover{text-decoration: underline;}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

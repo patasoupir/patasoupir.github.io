@@ -1,0 +1,40 @@
+.newWork {
+  display: flex;
+  flex-direction: column;
+  border: black dotted 3px;
+  border-radius: 500px;
+  padding: 20px;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.appendiceLenay button {
+  padding: 30px;
+  background-color: red;
+  text-align: center;
+  font-size: large;
+  border: none;
+  width: 100%;
+}
+.appendiceLenay a {
+  color: red;
+}
+
+.genSanteMentale button {
+  border: none;
+  background-color: rgb(31, 206, 255);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: ridge 2px blue;
+  border-radius: 3px;
+}
+.genSanteMentale button:hover {
+  background-color: rgb(0, 150, 255);
+  color: white;
+}
+.genSanteMentale a {
+  color: white;
+  text-decoration: none;
+}
