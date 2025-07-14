@@ -2,8 +2,7 @@ header {
   display: flex;
   flex-direction: column;
   font-family: "dragonlauphing", sans-serif;
-  border: solid 1px blue;
-  padding: 10px;
+  box-shadow: 0px 0px 200px rgb(0, 34, 255);
 }
 
 header a {
@@ -18,12 +17,17 @@ header .patasoupir {
   padding-top: 10px;
   padding-bottom: 10px;
   letter-spacing: 3px;
-  color: white;
-  font-family: "dragonlauphing", sans-serif;
-  background-image: url("img/voistu.jpg");
-  background-size: 100%;
+  font-weight: bold;
+  font-family: "arial", sans-serif;
+  background-color: rgb(60, 255, 0);
 }
 
+header .patasoupir a {
+  color: blue;
+}
+header .patasoupir a:hover {
+  color: rgba(255, 255, 255, 0.299);
+}
 header .menu {
   display: flex;
   text-align: center;
@@ -32,12 +36,13 @@ header .menu {
   font-size: 13pt;
   padding: 3px;
   background-image: url("img/voiture2.jpg");
+  background-size: 100%;
 }
 
-a {
+header .menu a {
   color: white;
   text-decoration: none;
 }
-a:hover {
+header .menu a:hover {
   text-decoration: underline;
 }
