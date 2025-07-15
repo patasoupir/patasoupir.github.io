@@ -14,7 +14,6 @@
 body {
   font-family: helvetica;
   background-color: white;
-
   background-image: url("teaser/img/exemple2.png");
   background-size: 100%;
 }
@@ -113,13 +112,20 @@ body {
 }
 
 #HEARTZ {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  font-size: 20pt;
-  color: white;
-  justify-items: center;
-  align-items: center;
+  background-color: yellow;
+  color: red;
+  font-size: 60pt;
+  z-index: 1;
+}
+#HEARTZ a {
+  color: red;
+  text-decoration: none;
+  font-size: 60pt;
+}
+#HEARTZ a:hover {
+  pointer: help;
+  color: blue;
+  background-color: rgb(3, 242, 3);
 }
 
 #FICHESHEARTZ {
