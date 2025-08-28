@@ -10,17 +10,32 @@
         font-family: "arial", sans-serif;
         background-color: rgb(255, 1, 255);
         font-size: 15pt;
+        border: 10px blue dotted;
+        padding: 10px;
       }
-      header {
-        background-color: rgb(255, 1, 255);
-        text-align: center;
-        font-family: "arial", sans-serif;
-        font-style: italic;
-        font-size: 37pt;
-        color: yellow;
-      }
+
       main {
-        border-image: url("img/capugifi.gif") 130 fill / 170px / 16px space;
+        border-image: url("img/capugifi.gif") 100 fill/ 250px / 1px space;
+      }
+      #startButton {
+        position: relative;
+        margin: 0 auto;
+        padding: 30px;
+        width: 70%;
+        font-family: arial;
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        color: yellow;
+        font-size: 50pt;
+        border-image: url("img/capu1.jpg") 50 fill/ 25px / 10px space;
+      }
+      #startButton:hover {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 20pt;
+        color: rgb(1, 43, 255);
       }
       .mainBox {
         display: flex;
@@ -28,54 +43,76 @@
         margin: 0 auto;
         align-items: center;
         justify-content: center;
-        width: 70%;
+        width: 60%;
+        height: 100vh;
         padding: 10px;
         text-align: center;
         border-image: url("img/étoile.png") 70 fill / 20px / 10px space;
         gap: 20px;
       }
+      .header {
+        background-color: rgb(255, 1, 255);
+        text-align: center;
+        font-family: "arial", sans-serif;
+        font-style: italic;
+        font-size: 37pt;
+        color: yellow;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
       #loadData {
-        padding: 10px;
+        padding: 15px;
         font-family: arial;
         font-size: 15pt;
-        width: 50%;
-        border-top: 10px blue solid;
-        border-left: rgb(5, 236, 5) 28px solid;
-        border-bottom: yellow 10px solid;
-        border-right: orange 17px solid;
-        color: blue;
+        width: auto;
+        border: 10px solid blue;
+        color: rgb(255, 1, 255);
+        font-weight: bold;
+        cursor: pointer;
       }
       #loadData:hover {
         background-color: rgb(255, 1, 255);
         color: white;
       }
-
+      #blinkAnimation {
+        animation: blink 1.5s infinite;
+      }
       #prenomBox {
         display: flex;
         flex-direction: column;
-        width: 50%;
-        height: 80vh;
+        width: 70vh;
+        height: 90vh;
         background-color: white;
         text-align: center;
         margin: 0 auto;
         align-items: center;
         justify-content: center;
-        border-image: url("img/capu1.jpg") 100 fill / 120px / 10px repeat;
+        border-image: url("img/capu1.jpg") 100 / 20px / 10px;
         font-size: 15pt;
         gap: 10px;
         line-height: 15px;
       }
 
-      #prenomBox.no-fill {
-        border-image: url("img/capu1.jpg") 100 / 50px / 10px repeat;
+      #prenomBox:hover {
+        border-image: url("img/capu1.jpg") 100 fill / 50px / 10px repeat;
+        color: transparent;
       }
       .hidden {
         display: none;
       }
       .motEntier {
-        white-space: nowrap; /* empêche toute coupure dans le mot */
-        display: inline-block; /* verrouille encore mieux l’ensemble */
+        white-space: nowrap;
+        display: inline-block;
       }
       .premiereLettre {
         color: rgb(0, 8, 255);
@@ -90,51 +127,83 @@
         animation-iteration-count: infinite;
       }
 
-      /* @keyframes tournoiment {
-         0% {
-           left: 100%;
-         }
-         50% {
-           left: 400px;
-         }
-         100% {
-           left: 10px;
-         }
-       } */
       @media only screen and (max-width: 820px) {
-        header {
+
+        .header {
           font-size: 15pt;
-          margin: 20px;
+          margin: 0;
+          padding: 0;
+          animation: leftToRight 10s ease-in-out;
+          display: inline-block;
+        }
+        @keyframes leftToRight {
+            0% {
+              transform: translate3d(-100%, 0, 0); /* position initiale à droite */
+            }
+            100% {
+              transform: translate3d(100%, 0, 0); /* position finale à gauche */
+            }
+          }
+        }
+        #startButton {
+          border-image: url("img/capu1.jpg") 80 fill / 20px / 10px space;
+          font-size: 15pt;
+          box-shadow: 2px 2px 5px black;
         }
         .mainBox {
-          width: 90%;
-        }
-        #loadData,
-        #prenomBox {
           width: 100%;
+          height: 100vh;
+          text-align: center;
+          margin: 0 auto;
+          padding: 0;
+          border-image: url("img/étoile.png") 40 fill / 20px / 10px space;
+        }
+        #loadData {
+          width: auto;
         }
         #prenomBox {
-          height: 60vh;
-          /* font-size: 13pt; */
+          height: 100%;
+          width: 100%;
+          width: 90%;
+          border: none;
           line-height: 10px;
+          margin: 0 auto;
+          padding: 0;
+          border-image: url("img/capu1.jpg") 150 / 30px / 10px space;
+          text-align: center;
+        }
+        .imgHidden {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
-    <header>HEY HAPPY BIRTHDAY BITCHES</header>
     <main>
-      <div class="mainBox">
-        <button id="loadData">click on me to create funny time !!!!!!!</button>
+      <!-- Bouton d'entrée -->
+      <div class="mainBox" id="startScreen">
+        <button id="startButton">bonjour capucine...</button>
+      </div>
+
+      <!-- Contenu principal caché au début -->
+      <div class="mainBox hidden" id="appContent">
+        <div class="header">HAPPY BIRTHDAY !!!!!!!!!!!</div>
+        <button id="loadData"><span id="blinkAnimation">t'en veux encore ??????????</span></button>
         <audio id="sound1" src="son/dems1.mp3"></audio>
         <audio id="sound2" src="son/dems1AIGU.mp3"></audio>
 
-        <div id="prenomBox" class="hidden"></div>
+        <div id="prenomBox"></div>
+
         <div class="capuImg">
           <img src="img/capu1.jpg" /> <img src="img/capu1.jpg" /><img src="img/capu1.jpg" />
-          <img src="img/capu1.jpg" /><img src="img/capu1.jpg" /><img src="img/capu1.jpg" /><img
+          <img src="img/capu1.jpg" /><img src="img/capu1.jpg" /><img
+            class="imgHidden"
             src="img/capu1.jpg"
-          /><img src="img/capu1.jpg" /><img src="img/capu1.jpg" />
+          />
+          <img class="imgHidden" src="img/capu1.jpg" /><img
+            class="imgHidden"
+            src="img/capu1.jpg"
+          /><img class="imgHidden" src="img/capu1.jpg" />
         </div>
       </div>
 
@@ -148,12 +217,24 @@
           N = [],
           E = [];
 
-        d3.select("#loadData").on("click", function () {
-          function formatWord(word = "", letter = "") {
-            const first = letter.toUpperCase();
-            const rest = String(word).slice(1);
-            return `<span class="motEntier"><span class="premiereLettre">${first}</span>${rest}</span>`;
-          }
+        function formatWord(word = "", letter = "") {
+          const first = letter.toUpperCase();
+          const rest = String(word).slice(1);
+          return `<span class="motEntier"><span class="premiereLettre">${first}</span>${rest}</span>`;
+        }
+
+        // Passage de l'écran start au vrai contenu
+        const startButton = document.getElementById("startButton");
+        const startScreen = document.getElementById("startScreen");
+        const appContent = document.getElementById("appContent");
+
+        startButton.addEventListener("click", () => {
+          startScreen.classList.add("hidden");
+          appContent.classList.remove("hidden");
+        });
+
+        // Génération prénom
+        function generatePrenom() {
           let prenom =
             formatWord(C1[Math.floor(Math.random() * C1.length)], "C") +
             "<br>" +
@@ -172,12 +253,13 @@
             formatWord(E[Math.floor(Math.random() * E.length)], "E");
 
           d3.select("#prenomBox").html(prenom);
-        });
+        }
+
+        // Chargement CSV
         const csvUrl =
           "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdImm57iA75bA0jj1vyRr2U0uXiwXJ1kvEm783QMUiO0GNk2UeVM6hSfKHN1ex0Ly4JCOmutjyLqP4/pub?gid=0&single=true&output=csv";
 
         d3.csv(csvUrl).then((data) => {
-          console.log(data);
           data.forEach((d) => {
             if (d.lettreC1) C1.push(d.lettreC1);
             if (d.lettreA) A.push(d.lettreA);
@@ -190,29 +272,19 @@
           });
         });
 
-        const button = document.getElementById("loadData");
-        const prenomBox = document.getElementById("prenomBox");
+        // Sons
+        const loadButton = document.getElementById("loadData");
         const sound1 = document.getElementById("sound1");
         const sound2 = document.getElementById("sound2");
-
         let clickCount = 0;
 
-        button.addEventListener("click", () => {
-          // Affiche le contenu caché
-          prenomBox.classList.remove("hidden");
-
-          // Change la bordure de "fill" vers "bordure seule"
-          prenomBox.classList.add("no-fill");
-
-          // Joue le son
-          clickCount++;
-          if (clickCount === 5) {
-            sound2.currentTime = 0;
-            sound2.play();
-          } else {
-            sound1.currentTime = 0;
-            sound1.play();
-          }
+        startButton.addEventListener("click", () => {
+          sound1.play();
+          generatePrenom();
+        });
+        loadButton.addEventListener("click", () => {
+          sound2.play();
+          generatePrenom();
         });
       </script>
     </main>
