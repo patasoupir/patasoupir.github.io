@@ -6,107 +6,131 @@
     <title>générateurDeCapu</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
+      /* --- CSS complet corrigé (voir plus bas aussi) --- */
+      html,
+      body,
+      * {
+        box-sizing: border-box;
+      }
       body {
-        font-family: "arial", sans-serif;
+        font-family: "Arial", sans-serif;
         background-color: rgb(255, 1, 255);
         font-size: 15pt;
         border: 10px blue dotted;
         padding: 10px;
+        margin: 0;
       }
 
       main {
-        border-image: url("img/capugifi.gif") 100 fill/ 250px / 1px space;
+        /* border-image nécessite aussi une bordure (border-style) */
+        border: 10px solid transparent;
+        border-image: url("img/capugifi.gif") 100 fill / 250px / 1px space;
+        padding: 10px;
       }
+
       #startButton {
         position: relative;
         margin: 0 auto;
         padding: 30px;
         width: 70%;
-        font-family: arial;
+        font-family: Arial, sans-serif;
         font-weight: bold;
         background-color: transparent;
-        border: none;
+        border: 10px solid transparent; /* nécessaire pour border-image */
         color: yellow;
         font-size: 50pt;
-        border-image: url("img/capu1.jpg") 50 fill/ 25px / 10px space;
+        border-image: url("img/capu1.jpg") 50 fill / 25px / 10px space;
+        display: block;
       }
       #startButton:hover {
         background-color: transparent;
-        border: none;
+        border: 10px solid transparent;
         cursor: pointer;
         font-size: 20pt;
         color: rgb(1, 43, 255);
       }
+
       .mainBox {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+        min-height: 100vh;
         align-items: center;
         justify-content: center;
-        width: 60%;
-        height: 100vh;
         padding: 10px;
         text-align: center;
+        border: 10px solid transparent; /* pareil pour border-image */
         border-image: url("img/étoile.png") 70 fill / 20px / 10px space;
         gap: 20px;
+        width: 100%;
+        overflow: hidden;
       }
+
       .header {
         background-color: rgb(255, 1, 255);
         text-align: center;
-        font-family: "arial", sans-serif;
+        font-family: "Arial", sans-serif;
         font-style: italic;
-        font-size: 37pt;
-        color: yellow;
+        font-size: 30pt;
+        color: rgb(255, 1, 255);
+        background-color: yellow;
+        margin: 0;
+        animation: leftToRight 5s infinite;
       }
-      @keyframes blink {
+      @keyframes leftToRight {
         0% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
+          transform: translate3d(-100%, 0, 0);
         }
         100% {
-          opacity: 1;
+          transform: translate3d(100%, 0, 0);
         }
       }
 
+      /* --- bouton charger --- */
       #loadData {
         padding: 15px;
-        font-family: arial;
+        font-family: Arial, sans-serif;
         font-size: 15pt;
         width: auto;
         border: 10px solid blue;
         color: rgb(255, 1, 255);
         font-weight: bold;
         cursor: pointer;
+        background: none;
+        background-color: white;
       }
       #loadData:hover {
         background-color: rgb(255, 1, 255);
         color: white;
       }
-      #blinkAnimation {
-        animation: blink 1.5s infinite;
-      }
+
+      /* --- LA BOÎTE PRENOM corrigée --- */
       #prenomBox {
         display: flex;
         flex-direction: column;
-        width: 70vh;
-        height: 90vh;
         background-color: white;
         text-align: center;
-        margin: 0 auto;
         align-items: center;
         justify-content: center;
-        border-image: url("img/capu1.jpg") 100 / 20px / 10px;
-        font-size: 15pt;
-        gap: 10px;
-        line-height: 15px;
+
+        border: 10px solid transparent;
+        border-image: url("img/capu1.jpg") 10 / 20px / 10px;
+        font-size: 14pt;
+        gap: 4px;
+
+        /* tailles flexibles */
+        min-width: 300px; /* empêche que ça devienne trop étroit */
+        max-width: 90vw; /* ne dépasse jamais 90% de l’écran */
+        padding: 16px;
+        box-sizing: border-box; /* espace intérieur pour visualiser */
       }
 
       #prenomBox:hover {
+        border: 10px solid transparent;
         border-image: url("img/capu1.jpg") 100 fill / 50px / 10px repeat;
         color: transparent;
       }
+
       .hidden {
         display: none;
       }
@@ -118,60 +142,73 @@
         color: rgb(0, 8, 255);
         font-weight: 700;
       }
-
       .capuImg img {
         width: 50px;
         height: 50px;
-        animation-name: tournoiment;
-        animation-duration: 100s;
-        animation-iteration-count: infinite;
       }
 
+      /* --- media queries (correctement fermées) --- */
       @media only screen and (max-width: 820px) {
-
+        body {
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+        }
         .header {
           font-size: 15pt;
           margin: 0;
           padding: 0;
-          animation: leftToRight 10s ease-in-out;
+          animation: leftToRight 10s infinite;
           display: inline-block;
         }
         @keyframes leftToRight {
-            0% {
-              transform: translate3d(-100%, 0, 0); /* position initiale à droite */
-            }
-            100% {
-              transform: translate3d(100%, 0, 0); /* position finale à gauche */
-            }
+          0% {
+            transform: translate3d(-100%, 0, 0);
+          }
+          100% {
+            transform: translate3d(100%, 0, 0);
           }
         }
+
         #startButton {
+          border: 10px solid transparent;
           border-image: url("img/capu1.jpg") 80 fill / 20px / 10px space;
           font-size: 15pt;
           box-shadow: 2px 2px 5px black;
         }
+
         .mainBox {
           width: 100%;
           height: 100vh;
           text-align: center;
           margin: 0 auto;
           padding: 0;
-          border-image: url("img/étoile.png") 40 fill / 20px / 10px space;
+          border: 10px solid transparent;
+          border-image: url("img/étoile.png") 70 fill / 20px / 10px space;
+          overflow: hidden;
         }
+
         #loadData {
-          width: auto;
-        }
-        #prenomBox {
-          height: 100%;
           width: 100%;
-          width: 90%;
+        }
+
+        #prenomBox {
+          width: 100%;
+          min-width: auto;
+          max-width: 90vw;
+          margin: 0;
+          box-sizing: border-box;
+
+          height: 100%;
           border: none;
-          line-height: 10px;
+          line-height: 1;
+          font-size: 0.9em;
           margin: 0 auto;
-          padding: 0;
-          border-image: url("img/capu1.jpg") 150 / 30px / 10px space;
+          padding: 20px;
+          border-image: url("img/capu1.jpg") 110 / 15px / 10px space;
           text-align: center;
         }
+
         .imgHidden {
           display: none;
         }
@@ -187,15 +224,19 @@
 
       <!-- Contenu principal caché au début -->
       <div class="mainBox hidden" id="appContent">
-        <div class="header">HAPPY BIRTHDAY !!!!!!!!!!!</div>
-        <button id="loadData"><span id="blinkAnimation">t'en veux encore ??????????</span></button>
+        <div class="header">HAPPY HALLOWEEN !!!!!!!!!!!</div>
+        <button id="loadData">
+          <span id="blinkAnimation">t'en veux encore ??????????</span>
+        </button>
         <audio id="sound1" src="son/dems1.mp3"></audio>
         <audio id="sound2" src="son/dems1AIGU.mp3"></audio>
 
         <div id="prenomBox"></div>
 
         <div class="capuImg">
-          <img src="img/capu1.jpg" /> <img src="img/capu1.jpg" /><img src="img/capu1.jpg" />
+          <img src="img/capu1.jpg" /> <img src="img/capu1.jpg" /><img
+            src="img/capu1.jpg"
+          />
           <img src="img/capu1.jpg" /><img src="img/capu1.jpg" /><img
             class="imgHidden"
             src="img/capu1.jpg"
