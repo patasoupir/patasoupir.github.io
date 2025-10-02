@@ -22,9 +22,8 @@
       }
 
       main {
-        /* border-image nécessite aussi une bordure (border-style) */
         border: 10px solid transparent;
-        border-image: url("img/capugifi.gif") 100 fill / 250px / 1px space;
+        border-image: url("img/capugifi.gif") 500 fill / 200px / 100px space;
         padding: 10px;
       }
 
@@ -181,7 +180,7 @@
         .mainBox {
           height: auto;
           text-align: center;
-
+          margin: 0 auto;
           padding: 0;
           border: 10px solid transparent;
           border-image: url("img/étoile.png") 70 fill / 20px / 10px space;
@@ -193,19 +192,20 @@
         }
 
         #prenomBox {
-          width: auto;
-          min-width: 60vw;
+          min-width: 54vw;
           max-width: 90vw;
-          margin: 0;
+          margin: 0 auto;
           box-sizing: border-box;
           height: auto;
-          padding: 50px;
-          border: none;
+          padding: 16px;
+          padding-top: 40px;
+          padding-bottom: 40px;
           line-height: 1;
           font-size: 0.9em;
           margin: 0 auto;
-
-          /* border-image: url("img/capu1.jpg") 110 / 15px / 10px space; */
+          border-radius: 1em;
+          border: dotted blue 1px;
+          border-image: url("img/capu1.jpg") 110 / 5px / 10px space;
           text-align: center;
         }
 
