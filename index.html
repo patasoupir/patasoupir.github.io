@@ -22,7 +22,10 @@
         const currentTime = new Date().getTime();
 
         // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
-        if (!lastRedirectTime || currentTime - parseInt(lastRedirectTime) > 50 * 60 * 1000) {
+        if (
+          !lastRedirectTime ||
+          currentTime - parseInt(lastRedirectTime) > 50 * 60 * 1000
+        ) {
           // Mettre à jour le timestamp
           localStorage.setItem("lastRedirectTime", currentTime);
           // Rediriger vers first-visit.html
@@ -51,10 +54,17 @@
     <main>
       <div class="newWork">
         <div class="genSanteMentale">
-          <a href="genSanteMentale.html"><button>Générer son diagnostic ici :)</button></a>
+          <a href="genSanteMentale.html"
+            ><button>Générer son diagnostic ici :)</button></a
+          >
         </div>
         <div class="appendiceLenay">
-          <button><a href="appendice/mh.html">silence here de quoi ???? </a></button>
+          <button>
+            <a href="appendice/mh.html">silence here de quoi ???? </a>
+          </button>
+        </div>
+        <div class="chili">
+          clique <a href="chili/CEL_1.html">ici</a> pour entendre mes histoires
         </div>
       </div>
 
@@ -71,15 +81,20 @@
             Quelques élément éléments pratiques à venir<br />
             - ! serveur : demander les prénoms<br />
             - ! serveur : demander des photos d'identité<br />
-            CSQ : c'est le nom du joueur et/ou sa photo qui s'inscrivent pour jouer<br /><br />
-            - garder en mémoire les différents joueurs devenus patients, possible de les
-            consulter<br />
+            CSQ : c'est le nom du joueur et/ou sa photo qui s'inscrivent pour
+            jouer<br /><br />
+            - garder en mémoire les différents joueurs devenus patients,
+            possible de les consulter<br />
             plus tard ?<br /><br />
-            <span class="weight">objectif, une plateforme médicale qui s'enfonce dans le rêve</span>
+            <span class="weight"
+              >objectif, une plateforme médicale qui s'enfonce dans le
+              rêve</span
+            >
           </p>
 
           <p class="administration">
-            je dois apprendre à coder mieux, oui, mais à coder comme le site ameli
+            je dois apprendre à coder mieux, oui, mais à coder comme le site
+            ameli
           </p>
         </div>
       </div>
@@ -87,16 +102,17 @@
       <div class="box SECOND">
         <div class="BOXTEXT">
           <p>
-            j'aurai aimé me servir de vous... faire une enquête... récolter des informations...<br />
+            j'aurai aimé me servir de vous... faire une enquête... récolter des
+            informations...<br />
             <br />
             - ... des exercices de psychologues !<br />
-            - vos informations ! vos fausses informations ! donnez-moi vos témoignages, venez me
-            voir ! je ne pourrai pas vous aider
+            - vos informations ! vos fausses informations ! donnez-moi vos
+            témoignages, venez me voir ! je ne pourrai pas vous aider
           </p>
           <p class="midle">PLUS TARD</p>
           <p class="administration">
-            d'abord, donnez-moi de vous. plutôt doctolib ou réseau social ?<br />ou bien juste
-            prenez ce qu'
+            d'abord, donnez-moi de vous. plutôt doctolib ou réseau social ?<br />ou
+            bien juste prenez ce qu'
           </p>
           <p class="right">
             à la place, j'ai récolté de ce qui a été visible<br />
@@ -117,13 +133,15 @@
               </div>
 
               <div id="HEARTZ">
-                <a href="penelope/MonsieurDoute/1Monsieurdoute.html">COME HERE !!!!!!!!!!!!</a>
+                <a href="penelope/MonsieurDoute/1Monsieurdoute.html"
+                  >COME HERE !!!!!!!!!!!!</a
+                >
               </div>
             </div>
             <div class="NOTES">
-              <img src="teaser/img/IMG_8302.jpg" /><img src="teaser/img/IMG_8305.jpg" /><img
-                src="teaser/img/IMG_8304.jpg"
-              />
+              <img src="teaser/img/IMG_8302.jpg" /><img
+                src="teaser/img/IMG_8305.jpg"
+              /><img src="teaser/img/IMG_8304.jpg" />
             </div>
 
             <div class="DOUTES">
@@ -137,8 +155,8 @@
       </div>
 
       <div class="solo">
-        mon projet consiste en la création d'un corps entier dans lequel tu iras te promener. I need
-        pics of my head and we will DIVE into it
+        mon projet consiste en la création d'un corps entier dans lequel tu iras
+        te promener. I need pics of my head and we will DIVE into it
       </div>
 
       <div class="box THIRD">
@@ -149,7 +167,8 @@
               <a href="appendice/discussionfield.html">here/ici</a>
             </p>
             <p class="administration">
-              a lot to say<br />a lot of notes too<br />1ère "fiction" sur un "trouble"
+              a lot to say<br />a lot of notes too<br />1ère "fiction" sur un
+              "trouble"
             </p>
           </div>
           <div class="star none"><img src="teaser/img/star.jpg" /></div>
@@ -168,13 +187,17 @@
       </div>
 
       <div class="box PROBLEMS BONUS">
-        je sais comment, avec quoi, pour qui j'aimerais parler... mais toujours pas de quoi.<br />
-        les avantages d'un site web, et non d'un jeu vidéo, et non d'un jeu de plateau, etc ; un ARG
+        je sais comment, avec quoi, pour qui j'aimerais parler... mais toujours
+        pas de quoi.<br />
+        les avantages d'un site web, et non d'un jeu vidéo, et non d'un jeu de
+        plateau, etc ; un ARG
       </div>
 
       <div class="box FIVE castle">
         <p>
-          <span class="administration crass">BUILDING A CASTLE : A GAME WITHIN THE DREAM ?</span>
+          <span class="administration crass"
+            >BUILDING A CASTLE : A GAME WITHIN THE DREAM ?</span
+          >
           <br /><br />
           ANOTHER PROJECT OR A CONTINUATION ???
         </p>
@@ -183,7 +206,9 @@
         <p>"<em>THE VERY BIG PARTY YOU WILL ALL BE INVITED TO</em>"</p>
         <img src="grass/img/1.png" title="the biggest party" />
 
-        <div class="weirdo"><img src="teaser/img/grass.png" title="the biggest party" /></div>
+        <div class="weirdo">
+          <img src="teaser/img/grass.png" title="the biggest party" />
+        </div>
 
         <p>THESE IMAGES I DON'T BELONG WHAT SHOULD I DO ? PROBLEM</p>
       </div>
@@ -210,23 +235,35 @@
             >
           </li>
           <li>
-            <a href="https://www.reddit.com/r/besoindeparler/s/TTVhphLGwK">besoin de parler 1</a>
+            <a href="https://www.reddit.com/r/besoindeparler/s/TTVhphLGwK"
+              >besoin de parler 1</a
+            >
           </li>
           <li>
-            <a href="//www.reddit.com/r/CPTSD/s/CmyFUKgM0i">besoin de parler 2</a>
+            <a href="//www.reddit.com/r/CPTSD/s/CmyFUKgM0i"
+              >besoin de parler 2</a
+            >
           </li>
           <li>
-            <a href="//www.reddit.com/r/besoindeparler/s/UP6JfLjDQC">besoin de parler 3</a>
+            <a href="//www.reddit.com/r/besoindeparler/s/UP6JfLjDQC"
+              >besoin de parler 3</a
+            >
           </li>
           <li>
-            <a href="https://imaginaldisk.world/map"><em>imaginal disk</em> = an INSPIRATION</a>
+            <a href="https://imaginaldisk.world/map"
+              ><em>imaginal disk</em> = an INSPIRATION</a
+            >
           </li>
           <li>
-            <em>la mécanique des fluides</em> (reddit etc + un sujet choisi, pas juste vague !)
+            <em>la mécanique des fluides</em> (reddit etc + un sujet choisi, pas
+            juste vague !)
           </li>
           <li>+ un.e prof à qui adresser mes questions ?</li>
           <li>
-            <span class="weight">COMING SOON : les témoignages d'amour de 60 élèves de 4ème !</span>
+            <span class="weight"
+              >COMING SOON : les témoignages d'amour de 60 élèves de 4ème
+              !</span
+            >
           </li>
         </div>
       </div>
@@ -234,10 +271,13 @@
 
     <footer>
       <div class="léa">
-        ah oui pour léa ! ma correspondance se poursuit <a href="léa.html">ici</a>
+        ah oui pour léa ! ma correspondance se poursuit
+        <a href="léa.html">ici</a>
       </div>
       <div class="fin">
-        <a href="generateurDeCapu.html"> dieu vous bénisse (^eh bah m_erci dieu^)</a>
+        <a href="generateurDeCapu.html">
+          dieu vous bénisse (^eh bah m_erci dieu^)</a
+        >
       </div>
     </footer>
   </body>
