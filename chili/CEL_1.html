@@ -7,7 +7,7 @@
     <style>
       body {
         font-family: sans-serif;
-        margin: 2rem;
+        margin: 1rem;
         background: #f9f9f9;
       }
       h1 {
@@ -89,6 +89,76 @@
         #reserve {
           display: none;
         }
+        .modal-content {
+          width: 70%;
+        }
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.7s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        font-size: 1rem;
+      }
+
+      #send {
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      #send:hover {
+        background: #0056b3;
+      }
+
+      /* .attention {
+        font-size: small;
+        float: right;
+        color: red;
+      } */
+
+      .close {
+        float: right;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: #555;
       }
     </style>
   </head>
@@ -134,11 +204,12 @@
           et bien, vous ne l'avez pas. Par contre si vous l'avez vous mourez.
         </div>
         <div class="bloc" draggable="true">
-          Au début il m’a prise pour une idiote car il a vraiment paniqué,
-          ensuite il m’a raconté ça, puis il m’a dit de rapidement trouver un
-          lieu de prise en charge pour me faire vacciner, et m’a même conseillé
-          d’envoyer un mail à mon assurance médicale de voyage pour lui demander
-          où me rendre pour une vaccination d’urgence dans la région où je suis.
+          Au début il m’a prise pour une idiote car il a paniqué avec la
+          nouvelle, ensuite il m’a raconté ça, puis il m’a dit de rapidement
+          trouver un lieu de prise en charge pour me faire vacciner, et m’a même
+          conseillé d’envoyer un mail à mon assurance médicale de voyage pour
+          lui demander où me rendre pour une vaccination d’urgence dans la
+          région où je suis.
         </div>
         <div class="bloc" draggable="true">J’attends encore la réponse.</div>
         <div class="bloc" draggable="true">
@@ -164,7 +235,8 @@
           lui dire quelque chose en français et j’ai dit
         </div>
         <div class="bloc" draggable="true">
-          "Merci beaucoup pour votre aide" (en joignant les mains comme l’emoji)
+          "Merci beaucoup pour votre aide" (en joignant les mains comme
+          l’emoji)"
         </div>
         <div class="bloc" draggable="true">mais je voulais dire</div>
         <div class="bloc" draggable="true">
@@ -217,12 +289,12 @@
         </div>
         <div class="bloc" draggable="true">
           J’ai vu un autre chien il y a deux jours, j’ai eu le malheur de
-          plonger dans ses yeux, ils m’ont hypnotisée et terrifiée. Lui et moi,
-          on s’est regardés longtemps, et je repense souvent à lui, il
-          tremblait, il avait les morts, ensuite il m’a crié dessus avec sa
-          grande gueule et il m’a suivie en criant. Il ne fallait pas montrer
-          que j’avais peur alors j’ai continué de marcher et mes épaules se sont
-          baissées en respirant.
+          plonger dans ses yeux, ils m’ont hypnotisée et terrifiée. On s’est
+          regardés longtemps, et je repense souvent à lui, il tremblait, il
+          avait les morts, ensuite il m’a crié dessus avec sa grande gueule et
+          il m’a suivie en criant. Il ne fallait pas montrer que j’avais peur
+          alors j’ai continué de marcher et mes épaules se sont baissées en
+          respirant.
         </div>
         <div class="bloc" draggable="true">
           C’était ce qu’on m’avait dit, ne pas montrer la peur, mais en plus il
@@ -239,8 +311,9 @@
           j'avais un peu mal ; ça allait, c'était juste rapé, un peu rose, il y
           avait mon jean. Je me souviens très bien m’être imaginée en short ;
           j'avais hésité à mettre un short ; je pince les yeux comme si des
-          lames s'y glissent, heureusement que je n’ai pas mis de short ohlala.
+          lames s'y glissent, heureusement que je n’ai pas mis de short
         </div>
+        <div class="bloc" draggable="true">ohlala.</div>
         <div class="bloc" draggable="true">
           Donc j'ai continué et trouvé la grande rue dont on m'avait parlé,
           celle avec tous les bars. Par curiosité j’ai soulevé le tissu
@@ -314,12 +387,12 @@
           compris. Je croyais qu’on irait plus tard, qu’on devait repasser
           chercher quelque chose chez lui. Il pleuvait nous avons pris une
           colline, il a demandé à une femme assise devant un bâtiment s’il
-          pouvait se garer là, elle a dit qu’elle n’en savait rien. Jusque là je
-          croyais encore qu’on allait chez lui mais on a tourné à droite et on
-          est immédiatement rentré dans une salle d’attente remplie de gens, ça
-          ressemblait à des urgences. Il a parlé à la dame d’un tout petit
-          accueil pour moi en disant que deux chiens m’avaient mordu les jambes.
-          Elle a pris mon nom, elle riait facilement, je n’avais pas mon
+          pouvait se garer en haut, elle a dit qu’elle n’en savait rien. Jusque
+          là je croyais encore qu’on allait chez lui mais on a tourné à droite
+          et on est immédiatement rentré dans une salle d’attente remplie de
+          gens, ça ressemblait à des urgences. Il a parlé à la dame d’un tout
+          petit accueil pour moi en disant que deux chiens m’avaient mordu les
+          jambes. Elle a pris mon nom, elle riait facilement, je n’avais pas mon
           passeport, puis on a attendu une demie heure avec les autres
           personnes, il y avait une petite fille qui s’ennuyait et répétait les
           noms que le médecin annonçait en passant la porte blindée où se
@@ -332,24 +405,28 @@
           lui c'est le coca, moi le sprite, bon, puis une dame a dit mon nom,
           j’ai discuté avec la femme-falaise, mais il me fallait mon passport,
           on est allé le chercher, grâce à Dieu sur la moto bleue comme celles
-          que je mettrais volontiers en fond d’écran. Il m'aurait été impossible
-          d'en rêver autant. La jante de sa roue avant s'était cassée hier, je
-          n’ai pas compris comment, mais hier. De retour au
-          <em>consultorio</em>, on a appelé mon nom, j’adorais quand elles
-          disaient mon nom. On m’a dit d’aller à droite après la porte blindée
-          (la première fois que je l’avais passée, j’étais allée à gauche), dans
-          une petite salle avec plein de paravents blancs, des lits en cuir et
-          en métal avec par-dessus chaque des pancartes flottantes, des feuilles
-          A4 glissées dans des pochettes de classeur, acrochées par des fils,
-          pour organiser la salle : “Cama 1”, “Cama 2”, “Cama 3”, etc. Le dos
-          des feuilles était vert. Il y avait un tableau blanc avec des petits
-          conseils écrits de toutes les couleurs scolaires (rouge bleu vert
-          noir) à destination du service et des patient.e.s. Il y avait des
-          affiches de prévention pour la <em>salud mental</em> : que c'est beau,
-          les chiens m'ont amenée au bon endroit... J’ai pris des photos de la
-          salle, elles sont mauvaises. De toute façon je vais pouvoir en
-          reprendre, j’y retourne tout le mois ; il y a cinq doses de vaccin à
-          recevoir contre la rage.
+          que je mettrais volontiers en fond d’écran.
+        </div>
+        <div class="bloc" draggable="true">
+          Il m'aurait été impossible d'en rêver autant.
+        </div>
+        <div class="bloc" draggable="true">
+          La jante de sa roue avant s'était cassée hier, je n’ai pas compris
+          comment, mais hier. De retour au <em>consultorio</em>, on a appelé mon
+          nom, j’adorais quand elles disaient mon nom. On m’a dit d’aller à
+          droite après la porte blindée (la première fois que je l’avais passée,
+          j’étais allée à gauche), dans une petite salle avec plein de paravents
+          blancs, des lits en cuir et en métal avec par-dessus chaque des
+          pancartes flottantes, des feuilles A4 glissées dans des pochettes de
+          classeur, acrochées par des fils, pour organiser la salle : “Cama 1”,
+          “Cama 2”, “Cama 3”, etc. Le dos des feuilles était vert. Il y avait un
+          tableau blanc avec des petits conseils écrits de toutes les couleurs
+          scolaires (rouge bleu vert noir) à destination du service et des
+          patient.e.s. Il y avait des affiches de prévention pour la
+          <em>salud mental</em> : que c'est beau, les chiens m'ont amenée au bon
+          endroit... J’ai pris des photos de la salle, elles sont mauvaises. De
+          toute façon je vais pouvoir en reprendre, j’y retourne tout le mois ;
+          il y a cinq doses de vaccin à recevoir contre la rage.
         </div>
         <div class="bloc" draggable="true">
           Toutes les dames qui se sont occupées de moi parlaient à une autre
@@ -370,6 +447,23 @@
     </div>
 
     <div class="paragraphes" id="paragraphes"></div>
+    <div class="modal" id="feedbackModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Dans quelques heures je retourne au <em>consultorio</em><br /></h2>
+        <h3>Qu'est-ce que je pourrais y faire ?</h3>
+        <form id="feedbackForm">
+          <textarea
+            id="message"
+            placeholder="٩( ᐛ )و hortense, tu devrais..."
+          ></textarea>
+          <button id="send" type="submit">envoyer</button><br />
+          <!-- <span class="attention">
+            (vous ne pourrez donner qu'un seul conseil)</span
+          > -->
+        </form>
+      </div>
+    </div>
 
     <script>
       let dragged = null;
@@ -438,6 +532,47 @@
         blocs.forEach((b) => mainZone.appendChild(b));
       }
       window.addEventListener("DOMContentLoaded", shuffleParagraphs);
+      const SCRIPT_URL =
+        "https://script.google.com/macros/library/d/1SLnhDQZY7-WBQrNcjL4-PeH_TNmDC2Fr-8zejMqtN9aM_oaJJaVnWEOz/1https://script.google.com/macros/s/AKfycbz7xOA3wIoH46jFrMLu_3kIlJYL3IMocuLew-FOX3PjyFWpUFbwDou5A5nh7CQ_5pdW/exec";
+
+      function handleScroll() {
+        if (
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 10
+        ) {
+          document.getElementById("feedbackModal").style.display = "flex";
+          window.removeEventListener("scroll", handleScroll); // ← ajoute cette ligne ici
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+
+      // Fermeture du popup
+      document.getElementById("closeModal").onclick = () => {
+        document.getElementById("feedbackModal").style.display = "none";
+      };
+
+      // Envoi du formulaire
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const message = document.getElementById("message").value.trim();
+          if (!message) return alert("il vaut mieux me donner une idée");
+          try {
+            await fetch(SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify({ message }),
+            });
+            alert(
+              "Merci beaucoup pour votre aide (en joignant les mains comme l’emoji)"
+            );
+            document.getElementById("feedbackModal").style.display = "none";
+          } catch (err) {
+            alert("¿hay un problema?");
+            console.error(err);
+          }
+        });
     </script>
   </body>
 </html>
