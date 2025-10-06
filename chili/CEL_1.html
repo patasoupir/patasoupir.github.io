@@ -90,7 +90,10 @@
           display: none;
         }
         .modal-content {
-          width: 70%;
+          padding: 0.5rem;
+        }
+        .modal {
+          padding: 0;
         }
       }
 
@@ -99,6 +102,7 @@
         position: fixed;
         z-index: 999;
         left: 0;
+        border-radius: 3px;
         top: 0;
         width: 100%;
         height: 100%;
@@ -110,7 +114,7 @@
       .modal-content {
         background: white;
         padding: 2rem;
-        border-radius: 1rem;
+
         max-width: 400px;
         width: 90%;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -135,7 +139,7 @@
       }
 
       #send {
-        margin-top: 2rem;
+        margin-top: 1rem;
         padding: 0.5rem 1rem;
         border: none;
         background: #007bff;
@@ -156,9 +160,13 @@
 
       .close {
         float: right;
-        font-size: 1.2rem;
+        font-size: 2rem;
         cursor: pointer;
         color: #555;
+      }
+      #closeModal {
+        margin-left: 3rem;
+        margin-bottom: 3rem;
       }
     </style>
   </head>
@@ -533,7 +541,7 @@
       }
       window.addEventListener("DOMContentLoaded", shuffleParagraphs);
       const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbzkOkzsBRP7NeHhedMVs2Cn2u9c8GXjO8Ip0qyyzP-eP6VybxS4rzS-oq-HqgtqXv7M/exec";
+        "https://script.google.com/macros/s/AKfycbysxT6pvqLWKM5xpv-Yia_tb5jVHBy6ZePJ2woRTUc84XAvQW95tTbhoiT5FOF2Pwpj/exec";
 
       function handleScroll() {
         if (
@@ -560,10 +568,17 @@
           const message = document.getElementById("message").value.trim();
           if (!message) return alert("il vaut mieux me donner une idée");
           try {
-            await fetch(SCRIPT_URL, {
-              method: "POST",
-              body: JSON.stringify({ message }),
-            });
+            await fetch(
+              "https://api.allorigins.win/raw?url=" +
+                encodeURIComponent(
+                  "https://script.google.com/macros/s/TON_URL_EXEC/exec"
+                ),
+              {
+                method: "POST",
+                body: JSON.stringify({ message }),
+                headers: { "Content-Type": "application/json" },
+              }
+            );
             alert(
               "Merci beaucoup pour votre aide (en joignant les mains comme l’emoji)"
             );
