@@ -540,8 +540,11 @@
         blocs.forEach((b) => mainZone.appendChild(b));
       }
       window.addEventListener("DOMContentLoaded", shuffleParagraphs);
-      const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbx33Op_z73Oz4vZF3pFeI8mDhtuBoiEjBVvkGbdRhOox8ySkfunj3RYiXES2S1mGoH1/exec";
+      const scriptURL =
+        "https://api.allorigins.win/raw?url=" +
+        encodeURIComponent(
+          "https://script.google.com/macros/s/AKfycbzaa5zhS17UDjXfWp_Bfn0tXcei2p6zJUYveVfCyFUOCZ3cqPxmQgF8NPrPF77p5WHH/exec"
+        );
 
       function handleScroll() {
         if (
