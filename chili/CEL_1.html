@@ -10,6 +10,17 @@
         margin: 1rem;
         background: #f9f9f9;
       }
+      header {
+        float: left;
+        padding: 4px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: grey;
+      }
       h1 {
         margin-bottom: 1rem;
       }
@@ -151,13 +162,6 @@
       #send:hover {
         background: #0056b3;
       }
-
-      /* .attention {
-        font-size: small;
-        float: right;
-        color: red;
-      } */
-
       .close {
         float: right;
         font-size: 2rem;
@@ -172,7 +176,9 @@
   </head>
 
   <body>
+    <header><a href="../index.html"><< return to precedent</a></header>
     <h1>
+      <br />
       ce texte peut être réorganisé
       <br />
       ou lu dans sa version originale<br />
@@ -461,14 +467,12 @@
         <h2>Dans quelques heures je retourne au <em>consultorio</em><br /></h2>
         <h3>Qu'est-ce que je pourrais y faire ?</h3>
         <form id="feedbackForm">
-          <textarea
+          <input
+            type="text"
             id="message"
-            placeholder="٩( ᐛ )و hortense, tu devrais..."
-          ></textarea>
+            placeholer="٩( ᐛ )و hortense, tu devrais..."
+          />
           <button id="send" type="submit">envoyer</button><br />
-          <!-- <span class="attention">
-            (vous ne pourrez donner qu'un seul conseil)</span
-          > -->
         </form>
       </div>
     </div>
@@ -564,12 +568,15 @@
       };
 
       // Envoi du formulaire
+      console.log("Formulaire soumis !");
+
       document
         .getElementById("feedbackForm")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
           const message = document.getElementById("message").value.trim();
           if (!message) return alert("il vaut mieux me donner une idée");
+
           try {
             await fetch(
               "https://api.allorigins.win/raw?url=" +
@@ -582,8 +589,9 @@
                 headers: { "Content-Type": "application/json" },
               }
             );
+
             alert(
-              "Merci beaucoup pour votre aide (en joignant les mains comme l’emoji)"
+              "Merci beaucoup pour votre aide (en joignant les mains comme l'emoji)"
             );
             document.getElementById("feedbackModal").style.display = "none";
           } catch (err) {

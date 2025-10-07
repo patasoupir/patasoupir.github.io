@@ -57,7 +57,7 @@
         }
       }
       .drawme {
-        font-size: 20pt;
+        font-size: 16pt;
         margin-left: 100px;
         line-height: 30px;
         z-index: 1;
@@ -310,12 +310,16 @@
             <span class="petitTexte">we can't sleep on a chair</span>
           </div>
           <div class="left">
-            Peux-tu dessiner un <span class="policeTwo">lit</span> pour moi ? <br />
-            <span class="petitTexte">Il y en a de moins en moins ces temps-ci</span>
+            Peux-tu dessiner un <span class="policeTwo">lit</span> pour moi ?
+            <br />
+            <span class="petitTexte"
+              >Il y en a de moins en moins ces temps-ci</span
+            >
           </div>
           <div class="left">
-            Puedes dibujarme una <span class="policeTwo">cama</span> por favor ? <br />
-            <span class="exception">Busco un lugar donde vivir </span>
+            Puedes dibujarme una <span class="policeTwo">cama</span> por favor ?
+            <br />
+            <!-- <span class="exception">Busco un lugar donde vivir </span> -->
           </div>
         </div>
       </header>
@@ -413,11 +417,11 @@
                   x="30"
                   y="30"
                   font-family="Symbolicnew"
-                  font-size="50"
-                  text-anchor="left"
-                  dominant-baseline="left"
+                  font-size="20"
+                  text-anchor="center"
+                  dominant-baseline="center"
                   fill="${color}">
-                  Ÿ
+                  🪣
               </text>
           </svg>`;
           const encodedSVG = encodeURIComponent(svgString);
@@ -554,7 +558,10 @@
           const aDiff = Math.abs(imageData.data[pixelPos + 3] - startColor[3]);
           const tolerance = 160;
           return (
-            rDiff <= tolerance && gDiff <= tolerance && bDiff <= tolerance && aDiff <= tolerance
+            rDiff <= tolerance &&
+            gDiff <= tolerance &&
+            bDiff <= tolerance &&
+            aDiff <= tolerance
           );
         }
 
@@ -562,7 +569,8 @@
           const [x, y] = pixelStack.pop();
 
           // Vérification des limites du canvas
-          if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) continue;
+          if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height)
+            continue;
 
           const pixelPos = (y * canvas.width + x) * 4;
 
