@@ -521,19 +521,19 @@
         ).element;
       }
 
+      // Mélange des blocs
       document.getElementById("shuffleBtn").addEventListener("click", () => {
         const mainZone = document.getElementById("main");
         const blocs = Array.from(mainZone.querySelectorAll(".bloc"));
-        // mélange avec Fisher-Yates
         for (let i = blocs.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [blocs[i], blocs[j]] = [blocs[j], blocs[i]];
         }
-        // vider et réinsérer
         blocs.forEach((b) => mainZone.appendChild(b));
       });
 
-      function shuffleParagraphs() {
+      // Mélange automatique au chargement
+      window.addEventListener("DOMContentLoaded", () => {
         const mainZone = document.getElementById("main");
         const blocs = Array.from(mainZone.querySelectorAll(".bloc"));
         for (let i = blocs.length - 1; i > 0; i--) {
@@ -541,29 +541,25 @@
           [blocs[i], blocs[j]] = [blocs[j], blocs[i]];
         }
         blocs.forEach((b) => mainZone.appendChild(b));
-      }
-      window.addEventListener("DOMContentLoaded", shuffleParagraphs);
+      });
 
+      // Pop-up en bas de page
       function handleScroll() {
         if (
           window.innerHeight + window.scrollY >=
           document.body.offsetHeight - 10
         ) {
           document.getElementById("feedbackModal").style.display = "flex";
-          window.removeEventListener("scroll", handleScroll); // ← ajoute cette ligne ici
+          window.removeEventListener("scroll", handleScroll);
         }
       }
-
       window.addEventListener("scroll", handleScroll);
 
-      // Fermeture du popup
+      // Fermeture du pop-up
       document.getElementById("closeModal").onclick = () => {
         document.getElementById("feedbackModal").style.display = "none";
       };
-
-      // Envoi du formulaire
-      console.log("Formulaire soumis !");
-
+      // LE FORMULAIRE GOOGLE SHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESH
       document
         .getElementById("feedbackForm")
         .addEventListener("submit", async (e) => {
@@ -571,21 +567,19 @@
           const message = document.getElementById("message").value.trim();
           if (!message) return alert("il vaut mieux me donner une idée");
 
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbwVN9l3ljfFJuArX7z_421_iRamNwak3jsF_3SVSL0RS2u49LOoRhXBpGv3DePGwRlH/exec";
+
           try {
-            await fetch(
-              "https://api.allorigins.win/raw?url=" +
-                encodeURIComponent(
-                  "https://script.google.com/macros/s/AKfycby_6A6Yek9l-3_6k3z4t0oWcVsj-49cQ9KcuC6O5ztiKWDZO_Nne-dwnOLxrAuMAjcc/exec"
-                ),
-              {
-                method: "POST",
-                body: JSON.stringify({ message }),
-                headers: { "Content-Type": "application/json" },
-              }
-            );
+            const response = await fetch(scriptURL, {
+              method: "POST",
+              mode: "no-cors", // 👈 très important ici merci pour l'émoji
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message }),
+            });
 
             alert(
-              "Merci beaucoup pour votre aide (en joignant les mains comme l'emoji)"
+              "Merci beaucoup pour votre aide (en joignant les mains comme l'émoji)"
             );
             document.getElementById("feedbackModal").style.display = "none";
           } catch (err) {
