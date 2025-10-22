@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>artec carnet en ligne</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 1rem;
+        background: #f9f9f9;
+      }
+      header {
+        float: left;
+        padding: 4px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: grey;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      .actions {
+        margin-bottom: 1rem;
+        gap: 2rem;
+        display: flex;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        background: #007bff;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      button a {
+        color: white;
+        text-decoration: none;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .container {
+        display: flex;
+        gap: 2rem;
+      }
+      .zone {
+        flex: 1;
+        padding: 1rem;
+        background: #fff;
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        min-height: 200px;
+      }
+      .zone h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        color: #555;
+      }
+      .bloc {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: #fefefe;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: grab;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .bloc:active {
+        cursor: grabbing;
+      }
+      .highlight {
+        border-color: #007bff;
+        background: #eef6ff;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        border-radius: 3px;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 2rem;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.7s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        font-size: 1rem;
+      }
+
+      #send {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      #send:hover {
+        background: #0056b3;
+      }
+      .close {
+        float: right;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #555;
+      }
+      #closeModal {
+        margin-left: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      @media only screen and (max-width: 820px) {
+        body {
+          margin: 10px;
+        }
+        h1 {
+          font-size: large;
+        }
+        .actions {
+          gap: 0.5rem;
+        }
+        .container {
+          font-size: 10pt;
+          gap: 1rem;
+        }
+        .zone {
+          padding: 10px;
+        }
+        #reserve {
+          display: none;
+        }
+        .modal-content {
+          padding: 0.5rem;
+        }
+        .modal {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header><a href="../index.html"><< return to precedent paradise</a></header>
+    <h1>
+      <br />
+      ce texte peut être réorganisé
+      <br />
+      ou lu dans sa version originale<br />
+      elle-même un peu en bazar<br />
+      <h3>
+        sur téléphone on ne peut pas intervertir les paragraphes soi-même, on ne
+        peut que les mélanger avec le bouton.
+      </h3>
+    </h1>
+    <div class="actions">
+      <button id="shuffleBtn">🔀 Mélanger les paragraphes</button
+      ><button id="showRealText">
+        <a href="originalText.html">🆒 Montrer le texte original</a>
+      </button>
+    </div>
+    <div class="container">
+      <div class="zone" id="main">
+        <div class="bloc" draggable="true">
+          La définition de <em>consultorio</em> m’est encore inconnue, c’est
+          entre la <em>posta</em> (les urgences) et l’hôpital public, et c'est
+          bien loin des cliniques privées. Je devais me rendre dans l'une
+          d'entre elles au départ, peut-être parce que leur site internet était
+          plus clair, mieux expliqué, aussi parce que mon hôtesse m'avait montré
+          comment elle elle faisait, donc j’avais su prendre rendez-vous, et
+          enfin ça devait surtout être parce que devant elle en espagnol j’avais
+          prononcé le mot <em>clinica</em> sans comprendre qu’il voulait dire
+          clinique, établissement privé, donc payant (je ferai attention
+          maintenant, même en français).
+        </div>
+        <div class="bloc" draggable="true">
+          Après ce n’était pas une histoire de paiement mais d’urgence, de toute
+          urgence m’avait dit le français, le bon médecin français chauve et
+          alarmiste qui m’avait raconté qu’en Tunisie après six mois de voyage
+          et une morsure un homme était mort de retour chez lui - un cas d’école
+          ! On ne nous disait pas ça en médecine avant : avant, la rage se
+          déclarait au bout de deux semaines, si vous ne l'avez pas à leur issue
+          et bien, vous ne l'avez pas. Par contre si vous l'avez vous mourez.
+        </div>
+        <div class="bloc" draggable="true">
+          Au début il m’a prise pour une idiote car il a paniqué avec la
+          nouvelle, ensuite il m’a raconté ça, puis il m’a dit de rapidement
+          trouver un lieu de prise en charge pour me faire vacciner, et m’a même
+          conseillé d’envoyer un mail à mon assurance médicale de voyage pour
+          lui demander où me rendre pour une vaccination d’urgence dans la
+          région où je suis.
+        </div>
+        <div class="bloc" draggable="true">J’attends encore la réponse.</div>
+        <div class="bloc" draggable="true">
+          Après y’avait très peu de risques, et les chiens qui m’avaient mordu
+          selon moi ils venaient d’une maison, parce que j’étais pas seule dans
+          cette rue ; si ces chiens étaient fous ils en auraient mangé davantage
+          des chevilles, ils ont eu peur de moi qui ai surgi des fleurs, enfin
+          j’en suis presque sûre, mais au
+          <em>consultorio</em> à deux reprises on m’a demandé d’où ils venaient
+          les chiens on m'a dit deux fois : <em>callilleros ???</em> quelque
+          chose comme ça, et donc oui, j'ai dit, des chiens dans la rue, perros
+          en la callé donc qu’est-ce que j’en sais moi s’ils étaient à quelqu’un
+          et biens portants, ohlala mais rien ! Là-bas au
+          <em>consultorio</em> on n’a pas insité sur le risque. Personne ne m’a
+          fait peur, au contraire, il fallait faire parce que c’est tout, on
+          fait au cas où, même si y’a presque rien, même si y’avait un jean, car
+          on ne sait pas, car il y a eu du sang. J'ai demandé à mon hôtesse si
+          elle était vaccinée, elle m'a dit non, elle aurait pu rajouter
+          chalance après si elle parlait français et aimait les jeux de mots.
+        </div>
+        <div class="bloc" draggable="true">
+          Sauf que la dame, la dame qui m’a le plus parlé, elle m’a demandé de
+          lui dire quelque chose en français et j’ai dit
+        </div>
+        <div class="bloc" draggable="true">
+          "Merci beaucoup pour votre aide" (en joignant les mains comme
+          l’emoji)"
+        </div>
+        <div class="bloc" draggable="true">mais je voulais dire</div>
+        <div class="bloc" draggable="true">
+          « madame vous êtes belle et calme on dirait la falaise par-dessus la
+          mer où les gens les gens ne se jettent plus, celle en bas de chez moi
+          là qui abrite la belle plage en crique, celle dont on a coupé la tête
+          il y a quarante ans car trop de gens y montaient pour se jeter dans le
+          pacifique : vous êtes la falaise qui ne regarde plus les morts tomber,
+          vous êtes pleine d’herbe de vie et de tristesse car vous ne savez pas
+          si c’était mieux avant, quand il y avait l’escalator vers l’au-delà
+          vous êtes, madame, vivante et pleine de sagesse, on dirait vraiment la
+          falaise, vous êtes la reine des médecins. J’ai dessiné votre
+          silhouette l’autre jour, en me promenant sur ce bout de la ville, je
+          ne savais pas que c’était vous qui par la grâce priait pour que je
+          sois sauvée. »
+        </div>
+        <div class="bloc" draggable="true">
+          Elle me souriait comme on fait aux enfants et tout ce que je disais
+          avait l'air de l'intéresser. Elle parlait lentement pour que je
+          comprenne bien.
+        </div>
+        <div class="bloc" draggable="true">
+          Ensuite, nous sommes sortis dehors, devant le
+          <em>consultorio</em> avec mon sauveur, chauffeur, seul ami et ma seule
+          bonne idée, celui qui m’avait amenée dans cet endroit. Parce que je
+          n’avais pas mon passeport on est redescendus chez moi : je n’avais
+          jamais fait de scooter jpp j’étais heureuse je n’avais pas prévu ça en
+          achetant ma bière à 17h dans l’épicerie où il travaille. C’était là
+          que je lui avais appris qu’il me fallait retourner à Santiago pour
+          recevoir le vaccin antirabique post-exposition. Je n’avais trouvé
+          rendez-vous pour cette raison précise que là-bas. Mais je m'étais mal
+          informée... On m'a dit, c’est bizarre qu’il ne soit qu’à Santiago, ce
+          vaccin… En plus tu devras payer cher…
+        </div>
+
+        <div class="bloc" draggable="true">
+          Après pourquoi je raconte cette histoire qui n’est pas si folle ? Ça
+          m'a donné l'impression de trouver quelque chose, mais tout s'est
+          arrêté d'un coup. Je voulais parler de la rage en long et en large,
+          tout ce que je sais c’est qu’elle n’est pas éteinte, au contraire elle
+          a l'œil entrouvert elle sommeille doucement elle sursaute elle fait
+          BOUH comme ce que je devrai dire aux chiens qui m’attaquent désormais.
+          La rage vit encore, tout comme la haine qui passait il y a trois jours
+          au cinéma du centre-ville, je n'y suis pas allée.
+        </div>
+        <div class="bloc" draggable="true">
+          Quand on a la rage on a aussi peur de l’eau, vous entendez ? Il n’y a
+          aucun moyen de soigner la rage une fois qu'elle s'est déclarée, ça
+          veut dire qu’on en meurt avec la haine de l’eau…
+        </div>
+        <div class="bloc" draggable="true">
+          J’ai vu un autre chien il y a deux jours, j’ai eu le malheur de
+          plonger dans ses yeux, ils m’ont hypnotisée et terrifiée. On s’est
+          regardés longtemps, et je repense souvent à lui, il tremblait, il
+          avait les morts, ensuite il m’a crié dessus avec sa grande gueule et
+          il m’a suivie en criant. Il ne fallait pas montrer que j’avais peur
+          alors j’ai continué de marcher et mes épaules se sont baissées en
+          respirant.
+        </div>
+        <div class="bloc" draggable="true">
+          C’était ce qu’on m’avait dit, ne pas montrer la peur, mais en plus il
+          faut leur crier dessus, je l’ai appris par mon hôtesse après
+          l’attaque. Il faut crier en marchant, non ? Il ne faut pas partir en
+          courant surtout, mais il faut continuer de marcher je crois, car si je
+          m'arrêtais pour crier les canines me trouaient vraiment. Je
+          n'arriverai pas à tout faire en même temps. Là elles avaient ripé sur
+          le tissu.
+        </div>
+
+        <div class="bloc" draggable="true">
+          Après deux-trois rues j’avais regardé ma cheville droite, là où
+          j'avais un peu mal ; ça allait, c'était juste rapé, un peu rose, il y
+          avait mon jean. Je me souviens très bien m’être imaginée en short ;
+          j'avais hésité à mettre un short ; je pince les yeux comme si des
+          lames s'y glissent, heureusement que je n’ai pas mis de short
+        </div>
+        <div class="bloc" draggable="true">ohlala.</div>
+        <div class="bloc" draggable="true">
+          Donc j'ai continué et trouvé la grande rue dont on m'avait parlé,
+          celle avec tous les bars. Par curiosité j’ai soulevé le tissu
+          par-dessus ma jambe gauche,
+        </div>
+        <div class="bloc" draggable="true">oh non, je saigne ici, oh non</div>
+        <div class="bloc" draggable="true">
+          J’ai tout de suite appelé mon amie qui connaît cette ville, elle m’a
+          dit :
+        </div>
+        <div class="bloc" draggable="true">
+          « ah merde oh t'inquiète c'est rien tu peux filmer la rue je veux voir
+          stp »
+        </div>
+        <div class="bloc" draggable="true">j'ai dit</div>
+        <div class="bloc" draggable="true">
+          « non désolée j'ai pas beaucoup de 4g »
+        </div>
+        <div class="bloc" draggable="true">
+          Après sa réaction c'était la bonne. Mon cœur battait de panique et de
+          surprise, j’ai regardé les symptômes de la rabia avec mon unique giga
+          de 4G, au téléphone mon amie m’a conseillé d'aller voir un ami qu'elle
+          avait eu ici, qui travaille au bar, de lui demander du désinfectant,
+          et puis on s’est dit que tout irait bien. Et j'étais d'accord. Au
+          final c'était un prétexte pour parler à quelqu'un - je n'ai pas assez
+          de prétextes je ne suis que mon blocage.
+        </div>
+        <div class="bloc" draggable="true">
+          Cet ami-là m'a donné ce que je voulais avec de la gentillesse en plus.
+          Merci.
+        </div>
+        <div class="bloc" draggable="true">
+          Je ressens de la gratitude et de la peur.
+        </div>
+        <div class="bloc" draggable="true">
+          Je lui ai raconté ma vie à lui aussi je lui ai dit que deux chiens
+          m’avait attaquée, que j'avais eu peur mais que ça allait, que ce
+          n’était pas sérieux du tout, très peu profond, mais je n’ai pas dit
+          que j’étais perdue parce que je ne pouvais pas faire demi-tour, que
+          devant moi je ne savais pas vraiment ce qu'il y avait, car je ne vois
+          qu'avec un œil et ne parle qu’une demie langue. Mais c’est pas grave,
+          tout le monde est très gentil.
+        </div>
+        <div class="bloc" draggable="true">
+          J’ai omis de préciser que juste avant que ça n’arrive je discutais
+          justement avec mes camarades pour savoir comment rendre quelque chose
+          sur ce carnet. Il était 18h. Le soleil s'en allait c'est toujours beau
+          quand il s'en va, j’allais bien trouver des idées dehors. J’étais
+          allée revoir le gars du magasin à côté, il est beau et il a mon âge,
+          mais on ne se comprend pas, et en sortant de son magasin, j’avais
+          trouvé un chemin magnifique recouvert de fleurs, qui se termine dans
+          une rue toute simple où les deux chiens avaient voulu me manger.
+          <div class="bloc" draggable="true">
+            (C'est comme ça que j'ai traduit au début, parce que je ne savais
+            pas dire mordre.)
+          </div>
+        </div>
+        <div class="bloc" draggable="true">
+          Quelle chance, moi qui voulait travailler sur le système médical !
+          J'étais justement sortie pour ça : voir comment on soigne ici !
+        </div>
+        <div class="bloc" draggable="true">
+          C’est donc ce garçon qui m’a proposé de l'attendre, le jour d’après,
+          quand je lui ai demandé quand est-ce qu’il finissait (dans 40 minutes)
+          : j’ai dit oui, de toute façon je comptais aller à l’hôpital dont il
+          venait de me parler, enfin aller en centre-ville, pas retourner chez
+          moi. Je pensais qu’on irait à pied, je venais d’ouvrir ma canette,
+          mais il a fini son travail, il m’a fait un salut il avait deux casques
+          dans la main on est allé jusqu’à sa moto j’ai engloutie ma bière j’ai
+          demandé où nous allions il a dit hospital mais je n’ai quand même rien
+          compris. Je croyais qu’on irait plus tard, qu’on devait repasser
+          chercher quelque chose chez lui. Il pleuvait nous avons pris une
+          colline, il a demandé à une femme assise devant un bâtiment s’il
+          pouvait se garer en haut, elle a dit qu’elle n’en savait rien. Jusque
+          là je croyais encore qu’on allait chez lui mais on a tourné à droite
+          et on est immédiatement rentré dans une salle d’attente remplie de
+          gens, ça ressemblait à des urgences. Il a parlé à la dame d’un tout
+          petit accueil pour moi en disant que deux chiens m’avaient mordu les
+          jambes. Elle a pris mon nom, elle riait facilement, je n’avais pas mon
+          passeport, puis on a attendu une demie heure avec les autres
+          personnes, il y avait une petite fille qui s’ennuyait et répétait les
+          noms que le médecin annonçait en passant la porte blindée où se
+          faisaient les consultations que deux <em>carabineros</em> ont traversé
+          en direction de la sortie, tenant entre eux un homme aux yeux abimés.
+          Passant devant le public, l’homme a dit quelque chose. Ça a fait
+          ricaner mon sauveur mais je ne sais pas encore conjuguer le verbe
+          rire... alors je n’ai pas demandé pourquoi il avait ri... Avec lui on
+          a un peu réussi à discuter, genre c'est quoi ta boisson préférée super
+          lui c'est le coca, moi le sprite, bon, puis une dame a dit mon nom,
+          j’ai discuté avec la femme-falaise, mais il me fallait mon passport,
+          on est allé le chercher, grâce à Dieu sur la moto bleue comme celles
+          que je mettrais volontiers en fond d’écran.
+        </div>
+        <div class="bloc" draggable="true">
+          Il m'aurait été impossible d'en rêver autant.
+        </div>
+        <div class="bloc" draggable="true">
+          La jante de sa roue avant s'était cassée hier, je n’ai pas compris
+          comment, mais hier. De retour au <em>consultorio</em>, on a appelé mon
+          nom, j’adorais quand elles disaient mon nom. On m’a dit d’aller à
+          droite après la porte blindée (la première fois que je l’avais passée,
+          j’étais allée à gauche), dans une petite salle avec plein de paravents
+          blancs, des lits en cuir et en métal avec par-dessus chaque des
+          pancartes flottantes, des feuilles A4 glissées dans des pochettes de
+          classeur, acrochées par des fils, pour organiser la salle : “Cama 1”,
+          “Cama 2”, “Cama 3”, etc. Le dos des feuilles était vert. Il y avait un
+          tableau blanc avec des petits conseils écrits de toutes les couleurs
+          scolaires (rouge bleu vert noir) à destination du service et des
+          patient.e.s. Il y avait des affiches de prévention pour la
+          <em>salud mental</em> : que c'est beau, les chiens m'ont amenée au bon
+          endroit... J’ai pris des photos de la salle, elles sont mauvaises. De
+          toute façon je vais pouvoir en reprendre, j’y retourne tout le mois ;
+          il y a cinq doses de vaccin à recevoir contre la rage.
+        </div>
+        <div class="bloc" draggable="true">
+          Toutes les dames qui se sont occupées de moi parlaient à une autre
+          femme qu'elles appelaient docteur, dans une petite salle où tout se
+          passait. Dans cette salle elles ont copié mon passeport, ont répété
+          mon numéro de téléphone et mon adresse, et de là venaient les piqures
+          et le carnet de vaccination antirabique. Mais la femme à laquelle
+          elles se référaient, je ne l'ai jamais vue.
+        </div>
+        <div class="bloc" draggable="true">
+          Dans tout ça je n’ai pas été inquiète, c’est plutôt maintenant, je
+          n'ai plus de prétexte : qu’est-ce que je vais bien pouvoir faire ?
+        </div>
+      </div>
+      <div class="zone" id="reserve">
+        <h2>Réserve pour réorganiser</h2>
+      </div>
+    </div>
+
+    <div class="paragraphes" id="paragraphes"></div>
+    <div class="modal" id="feedbackModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Dans quelques heures je retourne au <em>consultorio</em><br /></h2>
+        <h3>Qu'est-ce que je pourrais y faire ?</h3>
+        <form id="feedbackForm">
+          <textarea
+            id="message"
+            placeholder="٩( ᐛ )و hortense, tu devrais..."
+          ></textarea>
+          <button id="send" type="submit">envoyer</button><br />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let dragged = null;
+
+      document.querySelectorAll(".bloc").forEach((bloc) => {
+        bloc.addEventListener("dragstart", (e) => {
+          dragged = bloc;
+          bloc.classList.add("highlight");
+        });
+
+        bloc.addEventListener("dragend", (e) => {
+          dragged = null;
+          bloc.classList.remove("highlight");
+        });
+      });
+
+      document.querySelectorAll(".zone").forEach((zone) => {
+        zone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          const afterElement = getDragAfterElement(zone, e.clientY);
+          if (afterElement == null) {
+            zone.appendChild(dragged);
+          } else {
+            zone.insertBefore(dragged, afterElement);
+          }
+        });
+      });
+
+      function getDragAfterElement(container, y) {
+        const draggableElements = [
+          ...container.querySelectorAll(".bloc:not(.highlight)"),
+        ];
+        return draggableElements.reduce(
+          (closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+              return { offset: offset, element: child };
+            } else {
+              return closest;
+            }
+          },
+          { offset: Number.NEGATIVE_INFINITY }
+        ).element;
+      }
+
+      // Mélange des blocs
+      document.getElementById("shuffleBtn").addEventListener("click", () => {
+        const mainZone = document.getElementById("main");
+        const blocs = Array.from(mainZone.querySelectorAll(".bloc"));
+        for (let i = blocs.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [blocs[i], blocs[j]] = [blocs[j], blocs[i]];
+        }
+        blocs.forEach((b) => mainZone.appendChild(b));
+      });
+
+      // Mélange automatique au chargement
+      window.addEventListener("DOMContentLoaded", () => {
+        const mainZone = document.getElementById("main");
+        const blocs = Array.from(mainZone.querySelectorAll(".bloc"));
+        for (let i = blocs.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [blocs[i], blocs[j]] = [blocs[j], blocs[i]];
+        }
+        blocs.forEach((b) => mainZone.appendChild(b));
+      });
+
+      // Pop-up en bas de page
+      function handleScroll() {
+        if (
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 10
+        ) {
+          document.getElementById("feedbackModal").style.display = "flex";
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+      window.addEventListener("scroll", handleScroll);
+
+      // Fermeture du pop-up
+      document.getElementById("closeModal").onclick = () => {
+        document.getElementById("feedbackModal").style.display = "none";
+      };
+      // LE FORMULAIRE GOOGLE SHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESH
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const message = document.getElementById("message").value.trim();
+          if (!message) return alert("il vaut mieux me donner une idée");
+
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbwVN9l3ljfFJuArX7z_421_iRamNwak3jsF_3SVSL0RS2u49LOoRhXBpGv3DePGwRlH/exec";
+
+          try {
+            const response = await fetch(scriptURL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message }),
+            });
+
+            alert(
+              "Merci beaucoup pour votre aide (en joignant les mains comme l'émoji)"
+            );
+            document.getElementById("feedbackModal").style.display = "none";
+          } catch (err) {
+            alert("¿hay un problema?");
+            console.error(err);
+          }
+        });
+    </script>
+  </body>
+</html>

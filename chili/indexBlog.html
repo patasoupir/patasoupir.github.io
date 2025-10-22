@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index du blog</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <style>
+    header {
+      border: transparent;
+      color: transparent;
+      box-shadow: blue 4px 4px 4px;
+      text-align: center;
+      padding: 1rem;
+      background-image: url("imgIndex/indexHeader.jpg");
+      /* background-position: ; */
+      background-size: 100%;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul,
+    li {
+      /* list-style-type: url("pages/img/bordelPage/chien\ mignon.jpg"); */
+      margin: 0;
+      padding: 0;
+    }
+    /* INPUT commentaire style */
+    .modal-content {
+      gap: 1rem;
+    }
+    h2 {
+      font-size: small;
+    }
+    textarea {
+      width: 100%;
+      font-size: 1rem;
+      border: #00ff33;
+      box-shadow: 3px 2px 4px #00ff33;
+      text-align: center;
+    }
+
+    #send {
+      padding: 0.5rem;
+      border: none;
+      background: #00ff33;
+      color: white;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    #send:hover {
+      background: #0056b3;
+    }
+    .menu {
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid rgb(94, 255, 0);
+      border-top: 1px solid rgb(34, 255, 0);
+      padding: 1rem;
+    }
+    /* .menu:hover {
+      box-shadow: blue 4px 4px 4px;
+    } */
+    .typogMenu {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: transparent;
+      justify-content: space-between;
+      border: transparent 1px solid;
+      padding: 1rem;
+      border-image: url("pages/img/bordelPage/chien\ mignon.jpg") 300 / 100px
+        space;
+    }
+    #text hr {
+      width: 1px;
+    }
+    @media only screen and (max-width: 820px) {
+      .mainBox {
+        display: block;
+      }
+      #text {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <p>tête de page</p>
+    </header>
+    <hr />
+    <hr />
+    <main>
+      <div class="mainBox">
+        <div class="zone" id="text">
+          <p>menu</p>
+          <div class="menu">
+            <div class="typogMenu">
+              <p>m</p>
+              <p>e</p>
+              <p>n</p>
+              <p>u</p>
+            </div>
+            <ul>
+              <li>jour 1</li>
+              <li>jour 2</li>
+              <li>jour 3</li>
+              <li>
+                <a href="pages/days/01.10.25.html"
+                  >jour 4 (pour que par la grâce vous soyiez sauvés)</a
+                >
+              </li>
+              <li><a href="pages/days/02.10.25.html">jour 5 (teaser)</a></li>
+              <li><a href="pages/days/03.10.25.html">jour 6 (miiiiaou)</a></li>
+              <hr />
+              début de la déception
+              <hr />
+              <li><a>storys instagrams</a></li>
+              <li>
+                <a href=""
+                  >jour de ce que j'ai compris ensuite comme un date (il n'y
+                  aura jamais de page à ce lien c'était une journée fade)</a
+                >
+              </li>
+              <li>
+                <a href="pages/days/15.10.25.html"
+                  >jour 19 - découverte n°1 + noms de mes rencontres</a
+                >
+              </li>
+              <li>
+                <a href="pages/days/17.10.25.html"
+                  >jour 20 - de nouveau sauvée !</a
+                >
+              </li>
+              <hr />
+              une autre semaine s'est écoulée
+              <hr />
+              <li><a href="pages/days/21.10.25.today.html">today...</a></li>
+            </ul>
+          </div>
+
+          <p>j'arrive pas à tracer de trait ici</p>
+          <hr />
+          <hr />
+
+          <div class="discuter" id="feedbackModal">
+            <div class="modal-content">
+              <h3>vous pouvez ici poser des questions</h3>
+              <h2>
+                les réponses seront accessibles en cliquant sur le clown.
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1-Gg4yU_SZOXPtZiHAYkQazCo4QLekl51qP5mc-STvLw/edit?usp=sharing"
+                  >🤡</a
+                >
+              </h2>
+              <form id="feedbackForm">
+                <textarea id="message" placeholder=""></textarea>
+                <button id="send" type="submit">envoyer la question</button
+                ><br />
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div id="lotImages">
+          <div class="noGap">
+            <img src="imgIndex/indexImg (2).jpg" /><img
+              src="imgIndex/indexImg (1).jpg"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+    </main>
+    <footer>
+      <hr />
+      🤯🤯🤯🤯🤯🤯🤯
+      <hr />
+    </footer>
+
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const message = document.getElementById("message").value.trim();
+          if (!message) return alert("il vaut mieux me donner une idée");
+
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbwVN9l3ljfFJuArX7z_421_iRamNwak3jsF_3SVSL0RS2u49LOoRhXBpGv3DePGwRlH/exec";
+
+          try {
+            const response = await fetch(scriptURL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message }),
+            });
+
+            alert("merci d'avoir interragi avec moi");
+            document.getElementById("feedbackModal").style.display = "none";
+          } catch (err) {
+            alert("¿hay un problema?");
+            console.error(err);
+          }
+        });
+    </script>
+  </body>
+</html>

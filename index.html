@@ -21,10 +21,10 @@
         const lastRedirectTime = localStorage.getItem("lastRedirectTime");
         const currentTime = new Date().getTime();
 
-        // Si lastRedirectTime n'existe pas ou si 15 minutes se sont écoulées
+        // Si lastRedirectTime n'existe pas ou si 15 minutes (===TROIS JOURS plutôt dans correction si ça fonctionne) minutes se sont écoulées
         if (
           !lastRedirectTime ||
-          currentTime - parseInt(lastRedirectTime) > 50 * 60 * 1000
+          currentTime - parseInt(lastRedirectTime) > 500 * 600 * 1000
         ) {
           // Mettre à jour le timestamp
           localStorage.setItem("lastRedirectTime", currentTime);
@@ -41,7 +41,7 @@
       <div class="menu">
         <a href="images.html">images</a>
         <a href="ODIO.html">sons</a>
-        <a href="chili/léa.html">combles</a>
+        <a href="chili/indexBlog.html">chili</a>
         <a href="https://matias.ma/nsfw/">?</a>
       </div>
     </header>
