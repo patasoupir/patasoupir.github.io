@@ -22,11 +22,14 @@
       flex-direction: column;
     }
 
-    ul,
-    li {
+    ul {
       /* list-style-type: url("pages/img/bordelPage/chien\ mignon.jpg"); */
       margin: 0;
       padding: 0;
+      line-height: 2rem;
+    }
+    li {
+      padding-left: 1rem;
     }
     /* INPUT commentaire style */
     .modal-content {
@@ -34,6 +37,9 @@
     }
     h2 {
       font-size: small;
+    }
+    .bold {
+      font-weight: bold;
     }
     textarea {
       width: 100%;
@@ -61,6 +67,7 @@
       border-bottom: 1px solid rgb(94, 255, 0);
       border-top: 1px solid rgb(34, 255, 0);
       padding: 1rem;
+      box-shadow: rgb(21, 6, 234) 2px 2px 24px;
     }
     /* .menu:hover {
       box-shadow: blue 4px 4px 4px;
@@ -76,9 +83,7 @@
       border-image: url("pages/img/bordelPage/chien\ mignon.jpg") 300 / 100px
         space;
     }
-    #text hr {
-      width: 1px;
-    }
+
     @media only screen and (max-width: 820px) {
       .mainBox {
         display: block;
@@ -97,7 +102,6 @@
     <main>
       <div class="mainBox">
         <div class="zone" id="text">
-          <p>menu</p>
           <div class="menu">
             <div class="typogMenu">
               <p>m</p>
@@ -106,44 +110,56 @@
               <p>u</p>
             </div>
             <ul>
+              <hr />
+              👩‍✈️ days !
+              <hr />
               <li>jour 1</li>
               <li>jour 2</li>
               <li>jour 3</li>
               <li>
                 <a href="pages/days/01.10.25.html"
-                  >jour 4 (pour que par la grâce vous soyiez sauvés)</a
+                  ><span class="bold">jour 4</span> (pour que par la grâce vous
+                  soyiez sauvés)</a
                 >
               </li>
-              <li><a href="pages/days/02.10.25.html">jour 5 (teaser)</a></li>
-              <li><a href="pages/days/03.10.25.html">jour 6 (miiiiaou)</a></li>
-              <hr />
-              début de la déception
-              <hr />
-              <li><a>storys instagrams</a></li>
               <li>
-                <a href=""
-                  >jour de ce que j'ai compris ensuite comme un date (il n'y
-                  aura jamais de page à ce lien c'était une journée fade)</a
+                <a href="pages/days/02.10.25.html"
+                  ><span class="bold">jour 5</span> (teaser)</a
                 >
               </li>
+              <li>
+                <a href="pages/days/03.10.25.html"
+                  ><span class="bold">jour 6</span> (miiiiaou)</a
+                >
+              </li>
+
+              <hr />
+              début de déceptions
+              <hr />
+              <li>
+                <a
+                  >jour de story instagram (je les mettrai ici plus tard
+                  iguess)</a
+                >
+              </li>
+              <li>jour de date (il n'y aura jamais de page à ce lien)</li>
               <li>
                 <a href="pages/days/15.10.25.html"
-                  >jour 19 - découverte n°1 + noms de mes rencontres</a
-                >
-              </li>
-              <li>
-                <a href="pages/days/17.10.25.html"
-                  >jour 20 - de nouveau sauvée !</a
+                  ><span class="bold">jour 19</span> - découverte n°1 + noms de
+                  mes rencontres</a
                 >
               </li>
               <hr />
               une autre semaine s'est écoulée
               <hr />
+              <li>
+                <a href="pages/days/17.10.25.html"
+                  ><span class="bold">jour 20</span> - de nouveau sauvée !</a
+                >
+              </li>
               <li><a href="pages/days/21.10.25.today.html">today...</a></li>
             </ul>
           </div>
-
-          <p>j'arrive pas à tracer de trait ici</p>
           <hr />
           <hr />
 
@@ -178,7 +194,8 @@
     </main>
     <footer>
       <hr />
-      🤯🤯🤯🤯🤯🤯🤯
+      <em>indulgence pour le vide et la da iphone 3gs... le fun viendra...</em
+      >🤯🤯🤯🤯🤯🤯🤯
       <hr />
     </footer>
 
