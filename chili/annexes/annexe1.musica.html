@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>la musica !</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <style>
+    body {
+      color: white;
+      background-color: blue;
+      font-family: arial;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+
+    div {
+      font-size: 40pt;
+      margin: 2%;
+      animation: blink 0.5s infinite, changementCouleur 2s infinite alternate;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes changementCouleur {
+      0% {
+        color: red;
+      }
+      100% {
+        color: yellow;
+      }
+    }
+    .mainBox {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem;
+    }
+    .zone {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    #text {
+      flex: 0.5;
+    }
+    #text img {
+      max-width: 100%;
+    }
+    #lotImages {
+      flex: 1;
+    }
+    footer {
+      text-align: right;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: blue;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+    }
+    header a:hover {
+      color: blue;
+    }
+    li {
+      list-style-type: none;
+    }
+
+    @media only screen and (max-width: 820px) {
+      .mainBox {
+        display: block;
+      }
+      #text {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <hr />
+      <p><a href="../../indexBlog.html"> << return to precedent</a></p>
+      <hr />
+    </header>
+    <main>
+      <div class="mainBox">
+        <div class="zone" id="text">
+          not available for the momentnot available for the momentnot available
+          for the momentnot available for the momentnot available for the
+          momentnot available for the momentnot available for the momentnot
+          available for the moment
+        </div>
+        <div class="zone" id="lotImages">not available for the moment</div>
+      </div>
+    </main>
+  </body>
+</html>

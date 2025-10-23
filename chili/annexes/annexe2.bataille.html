@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>la revolución !</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <style>
+    body {
+      font-family: "Courier New", Courier, monospace;
+    }
+    .mainBox {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem;
+    }
+    .zone {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    #text {
+      flex: 0.5;
+      border-image: url("../imgIndex/drap2.gif") 20 / 200px space;
+    }
+    #text img {
+      max-width: 100%;
+    }
+    #lotImages {
+      flex: 1;
+    }
+    footer {
+      text-align: right;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: blue;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header a:hover {
+      color: blue;
+    }
+    li {
+      list-style-type: none;
+    }
+
+    @media only screen and (max-width: 820px) {
+      .mainBox {
+        display: block;
+      }
+      #text {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <hr />
+      <p><a href="../../indexBlog.html"> << return to precedent</a></p>
+      <hr />
+    </header>
+    <main>
+      <div class="mainBox">
+        <div class="zone" id="text">
+          svp mes amis révolutionnaires
+          <p>regardez ce film !!!</p>
+          <p>
+            c'est long... moi j'en suis qu'au milieu de la deuxième partie...
+            mais ça vaut le détour... regardez ce film...
+          </p>
+        </div>
+        <div class="zone" id="lotImages">
+          <iframe
+            max-width="100%"
+            heiht="500"
+            src="https://www.youtube.com/embed/h8Xm3cfLSPI?si=fC6V_f059Ckbagwa"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            max-width="100%"
+            src="https://www.youtube.com/embed/Bc4qPzlIopY?si=YRhzAWdjOCRts99j"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            max-width="100%"
+            src="https://www.youtube.com/embed/UjmnV-QfEn0?si=Fc3_ssJkkboE44zt"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
