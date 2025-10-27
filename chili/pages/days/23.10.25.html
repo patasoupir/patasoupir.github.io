@@ -14,11 +14,12 @@
       padding: 3px; */
     }
     header a {
-      color: transparent;
+      opacity: 0.1;
     }
     header a:hover {
       color: yellow;
-      font-size: 30pt;
+      font-size: 70pt;
+      opacity: 1;
     }
     #header1 {
       font-size: 40pt;
@@ -38,10 +39,6 @@
     }
     blockquote {
       animation: blink ease 0.7s infinite;
-      /* border: yellow dotted 4px;
-      background-color: yellow;
-      padding: 3px;
-     */
     }
     #center blockquote {
       flex: 1;
@@ -58,15 +55,23 @@
       animation: none;
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      background-color: cornflowerblue;
+      animation: blink ease 0.8s infinite;
     }
-    .cueca1 audio {
-      background-color: transparent;
-    }
+
     .cueca1 {
       animation: blink ease 0.5s infinite;
       border: yellow dotted 4px;
       background-color: yellow;
-      padding: 3px;
+      padding: 20px;
+      margin: 100px;
+    }
+    .pablo {
+      margin: 300px;
+      color: blue;
+      font-weight: 500;
+      border: dotted 8px yellow;
+      animation: blink ease 0.8s infinite;
     }
     @keyframes blink {
       0% {
@@ -94,12 +99,17 @@
         <div id="header1">AAAAAH..... LA CUECA..............</div>
         <audio controls autoplay muted>
           <source src="../son/audioCueca1.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
         </audio>
         <div id="mainBloc">
           <div id="sideLeft"></div>
           <div id="sideRight"></div>
-          <!-- <div class="cueca"></div> -->
+          <div class="pablo">
+            ça c si vous voulez m'entendre parler espagnol
+            <audio controls autoplay muted>
+              <source src="../son/pabloAuTel.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
           <div id="center">
             <blockquote
               class="instagram-media"
@@ -403,6 +413,7 @@
           procurer la meilleure sensation du monde, il faut gonfler ses joues
           par dessus plein de gens qui font la fête autour d'une table
         </div>
+        <div class="cueca1"></div>
       </div>
     </main>
   </body>
