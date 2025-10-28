@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index du blog</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <style>
+    body {
+      overflow-y: hidden;
+    }
+    #text {
+      gap: 0;
+      position: absolute;
+      opacity: 0.5;
+    }
+    #text img {
+      max-width: 70%;
+    }
+    .bottom {
+      display: flex;
+      max-width: 100vh;
+    }
+    @media (max-width: 479px) {
+      body {
+        overflow-y: hidden;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <p><a href="../../indexBlog.html"> << return to precedent</a></p>
+    </header>
+    <main>
+      <div class="mainBox">
+        <div class="zone" id="text">
+          <img src="../../imgIndex/message (1).jpg" />
+          <img src="../../imgIndex/message (2).jpg" />
+        </div>
+        <div class="zone" id="lotImages"></div>
+      </div>
+      <div class="bottom">
+        <img src="../img/27.10.25/panorama (2).jpg" />
+        <img src="../img/27.10.25/panorama (3).jpg" />
+        <img src="../img/27.10.25/panorama (4).jpg" />
+        <img src="../img/27.10.25/panorama (5).jpg" />
+        <img src="../img/27.10.25/panorama (6).jpg" />
+        <img src="../img/27.10.25/panorama (7).jpg" />
+        <img src="../img/27.10.25/panorama (8).jpg" />
+        <!-- <img src="../img/27.10.25/panorama (9).jpg" /> -->
+      </div>
+    </main>
+    <footer>
+      <hr />
+
+      <hr />
+    </footer>
+  </body>
+</html>
+
+<!-- pas oublier ça :
+ @media only screen and (max-width: 820px) {
+        .mainBox {
+          display: block;
+        }
+        #text {
+          display: block;
+        }
+      } -->
+
+<!-- PAGE ERROR STYLE:
+
+      body {
+        color: white;
+        background-color: blue;
+        font-family: arial;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      div {
+        font-size: 40pt;
+        margin: 2%;
+        animation: blink 0.5s infinite, changementCouleur 2s infinite alternate;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes changementCouleur {
+        0% {
+          color: red;
+        }
+        100% {
+          color: yellow;
+        }
+      }
+ -->
