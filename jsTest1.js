@@ -5,11 +5,11 @@
 // par exemple pour ajouter 20 points en une seule fois.
 // Ici, on veut que chaque clic ajoute un seul point,
 // jusqu'à un maximum de 20 — donc une boucle n'est pas nécessaire.
-let liste = document.querySelector(".liste");
-let un = document.querySelector(".un");
-let deux = document.querySelector(".deux");
-let trois = document.querySelector(".trois");
-let quatre = document.querySelector(".quatre");
+// let liste = document.querySelector(".liste");
+// let un = document.querySelector(".un");
+// let deux = document.querySelector(".deux");
+// let trois = document.querySelector(".trois");
+// let quatre = document.querySelector(".quatre");
 
 // BUTTONPOURLEBIEN //
 const buttonPourLeBien = document.getElementById("buttonPourLeBien");
