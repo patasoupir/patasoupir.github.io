@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index du blog</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .tete {
+      width: 30%;
+      margin: 0 auto;
+      text-align: center;
+      background-image: url("../img/home/cool\ \(1\).jpg");
+      background-size: 100%;
+      background-position: center;
+      padding: 300px;
+    }
+    header {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-image: url("../img/home/cool\ \(1\).jpg");
+      background-size: 100%;
+    }
+    header a:hover {
+      color: transparent;
+    }
+    .mainBox {
+      display: flex;
+    }
+    .mainBox hr {
+      color: red;
+    }
+    .text,
+    .text1,
+    .text2,
+    .lotImages {
+      flex: 1;
+    }
+    .text {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      color: orange;
+      font-size: 3rem;
+    }
+    img {
+      max-width: 100%;
+    }
+    footer {
+      margin-left: 70%;
+    }
+    .lotImages {
+      display: block;
+      margin: 1rem;
+    }
+    @media only screen and (max-width: 820px) {
+      body {
+        margin: 0;
+      }
+      .tete {
+        padding: 3rem;
+        /* background-image: url("../img/teteDrole1.jpeg");
+        object-fit: fill; */
+      }
+      .mainBox {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        flex: 1;
+      }
+      .text1 {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <div class="tete">la tete ici</div>
+    <header>
+      <p><a href="../../indexBlog.html"> << return to menu</a></p>
+      <hr />
+    </header>
+    <main>
+      <div class="mainBox">
+        <div class="text">
+          ça y est les amis ça y est ça y est ça y est je déménage !!!!!!!!!!
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          <p>
+            en una casa completamente diferente ; el oposito de dondé yo vivo
+            ahora ; une toilette et 5 filles entre 20m2...
+          </p>
+        </div>
+        <hr />
+        <div class="text1">
+          <img src="../img/home/cool (1).jpg" />
+          <!-- <img src="../img/home/cool (2).jpg" /> -->
+          <img src="../img/home/cool (3).jpg" />
+          <img src="../img/home/cool (4).jpg" />
+        </div>
+        <hr />
+        <div class="text2">
+          <h2>comme dirait Anouk :</h2>
+          <h1>comment te retrouver ?</h1>
+          tranquilité… solitude… réflexion… tristesse profonde et insignifiante…
+          mélancolie ensoleillée… chambre où je peux **ter…
+        </div>
+      </div>
+      <hr />
+      <hr />
+      <hr />
+      <div class="lotImages">
+        afin de dire adieu à mon quartier aimé, je suis retournée voir les
+        chiens qui m'ont attaquée et j'ai racheté une bière à l'épicerie de
+        celui qui m'a sauvée. c'était très drôle il y avait beaucoup de monde,
+        tous les vendeurs (et ils sont genre SIX) sont des garçons du même âge.
+        je trouve ça hilarant. je ne suis venue que pour l'un d'eux… il m'a dit
+        hola WTF J'AI BU TROIS GORG2ES je suis bourrée BREF : JE DEMENAGE !!!!
+      </div>
+    </main>
+    <footer>
+      <hr />
+      FIN
+      <hr />
+    </footer>
+  </body>
+</html>
+
+<!-- pas oublier ça :
+ @media only screen and (max-width: 820px) {
+        .mainBox {
+          display: block;
+        }
+        #text {
+          display: block;
+        }
+      } -->
+
+<!-- PAGE ERROR STYLE:
+
+      body {
+        color: white;
+        background-color: blue;
+        font-family: arial;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      div {
+        font-size: 40pt;
+        margin: 2%;
+        animation: blink 0.5s infinite, changementCouleur 2s infinite alternate;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes changementCouleur {
+        0% {
+          color: red;
+        }
+        100% {
+          color: yellow;
+        }
+      }
+ -->
