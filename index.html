@@ -12,23 +12,9 @@
       window.addEventListener("load", function () {
         // Vérifier si c'est la première visite
         if (!localStorage.getItem("firstVisit")) {
+          // Marquer la première visite
           localStorage.setItem("firstVisit", "done");
-          window.location.href = "paint.html";
-          return;
-        }
-
-        // Récupérer le timestamp de la dernière redirection
-        const lastRedirectTime = localStorage.getItem("lastRedirectTime");
-        const currentTime = new Date().getTime();
-
-        // Si lastRedirectTime n'existe pas ou si 15 minutes (===TROIS JOURS plutôt dans correction si ça fonctionne) minutes se sont écoulées
-        if (
-          !lastRedirectTime ||
-          currentTime - parseInt(lastRedirectTime) > 500 * 600 * 1000
-        ) {
-          // Mettre à jour le timestamp
-          localStorage.setItem("lastRedirectTime", currentTime);
-          // Rediriger vers first-visit.html
+          // Rediriger une seule fois
           window.location.href = "paint.html";
         }
       });
