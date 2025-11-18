@@ -57,6 +57,7 @@
         display: inline-block;
         position: relative;
         cursor: none;
+        box-shadow: 0px 0px 1000px rgba(241, 1, 1, 0.881);
       }
       img.responsive {
         display: block;
@@ -78,12 +79,17 @@
         font-size: 14px;
         transform: translate(0, 0);
       }
+      @media only screen and (max-width: 820px) {
+        #tooltip {
+          font-size: 8px;
+        }
+      }
       area {
         cursor: grab;
       }
 
       /* boîtes d'info visibles sous l'image (optionnel) */
-      .infos {
+      /* .infos {
         margin-top: 12px;
         display: flex;
         gap: 8px;
@@ -95,7 +101,7 @@
         background: #efefef;
         border: 1px solid #ccc;
         width: 200px;
-      }
+      } */
 
       .popup {
         position: absolute;
@@ -120,7 +126,7 @@
       }
       /* FAUTEUIL : images cachées */
       .divImages {
-        display: none;
+        max-width: 100%;
       }
       button {
         background: transparent;
@@ -295,8 +301,11 @@
         <p>tu as peur de moi ? y'a que toi qui pense ça...</p>
         <a href="CEL_1.html">revenir à la première consultation</a>
 
-        <a href="#">images du premier consultorio ? bientôt</a>
-        <div id="popupTexte" class="popup" style="width: 700px"></div>
+        <a href="#">une image du premier consultorio</a>
+        <div class="divImages"><img src="img/consultorio.jpg" /></div>
+        <p>
+          désolée pour le filtre terrifiant en fait je trouve ça super marrant
+        </p>
 
         <button class="closeBtn">x</button>
       </div>
@@ -521,7 +530,7 @@
           if (e.target.closest && e.target.closest(".popup")) return;
           closeAllPopups();
         });
-      })();
+      });
       function checkFirstVisit() {
         document.getElementById("welcomePopup").style.display = "flex";
       }
