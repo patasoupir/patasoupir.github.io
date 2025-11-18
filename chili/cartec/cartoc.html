@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grand-espace {
+        position: relative;
+        width: 2000px;
+        height: 2000px;
+        background: #242424;
+        background: radial-gradient(
+          circle,
+          rgb(255, 255, 255) 0%,
+          rgb(187, 211, 213) 13%,
+          rgb(201, 165, 89) 93%,
+          rgb(108, 103, 103) 100%
+        );
+      }
+      #centre {
+        position: absolute;
+        top: 1000px;
+        left: 1000px;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        display: inline-block;
+        box-shadow: 0px 0px 500px rgb(255, 255, 255);
+        width: 20px;
+        height: 20px;
+      }
+      #centre:hover {
+        cursor: grab;
+        background-image: url(img/bureau2.JPG);
+        padding: 60px;
+        box-shadow: 0px 0px 50px rgb(1, 35, 255);
+        transition: ease 5s;
+      }
+      #centre a {
+        color: transparent;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grand-espace">
+      <a href="cartuc.html"><div id="centre"></div></a>
+    </div>
+    <script>
+      window.onload = function () {
+        window.scrollTo(
+          document.getElementById("centre").offsetLeft - window.innerWidth / 2,
+          document.getElementById("centre").offsetTop - window.innerHeight / 2
+        );
+      };
+    </script>
+  </body>
+</html>

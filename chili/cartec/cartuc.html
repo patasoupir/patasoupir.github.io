@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>salle d'attente</title>
+    <style>
+      /* popup de départ !!!! */
+      .welcome-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 1000;
+      }
+      .popup-content {
+        background-color: rgb(254, 245, 245);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0px 0px 1000px rgba(241, 1, 1, 0.881);
+        color: black;
+        display: block;
+        padding: 4rem;
+        width: 500px;
+      }
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: blue;
+        border-radius: 0;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+      }
+      .close-popup:hover {
+        color: white;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+      }
+
+      /* image responsive (garde le ratio) */
+      .img-wrap {
+        max-width: 100%;
+        display: inline-block;
+        position: relative;
+        cursor: none;
+      }
+      img.responsive {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* tooltip unique réutilisable */
+      #tooltip {
+        position: absolute;
+        display: none;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        pointer-events: none; /* ne gêne pas la souris */
+        white-space: nowrap;
+        z-index: 9999;
+        font-size: 14px;
+        transform: translate(0, 0);
+      }
+      area {
+        cursor: grab;
+      }
+
+      /* boîtes d'info visibles sous l'image (optionnel) */
+      .infos {
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .infos .info {
+        display: none;
+        padding: 8px;
+        background: #efefef;
+        border: 1px solid #ccc;
+        width: 200px;
+      }
+
+      .popup {
+        position: absolute;
+        display: none;
+        background: white;
+        padding: 12px;
+        width: 240px;
+        z-index: 2000;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        cursor: crosshair;
+      }
+      .popup a {
+        text-decoration: none;
+        color: black;
+      }
+      .popup a:hover {
+        color: grey;
+      }
+
+      #poignee:hover {
+        cursor: cell;
+      }
+      /* FAUTEUIL : images cachées */
+      .divImages {
+        display: none;
+      }
+      button {
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        font-family: sans-serif;
+        line-height: 2rem;
+      }
+      button:hover {
+        cursor: grab;
+        color: blue;
+      }
+      .closeBtn {
+        border: none;
+        cursor: grab;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: blue;
+        border-radius: 0;
+        margin-bottom: 1rem;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+      }
+      .closeBtn:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-popup" id="welcomePopup">
+      <div id="#triangle-top"></div>
+      <div class="popup-content">
+        <button class="close-popup" onclick="closePopup()">&times;</button>
+        <h2>attention !</h2>
+        <p>
+          si vous regardez ce travail sur un ordinateur, nous vous conseillons
+          de vous promener lentement. vous pourriez y perdre la main.
+        </p>
+      </div>
+    </div>
+
+    <div class="img-wrap">
+      <!-- Remplace src par ton image -->
+      <img
+        id="theImage"
+        class="responsive"
+        src="img/bureau2.JPG"
+        alt="bureau"
+        width="3264"
+        height="2420"
+        usemap="#zones"
+      />
+      <div id="popupTV" class="popup">
+        <button class="closeBtn">x</button>
+        <h3>ya has escuchado la TV aca?</h3>
+        <p>no... aunqué habia una en mi pieza...</p>
+        <p>
+          pero vi peliculas... peliculas sobre
+          <a href="cartec.html">Chile</a>...
+        </p>
+        <p class="small">
+          <a href="https://www.youtube.com/watch?v=Mm8PZFz9T-E">📺</a>
+        </p>
+      </div>
+
+      <div id="popupCadre" class="popup">
+        <button class="closeBtn">x</button>
+        <h3>Le cadre</h3>
+        <p>
+          Le cadre ? Mais il est paradisiaque ! Attention cependant, la ville a
+          beaucoup changé. Beaucoup changé... Fais bien attention à tes
+          affaires. Fais bien attention en te promenant dans la rue. Une
+          <em>racaille</em> pourrait te prendre ton téléphone. C'est arrivé hier
+          à une italienne ! Elle avait passé la soirée avec tout le monde, elle
+          a quitté la place pour aller faire pipi, sans doute le regardait-elle
+          de trop près son écran... HOP/ quelqu'un est arrivé et lui a tiré le
+          cellular.
+        </p>
+      </div>
+
+      <div id="popupArbre" class="popup">
+        <h3>Arbre</h3>
+        <p>eh toi là-bas ! salut !</p>
+
+        <p>oh salut l'arbre ! comment ça va ?</p>
+        <p>super bien!</p>
+        <p>mais tu rayonnes ! comment ça se fait que tu ailles si bien ?</p>
+        <p>
+          il faut que tu fasses comme moi : consommer des champignons... pour
+          soigner ton esprit.
+        </p>
+        <p>
+          Consulter un psychologue avec des mycoses, quoi, moi ? Trop bizarre.
+          ça coute combien ?
+        </p>
+        <p>hmmm... 100 euros à peu près !</p>
+        <p>ah. et la consultation de 9h, elle est remboursée ?</p>
+        <p>oui ! mais seulement par Isapre, l'assurance la plus chère.</p>
+        <p>
+          ah ça tombe mal, je ne l'ai pas. Personne ne l'a celle-là. pourtant
+          j'ai vraiment besoin de me délivrer de mon anxiété sévère et de mettre
+          fin aux idées suicidaires qui me plombent vraiment, vraiment le moral.
+        </p>
+        <p>
+          ah ma chère... malheureusement, les consultations psychologiques sous
+          champi sont déconseillées aux personnes dans votre cas, ayant eu des
+          pensées suicidaires il y a moins de 8 semaines, souffrant d'anxiété
+          grave, ou bien présentant des troubles schyzophréniques et bipolaires.
+          après, je pense que ça dépend de toustes.
+        </p>
+        <p>
+          oui, je suis d'accord. mais bon là je n'ai plus très envie. de toute
+          façon, c'est super cher.
+        </p>
+        <p>
+          vous avez raison. j'espère que vous allez trouver un moyen pour vous
+          aider. vous avez essayé la
+          <a
+            href="https://www.google.com/search?sca_esv=d8140a1b87a5a1ad&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQYfURUq58J6Fn4NbJBsIlHfjq0kNfSbygTwSRrWtUGJ2okyCo_dM2pv2SOH7zOxQBgKknUeqQ6n86IaR145uR-cdsd5L3TU1Mi6OOprz6fXgq3EblvG7X6DrF9UitIBxZgr1-JbZGf3aEa45rrvq1PFJWgDM58vtq2Q7TmN5LdFvw9pOcvzskqods0a5i6eWVtgWi1dpRV9qe89PsVBNovzw-QvY&q=biodanza&sa=X&ved=2ahUKEwjHw_DNt_yQAxU6ppUCHR5eAQMQtKgLegQIExAB"
+            >biodanza</a
+          >????? ?
+        </p>
+        <button class="closeBtn">x</button>
+      </div>
+
+      <div id="popupFleur" class="popup">
+        <h3>fleur</h3>
+        <p>
+          une fleur pour tous les bouquets que j'ai fait et les plantes que
+          j'apprends à faire pousser. pourquoi se servir d'un ordinateur ? c'est
+          super déprimant...
+        </p>
+        <button class="closeBtn"><a href="credit.html">x</a></button>
+      </div>
+
+      <div id="popupJournal" class="popup">
+        <h3>un journal posé là</h3>
+        <p>approche-toi pour mieux lire !</p>
+        <a href="transcription.html">lire le journal</a>
+        <button class="closeBtn">x</button>
+      </div>
+
+      <div id="popupRadiateur" class="popup">
+        <h3>un peu de chaleur !</h3>
+        <p>
+          hola Ingrid ! muchas gracias 💖💖💖💖💖💖💖
+          <a
+            href="https://psicologosxchile.cl/ingrid-nuestra-nueva-asistente-virtual-que-facilita-tus-dudas-y-tu-atencion/"
+            >ingrid !</a
+          >
+        </p>
+        <p>
+          ingrid est toute nouvelle ! elle vient d'entrer dans l'entreprise !
+        </p>
+        <p>on peut t'entendre s'il te plait ?</p>
+        <button id="fin" onclick="play()">
+          ingrid ?
+          <audio id="hiddenSoundFin">
+            <source src="son/fin.mp3" />
+          </audio>
+        </button>
+
+        <button class="closeBtn">x</button>
+      </div>
+
+      <div id="popupFauteuil" class="popup">
+        <h3>assied-toi un moment, reste assise... là, voilà.</h3>
+        <p>tu as peur de moi ? y'a que toi qui pense ça...</p>
+        <a href="CEL_1.html">revenir à la première consultation</a>
+
+        <a href="#">images du premier consultorio ? bientôt</a>
+        <div id="popupTexte" class="popup" style="width: 700px"></div>
+
+        <button class="closeBtn">x</button>
+      </div>
+
+      <!-- 
+        <p>othello parle tout seul</p>
+        <p>
+          othello est fou il a tout inventé il parle tout seul avec une grande
+          couverture sur lui
+        </p>
+        <p>grrmlllrkrlklrlllll</p>
+        <p>pièce de théâtre, 20 décembre 2025</p>
+        <p>en attendant il faut qu'on répète</p>
+        <button class="closeBtn">x</button>
+      </div> -->
+
+      <div id="popupDernierCadre" class="popup" style="width: 500px">
+        <button>
+          un peu de musique ? ça reste dans la tête
+          <audio controls>
+            <source src="son/locaFULL.mp3" type="audio/mpeg" />
+          </audio>
+        </button>
+      </div>
+
+      <!-- tooltip réutilisé -->
+      <div id="tooltip"></div>
+    </div>
+
+    <!-- MAP : coords d'origine (par rapport à naturalWidth/naturalHeight) -->
+    <map name="zones">
+      <!-- CORRIGÉ : pas de balise mal fermée -->
+      <area
+        shape="rect"
+        coords="189,477,737,790"
+        id="TV"
+        alt="TV"
+        data-tooltip="Télévision"
+        data-popup="popupTV"
+      />
+      <area
+        shape="rect"
+        coords="1119,442,1284,744"
+        id="cadre"
+        alt="cadre"
+        data-tooltip="Cadre"
+        data-popup="popupCadre"
+      />
+      <area
+        shape="circle"
+        coords="338,1425,92"
+        id="arbre"
+        alt="arbre"
+        data-tooltip="Arbre"
+        data-popup="popupArbre"
+      />
+      <area
+        shape="poly"
+        coords="40,1206,96,1342,29,1437,96,1560,209,1529,237,1564,110,1667,24,1613,9,1547,56,1543,9,1430,35,1323,27,1226,41,1204,41,1198"
+        id="fleur"
+        data-tooltip="Fleur"
+        data-popup="popupFleur"
+      />
+      <area
+        shape="rect"
+        coords="718,1643,810,1704"
+        id="prise"
+        href="https://www.cchr.fr/newsletter/volume4/issue3/saving-chiles-youth-from-forced-psychiatric-drugging.html"
+        data-tooltip="?"
+      />
+      <area
+        shape="poly"
+        coords="1,1800,301,1769,309,1826,5,1864,1,1798,2,1798"
+        id="journal"
+        data-tooltip="journal"
+        data-popup="popupJournal"
+      />
+      <area
+        shape="poly"
+        coords="1146,1565,1204,1539,1307,1543,1359,1570,1380,1706,1369,1944,1418,2014,1310,2036,1123,2025,1063,1995,1132,1962,1094,1911,1110,1672,1137,1552,1151,1563,1147,1563"
+        id="radiateur"
+        data-tooltip="Radiateur"
+        data-popup="popupRadiateur"
+      />
+      <area
+        shape="poly"
+        coords="2156,1927,2171,2071,2798,2406,2799,1887,2665,1835,2377,1871,2223,1890,2158,1932,2158,1930"
+        id="fauteuil"
+        data-tooltip="Fauteuil"
+        data-popup="popupFauteuil"
+      />
+      <!-- <area
+        shape="poly"
+        coords="1877,1883,2145,2025,2138,1919,2194,1889,2140,100,1820,341,1847,1193,1831,1190,1821,1204,1833,1223,1849,1225,1861,1880,1877,1878,1877,1875,1873,1876,1877,1887,1875,1878,1877,1880"
+        id="porte"
+        href="img/img20.jpg"
+      /> -->
+      <area
+        shape="poly"
+        coords="1834,1195,1860,1201,1877,1184,1884,1201,1885,1226,1875,1236,1862,1222,1842,1221,1828,1215,1824,1205,1834,1194,1833,1194"
+        id="poignee"
+        href="img/animita.jpg"
+      />
+      <area shape="rect" coords="123,2147,1798,2309" alt="texte" />
+      <area
+        shape="poly"
+        coords="464,1712,457,1718,522,1744,602,1730,596,1704,570,1694,581,1662,573,1642,553,1628,532,1624,514,1634,503,1656,504,1674,518,1693,493,1698,472,1703,464,1712,464,1709"
+        alt="truc"
+        href="../pages/drDouteAuChili.html"
+      />
+      <area
+        shape="poly"
+        coords="3053,5,3060,345,3076,351,3261,302,3260,4,3054,6,3056,7"
+        id="dernierCadre"
+        data-tooltip="musiqueDeFond"
+        data-popup="popupDernierCadre"
+      />
+    </map>
+
+    <script>
+      (function () {
+        const img = document.getElementById("theImage");
+        const tooltip = document.getElementById("tooltip");
+        const map = document.querySelector('map[name="zones"]');
+        const allAreas = map.querySelectorAll("area"); // TOUTES les areas
+        const tooltipAreas = map.querySelectorAll("area[data-tooltip]"); // celles avec tooltip
+        const popupAreas = map.querySelectorAll("area[data-popup]"); // celles avec popup
+        const popups = document.querySelectorAll(".popup");
+
+        // 1) sauvegarde coords originaux pour TOUTES les areas
+        allAreas.forEach((a) => {
+          a.dataset.orig = a.getAttribute("coords") || "";
+        });
+
+        // 2) redimensionnement (scale X et Y)
+        function resizeAreas() {
+          if (!img.naturalWidth || !img.naturalHeight) return;
+          const scaleX = img.clientWidth / img.naturalWidth;
+          const scaleY = img.clientHeight / img.naturalHeight;
+
+          allAreas.forEach((a) => {
+            const orig = a.dataset.orig;
+            if (!orig) return;
+            const nums = orig.split(",").map((n) => parseFloat(n) || 0);
+            const scaled = nums.map((v, i) =>
+              i % 2 === 0 ? Math.round(v * scaleX) : Math.round(v * scaleY)
+            );
+            a.coords = scaled.join(",");
+          });
+        }
+
+        window.addEventListener("resize", resizeAreas);
+        window.addEventListener("orientationchange", resizeAreas);
+        img.addEventListener("load", resizeAreas);
+        if (img.complete) resizeAreas();
+        setTimeout(resizeAreas, 300); // sécurité si image tardive
+
+        // 3) TOOLTIP : uniquement pour les areas qui ont data-tooltip
+        tooltipAreas.forEach((area) => {
+          area.addEventListener("mouseenter", (e) => {
+            tooltip.textContent = area.dataset.tooltip || area.alt || "";
+            tooltip.style.display = "block";
+          });
+          area.addEventListener("mousemove", (e) => {
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+          });
+          area.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+          });
+        });
+
+        // 4) POPUPS : uniquement pour les areas qui ont data-popup
+        function closeAllPopups() {
+          popups.forEach((p) => (p.style.display = "none"));
+        }
+        popupAreas.forEach((area) => {
+          area.addEventListener("click", (e) => {
+            // bloque seulement si data-popup présent (on est dans popupAreas)
+            e.preventDefault();
+
+            closeAllPopups();
+            const popupId = area.dataset.popup;
+            const popup = document.getElementById(popupId);
+            if (!popup) return;
+
+            const coords = area.coords
+              .split(",")
+              .map((n) => parseFloat(n) || 0);
+            const imgRect = img.getBoundingClientRect();
+            let x = coords[0] || 0,
+              y = coords[1] || 0;
+
+            if (area.shape === "rect") {
+              x = coords[2] || coords[0];
+              y = coords[1] || coords[3] || 0;
+            } else if (area.shape === "circle") {
+              x = (coords[0] || 0) + (coords[2] || 0);
+              y = (coords[1] || 0) - (coords[2] || 0);
+            }
+            // polygon fallback already uses first pair
+
+            // positionner popup en tenant compte du scroll
+            popup.style.left = imgRect.left + window.scrollX + x + 10 + "px";
+            popup.style.top = imgRect.top + window.scrollY + y + 10 + "px";
+            popup.style.display = "block";
+          });
+        });
+
+        // fermer popups par bouton
+        popups.forEach((p) => {
+          const btn = p.querySelector(".closeBtn");
+          if (btn)
+            btn.addEventListener("click", () => (p.style.display = "none"));
+        });
+
+        // ----- Optional : fermer popups en cliquant en dehors -----
+        document.addEventListener("click", (e) => {
+          // si on clique sur une area (ou sur un élément lié) on ne ferme pas ici
+          if (e.target.tagName.toLowerCase() === "area") return;
+          // si on clique à l'intérieur d'une popup, ne ferme pas
+          if (e.target.closest && e.target.closest(".popup")) return;
+          closeAllPopups();
+        });
+      })();
+      function checkFirstVisit() {
+        document.getElementById("welcomePopup").style.display = "flex";
+      }
+      function closePopup() {
+        document.getElementById("welcomePopup").style.display = "none";
+      }
+      window.addEventListener("load", checkFirstVisit);
+      //   apparition imagesDIV
+      document.querySelector(divImages).forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const id = this.getAttribute("href").substring(1);
+          const el = document.getElementById(id);
+
+          if (el) {
+            e.preventDefault();
+            el.style.display = "block";
+          }
+        });
+      });
+      // soundddd
+      // soundddd
+      // soundddd
+
+      function play() {
+        var audio = document.getElementById("hiddenSoundFin");
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Image map responsive + tooltip + popups (corrigé)</title>
+    <style>
+      /* popup de départ */
+      .welcome-popup {
+        position: fixed;
+        inset: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+      }
+      .popup-content {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        width: 500px;
+        text-align: center;
+      }
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: blue;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 12px;
+      }
+
+      .img-wrap {
+        max-width: 100%;
+        display: inline-block;
+        position: relative;
+        cursor: crosshair;
+      }
+      img.responsive {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* tooltip */
+      #tooltip {
+        position: absolute;
+        display: none;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 9999;
+        font-size: 14px;
+      }
+
+      .popup {
+        position: absolute;
+        display: none;
+        background: white;
+        padding: 12px;
+        width: 240px;
+        z-index: 2000;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+      }
+      .closeBtn {
+        background: #444;
+        color: white;
+        border: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .closeBtn:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- welcome popup -->
+    <div class="welcome-popup" id="welcomePopup">
+      <div class="popup-content">
+        <button class="close-popup" onclick="closePopup()">&times;</button>
+        <h2>attention à vos mains</h2>
+        <p>promenez-vous prudemment...</p>
+      </div>
+    </div>
+
+    <h2>Image map responsive — tooltip & popups</h2>
+
+    <div class="img-wrap">
+      <img
+        id="theImage"
+        class="responsive"
+        src="img/bureau2.JPG"
+        alt="bureau"
+        width="3264"
+        height="2420"
+        usemap="#zones"
+      />
+
+      <!-- popups (une par objet) -->
+      <div id="popupTV" class="popup">
+        <h3>TV</h3>
+        <p>Voici la description détaillée de la TV.</p>
+        <button class="closeBtn">Fermer</button>
+      </div>
+
+      <div id="popupCadre" class="popup">
+        <h3>Cadre</h3>
+        <p>Description du cadre sur le mur.</p>
+        <button class="closeBtn">Fermer</button>
+      </div>
+
+      <div id="popupArbre" class="popup">
+        <h3>Arbre</h3>
+        <p>Un arbre décoratif dans ton image !</p>
+        <button class="closeBtn">Fermer</button>
+      </div>
+
+      <div id="popupFleur" class="popup">
+        <h3>Fleur</h3>
+        <p>Une jolie fleur.</p>
+        <button class="closeBtn">Fermer</button>
+      </div>
+
+      <!-- tooltip -->
+      <div id="tooltip"></div>
+    </div>
+
+    <!-- MAP : coords d'origine (par rapport à naturalWidth/naturalHeight) -->
+    <map name="zones">
+      <!-- CORRIGÉ : pas de balise mal fermée -->
+      <area
+        shape="rect"
+        coords="189,477,737,790"
+        id="TV"
+        alt="TV"
+        href="#"
+        data-tooltip="Télévision"
+        data-popup="popupTV"
+      />
+      <area
+        shape="rect"
+        coords="1119,442,1284,744"
+        id="cadre"
+        alt="cadre"
+        href="#"
+        data-tooltip="Cadre"
+        data-popup="popupCadre"
+      />
+      <area
+        shape="circle"
+        coords="338,1425,92"
+        id="arbre"
+        alt="arbre"
+        href="#"
+        data-tooltip="Arbre"
+        data-popup="popupArbre"
+      />
+      <area
+        shape="poly"
+        coords="40,1206,96,1342,29,1437,96,1560,209,1529,237,1564,110,1667,24,1613,9,1547,56,1543,9,1430,35,1323,27,1226,41,1204,41,1198"
+        id="fleur"
+        href="#"
+        data-tooltip="Fleur"
+        data-popup="popupFleur"
+      />
+      <area
+        shape="rect"
+        coords="718,1643,810,1704"
+        id="prise"
+        href="https://example.com/prise"
+      />
+      <area
+        shape="poly"
+        coords="1,1800,301,1769,309,1826,5,1864,1,1798,2,1798"
+        id="livre"
+        href="#"
+        data-tooltip="Livre"
+        data-popup="popupLivre"
+      />
+      <area
+        shape="poly"
+        coords="1146,1565,1204,1539,1307,1543,1359,1570,1380,1706,1369,1944,1418,2014,1310,2036,1123,2025,1063,1995,1132,1962,1094,1911,1110,1672,1137,1552,1151,1563,1147,1563"
+        id="radiateur"
+        href="https://example.com/radiateur"
+        data-tooltip="Radiateur"
+      />
+      <area
+        shape="poly"
+        coords="2156,1927,2171,2071,2798,2406,2799,1887,2665,1835,2377,1871,2223,1890,2158,1932,2158,1930"
+        id="fauteuil"
+        href="#"
+        data-tooltip="Fauteuil"
+        data-popup="popupFauteuil"
+      />
+      <area
+        shape="poly"
+        coords="1871,1875,2142,2029,2141,1883,2187,1882,2138,102,1825,347,1842,1182,1818,1192,1824,1234,1845,1239,1876,1876,1872,1876"
+        id="porte"
+        href="https://google.com/"
+      />
+      <area
+        shape="poly"
+        coords="3053,5,3060,345,3076,351,3261,302,3260,4,3054,6,3056,7"
+        id="dernierCadre"
+        href="https://www.youtube.com/watch?v=nyld1vl2_YQ"
+      />
+    </map>
+
+    <script>
+      (function () {
+        const img = document.getElementById("theImage");
+        const tooltip = document.getElementById("tooltip");
+        const map = document.querySelector('map[name="zones"]');
+        const allAreas = map.querySelectorAll("area"); // TOUTES les areas
+        const tooltipAreas = map.querySelectorAll("area[data-tooltip]"); // celles avec tooltip
+        const popupAreas = map.querySelectorAll("area[data-popup]"); // celles avec popup
+        const popups = document.querySelectorAll(".popup");
+
+        // 1) sauvegarde coords originaux pour TOUTES les areas
+        allAreas.forEach((a) => {
+          a.dataset.orig = a.getAttribute("coords") || "";
+        });
+
+        // 2) redimensionnement (scale X et Y)
+        function resizeAreas() {
+          if (!img.naturalWidth || !img.naturalHeight) return;
+          const scaleX = img.clientWidth / img.naturalWidth;
+          const scaleY = img.clientHeight / img.naturalHeight;
+
+          allAreas.forEach((a) => {
+            const orig = a.dataset.orig;
+            if (!orig) return;
+            const nums = orig.split(",").map((n) => parseFloat(n) || 0);
+            const scaled = nums.map((v, i) =>
+              i % 2 === 0 ? Math.round(v * scaleX) : Math.round(v * scaleY)
+            );
+            a.coords = scaled.join(",");
+          });
+        }
+
+        window.addEventListener("resize", resizeAreas);
+        window.addEventListener("orientationchange", resizeAreas);
+        img.addEventListener("load", resizeAreas);
+        if (img.complete) resizeAreas();
+        setTimeout(resizeAreas, 300); // sécurité si image tardive
+
+        // 3) TOOLTIP : uniquement pour les areas qui ont data-tooltip
+        tooltipAreas.forEach((area) => {
+          area.addEventListener("mouseenter", (e) => {
+            tooltip.textContent = area.dataset.tooltip || area.alt || "";
+            tooltip.style.display = "block";
+          });
+          area.addEventListener("mousemove", (e) => {
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+          });
+          area.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+          });
+        });
+
+        // 4) POPUPS : uniquement pour les areas qui ont data-popup
+        function closeAllPopups() {
+          popups.forEach((p) => (p.style.display = "none"));
+        }
+        popupAreas.forEach((area) => {
+          area.addEventListener("click", (e) => {
+            // bloque seulement si data-popup présent (on est dans popupAreas)
+            e.preventDefault();
+
+            closeAllPopups();
+            const popupId = area.dataset.popup;
+            const popup = document.getElementById(popupId);
+            if (!popup) return;
+
+            const coords = area.coords
+              .split(",")
+              .map((n) => parseFloat(n) || 0);
+            const imgRect = img.getBoundingClientRect();
+            let x = coords[0] || 0,
+              y = coords[1] || 0;
+
+            if (area.shape === "rect") {
+              x = coords[2] || coords[0];
+              y = coords[1] || coords[3] || 0;
+            } else if (area.shape === "circle") {
+              x = (coords[0] || 0) + (coords[2] || 0);
+              y = (coords[1] || 0) - (coords[2] || 0);
+            }
+            // polygon fallback already uses first pair
+
+            // positionner popup en tenant compte du scroll
+            popup.style.left = imgRect.left + window.scrollX + x + 10 + "px";
+            popup.style.top = imgRect.top + window.scrollY + y + 10 + "px";
+            popup.style.display = "block";
+          });
+        });
+
+        // fermer popups par bouton
+        popups.forEach((p) => {
+          const btn = p.querySelector(".closeBtn");
+          if (btn)
+            btn.addEventListener("click", () => (p.style.display = "none"));
+        });
+
+        // ----- Optional : fermer popups en cliquant en dehors -----
+        document.addEventListener("click", (e) => {
+          // si on clique sur une area (ou sur un élément lié) on ne ferme pas ici
+          if (e.target.tagName.toLowerCase() === "area") return;
+          // si on clique à l'intérieur d'une popup, ne ferme pas
+          if (e.target.closest && e.target.closest(".popup")) return;
+          closeAllPopups();
+        });
+      })();
+    </script>
+  </body>
+</html>

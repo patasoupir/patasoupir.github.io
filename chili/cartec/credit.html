@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dr doute</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+      }
+
+      .welcome-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 1000;
+      }
+
+      .popup-content {
+        background-color: rgba(255, 255, 255, 0.849);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-family: "dragonlauphing", sans-serif;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+        color: rgb(0, 0, 255);
+        display: block;
+        padding: 1rem;
+        width: 500px;
+      }
+
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: blue;
+        border-radius: 0;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+      }
+      .close-popup:hover {
+        color: white;
+      }
+
+      .tete {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 1rem;
+        text-transform: uppercase;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: grey;
+      }
+      li {
+        list-style-type: none;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        background: #007bff;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      button a {
+        color: white;
+        text-decoration: none;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .zone {
+        flex: 1;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 10px;
+        min-height: 200px;
+      }
+      .zone img {
+        max-width: 100%;
+      }
+      .bloc {
+        padding: 1rem;
+        background: #fefefe;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: grab;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background-color: yellow;
+        padding: 1rem;
+      }
+
+      area:hover {
+        filter: invert(1);
+        cursor: grab;
+      }
+    </style>
+  </head>
+  <body>
+    <header><a href="cartuc.html"><< retour </a></header>
+    <div class="container">
+      <div class="zone">
+        <img src="img/credit (1).png" /><img src="img/credit (2).png" /><img
+          src="img/credit (3).png"
+        /><img src="img/credit (4).png" />
+        <img src="img/credit (5).png" />
+        <img src="img/credit (6).png" />
+      </div>
+      <div class="zone">
+        <img src="img/credit chili (1).png" /><img
+          src="img/credit chili (2).png"
+        /><img src="img/credit chili (3).png" />
+      </div>
+    </div>
+  </body>
+</html>
