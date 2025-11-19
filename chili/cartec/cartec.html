@@ -95,7 +95,7 @@
       .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 1rem;
       }
       .zone {
         flex: 1;
@@ -127,6 +127,12 @@
         filter: invert(1);
         cursor: grab;
       }
+      @media only screen and (max-width: 820px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body>
@@ -146,6 +152,18 @@
           , ASSISTANTE VIRTUELLE SUPER EFFICACE
         </p>
       </div>
+      <div class="bloc" id="CESFAM">
+        <p>sinon, assistante sociale au CESFAM ou psicologue : gratuit !</p>
+        <p>
+          recherche du cesfam qui me convient. en tant qu'étrangère, je peux y
+          accéder aussi? Gratuitement, oui.<bold>
+            Mais dans un consultorio, l'attention c'est une fois par mois.</bold
+          >On va essayer d'y aller... On va voir... il me faut un petit papier,
+          qui se demande aussi à un compte whatsapp, pour le certificat de
+          résidence. 2 euros environ.
+        </p>
+        <p><img src="img/junto.jpg" style="max-width: 100%" /></p>
+      </div>
       <div class="bloc" id="hungos">
         <p>
           les champignons... vous pouvez, mais sans anxiety sévère. 100euros la
@@ -162,16 +180,6 @@
         </p>
         <p>la biodanza es un super proyecto ! creado por un chileno</p>
       </div>
-
-      <div class="bloc" id="CESFAM">
-        <p>assistante sociale au CESFAM ou psicologue : gratuit !</p>
-        <p>
-          recherche du cesfam qui me convient. en tant qu'étrangère, je peux y
-          accéder aussi? Gratuitement ? Mais dans un consultorio, l'attention
-          c'est une fois par mois. On va essayer d'y aller... On va voir...
-        </p>
-      </div>
-
       <div class="bloc" id="kiyona">
         <p>
           chloé chloé chloé j'ai besoin de toi ! une amie qui travaille sur les
@@ -180,6 +188,7 @@
           <a href="https://www.youtube.com/watch?v=3YHvpuI3XNo&t=47s">chloé</a>
         </p>
       </div>
+
       <div class="bloc" id="france">
         <p>
           une psy me parle de la situation française, transcription à venir. en
@@ -231,7 +240,7 @@
         <p>
           temps d'attente : deux semaines ici. en france ? selon internet, 16
           jours en moyenne (une semaine dans paris plutôt pour un psychiatre).
-          selon <em>psy avec qui j'ai discuté</em>
+          selon la <em>psy française avec qui j'ai discuté</em>
         </p>
       </div>
       <div class="bloc" id="kiyona">
@@ -247,17 +256,15 @@
     <div class="questions">
       <p>
         crisis de salud mental en chile, pero que se pasa ? segun tu, esto es un
-        nueva phenomena ? que sabes de la quantidad de suicidios en CHile, y de
-        la piedra feliz? que pienses son las causas de este crisis de salud
-        mental ? la pandemia tiene une role, pero justo antes habia el estallido
-        social y preguntas de la societad para hacer algo otro.
+        nueva phenomena ? que sabes sobre suicidios en CHile, y de la piedra
+        feliz? que pienses son las causas de este crisis de salud mental ? la
+        pandemia tiene une role, pero justo antes habia el estallido social y
+        preguntas de la societad para hacer algo otro.
       </p>
       <p>
-        pienses que chile es diferente de los otros paises, con su problemas ?
-      </p>
-      <p>
-        oublié de lui demander : à combien est remboursé une consultation
-        psychologique ?
+        pienses que chile es diferente de los otros paises, con sus proprios
+        problemas, vinculados con el ambiante, su historia, su posicion
+        geografica ?
       </p>
     </div>
   </body>

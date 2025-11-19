@@ -81,7 +81,10 @@
       }
       @media only screen and (max-width: 820px) {
         #tooltip {
-          font-size: 8px;
+          font-size: 9px;
+          background: transparent;
+          padding: 3px 3px;
+          color: red;
         }
       }
       area {
@@ -169,6 +172,10 @@
           si vous regardez ce travail sur un ordinateur, nous vous conseillons
           de vous promener lentement. vous pourriez y perdre la main.
         </p>
+        <p>
+          par contre, sur un téléphone, il sera mieux de zoomer... et chercher
+          partout...
+        </p>
       </div>
     </div>
 
@@ -187,12 +194,10 @@
         <button class="closeBtn">x</button>
         <h3>ya has escuchado la TV aca?</h3>
         <p>no... aunqué habia una en mi pieza...</p>
-        <p>
-          pero vi peliculas... peliculas sobre
-          <a href="cartec.html">Chile</a>...
-        </p>
+        <p>pero vi peliculas... peliculas sobre Chile...</p>
         <p class="small">
           <a href="https://www.youtube.com/watch?v=Mm8PZFz9T-E">📺</a>
+          <a href="https://www.youtube.com/watch?v=h8Xm3cfLSPI">📺</a>
         </p>
       </div>
 
@@ -251,7 +256,8 @@
           <a
             href="https://www.google.com/search?sca_esv=d8140a1b87a5a1ad&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQYfURUq58J6Fn4NbJBsIlHfjq0kNfSbygTwSRrWtUGJ2okyCo_dM2pv2SOH7zOxQBgKknUeqQ6n86IaR145uR-cdsd5L3TU1Mi6OOprz6fXgq3EblvG7X6DrF9UitIBxZgr1-JbZGf3aEa45rrvq1PFJWgDM58vtq2Q7TmN5LdFvw9pOcvzskqods0a5i6eWVtgWi1dpRV9qe89PsVBNovzw-QvY&q=biodanza&sa=X&ved=2ahUKEwjHw_DNt_yQAxU6ppUCHR5eAQMQtKgLegQIExAB"
             >biodanza</a
-          >????? ?
+          >
+          ??????
         </p>
         <button class="closeBtn">x</button>
       </div>
@@ -292,7 +298,14 @@
             <source src="son/fin.mp3" />
           </audio>
         </button>
-
+        <br />
+        <br /><br />
+        <p>
+          oh, elle n'est pas toute seule ! les autres ne parlent pas mais elles
+          savent très bien écrire.
+        </p>
+        <p><img src="img/autresIA.png" style="max-width: 100%" /></p>
+        <p>ce serait super que chloé nous en dise un peu plus 😁</p>
         <button class="closeBtn">x</button>
       </div>
 
@@ -302,10 +315,9 @@
         <a href="CEL_1.html">revenir à la première consultation</a>
 
         <a href="#">une image du premier consultorio</a>
-        <div class="divImages"><img src="img/consultorio.jpg" /></div>
-        <p>
-          désolée pour le filtre terrifiant en fait je trouve ça super marrant
-        </p>
+        <div class="divImages">
+          <a href="cartec.html"><img src="img/consultorio.jpg" /></a>
+        </div>
 
         <button class="closeBtn">x</button>
       </div>
@@ -322,7 +334,7 @@
         <button class="closeBtn">x</button>
       </div> -->
 
-      <div id="popupDernierCadre" class="popup" style="width: 500px">
+      <div id="popupDernierCadre" class="popup" style="background: black">
         <button>
           un peu de musique ? ça reste dans la tête
           <audio controls>
@@ -397,17 +409,18 @@
         data-tooltip="Fauteuil"
         data-popup="popupFauteuil"
       />
-      <!-- <area
+      <area
         shape="poly"
         coords="1877,1883,2145,2025,2138,1919,2194,1889,2140,100,1820,341,1847,1193,1831,1190,1821,1204,1833,1223,1849,1225,1861,1880,1877,1878,1877,1875,1873,1876,1877,1887,1875,1878,1877,1880"
         id="porte"
-        href="img/img20.jpg"
-      /> -->
+        href="img/animita.jpg"
+        data-tooltip="mauvaise piste l'animita"
+      />
       <area
         shape="poly"
         coords="1834,1195,1860,1201,1877,1184,1884,1201,1885,1226,1875,1236,1862,1222,1842,1221,1828,1215,1824,1205,1834,1194,1833,1194"
         id="poignee"
-        href="img/animita.jpg"
+        href="img/img20.jpg"
       />
       <area shape="rect" coords="123,2147,1798,2309" alt="texte" />
       <area
@@ -420,7 +433,7 @@
         shape="poly"
         coords="3053,5,3060,345,3076,351,3261,302,3260,4,3054,6,3056,7"
         id="dernierCadre"
-        data-tooltip="musiqueDeFond"
+        data-tooltip="musique"
         data-popup="popupDernierCadre"
       />
     </map>
@@ -538,6 +551,7 @@
         document.getElementById("welcomePopup").style.display = "none";
       }
       window.addEventListener("load", checkFirstVisit);
+
       //   apparition imagesDIV
       document.querySelector(divImages).forEach((link) => {
         link.addEventListener("click", function (e) {
