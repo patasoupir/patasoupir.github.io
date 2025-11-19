@@ -89,7 +89,7 @@
       }
 
       /* boîtes d'info visibles sous l'image (optionnel) */
-      /* .infos {
+      .infos {
         margin-top: 12px;
         display: flex;
         gap: 8px;
@@ -101,7 +101,7 @@
         background: #efefef;
         border: 1px solid #ccc;
         width: 200px;
-      } */
+      }
 
       .popup {
         position: absolute;
@@ -167,7 +167,7 @@
         <h2>attention !</h2>
         <p>
           si vous regardez ce travail sur un ordinateur, nous vous conseillons
-          de vous promener lentement, vous pourriez perdre la main
+          de vous promener lentement. vous pourriez y perdre la main.
         </p>
       </div>
     </div>
@@ -530,7 +530,7 @@
           if (e.target.closest && e.target.closest(".popup")) return;
           closeAllPopups();
         });
-      });
+      })();
       function checkFirstVisit() {
         document.getElementById("welcomePopup").style.display = "flex";
       }
@@ -549,14 +549,15 @@
             el.style.display = "block";
           }
         });
-        function play() {
-          var audio = document.getElementById("hiddenSoundFin");
-          audio.play();
-        }
       });
       // soundddd
       // soundddd
       // soundddd
+
+      function play() {
+        var audio = document.getElementById("hiddenSoundFin");
+        audio.play();
+      }
     </script>
   </body>
 </html>
