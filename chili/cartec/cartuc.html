@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
@@ -167,15 +167,8 @@
       <div id="#triangle-top"></div>
       <div class="popup-content">
         <button class="close-popup" onclick="closePopup()">&times;</button>
-        <h2>attention !</h2>
-        <p>
-          si vous regardez ce travail sur un ordinateur, nous vous conseillons
-          de vous promener lentement. vous pourriez y perdre la main.
-        </p>
-        <p>
-          par contre, sur un téléphone, il sera mieux de zoomer... et chercher
-          partout...
-        </p>
+        <h2>attention</h2>
+        <p>ce projet est a ouvrir sur ordinateur, ce sera mieux</p>
       </div>
     </div>
 
@@ -413,8 +406,8 @@
         shape="poly"
         coords="1877,1883,2145,2025,2138,1919,2194,1889,2140,100,1820,341,1847,1193,1831,1190,1821,1204,1833,1223,1849,1225,1861,1880,1877,1878,1877,1875,1873,1876,1877,1887,1875,1878,1877,1880"
         id="porte"
-        href="img/animita.jpg"
-        data-tooltip="mauvaise piste l'animita"
+        href="valparaiso.html"
+        data-tooltip="entrada"
       />
       <area
         shape="poly"
@@ -464,7 +457,7 @@
             if (!orig) return;
             const nums = orig.split(",").map((n) => parseFloat(n) || 0);
             const scaled = nums.map((v, i) =>
-              i % 2 === 0 ? Math.round(v * scaleX) : Math.round(v * scaleY)
+              i % 2 === 0 ? Math.round(v * scaleX) : Math.round(v * scaleY),
             );
             a.coords = scaled.join(",");
           });

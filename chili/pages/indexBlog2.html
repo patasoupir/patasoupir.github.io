@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>je ne reviendrai jamais</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        display: flex;
+      }
+      #imgMain {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imgMain"><img src="imgIndex" /></div>
+    <p>
+      <img id="imgMusique" src="img/musique/musique.gif" onclick="play()" />
+      <audio id="audio" src="son/pretinha.mp3"></audio>
+    </p>
+
+    <script>
+      let play = function () {
+        document.getElementById("audio").play();
+      };
+    </script>
+  </body>
+</html>

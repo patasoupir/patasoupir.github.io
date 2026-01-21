@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="headfoot.css" />
+    <title>Valparaiso</title>
+
+    <style>
+      body {
+        background: #000;
+        font-family: arial;
+      }
+      .flex {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+      }
+      #mainContent {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem;
+      }
+      #notes {
+        color: white;
+        font-size: 10pt;
+        border-left: solid 1px white;
+        padding: 0.2rem;
+        flex: 1;
+        flex-wrap: wrap;
+      }
+      #notes img {
+        max-width: 100%;
+        gap: 10px;
+      }
+      .note {
+        padding: 0.5rem;
+        border-bottom: 1px solid white;
+      }
+      button {
+        border: none;
+        background-color: white;
+        padding: 5px;
+      }
+      .ref {
+        color: violet;
+      }
+      button:active {
+        color: rgb(0, 255, 0);
+        transition: 0.2s ease;
+        transform: translateY(2px);
+        transform: translateX(1px);
+        border-radius: 0.5rem;
+      }
+      .ref:hover {
+        color: blue;
+        cursor: pointer;
+      }
+      .img-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .img-wrap img {
+        width: 100%;
+        display: block;
+      }
+
+      video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      /* === GRILLE === */
+      .grid {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      .cell {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      /* contenu caché */
+      .cell-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .cell:hover .cell-content {
+        opacity: 1;
+      }
+
+      .cell-content video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .cell-content p {
+        color: white;
+        font-family: sans-serif;
+        padding: 1rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="page">
+        <button><a href="communautaire.html"><< comeback</a></button>
+      </div>
+    </header>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/33S4R0C3yBw?si=ViL3snY-_oTXo_9N"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <div class="flex">
+      <div id="mainContent" style="color: white">
+        <p>
+          <span onclick="toggle('note1')" class="ref">
+            La psychologie communautaire...
+          </span>
+        </p>
+        <p>
+          Gabi en avait parlé aussi. Mais Maga en + a rajouté
+          <span onclick="toggle('note3')" class="ref">Paulo Freire.</span><br />
+          Elle est différente de la psychologie en cabinet, de la psychologie
+          clinique, de la psychanalyse... elle essaie de soigner un groupe, un
+          contexte ou de voir comment on peut modifier les environnements plus
+          que les individualités, elle est dynamique sur un territoire qu'elle
+          critique et met en mouvement.
+        </p>
+        <p>
+          Quelle joie ! C'est la fin de l'art thérapie, qui ne sert qu'à se
+          soigner soi-même, enfin ! Mes réponses sont dans la disparition de
+          l'isolement, la communauté, la communication, la traduction. Pas que
+          dans ce que tu mets dans ton assiette, pas dans tes jambes, pas dans
+          une feuille de papier avec des jolies couleurs... Pas seulement dans
+          l'art...
+        </p>
+        <p>
+          Avec la 'psychologie communautaire', basée sur la critique (la mise en
+          mouvement des structures) j'ai l'impression d'avoir trouvé quelque
+          chose, quelque chose de mieux que
+          <span onclick="toggle('note4')" class="ref">l'anti-psychiatrie</span>,
+          par définition contre le fonctionnement du système psychiatrique. Sa
+          connotation de rejet, de négation,
+          <span onclick="toggle('note5')" class="ref"
+            >ne me plaît pas trop..</span
+          >. Et je n'ai peut-être pas assez lu dessus, mais je n'aime pas
+          <span onclick="toggle('note6')" class="ref">l'ethnopsychiatrie.</span>
+        </p>
+        <p>
+          En tout cas il y a quelque chose qui piétine... et quelque chose qui
+          veut jaillir... Qui veut expliquer son
+          <span onclick="toggle('note7')" class="note">MONDE</span>.
+        </p>
+        <p>
+          <button onclick="toggle('note8')" class="note">
+            quelle chance j'ai d'avoir des yeux et de pouvoir les ouvrir
+          </button>
+        </p>
+
+        <p>
+          ... complotisme contre la psychologie ! revanche ! vers quel soin se
+          tourner ? La libération de la parole de la consultation
+          psychologique/psychiatrique... n'est-ce pas l'ultime moyen de nous
+          faire taire, puisqu'elle nous freine, nous demande introspection quand
+          le plus urgent parfois est d'agir ?
+        </p>
+
+        <p>
+          je vois d'autres structures, une hhiérarchie des genres : le
+          psychiatre, le médecin, puis la.le psy, moins bien "reconnu.e", et
+          enfin la travailleuse sociale, que l'article remet à sa place comme
+          actrice essentielle à la connaissance des moyens d'actions d'une
+          personne pour parvenir à sa libération dans des cas d'oppression. et
+          ces cas peuvent être des oppressions en domaine psychiatriques. voilà
+          quel serait mon intérêt en france : propose-t-on aux persnnes
+          hospitalisées et diagnostiquées dans des établissements pscyhiatriques
+          d'autres moyens pour s'expliquer et se soigner leurs problèmes que les
+          pillules ? si oui, quels sont-ils ? parle-t-on aux individus de leurs
+          conditions d'existence ? Est-ce qu'on vous parle de vos conditions
+          d'existence ? Est-ce que vous vous parlez à vous-mêmes de vos
+          conditions d'existence ?
+        </p>
+        <p>
+          les groupes de paroles en France, comme celui des entendeurs de voix
+          que j'ai eu la chance de rencontrer, proposent des alternatives de
+          discussion à l'enfermement de l'hopital psychiatrique, des lieux moins
+          remplis d' autorité, où existe la parole et où circulent les savoirs.
+          Mais je l'ai bien vu en y allant : celui qui était totalement
+          désordonné, et qui avait l'air vraiment fou parce qu'il essayait de se
+          sevrer des pillules qu'on lui donnait, il allait rentrer seul chez lui
+          après le soir. deux heures de groupe de parole. et c'est tout. je suis
+          sûre qu'ici, dans cette ville spécialement, il y a moins d'isolement.
+          je devrais juste le prouver.
+        </p>
+      </div>
+      <!-- SIDESIDE SIDE SIDE SIDE -->
+      <div id="notes"></div>
+      <div id="note1" class="note" style="display: none">
+        <em
+          >La psychologie communautaire est une discipline dont l’intérêt porte
+          sur les actions « communautaires », leurs processus et leur
+          implantation. Reposant sur des valeurs autant que sur des modèles de
+          recherche et d’action, elle développe des paradigmes permettant
+          d’appréhender l’individu dans son environnement, la communauté de
+          manière écologique et la société de manière critique.</em
+        >
+        SAïAS T. (éd.) (2009). « La psychologie communautaire », Pratiques
+        psychologiques, 15 (1).
+        <a
+          href="https://www.researchgate.net/profile/Thomas-Saias/publication/332094359_Introduction_a_la_psychologie_communautaire/links/5c9f511fa6fdccd460441925/Introduction-a-la-psychologie-communautaire.pdf"
+          >source</a
+        >
+      </div>
+      <div id="note2" class="note" style="display: none"></div>
+      <div id="note3" class="note" style="display: none">
+        <img src="img/paulo.jpg" />
+      </div>
+      <div id="note4" class="note" style="display: none">
+        L'antipsychiatrie est un concept qui gravite autour de mon sujet mais
+        que je n'ose pas, ou bien ne veut pas vraiment écrire. Le terme induit
+        un rejet, cela en fait un fourre-tout.
+        <a
+          href="https://www.erudit.org/fr/revues/philoso/1977-v4-n2-philoso1313/203077ar.pdf"
+          >bonus ?</a
+        >
+
+        Le monde psychiatrique, je n'y suis pas rentré, je ne peux pas le
+        rejeter tout d'un coup, déjà, comme ça. Ces médicaments m'aident, tu
+        penses que je ne devrais pas les prendre ? Tu veux que je continue de
+        souffrir ? Tu veux que je reste inadaptée ? Non. Je te souhaite de ne
+        pas soufrir du tout. Il est juste possible que tu souffres toujours,
+        seulement différemment.
+      </div>
+      <div id="note5" class="note" style="display: none">
+        Pour moi c'est le désir de révolutionner le traitement qui est fait aux
+        personnes en situation de souffrance mentale. C'est tout, c'est la
+        posture d'un contre-discours : maintenant il faut savoir ce qu'on met
+        dedans.
+      </div>
+      <div id="note6" class="note" style="display: none">
+        <img src="img/ethnopsy.png" />
+      </div>
+      <div id="note7" class="note" style="display: none">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/wBt0Ubj7mto?si=THgOd1IVCAAkQxt7"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div id="note8" class="note" style="display: none">
+        Irène Pereira, « La conscience opprimée. Une analyse philosophique à
+        partir de la Pédagogie des opprimés de Paulo Freire », Lusotopie [En
+        ligne], XXII(1) | 2023, mis en ligne le 01 octobre 2023, consulté le 20
+        janvier 2026. URL : http://journals.openedition.org/lusotopie/6639
+        <p>
+          ><em
+            >Par conséquent, se désaliéner, se libérer, ce n’est pas accéder
+            uniquement à une interprétation exacte de son intériorité. Certes
+            les rapports sociaux produisent bien en l’être humain des éléments
+            inconscients. Il peut exister un inconscient d’origine sociale, dans
+            lequel les rapports sociaux d’oppression ont été intériorisés. Mais
+            se libérer, ce n’est pas seulement faire accéder à la conscience des
+            rapports sociaux d’oppression intériorisés inconsciemment. Se
+            libérer suppose de transformer la réalité sociale qui produit cette
+            intériorisation d’éléments oppressifs inconscients. Se libérer,
+            c’est ainsi se produire soi-même par son action.</em
+          >
+          >
+          <br />
+          <em
+            >Personne n’a la liberté d’être libre : c’est l’inverse, on lutte
+            pour la liberté précisément parce qu’on ne l’a pas » (Freire 2021
+            [1968] : 19).
+          </em>
+        </p>
+        <img src="img/article1.png" />
+      </div>
+      <p>
+        surtout, j'ai aimé cet article qui parlait des travailleux sociaox :
+        quand j'ai voulu avoir un rdv au consultorio de playa ancha, ici, à
+        valparaiso, on m'a dit "ah oui, rendez-vous avec l'assistante sociale ?"
+        et j'ai pas trouvé ça mal, mais surprenant. c'est une autre boucle qui
+        se ferme... pourquoi faudrait-il à tout prix un psy ?
+      </p>
+      <img src="img/treize.jpeg" />
+    </div>
+
+    <div class="img-wrap">
+      <img src="img/hospital.jpg" alt="bureau" />
+    </div>
+    <div>
+      <div class="grid">
+        <div class="cell">
+          <div class="cell-content">
+            <div class="cell-content"></div>
+          </div>
+        </div>
+
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content"></div>
+        </div>
+        <div class="cell">
+          <div class="cell-content">
+            <a href="porte.html"><img src="img/bureau3.jpg" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="page"
+      id="nextButton"
+      style="
+        position: relative;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+        top: 0;
+      "
+    >
+      <button id="nextButton">
+        <a href="porte.html">next >></a>
+      </button>
+    </div>
+  </body>
+  <script>
+    function toggle(id) {
+      console.log("toggle appelé avec id =", id);
+
+      var el = document.getElementById(id);
+      console.log("élément trouvé =", el);
+
+      var zone = document.getElementById("notes");
+
+      if (!el) {
+        console.error("Aucune div avec l'id :", id);
+        return;
+      }
+
+      if (el.style.display === "none") {
+        el.style.display = "block";
+        zone.appendChild(el);
+      } else {
+        el.style.display = "none";
+      }
+    }
+  </script>
+</html>

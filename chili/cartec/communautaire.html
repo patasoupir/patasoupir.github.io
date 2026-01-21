@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vie communautaire</title>
+    <link rel="stylesheet" type="text/css" href="headfoot.css" />
+
+    <style>
+      body {
+        font-family: arial;
+      }
+      #box1 {
+        display: flex;
+        gap: 1rem;
+        border: solid 2px rgb(0, 255, 0);
+        padding: 0.5rem;
+        margin: 0.5rem;
+      }
+      .left {
+        flex: 1;
+      }
+      .right {
+        flex: 3;
+      }
+      .right video {
+        max-width: 100%;
+      }
+      button {
+        border: none;
+      }
+      button:hover {
+        color: rgb(0, 255, 0);
+
+        border: dotted rgb(0, 255, 0) 0.5px;
+        cursor: pointer;
+        background-color: rgb(0, 255, 0);
+        transition: 1s ease-in;
+        border-radius: 10rem;
+        font-size: 30pt;
+      }
+      button:active {
+        color: rgb(0, 255, 0);
+        transition: 0.5s ease;
+        transform: translateY(15px);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="page">
+        <button><a href="derriereLePort.html"><< comeback</a></button>
+      </div>
+    </header>
+    <main>
+      <p>
+        quand on a discuté, j'ai compris que j'avais déjà sans y réfléchir
+        participé à l'<strong>auto-gestion</strong>
+        de la ville
+      </p>
+      <p>
+        par exemple un jour j'ai discuté avec deux filles qui m'ont dit... viens
+        au TAC ! j'ai dit :
+
+        <button
+          onclick="
+            box1.style.display =
+              box1.style.display === 'none' ? 'block' : 'none'
+          "
+        >
+          d'accord
+        </button>
+      </p>
+      <div id="box1" style="display: none">
+        <div class="left">
+          <p>donc je suis allée au</p>
+          <h2>
+            <a
+              href="https://www.instagram.com/tac.cordillera?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >TAC : TALLER ACTION COMUNITARIA (Atelier d'action
+              communautaire)</a
+            >
+          </h2>
+          <p>
+            une semaine en hiver, une semaine en été : tous.te.s les bénévoles
+            proposent une école intensive d'atelier aux enfants du quartier. toi
+            qui es adulte, ou un peu plus vieux au moins, présente-toi : tu sais
+            faire du théâtre ? enseigner le jonglage, dessiner ? on va préparer
+            un carnaval pour dimanche, à la fin de la semaine. j'y suis allée
+            car on avait besoin de volontaires. personne ne m'a demandé si
+            j'avais déjà gardé des enfants : on a besoin de gens, on prend,
+            c'est tout.
+          </p>
+          <p>
+            <em
+              >Les gens que j'ai rencontré au TAC, eux qui plantent des patates,
+              repeignent les murs, font la garderie des petits, organisent une
+              sortie au musée, un carnaval, et moi qui les ai acompagné.es,
+              c'est bénévole, personne n'est payé ; ça ne dure qu'une semaine,
+              car sinon ils ne sauraient pas comment manger, mais voilà la
+              réponse que je cherchais, on était tous pareilxs. C'est par amour
+              qu'il se passe quelque chose...</em
+            >
+          </p>
+          <p>
+            Ce qui explique la fragilité des structures communautaires de
+            soutien : si elles sont volontaires, dépendent du temps et des
+            relations humaines, quelqu'un peut venir trois semaines puis ne plus
+            jamais revenir, du jour au lendemain. L'engagement interpersonnel
+            libère et responsabilise en même temps qu'il peut démotiver. C'est
+            vacillant : de la présence, mais jusqu'à quand ? Jusqu'à ce que les
+            gens s'en aillent, et après, plus rien ? La confiance est une
+            pratique de longue durée, un héritage issu de l'expérience ou de
+            l'histoire. C'est habituel ici, dans cette ville, ce pays, et ce
+            continent. Mais pourtant, à ce qu'on m'a dit, la peur a grandi ici.
+            Surtout sur Valparaiso, qui était, il y a dix ans, beaucoup moins
+            abandonnée, peut-être moins pirate. Avec moins de confiance, plus
+            d'isolation, peut-être qu'il y a aura moins d'initiatives de
+            quartiers. Encore moins d'éducation, encore moins de soutien, encore
+            plus de douleurs et encore plus de folles...
+          </p>
+        </div>
+        <div class="right" style="max-width: 100%; object-fit: cover">
+          <div class="video-wrap">
+            <video autoplay muted loop playsinline controls>
+              <source src="img/balansoire.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="box2"
+            style="
+              border: violet solid 3px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            "
+          >
+            et ensuite, j'ai eu la chance de rencontrer
+
+            <span style="color: red; font-size: 20pt"> M</span
+            ><span style="color: rgb(255, 213, 0); font-size: 17pt">A</span
+            ><span style="color: rgb(0, 255, 115); font-size: 19pt">G</span
+            ><span style="color: rgb(0, 128, 255); font-size: 14pt">A</span>
+            <br />
+
+            <p>
+              qui m'explique, et en <em>français</em>, que dans une ville comme
+              Valparaiso... avec beaucoup de douleur, de tristesse, et de
+              pauvreté...
+            </p>
+            <button
+              style="background-color: transparent"
+              id="fin"
+              onclick="
+                const a = document.getElementById('sonMaga');
+                a.paused
+                  ? ((a.style.display = 'block'), a.play())
+                  : (a.pause(), (a.style.display = 'none'));
+              "
+            >
+              🔊🔊🔊
+            </button>
+            <br />
+            <audio
+              id="sonMaga"
+              style="height: 30px; text-align: right; border: palevioletred"
+              controls
+              hidden
+              style="display: none"
+            >
+              <source src="son/maga.mp3" />
+            </audio>
+            <br />
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      class="page"
+      style="
+        position: relative;
+        display: flex;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+        top: 0;
+
+        justify-content: space-between;
+      "
+    >
+      <button id="nextButton">
+        <a href="hospital.html">next >></a>
+      </button>
+    </div>
+  </body>
+</html>

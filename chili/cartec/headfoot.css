@@ -1,0 +1,24 @@
+
+      #nextButton {
+        position: absolute;
+        left: 100%;
+        transform: translateX(-100%);
+        white-space: nowrap;
+        
+      }
+     .page button {
+        font-size: larger;
+        background-color: white;
+        padding: 0.5rem;
+        z-index: 4;
+        opacity: 1;
+        border: solid black 2px;
+      }
+      
+      .page button a {
+        text-decoration: none;
+        color: black;
+      }
+      .page button a:hover {
+        color: blue;
+      }

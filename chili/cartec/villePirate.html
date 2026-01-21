@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="headfoot.css" />
+    <title>introduction</title>
+    <link rel="stylesheet" type="text/css" href="headfoot.css" />
+    <style>
+      body {
+        font-family: arial;
+        background-image: url("img/texte.jpg");
+        background-size: cover;
+      }
+
+      .video-wrap {
+        flex: 1;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      #disapear:hover {
+        color: transparent;
+        transition: 1000ms ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="page">
+        <button><a href="valparaiso.html"><< comeback</a></button>
+      </div>
+    </header>
+    <div class="texte">
+      <p id="disapear">
+        j'ai l'impression de vivre dans une ville pirate, la ville, vraiment, se
+        balance
+      </p>
+    </div>
+
+    <div class="flex">
+      <iframe
+        style="
+          max-width: 100%;
+          padding: 27rem;
+          padding-top: 70rem;
+          padding-bottom: 0;
+          border: none;
+        "
+        width="360"
+        height="315"
+        src="https://www.youtube.com/embed/wph3tuFBi-A?si=R9rSuww_z1k-lyNe"
+        allowfullscreen
+      ></iframe>
+
+      <div
+        class="invitation"
+        style="
+          background-color: rgb(255, 255, 255);
+          text-align: center;
+          padding-left: 10rem;
+          padding-right: 10rem;
+        "
+      ></div>
+      <script>
+        const invitation = ` Car au fond, Valparaíso s'est construite culturellement sur la base du
+        concept de bohème. <br />Mais la bohème... a été déformée. Le concept
+        même de bohème, de la vie bohème de Valparaíso a beaucoup changé depuis
+        l'époque de nos parents, les années 80, 90, à maintenant, les années
+        2020. <br />Depuis les années 2020, cette ville est en déclin et, bien
+        sûr, la mauvaise conception de ce que signifie la bohème a également été
+        déformée et a généré ou facilité, au fond, le fait que les gens tombent
+        davantage dans la dépendance aux drogues. <br />
+      Oui avant c'était moins, maintenant, avec l'arrivée peut-être de
+        tout ce qui est comme les drogues de synthèses, tout ce qui est comme le
+        monde nocturne de chaque Valparaíso s'est modelé, et s'est comme
+        institué la culture selon laquelle il faut sortir le vendredi soir, il
+        faut boire, il faut se droguer, il faut devenir fou, folie, folie,
+        folie.<br />
+        Et puis le lendemain, vous êtes avec la gueule de bois, le moral dans
+        les chaussettes, comme avec, je ne sais pas, avec tout ce côté négatif
+        que la ville implique parce qu'en soi, l'ambiance pendant la journée est
+        très bonne, mais il arrive souvent qu'il reste les vestiges de la nuit
+        passée. <br />
+        Écoute, hier par exemple, il y a eu une fête, les gens ont fait la fête
+        très tard et aujourd'hui, il y en aura quelques-uns qui traîneront dans
+        les parages, qui ont été laissés à la merci de la nuit, vraiment, à la
+        merci de la nuit, et cela aussi a un impact sur l'autre.<br />
+        Donc c'est compliqué de dire... Enfin si : Valparaíso génère du
+        bien-être au niveau de la communauté, mais en ce qui concerne les modes
+        de vie, peut-être pas tant que ça. <br />
+        Bien sûr. <br />
+        Il peut y avoir des modes de vie qui, à long terme, causent plus de tort
+        à soi-même. <br />Ou bien quand on ne connaît personne. Si on n'a pas de
+        proches et qu'on va à Valpo et qu'on se laisse aller à la fête, à la vie
+        bohème... <br />On peut se perdre tout le temps, on peut entrer
+        là-dedans, et puis, je ne sais pas, notre niveau de santé mentale peut
+        s'envoler vers d'autres mondes. <br />Cela arrive en fait, car ici, on
+        rencontre des personnes qui se sont retrouvées à la rue et qui vous
+        parlent d'elles ; vous pouvez avoir des conversations très intéressantes
+        avec elles, mais elles sont à la rue parce qu'elles ne se sont pas
+        trouvées, elles ne se sont pas trouvées à cet endroit. <br />Elles se
+        sont perdues dans la vie bohème. <br />
+        Oui, elles se sont perdues. Elles se sont perdues dans la nuit. Oui...
+        <br />
+        C'est un sujet complexe.`;
+
+        const speed = 50; // Vitesse d'affichage en millisecondes
+        let i = 0;
+        let currentText = ""; // Variable pour accumuler le texte traité
+        let isTag = false;
+
+        function typeWriter() {
+          if (i < invitation.length) {
+            let char = invitation.charAt(i);
+
+            // Détecte le début et la fin d'une balise HTML
+            if (char === "<") {
+              isTag = true;
+            }
+
+            currentText += char;
+
+            if (char === ">") {
+              isTag = false;
+            }
+
+            // Si on n'est pas dans une balise, insérer le texte traité dans le DOM
+            if (!isTag) {
+              document.querySelector(".invitation").innerHTML = currentText;
+            }
+
+            i++;
+            setTimeout(typeWriter, isTag ? 0 : speed); // Appel récursif pour afficher le caractère suivant
+          }
+        }
+
+        typeWriter();
+      </script>
+    </div>
+    <div
+      class="page"
+      style="
+        position: relative;
+        display: flex;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+        top: 0;
+
+        justify-content: space-between;
+      "
+    >
+      <button id="nextButton">
+        <a href="derriereLePort.html">next >></a>
+      </button>
+    </div>
+  </body>
+</html>
