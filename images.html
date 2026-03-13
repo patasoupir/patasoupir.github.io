@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -10,7 +10,10 @@
     <link rel="stylesheet" type="text/css" href="header.css" />
     <style type="text/css">
       img {
-        width: 100%;
+        max-width: 100%;
+      }
+      body {
+        margin: 0;
       }
 
       main {
@@ -26,7 +29,7 @@
         flex-direction: column;
         overflow-y: scroll;
         scrollbar-width: none;
-        background-color: blue;
+        background-color: rgba(0, 0, 255, 0.657);
       }
       #leftbox {
         font-family: arial;
@@ -53,6 +56,31 @@
       #right {
         color: black;
       }
+      .hidden {
+        display: none;
+      }
+
+      @media only screen and (max-width: 820px) {
+        main {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        #leftbox {
+          display: none;
+        }
+        .hidden {
+          display: flex;
+          flex-direction: column;
+        }
+        .hidden a {
+          color: white;
+          text-decoration: none;
+        }
+        body {
+          margin: 0;
+        }
+      }
     </style>
   </head>
 
@@ -77,6 +105,7 @@
             </h5>
           </div>
           <div class="text">IL Y A BIEN LONGTEMPS</div>
+
           <div class="img">
             <a href="img/douche.jpg"
               ><img
@@ -110,6 +139,11 @@
           <p class="section80">
             <em>insulter sa mâchoire, irrespecter sa danse est-ce ? </em>
           </p>
+          <div class="img">
+            <a href="img/salon dans spiderman.jpg"
+              ><img src="img/salon dans spiderman.jpg"
+            /></a>
+          </div>
           <div class="img">
             <a href="img/desert.jpg"
               ><img
@@ -176,10 +210,75 @@
           <a href="img/monstre3.jpg"><img src="img/monstre3.jpg" /></a>
         </div>
         <div class="img">
+          <a href="img/couveuse.jpg"><img src="img/couveuse.jpg" /></a>
+        </div>
+        <div class="img">
           <a href="img/gant5.jpg"><img src="img/gant5.jpg" /></a>
         </div>
         <div class="img">
-          <a href="img/duras.png"><img src="img/duras.png" /></a>
+          <a href="img/samere.png"><img src="img/samere.png" /></a>
+        </div>
+
+        <div class="hidden">
+          <div class="blackGap" style="height: 200px"></div>
+          <div class="img">
+            <a href="img/douche.jpg"
+              ><img
+                src="img/douche.jpg"
+                alt="énorme sensation de vide"
+                title="à ce moment là c'était pourtant tragique"
+            /></a>
+          </div>
+
+          <div class="text"><h1>il faut du fil</h1></div>
+          <div class="img">
+            <a href="img/image2grande.jpg"
+              ><img
+                src="img/image2grande.jpg"
+                alt="Un grand tournesol me traverse le coeur."
+                title="Je n'ai jamais autant chialé que ce matin !"
+            /></a>
+          </div>
+
+          <div class="img">
+            <a href="img/salon dans spiderman.jpg"
+              ><img src="img/salon dans spiderman.jpg"
+            /></a>
+          </div>
+          <div class="img">
+            <a href="img/desert.jpg"
+              ><img
+                src="img/desert.jpg"
+                alt="ce n'est pas mon rêve, mais je l'aime bien"
+                title="ce n'est pas bien mais je l'aime moi"
+            /></a>
+          </div>
+
+          <br />
+          <div class="text">
+            <a href="obèse.html">AUTRE IMAGE</a>
+          </div>
+
+          <div class="img">
+            <a href="img/bien.jpg"
+              ><img
+                src="img/personnes.jpg"
+                alt="symboles évidents - ne jette pas tes cheveux par les fenêtres tu n'en as plus beaucoup"
+                title="professionnel de la protection"
+            /></a>
+          </div>
+
+          <div class="img">
+            <a href="img/image3grande.jpg"
+              ><img
+                src="img/image3grande.jpg"
+                alt="Gontranpoli n'ose pas enflammer la maison dans laquelle il est invité."
+                title="Gontropoli vole des couteaux dans le tiroir de la cuisine de son camarade."
+            /></a>
+          </div>
+
+          <a href="noir.html">You might sleep, but you will never dream</a
+          ><br />
         </div>
       </div>
     </main>

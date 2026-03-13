@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -10,12 +10,21 @@
         padding: 10px;
       }
 
-      #loadData {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .styleButton {
         background-color: rgb(31, 206, 255);
         color: white;
         font-size: 15pt;
-        padding: 10px;
+
         border: none;
+        padding: 30px;
+      }
+      .styleButton:hover {
+        background-color: rgb(18, 148, 184);
+        cursor: pointer;
       }
       #disease-block {
         background-color: #f0f0f0;
@@ -39,12 +48,23 @@
         background-color: rgb(31, 206, 255);
         padding: 60px;
       }
+
+      #accept {
+        float: right;
+        background-color: blue;
+        margin-right: 0;
+      }
+      #accept:hover {
+        background-color: red;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
     </style>
   </head>
   <body>
     <h1>Recherches en santé mentale<br />Quelle est votre situation ?</h1>
-
-    <button id="loadData">Cliquez pour obtenir votre diagnostic</button>
 
     <div id="disease-block" class="hidden">
       <h1 id="resultTitle"></h1>
@@ -56,6 +76,14 @@
         <h2>Le conseil du doc :</h2>
         <h4 id="docteurGivesAdvices"></h4>
       </footer>
+    </div>
+    <div class="buttons">
+      <button id="loadData" class="styleButton">
+        Cliquez ici pour obtenir votre diagnostic
+      </button>
+      <button id="accept" class="styleButton hidden">
+        <a href="accept.html">accepter le diagnostic ></a>
+      </button>
     </div>
 
     <script>
@@ -84,7 +112,9 @@
         let phraseTraitement =
           verbeRecommand[Math.floor(Math.random() * verbeRecommand.length)] +
           " " +
-          actionTraitement[Math.floor(Math.random() * actionTraitement.length)] +
+          actionTraitement[
+            Math.floor(Math.random() * actionTraitement.length)
+          ] +
           " " +
           ideeTraitement[Math.floor(Math.random() * ideeTraitement.length)] +
           ponctuation[Math.floor(Math.random() * ponctuation.length)];
@@ -127,21 +157,27 @@
 
         data.forEach((d) => {
           if (d.nomDeLaMaladie) nomMaladie.push(d.nomDeLaMaladie);
-          if (d.caracteristiqueDeLaMaladie) caractMaladie.push(d.caracteristiqueDeLaMaladie);
+          if (d.caracteristiqueDeLaMaladie)
+            caractMaladie.push(d.caracteristiqueDeLaMaladie);
           if (d.verbeDeRecommandationDeTraitement)
             verbeRecommand.push(d.verbeDeRecommandationDeTraitement);
-          if (d.actionPourLeTraitement) actionTraitement.push(d.actionPourLeTraitement);
+          if (d.actionPourLeTraitement)
+            actionTraitement.push(d.actionPourLeTraitement);
           if (d.traitement) ideeTraitement.push(d.traitement);
           if (d.signeDePonctuation) ponctuation.push(d.signeDePonctuation);
           if (d.signesCliniques) signesCli.push(d.signesCliniques);
           if (d.verbeCauses) verbConseil.push(d.verbeCauses);
           if (d.causes1) conseil.push(d.causes1);
         });
-        document.getElementById("loadData").addEventListener("click", function () {
-          // Affiche le contenu caché
-          document.getElementById("disease-block").classList.remove("hidden");
-        });
-
+        document
+          .getElementById("loadData")
+          .addEventListener("click", function () {
+            // Affiche le contenu caché
+            document.getElementById("disease-block").classList.remove("hidden");
+            document.getElementById("accept").classList.remove("hidden");
+            document.getElementById("loadData").textContent =
+              "un autre diagnostic ?";
+          });
         console.log(nomMaladie);
         console.log(caractMaladie);
         console.log(ideeTraitement);
