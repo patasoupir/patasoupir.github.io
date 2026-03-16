@@ -1,7 +1,7 @@
 header {
   display: flex;
   flex-direction: column;
-  font-family: "dragonlauphing", sans-serif;
+  font-family: "arial";
   box-shadow: 0px 0px 200px rgb(0, 34, 255);
   margin: 0;
   padding: 0;
@@ -17,10 +17,9 @@ header a {
 
 header .patasoupir {
   font-size: 25pt;
-  text-align: center;
+  text-align: justify;
   padding-top: 10px;
   padding-bottom: 10px;
-  letter-spacing: 3px;
   font-weight: bold;
   font-family: "arial", sans-serif;
 }
@@ -38,12 +37,10 @@ header .menu {
   flex: 1;
   font-size: 13pt;
   padding: 3px;
-  background-image: url("img/voiture2.jpg");
-  background-size: 100%;
 }
 
 header .menu a {
-  color: white;
+  color: red;
   text-decoration: none;
 }
 header .menu a:hover {

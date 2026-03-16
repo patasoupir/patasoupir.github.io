@@ -46,7 +46,7 @@ li:hover {
 #titreDrDoute {
   color: rgba(255, 0, 166, 0.123);
   position: absolute;
-  animation: blink 15s infinite;
+  animation: blink 20s infinite;
   top: 10px;
   left: 10px;
   font-size: 50pt;
@@ -203,7 +203,7 @@ footer {
   display: flex;
   flex-direction: column;
   font-family: arial;
-  font-size: 11pt;
+  font-size: 12pt;
   text-align: center;
   padding: 10px;
 }

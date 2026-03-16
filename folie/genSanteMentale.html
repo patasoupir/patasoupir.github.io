@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <title>Fiche patient.e.s</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../styleIndexPresentation.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../header.css" />
     <style>
       body {
         font-family: helvetica;
         padding: 10px;
       }
-
       a {
         color: white;
         text-decoration: none;
@@ -18,7 +23,6 @@
         background-color: rgb(31, 206, 255);
         color: white;
         font-size: 15pt;
-
         border: none;
         padding: 30px;
       }
@@ -51,7 +55,7 @@
 
       #accept {
         float: right;
-        background-color: blue;
+        background-color: rgb(119, 119, 163);
         margin-right: 0;
       }
       #accept:hover {
@@ -70,6 +74,10 @@
     </style>
   </head>
   <body>
+    <header>
+      <div class="patasoupir"><a href="../index.html">< retour</a></div>
+    </header>
+
     <h1>Recherches en santé mentale<br />Quelle est votre situation ?</h1>
 
     <div id="disease-block" class="hidden">
