@@ -11,6 +11,7 @@ body {
 }
 
 header a {
+  color: white;
   flex: 1;
   text-decoration: none;
 }

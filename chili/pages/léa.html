@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alors coucou léa, voici mon pantalon</title>
+    <style>
+      .welcome-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 1000;
+        border-top-left-radius: 90%;
+        border-top-right-radius: 3%;
+        border-bottom-right-radius: 60%;
+        box-shadow: 0px 0px 500px rgb(255, 255, 255);
+        margin: 5px;
+      }
+
+      .popup-content {
+        background-color: rgba(255, 255, 255, 0.849);
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        text-align: center;
+        font-family: "dragonlauphing", sans-serif;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+        color: rgb(0, 0, 255);
+        border-bottom-right-radius: 200%;
+        border-bottom-left-radius: 200%;
+        border-top-left-radius: 200%;
+        padding: 70px;
+        display: block;
+      }
+      #triangle-top {
+        width: 50%;
+        height: 50%;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid green;
+      }
+
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: blue;
+      }
+      .close-popup:hover {
+        color: white;
+      }
+
+      body {
+        text-align: center;
+        margin: 0;
+        width: 5000px;
+        height: 5000px;
+        animation: appear 3s linear forwards;
+      }
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      header {
+        border-left: blue dotted 8px;
+        border-top: greenyellow 27px dotted;
+      }
+
+      header h1 {
+        border-image: url("img/bordelPage/gifTécla.gif") 40 fill / 1000px;
+        z-index: 1000;
+      }
+
+      .sideContainer {
+        display: flex;
+      }
+      .asideBox {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1;
+        margin: 1rem;
+      }
+      .dropBox {
+        position: relative;
+        display: inline-block;
+      }
+      .buttonBox {
+        background-color: blueviolet;
+        background-image: url("img/bordelPage/1_DATE_3009.png");
+        background-size: 100px;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+      }
+
+      .contentBox {
+        display: none;
+        position: absolute;
+        background-color: lightgrey;
+        min-width: 20px;
+        z-index: 1;
+      }
+      .contentBox img {
+        display: block;
+        max-width: 500px;
+      }
+      .contentBox a:hover {
+        background-color: white;
+      }
+      .dropBox:hover .contentBox {
+        display: block;
+      }
+      .dropBox:hover .buttonBox {
+        background-color: grey;
+      }
+      #reves {
+        background-color: yellow;
+      }
+      #questions {
+        background-color: chartreuse;
+      }
+      .mainContainer {
+        flex: 3;
+        border: solid blue 1px;
+        margin: 1rem;
+        text-align: left;
+        border-image: url("img/bordelPage/drapChili.jpg") 100 fill / 800px /
+          1400px;
+      }
+      .piedDePage {
+        font-size: 40pt;
+        background-color: rgb(7, 7, 142);
+        color: white;
+      }
+
+      .floating {
+        position: absolute;
+        margin-left: 1000px;
+        color: yellow;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 70pt;
+        display: flex;
+        gap: 3rem;
+        z-index: 1000;
+        text-align: right;
+        background-image: url("img/bordelPage/nica.jpg");
+        background-repeat: repeat-x;
+        min-height: 801px;
+      }
+      #chiliUnique {
+        position: relative;
+        display: inline-block;
+      }
+      .imgDrop {
+        position: absolute;
+        display: none;
+      }
+      #chiliUnique .imgDrop:hover {
+        display: block;
+      }
+      #mouton {
+        border-bottom: dotted rgb(5, 255, 5) 140px;
+      }
+      .gifDeMerde {
+        display: flex;
+        animation: gifCrazy alternate ease 10s;
+      }
+      @keyframes gifCrazy {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      #chien {
+        margin-left: 300px;
+        animation: like 2s 3s linear infinite;
+      }
+      @keyframes like {
+        0% {
+          transform: rotate(0deg) scale(0.3);
+        }
+        10% {
+          transform: rotate(15deg) scale(0.9);
+        }
+        50% {
+          transform: rotate(-180deg) scale(2);
+        }
+        90% {
+          transform: rotate(-180deg) scale(2);
+        }
+        100% {
+          transform: rotate(-360deg) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        mettre logo OU BIEN
+        <img id="mouton" src="img/bordelPage/futchamp.png" /><a
+          href="drDouteAuChili.html"
+          ><img src="img/bordelPage/bordelPage/theOverpast.gif"
+        /></a>
+        <div class="gigDeMerde">
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+          <img src="img/bordelPage/gifTécla.gif" />
+        </div>
+      </h1>
+      <div class="floating">
+        <span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span id="chiliUnique" class="suite"
+          >CHILI<img class="imgDrop" src="img/bordelPage/ia.jpg" /></span
+        ><span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span class="suite">CHILI</span><span class="suite">CHILI</span
+        ><span class="suite">CHILI</span>
+      </div>
+    </header>
+
+    <main>
+      <div class="sideContainer">
+        <aside id="musique">
+          <div class="dropBox">
+            <button
+              onclick="play()"
+              style="background-color: transparent; border: none"
+            >
+              ma belle, quelle musique te trotte dans la tête ?
+              <audio id="hiddenSound"><source src="son/loca.mp3" /></audio>
+            </button>
+            <div id="chien">
+              <img src="img/bordelPage/dog1.jpg" />
+            </div>
+            <div class="contentBox">
+              je peux parler oùùùù ? dis moi !!!<img
+                src="img/bordelPage/2_3009.png"
+              /><img src="img/bordelPage/3_3009.png" /><img
+                src="img/bordelPage/4_3009.png"
+              /><img src="img/bordelPage/5_3009.png" /><img
+                src="img/bordelPage/6_3009.png"
+              /><img src="img/bordelPage/7_3009.png" />
+              <a href="CEL_1.html">y'a qu'avec ça que ça marche ???</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="imageMarrante" style="width: 500px; height: 500px">
+        petite histoire
+      </div>
+
+      <aside id="reves">je me suis réveillée avec un rêve aujourd'hui</aside>
+      <aside id="questions">
+        des questions ? vous ne pouvez pas les poser pour l'instant. page
+        commentaire insuffisante. se référer à nous d'une autre manière.
+      </aside>
+
+      <div class="mainContainer">
+        <h1>BIENVENUE ^^</h1>
+        <p>histoires de mon voyage ici...</p>
+
+        <div class="dropBox">
+          <button class="buttonBox"></button>
+          <div class="contentBox">
+            je peux parler oùùùù ? dis moi !!!<img
+              src="img/bordelPage/2_3009.png"
+            /><img src="img/bordelPage/3_3009.png" /><img
+              src="img/bordelPage/4_3009.png"
+            /><img src="img/bordelPage/5_3009.png" /><img
+              src="img/bordelPage/6_3009.png"
+            /><img src="img/bordelPage/7_3009.png" />
+            <a href="CEL_1.html">y'a qu'avec ça que ça marche ???</a>
+          </div>
+        </div>
+      </div>
+      récit 2 : la première fois que je vais consulter<br />
+      récit 3 : etc
+    </main>
+    <footer>
+      <div class="piedDePage">
+        YO FUCK ME YEACH CHILEAN PESOSESTOY AMERICANAQUI ?????????? SE QUE NO SE
+        DICE PERO ES TAN BIEN TAN FIGUE TAN FIGUAY ; ESTABIENACA, CON LOS
+        AMEXICOS AMIS, Y BUENA SUERTE EN EL JUEGO
+      </div>
+    </footer>
+
+    <div class="welcome-popup" id="welcomePopup">
+      <div id="#triangle-top"></div>
+      <div class="popup-content">
+        <button class="close-popup" onclick="closePopup()">&times;</button>
+        <h2>Bienvenue !</h2>
+        <p>
+          Nous vous sommes très reconnaissantes de venir visiter ce site. C'est
+          votre première visite ? Vous n'aurez pas besoin de guide...
+        </p>
+      </div>
+    </div>
+
+    <script>
+      //  script pour la lecture de l'audio:
+      function play() {
+        var audio = document.getElementById("hiddenSound");
+        audio.play();
+      }
+
+      function checkFirstVisit() {
+        // if (!localStorage.getItem("hasVisited")) {
+        //   // Si c'est la première visite
+        document.getElementById("welcomePopup").style.display = "flex";
+        //   // Marquer comme visité
+        //   localStorage.setItem("hasVisited", "true");
+        // }
+      }
+
+      // Fonction pour fermer le pop-up
+      function closePopup() {
+        document.getElementById("welcomePopup").style.display = "none";
+      }
+
+      // Vérifier dès le chargement de la page
+      window.addEventListener("load", checkFirstVisit);
+    </script>
+  </body>
+</html>
