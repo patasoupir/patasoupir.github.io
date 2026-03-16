@@ -1,21 +1,129 @@
 @font-face {
   font-family: "dragonlauphing";
-  src: url("fonts/dragonlauphing.tff") format("tff"), url("fonts/dragonlauphing.tff") format("tff");
+  src:
+    url("fonts/dragonlauphing.tff") format("tff"),
+    url("fonts/dragonlauphing.tff") format("tff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "dragonlie";
-  src: url("fonts/dragonlie.tff") format("tff"), url("fonts/dragonlie.tff") format("tff");
+  src:
+    url("fonts/dragonlie.tff") format("tff"),
+    url("fonts/dragonlie.tff") format("tff");
   font-weight: normal;
   font-style: normal;
 }
-
+/* général : */
 body {
   font-family: "arial";
   background-color: white;
   background-image: url("teaser/img/exemple2.png");
   background-size: 100%;
+}
+a {
+  color: blue;
+}
+
+/* corps */
+main {
+  margin: 5px;
+}
+li:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.deuxColonne {
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.titreGauche {
+  flex: 1;
+}
+
+#titreDrDoute {
+  color: rgba(255, 0, 166, 0.123);
+  position: absolute;
+  animation: blink 15s infinite;
+  top: 10px;
+  left: 10px;
+  font-size: 50pt;
+
+  z-index: 0;
+}
+.invitation {
+  font-size: 48pt;
+  width: fit-content;
+}
+ul {
+  width: 100%;
+}
+.menuRecherche {
+  display: flex;
+  z-index: 1000;
+  width: 100%;
+  gap: 5px;
+}
+.menuRecherche button {
+  color: blue;
+}
+
+button {
+  border: none;
+  width: 100%;
+  background-color: rgb(229, 229, 255);
+  padding: 20px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.menu2 {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.menu2 img {
+  max-width: 100%;
+  cursor: pointer;
+}
+.menu2 img:hover {
+  opacity: 0.8 ease 1s;
+}
+
+li {
+  list-style-type: none;
+}
+
+.dottedBorder {
+  display: flex;
+  flex-direction: column;
+  border: dotted black 3px;
+  border-radius: 500px;
+  width: 70%;
+  margin: 10px auto;
+}
+
+.drawingBox {
+  display: flex;
+  flex-direction: column;
+  animation: none;
+  text-decoration: none;
+  margin: 25px;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 80px;
+  position: absolute;
+}
+.border {
+  display: flex;
+  border: dotted rgb(0, 0, 0) 10px;
+  margin: 10px auto;
 }
 .qr {
   padding: 10px;
@@ -26,11 +134,11 @@ body {
 .ENORME {
   font-family: helvetica;
   text-align: justify-all;
-  color: red;
-  animation: blink 3s infinite;
+  /* animation: blink 7s infinite; */
   font-size: 35pt;
   width: 70%;
   color: blue;
+  margin: 5px;
 }
 
 @keyframes blink {
@@ -44,25 +152,8 @@ body {
     opacity: 1;
   }
 }
-
-
-.FIRST {
-  background-image: url("teaser/img/exemple2.png");
-  background-size: 100%;
-}
-
-
-.SIX {
-  display: flex;
-  flex-direction: column;
-}
-.LEFTLIST {
-  display: flex;
-  flex-direction: column;
-}
-.RIGHTLIST {
-  display: flex;
-  flex-direction: column;
+.borderTopRed {
+  border-top: red 10px dotted;
 }
 .EXEMPLES {
   background-image: url("teaser/img/exemple.png");
@@ -71,10 +162,6 @@ body {
   width: 100%;
 }
 
-
-.PROBLEMS {
-  border-image: url("img/gant1000.jpg") 27 23 / 50px 30px / 1rem round space;
-}
 .cacheCache {
   z-index: 1;
   text-align: center;
@@ -82,24 +169,14 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
-.midle {
-  text-align: center;
-  font-family: 30pt;
-}
-.right {
-  text-align: left;
-  color: red;
-}
 .weight {
   font-style: oblique;
   color: rgb(255, 2, 2);
-  font-size: 16pt;
+  font-size: 13pt;
 }
 .crass {
   font-size: 30pt;
 }
-
-
 
 .dragaulauphing {
   font-family: "dragonlauphing", sans-serif;
@@ -122,7 +199,7 @@ li {
 footer {
   display: flex;
   flex-direction: column;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: arial;
   font-size: 11pt;
   text-align: center;
   padding: 10px;
@@ -130,15 +207,34 @@ footer {
 
 @media only screen and (max-width: 820px) {
   body {
-    margin-left: 10px;
-    margin-right: 10px;
     overflow-x: hidden;
+    width: 100%;
   }
-  .none{
+  .none {
     display: none;
   }
-  .menu2{flex-direction: column;}
-  .menu2 img {width:100%;height:100%;max-width: 100%;}
-  .flex-column{white-space: nowrap;flex-direction: row;}
-  .box img{max-width: 100%;}
+  .invitation {
+    font-size: 15pt;
+  }
+  #titreDrDoute {
+    font-size: 30pt;
+  }
+  .menu2 {
+    flex-direction: column;
+  }
+  .menu2 img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+  div .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .box img {
+    max-width: 100%;
+  }
+  .ENORME {
+    font-size: 20pt;
+  }
 }

@@ -5,65 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="styleIndexPresentation.css" />
-
     <link rel="stylesheet" type="text/css" href="header.css" />
-    <style>
-      .newWork {
-        display: flex;
-        flex-direction: column;
-        border: black dotted 3px;
-        border-radius: 500px;
-        padding: 20px;
-        width: 80%;
-        align-items: center;
-        justify-content: center;
-        margin: 10px auto;
-      }
 
-      .menu2 {
-        display: flex;
-        width: fit-content;
-        font-family: arial;
-      }
-      .menu2 img {
-        max-width: 100%;
-        cursor: pointer;
-      }
-      .menu2 img:hover {
-        opacity: 0.8 ease 1s;
-      }
-      button {
-        border: none;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 3px;
-        width: 100%;
-      }
-      button:hover {
-        cursor: pointer;
-        background-color: white;
-      }
-      .newWork button {
-        border-radius: 5rem;
-        font-family: 15pt;
-        padding: 30px;
-        width: auto;
-      }
-      li:hover {
-        cursor: pointer;
-        background-color: white;
-      }
-      /* h1 {
-
-      } */
-      div .flex-column {
-        display: flex;
-        flex-direction: column;
-      }
-      li {
-        list-style-type: none;
-      }
-    </style>
     <script>
       window.addEventListener("load", function () {
         // Vérifier si c'est la première visite
@@ -79,40 +22,44 @@
 
   <body>
     <header>
-      <div class="patasoupir"><a href="index.html">PATASOUPIR</a></div>
-      <div class="menu">
-        <a href="images.html">images</a>
-        <a href="ODIO.html">sons</a>
-        <a href="https://matias.ma/nsfw/">?</a>
-      </div>
+      <div class="patasoupir"><a href="index.html">INDEX</a></div>
     </header>
-
-    <p class="ENORME">
-      DR. DOUTE.<br />
-      QUAND VIENDRAS-TU M'4IDER MOI
-    </p>
-
     <main>
-      <div id="menu1">
-        <!-- <h1>projets</h1> -->
-        <div class="newWork">
-          <h3>projet de recherche :</h3>
+      <div class="deuxColonne">
+        <div class="ENORME titreGauche">
+          folie & résistance
+          <div class="invitation"></div>
+          <div id="titreDrDoute">
+            DR. DOUTE.<br />
+            QUAND VIENDRAS-TU M'4IDER MOI
+          </div>
+        </div>
+
+        <div class="menuRecherche">
           <ul>
             <a href="https://madaaam.hotglue.me">
-              <button>base 2 données</button></a
+              <button>bordel d'informations</button></a
             >
-
             <a href="genSanteMentale.html"
-              ><button>générer ses diagnostics</button></a
+              ><button>sous quelle forme es-tu fou ?</button></a
             >
 
             <a href="chili/cartec/cartoc.html"
-              ><button>prototype mémoire</button></a
+              ><button>salle d'attente</button></a
             >
           </ul>
         </div>
+      </div>
+      <div>
+        <div class="drawingBox">
+          <div class="flex-column ENORME" style="animation: blink 1s infinite">
+            <a href="images.html">images</a>
+          </div>
+        </div>
+      </div>
 
-        <h1>autres projets</h1>
+      <div class="ENORME borderTopRed">autres projets</div>
+      <div class="menu2">
         <ul class="menu2">
           <div class="flex-column">
             <a href="paint.html">
@@ -146,17 +93,19 @@
           </div>
         </ul>
       </div>
+
       <br />
       <div class="box">
-        <h1
+        <div
+          class="ENORME"
           style="
             background-image: url(teaser/img/doute2.png);
             border-image: url(teaser/img/doute3.png) 100 / 100px / 70px space;
-            color: red;
+            animation: blink 9s infinite;
           "
         >
-          inspirations
-        </h1>
+          <span style="animation: none">inspirations</span>
+        </div>
 
         <ul>
           <h3>sites internet</h3>
@@ -199,16 +148,16 @@
               >film encore mieux</a
             >
           </li>
-          <li>
+          <!-- <li>
             <span class="weight"
               >COMING SOON : les témoignages d'amour de 60 élèves de 4ème
               !</span
             >
-          </li>
+          </li> -->
         </ul>
       </div>
 
-      <div class="box FIRST newWork">
+      <div class="box dottedBorder">
         <div class="présentation">
           <div class="qr"><img src="teaser/img/qrcode.jpg" /></div>
           <p class="administration">
@@ -232,7 +181,7 @@
       <div class="box THREE heart"><a href="heart/mygame.html"></a></div>
       <div class="box FIVE castle">
         <p>
-          <span class="administration crass"
+          <span class="crass"
             >BUILDING A CASTLE : A GAME WITHIN THE DREAM ?</span
           >
           <br /><br />
@@ -246,33 +195,70 @@
         </p>
         <img src="grass/img/1.png" title="the biggest party" />
 
-        <div class="weirdo">
+        <div class="EXEMPLES">
           <img src="teaser/img/grass.png" title="the biggest party" />
         </div>
 
         <p>THESE IMAGES I DON'T OWN, WHAT SHOULD I DO ?</p>
       </div>
-    </main>
 
-    <div class="none" style="display: flex; flex-direction: column">
-      <!-- <img src="teaser/img/IMG_8302.jpg" /><img
+      <div class="none" style="display: flex; flex-direction: column">
+        <!-- <img src="teaser/img/IMG_8302.jpg" /><img
           src="teaser/img/IMG_8305.jpg"
         /> -->
-      <img src="teaser/img/IMG_8304.jpg" />
-    </div>
+        <img src="teaser/img/IMG_8304.jpg" />
+      </div>
+    </main>
 
     <footer>
       <div class="léa">
         <p>
-          contactez-moi via ce<a
+          contactez-moi via ce
+          <a
             href="https://docs.google.com/spreadsheets/d/1-Gg4yU_SZOXPtZiHAYkQazCo4QLekl51qP5mc-STvLw/edit?usp=sharing"
-            ><span class="bold"> clown 🤡</span></a
+            ><span class="bold">🤡</span></a
           >
         </p>
-        pour léa, ma correspondance se poursuit
+
         <a href="léa.html">ici</a>
       </div>
       <div class="fin"><a href="dieu.html">que dieu vous bénisse</a></div>
     </footer>
+    <script>
+      // Texte à afficher
+      const invitation = `>>>>>>>>>>`;
+
+      const speed = 800; // Vitesse d'affichage en millisecondes
+      let i = 0;
+      let currentText = ""; // Variable pour accumuler le texte traité
+      let isTag = false;
+
+      function typeWriter() {
+        if (i < invitation.length) {
+          let char = invitation.charAt(i);
+
+          // Détecte le début et la fin d'une balise HTML
+          if (char === "<") {
+            isTag = true;
+          }
+
+          currentText += char;
+
+          if (char === ">") {
+            isTag = false;
+          }
+
+          // Si on n'est pas dans une balise, insérer le texte traité dans le DOM
+          if (!isTag) {
+            document.querySelector(".invitation").innerHTML = currentText;
+          }
+
+          i++;
+          setTimeout(typeWriter, isTag ? 0 : speed); // Appel récursif pour afficher le caractère suivant
+        }
+      }
+
+      typeWriter();
+    </script>
   </body>
 </html>
