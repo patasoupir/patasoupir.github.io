@@ -69,6 +69,7 @@ ul {
 }
 .menuRecherche button {
   color: blue;
+  font-size: 15pt;
 }
 
 button {
@@ -224,8 +225,11 @@ footer {
   .menu2 {
     flex-direction: column;
   }
-  .menuRecherche button {
+
+  .menuRecherche button,
+  .menu2 button {
     padding: 10px;
+    font-size: 13pt;
   }
   .menu2 img {
     width: 100%;
@@ -236,9 +240,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  button {
-    font-size: 13pt;
-  }
+
   .box img {
     max-width: 100%;
   }
