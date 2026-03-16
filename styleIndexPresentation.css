@@ -77,6 +77,7 @@ button {
   width: 100%;
   background-color: rgb(229, 229, 255);
   padding: 20px;
+  font-family: arial;
 }
 button:hover {
   cursor: pointer;
@@ -224,12 +225,14 @@ footer {
   .menuRecherche,
   .menu2 {
     flex-direction: column;
+    margin-top: 30px;
   }
 
   .menuRecherche button,
   .menu2 button {
     padding: 10px;
     font-size: 13pt;
+    font-family: arial;
   }
   .menu2 img {
     width: 100%;
