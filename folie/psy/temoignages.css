@@ -1,0 +1,225 @@
+/* ============================================================
+   temoignages.css
+   Section témoignages — responsive & accessible
+   Coller ce fichier dans votre projet et l'appeler avec :
+   <link rel="stylesheet" href="temoignages.css">
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --temo-bg: #f9f7f4; /* fond de la section         */
+  --temo-carte-bg: #ffffff; /* fond des cartes            */
+  --temo-titre: #2c2c2c; /* couleur du titre principal */
+  --temo-sous-titre: #6b6b6b; /* sous-titre / méta          */
+  --temo-texte: #444444; /* corps des témoignages      */
+  --temo-nom: #2c2c2c; /* nom du patient             */
+  --temo-date: #9a9a9a; /* date                       */
+  --temo-etoile: #e8a838; /* couleur des étoiles        */
+  --temo-avatar-bg: #e8f0e8; /* fond de l'avatar           */
+  --temo-avatar-texte: #3a6b3a; /* initiale de l'avatar       */
+  --temo-bordure: #e8e4de; /* bordure des cartes         */
+  --temo-ombre: rgba(0, 0, 0, 0.06);
+
+  --temo-rayon: 12px;
+  --temo-rayon-avatar: 50%;
+
+  --temo-police-titre: Georgia, "Times New Roman", serif;
+  --temo-police-corps: inherit; /* hérite de votre site       */
+}
+
+/* ── Section ────────────────────────────────────────────────── */
+.temoignages {
+  background-color: var(--temo-bg);
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* ── En-tête ────────────────────────────────────────────────── */
+.temoignages__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.temoignages__titre {
+  font-family: var(--temo-police-titre);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--temo-titre);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.temoignages__sous-titre {
+  font-family: var(--temo-police-corps);
+  font-size: 1rem;
+  color: var(--temo-sous-titre);
+  margin: 0;
+}
+
+/* ── Grille des cartes ──────────────────────────────────────── */
+.temoignages__grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Carte individuelle ─────────────────────────────────────── */
+.temoignage-carte {
+  background: var(--temo-carte-bg);
+  border: 1px solid var(--temo-bordure);
+  border-radius: var(--temo-rayon);
+  padding: 1.5rem 1.4rem 1.4rem;
+  box-shadow: 0 2px 8px var(--temo-ombre);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+
+  /* transition légère au survol */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.temoignage-carte:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px var(--temo-ombre);
+}
+
+/* Respect des préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  .temoignage-carte {
+    transition: none;
+  }
+  .temoignage-carte:hover {
+    transform: none;
+  }
+}
+
+/* ── Header de carte (avatar + identité) ────────────────────── */
+.temoignage-carte__header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.temoignage-carte__avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: var(--temo-rayon-avatar);
+  background-color: var(--temo-avatar-bg);
+  color: var(--temo-avatar-texte);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  user-select: none;
+}
+
+.temoignage-carte__identite {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.temoignage-carte__nom {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--temo-nom);
+  line-height: 1.3;
+}
+
+.temoignage-carte__date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--temo-date);
+}
+
+/* ── Étoiles ────────────────────────────────────────────────── */
+.temoignage-carte__etoiles {
+  font-size: 1rem;
+  color: var(--temo-etoile);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+/* ── Texte du témoignage ────────────────────────────────────── */
+.temoignage-carte__texte {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1; /* pousse la carte à s'étirer en hauteur égale */
+}
+
+.temoignage-carte__texte p {
+  margin: 0;
+  font-family: var(--temo-police-corps);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--temo-texte);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+/* Tablette paysage / petite desktop */
+@media (max-width: 960px) {
+  .temoignages__grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablette portrait */
+@media (max-width: 640px) {
+  .temoignages {
+    padding: 2.5rem 1rem;
+  }
+
+  .temoignages__grille {
+    grid-template-columns: 1fr;
+  }
+
+  .temoignage-carte {
+    padding: 1.25rem 1.1rem;
+  }
+}
+
+/* ── Accessibilité : focus visible ─────────────────────────── */
+.temoignage-carte:focus-within {
+  outline: 2px solid var(--temo-avatar-texte);
+  outline-offset: 2px;
+}
+
+/* Masquer visuellement mais garder pour les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mode sombre (optionnel, si votre site le supporte) ──────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --temo-bg: #1e1e1e;
+    --temo-carte-bg: #2a2a2a;
+    --temo-titre: #f0ede8;
+    --temo-sous-titre: #a0a0a0;
+    --temo-texte: #cccccc;
+    --temo-nom: #f0ede8;
+    --temo-date: #777777;
+    --temo-avatar-bg: #2e402e;
+    --temo-avatar-texte: #7bbf7b;
+    --temo-bordure: #3a3a3a;
+    --temo-ombre: rgba(0, 0, 0, 0.3);
+  }
+}

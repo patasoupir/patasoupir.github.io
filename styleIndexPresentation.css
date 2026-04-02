@@ -68,7 +68,6 @@ ul {
   flex: 1;
 }
 .menuRecherche button {
-  color: blue;
   font-size: 15pt;
 }
 
@@ -78,10 +77,13 @@ button {
   background-color: rgb(229, 229, 255);
   padding: 20px;
   font-family: arial;
+  text-decoration: underline;
+  color: blue;
 }
 button:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0);
+  text-decoration: none;
 }
 
 .menu2 {
@@ -90,11 +92,11 @@ button:hover {
   flex-direction: row;
   gap: 5px;
 }
-
 .menu2 img {
   max-width: 100%;
   cursor: pointer;
 }
+
 .menu2 img:hover {
   opacity: 0.8 ease 1s;
 }

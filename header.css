@@ -20,7 +20,7 @@ header .patasoupir {
   text-align: justify;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  margin-left: 5px;
   font-family: "arial", sans-serif;
 }
 
@@ -36,7 +36,10 @@ header .menu {
   flex-direction: row;
   flex: 1;
   font-size: 13pt;
-  padding: 3px;
+
+  border-bottom: dotted 8px yellow;
+  border-top: dotted 8px yellow;
+  background-color: rgb(0, 0, 0);
 }
 
 header .menu a {

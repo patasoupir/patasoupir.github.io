@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DR. DOUTE</title>
+    <meta
+      name="description"
+      content="Psychologue à Paris - Présentation, accompagnement et prise de rendez-vous."
+    />
+    <link rel="stylesheet" href="stylesIndexx.css" />
+    <link rel="stylesheet" href="containerignages.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header" role="banner">
+      <div class="container header-container">
+        <div class="logo" id="logo">
+          <a href="#">Docteur Doute</a>
+        </div>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <nav id="topnav_menu">
+            <ul>
+              <li><a href="#logo" id="home_link">Accueil</a></li>
+              <li><a href="#aPropos">À propos</a></li>
+              <li><a href="#accompagnement">Accompagnement</a></li>
+              <li><a href="#rdv">Prendre RDV</a></li>
+              <li><a href="#">Se connecter</a></li>
+            </ul>
+          </nav>
+          <!-- menu pour téléphone RESPONSIVE-->
+          <!-- Icône Hamburger -->
+          <a id="topnav_hamburger_icon" onclick="showResponsiveMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+
+          <!-- Menu Responsive -->
+          <nav id="topnav_responsive_menu">
+            <ul>
+              <li><a href="#home_link">Accueil</a></li>
+              <li><a href="#aPropos">À propos</a></li>
+              <li><a href="#accompagnement">Accompagnement</a></li>
+              <li><a href="#contact">Prendre RDV</a></li>
+              <li><a href="#connect">Se connecter</a></li>
+            </ul>
+          </nav>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content">
+      <!-- HERO / INTRO -->
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-image">
+            <!-- Photo -->
+            <img src="img/psy1.jpg" alt="Photo du psychologue" />
+          </div>
+          <div class="hero-text">
+            <h1>Psychologue clinicien à Paris</h1>
+            <p>
+              Accompagnement psychologique pour seniors, adultes et adolescents
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRESENTATION -->
+      <section class="about" id="aPropos">
+        <div class="container">
+          <h2>À propos</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                Aujourd'hui psychologue clinicien dans le Xème arrondissement de
+                Paris, je propose des consultations individuelles ou en groupe
+                pour tous les âges de la vie. Soucieux de m'intéresser à des
+                personnes différentes, quelque soit leur origine sociale, je
+                propose des prix très compétitifs pour le marché de la santé
+                mentale. Je suis aussi affilié au dispositif Mon Soutien Psy de
+                l'Assurance Maladie depuis sa création. Mon travail s'adresse en
+                particulier aux patients soufrant de troubles mentaux, à partir
+                de l'adolescence jusqu'à la mort.
+              </p>
+              <br />
+              <p>
+                Mon approche thérapeutique est basée sur la théorie
+                comportementale et cognitive, ainsi que sur les neuro-sciences
+                et la psychanalyse. Je cherche à trouver du sens aux
+                comportements négatifs pour amener du bonheur dans la vie de mes
+                patients et patientes.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <ul>
+                <li>
+                  <strong
+                    >Master en psychologie et psychopathologie clinique </strong
+                  >- UFR d’études psychanalytiques - Paris Cité (Paris 7)
+                </li>
+                <li>
+                  <strong>Psychologue</strong> au
+                  <strong>Centre Médico-Psychologie d'Orléans</strong> de 2019 à
+                  2020, puis psychologue clinicien en libéral à Versailles.
+                  Affilié à Mon Soutien Psy depuis 2025.
+                </li>
+                <li>
+                  Spécialiste en <strong>troubles anxieux</strong>,
+                  <strong>troubles du comportement alimentaire</strong> chez les
+                  adolescentes, <strong>troubles schizophréniques</strong> et
+                  <strong>troubles du langages</strong>.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="services" id="accompagnement">
+        <div class="container">
+          <h2>Accompagnement</h2>
+          <article class="service-card">
+            <details>
+              <summary>Consultations individuelles</summary>
+              <div class="service-content">
+                <p>
+                  En cas de dépression, mal-être, somatisation, anxiété,
+                  burn-out... Les symptômes variés sont acceptés.
+                </p>
+                <img src="img/cabinet1.jpg" />
+              </div>
+            </details>
+          </article>
+
+          <article class="service-card">
+            <details>
+              <summary>Thérapie de couple</summary>
+              <div class="service-content">
+                <p>1h30 conseillée pour la première fois.</p>
+                <img src="img/cabinet2.jpg" />
+              </div>
+            </details>
+          </article>
+          <article class="service-card">
+            <details>
+              <summary>Suivi adolescents</summary>
+              <div class="service-content">
+                <p>
+                  Les adolescents peuvent avoir beaucoup de difficultés en
+                  passant à l'âge adulte. Il est important de les accompagner
+                  dans leurs doutes légitimes.
+                </p>
+                <img src="img/cabinet3.jpg" />
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT / CTA -->
+      <section class="rdv" id="rdv">
+        <div class="container">
+          <h2>Prendre rendez-vous</h2>
+          <p></p>
+
+          <a href="#" class="btn">Voir les disponibilités</a>
+        </div>
+      </section>
+      <!-- TEMOIGNAGES -->
+      <section class="testimonials">
+        <div class="container">
+          <h2>Témoignages</h2>
+          <h4>Ce que les patients disent sur moi</h4>
+
+          <div class="testimonials-list">
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Le docteur Doute serait bon psychologue s'il ne tournait pas
+                tout le temps le dos à ses patients. La première fois, ça
+                destabilise, et puis on se déconcentre, on paie 70euros pour
+                ressortir plus confus qu'en entrant."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Un suivi qui m’a vraiment aidé à avancer. Je recommande
+                vivement."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Cadre rassurant et professionnel, je me suis senti en
+                confiance."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <!-- CACHÉS -->
+            <article class="testimonial hidden">
+              <p class="testimonial-text">
+                "une horreur. j'ai cru qu'on allait me découper en tranche"
+              </p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+
+            <article class="testimonial hidden">
+              <p class="testimonial-text">"Je recommande vivement..."</p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+
+            <article class="testimonial hidden">
+              <p class="testimonial-text">"Approche bienveillante..."</p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+          </div>
+
+          <div class="testimonials-more">
+            <button id="loadMoreBtn" class="btn">
+              Afficher plus de témoignages
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p>69, quai de Valmy</p>
+          <p>+33 7 88 89 93 31</p>
+          <p>dr65prototype@proton.me</p>
+        </div>
+
+        <!-- <div class="footer-col">
+          <h3>Réseaux sociaux</h3>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Doctolib</a></li>
+          </ul>
+        </div> -->
+        <hr />
+        <div id="mentionsLegales">
+          <ul>
+            <li>
+              <a href="Mentions Légales DrDoute.pdf">Mentions légales</a>
+            </li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
