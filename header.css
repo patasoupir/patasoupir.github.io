@@ -5,6 +5,10 @@ header {
   box-shadow: 0px 0px 200px rgb(0, 34, 255);
   margin: 0;
   padding: 0;
+
+  background-color: white;
+
+  margin-bottom: 10px;
 }
 body {
   margin: 0;
@@ -16,12 +20,13 @@ header a {
 }
 
 header .patasoupir {
-  font-size: 25pt;
+  font-size: 23px;
   text-align: justify;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 5px;
   font-family: "arial", sans-serif;
+  align-items: center;
 }
 
 header .patasoupir a {

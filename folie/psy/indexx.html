@@ -9,28 +9,65 @@
       content="Psychologue à Paris - Présentation, accompagnement et prise de rendez-vous."
     />
     <link rel="stylesheet" href="stylesIndexx.css" />
-    <link rel="stylesheet" href="containerignages.css" />
+
     <script src="script.js" defer></script>
+    <style>
+      /* QUESTIONS REPONSES TEST : */
+      .qcm-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .question {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .question h3 {
+        color: #333;
+      }
+
+      details {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      summary {
+        font-weight: bold;
+        color: #0056b3;
+      }
+      .reponse {
+        margin-top: 10px;
+        color: #555;
+        font-style: italic;
+      }
+    </style>
   </head>
 
   <body>
     <!-- HEADER -->
-    <header class="header" role="banner">
-      <div class="container header-container">
-        <div class="logo" id="logo">
-          <a href="#">Docteur Doute</a>
+    <header class="header1" role="banner">
+      <div class="headerViteLePsy">
+        <div class="logo">
+          <a href="#">Vite Le Psy</a>
+          <p>La bonne alternative</p>
         </div>
 
         <nav role="navigation" aria-label="Menu principal">
           <nav id="topnav_menu">
             <ul>
-              <li><a href="#logo" id="home_link">Accueil</a></li>
-              <li><a href="#aPropos">À propos</a></li>
-              <li><a href="#accompagnement">Accompagnement</a></li>
-              <li><a href="#rdv">Prendre RDV</a></li>
+              <li><a href="#aPropos">Le projet</a></li>
+              <li><a href="#QuiSommesNous?">Qui sommes-nous?</a></li>
+              <li><a href="#rdv">Discuter avec le Dr</a></li>
               <li><a href="#">Se connecter</a></li>
             </ul>
           </nav>
+
           <!-- menu pour téléphone RESPONSIVE-->
           <!-- Icône Hamburger -->
           <a id="topnav_hamburger_icon" onclick="showResponsiveMenu()">
@@ -42,10 +79,9 @@
           <!-- Menu Responsive -->
           <nav id="topnav_responsive_menu">
             <ul>
-              <li><a href="#home_link">Accueil</a></li>
-              <li><a href="#aPropos">À propos</a></li>
-              <li><a href="#accompagnement">Accompagnement</a></li>
-              <li><a href="#contact">Prendre RDV</a></li>
+              <li><a href="#aPropos">Le projet</a></li>
+              <li><a href="#QuiSommesNous?">Qui sommes-nous?</a></li>
+              <li><a href="#contact">Discuter avec le Dr.</a></li>
               <li><a href="#connect">Se connecter</a></li>
             </ul>
           </nav>
@@ -57,77 +93,141 @@
     <main id="main-content">
       <!-- HERO / INTRO -->
       <section class="hero">
-        <div class="container hero-content">
-          <div class="hero-image">
-            <!-- Photo -->
-            <img src="img/psy1.jpg" alt="Photo du psychologue" />
-          </div>
-          <div class="hero-text">
-            <h1>Psychologue clinicien à Paris</h1>
-            <p>
-              Accompagnement psychologique pour seniors, adultes et adolescents
-            </p>
-          </div>
+        <div class="hero-content">
+          <h1 id="big">
+            Votre plateforme experte en sant<span
+              style="
+                font-size: 3.5rem;
+                font-weight: 800;
+                color: #2c2952 solid 3px;
+                font-style: italic;
+              "
+              >é</span
+            >
+            mentale
+          </h1>
         </div>
       </section>
+      <!-- <h2>Un besoin, une souffrance ? Faites appel à nos services</h2> -->
 
       <!-- PRESENTATION -->
-      <section class="about" id="aPropos">
+      <section
+        class="about"
+        id="aPropos"
+        style="background-image: url(img/cabinet1.jpg)"
+      >
         <div class="container">
-          <h2>À propos</h2>
-          <div class="about-grid">
-            <div class="about-text">
-              <p>
-                Aujourd'hui psychologue clinicien dans le Xème arrondissement de
-                Paris, je propose des consultations individuelles ou en groupe
-                pour tous les âges de la vie. Soucieux de m'intéresser à des
-                personnes différentes, quelque soit leur origine sociale, je
-                propose des prix très compétitifs pour le marché de la santé
-                mentale. Je suis aussi affilié au dispositif Mon Soutien Psy de
-                l'Assurance Maladie depuis sa création. Mon travail s'adresse en
-                particulier aux patients soufrant de troubles mentaux, à partir
-                de l'adolescence jusqu'à la mort.
-              </p>
-              <br />
-              <p>
-                Mon approche thérapeutique est basée sur la théorie
-                comportementale et cognitive, ainsi que sur les neuro-sciences
-                et la psychanalyse. Je cherche à trouver du sens aux
-                comportements négatifs pour amener du bonheur dans la vie de mes
-                patients et patientes.
-              </p>
+          <div class="hero-text">
+            <div>
+              <h1>"La santé mentale est un <strong>droit</strong>"</h1>
             </div>
-
-            <div class="about-card">
-              <ul>
-                <li>
-                  <strong
-                    >Master en psychologie et psychopathologie clinique </strong
-                  >- UFR d’études psychanalytiques - Paris Cité (Paris 7)
-                </li>
-                <li>
-                  <strong>Psychologue</strong> au
-                  <strong>Centre Médico-Psychologie d'Orléans</strong> de 2019 à
-                  2020, puis psychologue clinicien en libéral à Versailles.
-                  Affilié à Mon Soutien Psy depuis 2025.
-                </li>
-                <li>
-                  Spécialiste en <strong>troubles anxieux</strong>,
-                  <strong>troubles du comportement alimentaire</strong> chez les
-                  adolescentes, <strong>troubles schizophréniques</strong> et
-                  <strong>troubles du langages</strong>.
-                </li>
-              </ul>
-            </div>
+            <p>
+              ViteLePsy s'est donné pour mission de simplifier l'accès aux soins
+              pour toutes et tous. A travers une plateforme ouverte et gratuite,
+              basée sur l'Intelligence Artificielle, Vite Le Psy met à la
+              disposition de la population francophone son docteur numérique,
+              disponible 7 jours sur 7 et 24h sur 24h. à travers une "chat-box"
+              (boîte de discussion) et une ligne d'écoute, le docteur peut
+              recevoir tout type de souffrance, mal-être ou douleur, quelque
+              soit l'heure et l'endroit. Précis, efficace, émotif, le docteur
+              peut :
+            </p>
+            <ul>
+              <li>vous écouter</li>
+              <li>vous conseiller d'autres ressources</li>
+              <li>vous rassurer</li>
+              <li>vous conseiller</li>
+            </ul>
+            <
           </div>
         </div>
       </section>
+      <div class="qcm-container">
+        <h2>Questions et Réponses</h2>
 
-      <!-- SERVICES -->
-      <section class="services" id="accompagnement">
-        <div class="container">
-          <h2>Accompagnement</h2>
-          <article class="service-card">
+        <!-- Exemple 1 : Question HTML -->
+        <div class="question">
+          <h3>1. Qui sommes-nous ?</h3>
+          <details>
+            <summary>Voir la réponse</summary>
+            <p class="reponse"></p>
+            <p>
+              Vite Le Psy est un outil numérique d'utilité citoyenne visant à
+              améliorer la situation critique de la population française en
+              santé mentale, déclarée "grande cause nationale 2025"
+            </p>
+
+            <p>
+              C'est une interface en ligne créée par nos experts de la santé
+              mentale pour apporter une aide précise et adaptée aux personnes en
+              souffrance psychologique. Le soin se numérise pour apporter 7
+              jours sur 7 et 24 heures sur 24 un soutien varié, quelque soit
+              l'intensité de la demande.
+            </p>
+          </details>
+        </div>
+        <div class="question">
+          <h3>2. Pourquoi agissons-nous ?</h3>
+          <details>
+            <summary>Voir la réponse</summary>
+            <p class="reponse">
+              Parce qu'aujourd'hui, une personne sur quatre en France est
+              susceptible d'être atteinte d'un trouble de la santé mentale à un
+              moment de sa vie. Puisque nous sommes tous potentiellement
+              touchés, nous devons tous prendre soin des uns des autres. Et
+              prendre soin des autres commence d'abord par le soin de soi-même.
+            </p>
+          </details>
+        </div>
+        <div class="question">
+          <h3>3. Pourquoi en avons-nous besoin ?</h3>
+          <details>
+            <summary>Voir la réponse</summary>
+            <p class="reponse"></p>
+            <p>
+              La santé mentale est une composante primordiale de notre être et
+              de notre bien-être. Le site santé public france explique : "La
+              santé mentale représente bien plus que l’absence de troubles ou de
+              handicaps mentaux." Selon l’OMS, l'Organisation Mondiale de la
+              Santé, la santé mentale est un « état de
+              <strong>bien-être</strong> qui permet à chacun de réaliser son
+              <strong>potentiel</strong>, de faire face aux difficultés
+              <strong>normales</strong> de la vie, de travailler avec
+              <strong>succès</strong> et de manière <strong>productive</strong>,
+              et d’être en mesure d’apporter une contribution à la communauté
+              »." Aujourd'hui, la santé mentale est un
+              <strong>droit</strong> auquel tous peuvent et doivent prétendre.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- SOURCES BONUS ICI FAUT LES METTRE  -->
+      <div class="sourceBONUS">
+        <p class="source">
+          Pour plus d'informations, nous vous invitons à visiter les interfaces
+          numériques de nos partenaires :
+        </p>
+        <p>
+          source : corinne fiorenti : Indiquer que les épisodes ont un impact
+          notable sur leurs relations, leurs performances au travail et à
+          l’école, ou sur d’autres
+          <strong>domaines de fonctionnement.</strong>
+        </p>
+
+        <p>
+          <a
+            href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale"
+            >santé publique france</a
+          >
+        </p>
+        <p>
+          sources : psychom.com, ameli, doctolib, santémentale-info-service,
+          santé publique france
+        </p>
+      </div>
+
+      <!-- <article class="service-card">
             <details>
               <summary>Consultations individuelles</summary>
               <div class="service-content">
@@ -161,76 +261,14 @@
                 <img src="img/cabinet3.jpg" />
               </div>
             </details>
-          </article>
-        </div>
-      </section>
+          </article> -->
 
       <!-- CONTACT / CTA -->
       <section class="rdv" id="rdv">
         <div class="container">
-          <h2>Prendre rendez-vous</h2>
-          <p></p>
-
-          <a href="#" class="btn">Voir les disponibilités</a>
-        </div>
-      </section>
-      <!-- TEMOIGNAGES -->
-      <section class="testimonials">
-        <div class="container">
-          <h2>Témoignages</h2>
-          <h4>Ce que les patients disent sur moi</h4>
-
-          <div class="testimonials-list">
-            <article class="testimonial">
-              <p class="testimonial-text">
-                "Le docteur Doute serait bon psychologue s'il ne tournait pas
-                tout le temps le dos à ses patients. La première fois, ça
-                destabilise, et puis on se déconcentre, on paie 70euros pour
-                ressortir plus confus qu'en entrant."
-              </p>
-              <p class="testimonial-author">— Prénom Nom</p>
-            </article>
-
-            <article class="testimonial">
-              <p class="testimonial-text">
-                "Un suivi qui m’a vraiment aidé à avancer. Je recommande
-                vivement."
-              </p>
-              <p class="testimonial-author">— Prénom Nom</p>
-            </article>
-
-            <article class="testimonial">
-              <p class="testimonial-text">
-                "Cadre rassurant et professionnel, je me suis senti en
-                confiance."
-              </p>
-              <p class="testimonial-author">— Prénom Nom</p>
-            </article>
-
-            <!-- CACHÉS -->
-            <article class="testimonial hidden">
-              <p class="testimonial-text">
-                "une horreur. j'ai cru qu'on allait me découper en tranche"
-              </p>
-              <p class="testimonial-author">— Prénom</p>
-            </article>
-
-            <article class="testimonial hidden">
-              <p class="testimonial-text">"Je recommande vivement..."</p>
-              <p class="testimonial-author">— Prénom</p>
-            </article>
-
-            <article class="testimonial hidden">
-              <p class="testimonial-text">"Approche bienveillante..."</p>
-              <p class="testimonial-author">— Prénom</p>
-            </article>
-          </div>
-
-          <div class="testimonials-more">
-            <button id="loadMoreBtn" class="btn">
-              Afficher plus de témoignages
-            </button>
-          </div>
+          <h2>Prendre rendez-vous en ligne</h2>
+          <p>Contacter notre spécialiste santé mentale</p>
+          <a href="drDoute.html" class="btn">Voir les disponibilités</a>
         </div>
       </section>
     </main>
@@ -238,12 +276,8 @@
     <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
       <div class="container footer-container">
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <p>69, quai de Valmy</p>
-          <p>+33 7 88 89 93 31</p>
-          <p>dr65prototype@proton.me</p>
-        </div>
+        <h1>VITE LE PSY</h1>
+        <p>© 2026. Vite Le Psy. Tous droits réservés.</p>
 
         <!-- <div class="footer-col">
           <h3>Réseaux sociaux</h3>
@@ -256,9 +290,13 @@
         <div id="mentionsLegales">
           <ul>
             <li>
+              <a href="#">Accessibilité</a>
+            </li>
+            <li>
               <a href="Mentions Légales DrDoute.pdf">Mentions légales</a>
             </li>
             <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Conditions Générales d'Utilisation</a></li>
           </ul>
         </div>
       </div>

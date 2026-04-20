@@ -20,14 +20,41 @@
       audio {
         height: 20px;
         width: 90%;
-        padding: 10px;
+        padding: 30px;
       }
       .titre {
         color: blue;
-        font-size: 1.3rem;
+        font-size: 20px;
         margin-top: 20px;
-        padding-top: 10px;
-        border-top: dotted blue 3px;
+        padding: 10px;
+      }
+
+      section {
+        margin-top: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 30px;
+      }
+      .ahouille {
+        box-shadow: 1px 1px 10px black;
+      }
+      p {
+        margin-left: 100px;
+        margin-right: 300px;
+        font-size: 16px;
+        padding: 20px;
+        font-family: "Times New Roman", Times, serif;
+        border-left: solid 1px black;
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          width: 100%;
+        }
+        p {
+          margin: 20px;
+          padding: 10px;
+        }
       }
     </style>
   </head>
@@ -40,7 +67,7 @@
     </header>
 
     <main>
-      <div class="box">
+      <section>
         <div class="ahouille">
           <div class="titre">
             Le banc Frédéric - supprimé ^^<br /><mark>2'49 - Novembre 2022</mark
@@ -104,8 +131,9 @@
             </p>
           </div>
         </div>
+      </section>
 
-        <!-- <div class="ahouille">
+      <!-- <div class="ahouille">
           <div class="titre">
             >A life without that in it, is a life ! can't lead<br /><mark
               >3'20 - Octobre 2023</mark
@@ -117,25 +145,20 @@
           </div>
         </div> -->
 
-        <div class="ahouille">
-          <div class="titre">
-            En me rendant au supermarché...
-            <br /><mark>2'53 - Novembre 2023</mark><br />
-            <audio controls src="son/listeDeCourses.mp3"></audio>
-          </div>
-
-          <div>
-            <p>Monte, montage</p>
-          </div>
+      <section class="ahouille">
+        <div class="titre">
+          En me rendant au supermarché...
+          <br /><mark>2'53 - Novembre 2023</mark><br />
+          <audio controls src="son/listeDeCourses.mp3"></audio>
         </div>
+      </section>
 
-        <div class="ahouille">
-          <div class="titre">
-            Au revoir, merci <br /><mark>3'17 - Décembre 2023</mark><br />
-            <audio controls src="son/auRevoirMerci.mp3"></audio>
-          </div>
+      <section class="ahouille">
+        <div class="titre">
+          Au revoir, merci <br /><mark>3'17 - Décembre 2023</mark><br />
+          <audio controls src="son/auRevoirMerci.mp3"></audio>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

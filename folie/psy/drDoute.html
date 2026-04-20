@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profil Psychologue</title>
+    <link rel="stylesheet" href="stylesIndexx.css" />
+    <script src="script.js" defer></script>
+    <style>
+      /* CHATBOX ICI : */
+      #chatBox {
+        display: none;
+      }
+      #chatbot {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+
+        display: grid;
+        grid-template-rows: 80px auto 50px;
+
+        height: 400px;
+        width: 400px;
+
+        font-family: arial;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 50%;
+      }
+
+      #headerChatBox {
+        display: flex;
+        padding: 5px;
+        border-radius: 10px 10px 0 0;
+        font-size: 10pt;
+        align-items: center;
+        gap: 10px;
+        background-color: rgb(0, 225, 255);
+      }
+      .affichageGrid {
+        display: grid;
+        grid-template-columns: 50px auto;
+      }
+      .botIcon {
+        margin: 5px;
+      }
+      .botIcon img {
+        max-width: 100%;
+        border-radius: 50%;
+        border: solid 3px white;
+      }
+
+      #conversation {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        overflow-y: scroll;
+
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .user,
+        .bot {
+          display: flex;
+          flex-direction: row;
+        }
+
+        p {
+          margin: 5px;
+          padding: 5px;
+          border-radius: 10px;
+        }
+      }
+
+      .user {
+        justify-content: flex-end;
+
+        p {
+          background-color: beige;
+        }
+      }
+
+      .bot {
+        justify-content: flex-start;
+
+        p {
+          background-color: rgb(0, 225, 255);
+        }
+      }
+
+      #input {
+        display: flex;
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+        border-top: grey 1px solid;
+
+        form {
+          display: contents;
+        }
+
+        input {
+          display: block;
+          margin: auto;
+          width: calc(100% - 10px);
+          height: calc(100% - 10px);
+          border: transparent;
+          padding: 5px;
+          border-radius: 0 10px 10px 10px;
+        }
+      }
+      /* ...................................................; /* FIN DU CHAT BOT */
+      /* ...................................................; /* FIN DU CHAT BOT */
+      /* ...................................................; /* FIN DU CHAT BOT */
+
+      .headerProfil {
+        background: white;
+        padding: 30px;
+        border-bottom: 1px solid #e5e7eb;
+
+        .container {
+          display: flex;
+          gap: 30px;
+        }
+      }
+      .profilImg {
+        width: 200px;
+        img {
+          max-width: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      /* SUB NAV */
+      .subnav {
+        position: sticky;
+        top: 0;
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 10;
+      }
+
+      .subnav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+      }
+
+      .subnav li {
+        margin: 10px 15px;
+      }
+
+      .subnav a {
+        text-decoration: none;
+        color: #2563eb;
+        font-weight: 500;
+      }
+
+      .subnav a:hover {
+        text-decoration: underline;
+      }
+
+      /* CARD SECTIONS */
+      .card {
+        background: white;
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card h2 {
+        margin-bottom: 15px;
+      }
+      #promotion {
+        text-align: center;
+      }
+
+      /* PRICING */
+      .pricing {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 8px;
+      }
+
+      /* MAP */
+      .map-placeholder {
+        height: 150px;
+        background: #e5e7eb;
+        border-radius: 8px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+      }
+
+      /* TESTIMONIALS */
+      .testimonials {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      h4 {
+        text-align: center;
+        color: var(--blue-main);
+        font-weight: 500;
+      }
+
+      .testimonials h2 {
+        text-align: center;
+      }
+
+      /* BUTTON */
+
+      .btn {
+        background: #2563eb;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .btn a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background: #1d4ed8;
+      }
+      #gridTroubles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        li {
+          border-radius: 1em;
+          background-color: rgb(14, 188, 223);
+          padding: 15px;
+          margin: 5px;
+        }
+        h5 {
+          font-size: 14pt;
+          margin-bottom: 10px;
+        }
+        br {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="headerViteLePsy" role="banner">
+      <div class="logo" id="logo">
+        <a href="indexx.html">ViteLePsy</a>
+      </div>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <nav id="topnav_menu">
+          <li><a href="#">Se connecter</a></li>
+        </nav>
+        <!-- menu pour téléphone RESPONSIVE-->
+        <!-- Icône Hamburger -->
+        <a id="topnav_hamburger_icon" onclick="showResponsiveMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <!-- Menu Responsive -->
+        <nav id="topnav_responsive_menu">
+          <ul>
+            <li><a href="#home_link">Accueil</a></li>
+            <li><a href="#aPropos">À propos</a></li>
+            <li><a href="#accompagnement">Accompagnement</a></li>
+            <li><a href="#contact">RDV en ligne</a></li>
+            <li><a href="#connect">Se connecter</a></li>
+          </ul>
+        </nav>
+      </nav>
+    </header>
+    <!-- HEADER -->
+    <div class="headerProfil">
+      <div class="container">
+        <div class="profilImg"><img src="img/psy1.jpg" /></div>
+        <div>
+          <h1>Dr. Doute</h1>
+          <p>Psychologue</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU ANCRE -->
+    <nav class="subnav">
+      <ul>
+        <li><a href="#presentation">Présentation</a></li>
+        <li><a href="#specialites">Spécialités</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#adresse">Adresse</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <!-- PRESENTATION -->
+      <section id="presentation" class="card">
+        <h2>Présentation</h2>
+        <div class="about-text">
+          <p>
+            Psychologue clinicien dans le Xème arrondissement de Paris, je
+            propose des consultations individuelles ou en groupe pour tous les
+            âges de la vie. Soucieux de m'intéresser à des personnes
+            différentes, quelque soit leur origine sociale, je fais de mon
+            possible pour proposer des prix attractifs pour ceux qui ont besoin
+            d'un suivi personnel en étant affilié au dispositif Mon Soutien Psy
+            de l'Assurance Maladie.
+          </p>
+          <p>
+            Depuis mars 2026, j'ai commencé à travailler pour VITE LE PSY, une
+            plateforme numérique gouvernenentale innovante pour les français et
+            françaises. VITE LE PSY apporte un soutien permanent aux personnes
+            en recherche d'aide.
+          </p>
+          <button class="btn" style="position: relative; right: 10px">
+            <a href="indexx.html">Découvrir Vite Le Psy</a>
+          </button>
+          <p>
+            Mon approche thérapeutique est basée sur la théorie comportementale
+            et cognitive, ainsi que sur les neuro-sciences et la psychanalyse.
+            Je cherche à trouver du sens aux comportements négatifs pour amener
+            du bonheur dans la vie de mes patients et patientes.
+          </p>
+        </div>
+        <h2>Mon parcours :</h2>
+        <ul>
+          <li>
+            <strong>Psychologue clinicien en libéral </strong>- Paris, Xème
+            arrondissement, 2020 - 2025
+          </li>
+
+          <li>
+            <strong>Psychologue</strong> au
+            <strong>Centre Médico-Psychologie d'Orléans</strong> de 2019 à 2020
+          </li>
+          <li>
+            <strong>Master en psychologie et psychopathologie clinique </strong
+            >- UFR d’études psychanalytiques - Paris Cité (Paris 7), 2017 - 2019
+          </li>
+        </ul>
+      </section>
+      <section id="promotion" class="card">
+        <button class="btn">
+          <a href="indexx.html">Découvrir Vite Le Psy</a>
+        </button>
+      </section>
+      <!-- SPECIALITES -->
+      <section id="specialites" class="card">
+        <h2>Spécialités</h2>
+        <ul id="gridTroubles">
+          <li>
+            <h5>Troubles dépressifs</h5>
+            <ul>
+              <li>Dépression passagère</li>
+              <li>Dépression chronique</li>
+              <li>Dépression résistante</li>
+            </ul>
+          </li>
+          <li>
+            <h5>Anxiétés</h5>
+            <ul>
+              <li>Anxiété chronique</li>
+              <li>Phobies</li>
+              <li>Troubles Obsessionnels Compulsifs (TOC)</li>
+              <li>Stress Post-Traumatic (PTSD)</li>
+              <li>Crise panique</li>
+            </ul>
+          </li>
+          <li>
+            <h5>Troubles du comportement</h5>
+            <ul>
+              <li>
+                Trouble de l'Attention avec et sans Hyperactivité (TDA(H))
+              </li>
+              <li>Haut Potentiel Intellectuel (HPI)</li>
+            </ul>
+          </li>
+          <li>
+            <h5>Troubles psychotiques</h5>
+            <ul>
+              <li>Schizophrénie</li>
+              <li>Hallucinations auditives et visuelles</li>
+            </ul>
+          </li>
+          <li>
+            <h5>Troubles de l'humeur</h5>
+            <ul>
+              <li>Bipolarité</li>
+              <li>Borderline</li>
+              <li>Gestion de la colère et du stress</li>
+              <li>Burn-out</li>
+              <li>Hypersensibilité</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- LANGUES -->
+      <section id="langues" class="card">
+        <h2>Langues parlées</h2>
+        <p>Anglais - Français - Espagnol</p>
+      </section>
+
+      <!-- TARIFS -->
+      <section id="tarifs" class="card">
+        <h2>Tarifs</h2>
+        <p>Conventionné secteur A</p>
+        <p>
+          Les paiements en Bitcoins (BTC, Liquid, Lighting) sont acceptés et
+          recommandés <br />Paiements par carte bancaire acceptés<br />
+          Espèces & chèques refusés
+        </p>
+        <br />
+        <div class="pricing">
+          <div class="price-item">
+            <span>Consultation</span>
+            <strong>80€</strong>
+          </div>
+          <div class="price-item">
+            <span>Suivi</span>
+            <strong>70€</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADRESSE -->
+      <!-- <section id="adresse" class="card">
+        <h2>Adresse</h2>
+        <p>69 quai de Valmy<br />75010 Paris</p>
+        <div class="map-placeholder">Carte ici</div>
+      </section> -->
+
+      <!-- CONTACT -->
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <input
+          type="button"
+          value="Prendre RDV"
+          class="btn"
+          id="btnChatBot"
+          onclick="revealChatBot()"
+        />
+      </section>
+      <!-- TEMOIGNAGES -->
+      <section class="testimonials">
+        <div class="container">
+          <h2>Témoignages</h2>
+          <h4>Ce que les patients disent sur moi</h4>
+
+          <div class="testimonials-list">
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Le docteur Doute serait bon psychologue s'il ne tournait pas
+                tout le temps le dos à ses patients. La première fois, ça
+                destabilise, et puis on se déconcentre, on paie 70euros pour
+                ressortir plus confus qu'en entrant."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Un suivi qui m’a vraiment aidé à avancer. Je recommande
+                vivement."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial-text">
+                "Cadre rassurant et professionnel, je me suis senti en
+                confiance."
+              </p>
+              <p class="testimonial-author">— Prénom Nom</p>
+            </article>
+
+            <!-- CACHÉS -->
+            <article class="testimonial hidden">
+              <p class="testimonial-text">
+                "une horreur. j'ai cru qu'on allait me découper en tranche"
+              </p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+
+            <article class="testimonial hidden">
+              <p class="testimonial-text">"Je recommande vivement..."</p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+
+            <article class="testimonial hidden">
+              <p class="testimonial-text">"Approche bienveillante..."</p>
+              <p class="testimonial-author">— Prénom</p>
+            </article>
+          </div>
+
+          <div class="testimonials-more">
+            <button id="loadMoreBtn" class="btn">
+              Afficher plus de témoignages
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-container">
+        <h1>VITE LE PSY</h1>
+        <p>© 2026. Vite Le Psy. Tous droits réservés.</p>
+
+        <!-- <div class="footer-col">
+          <h3>Réseaux sociaux</h3>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Doctolib</a></li>
+          </ul>
+        </div> -->
+        <hr />
+        <div id="mentionsLegales">
+          <ul>
+            <li>
+              <a href="Mentions Légales DrDoute.pdf">Mentions légales</a>
+            </li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script type="module">
+      import * as chrono from "https://esm.sh/chrono-node";
+      // serait cool d'avoir un preprocessing des messages
+      // pour transformer des abréviations, des expressions qu'il comprend pas genre MIDI
+
+      const savedAnswers = [
+        {
+          matchers: [
+            new RegExp(/\bdispo\b/i),
+            new RegExp(/\bdisponibilit[ée]\b/i),
+            new RegExp(/\bdisponibilit[ée]s\b/i),
+          ],
+          answers: [
+            "Quand vous voulez, nous sommes disponibles à tout heure.",
+            "N'importe.",
+            "Nous sommes ouverts 24/7.",
+          ],
+        },
+        {
+          matchers: [
+            new RegExp(/\bbonjour\b/i),
+            new RegExp(/\bhola\b/i),
+            new RegExp(/\bsalut\b/i),
+          ],
+          answers: ["Bonjour !"],
+        },
+        {
+          matchers: [
+            new RegExp(/\bmerci\b/i),
+            new RegExp(/\bsuper\b/i),
+            new RegExp(/\bcool\b/i),
+          ],
+          answers: ["De rien..."],
+        },
+      ];
+      const defaultAnswers = [
+        "Désolée, nous ne comprenons pas.",
+        "Vous vous êtes trompé ?",
+        "Proposez-moi un créneau",
+        "Caramba !",
+        "Vous m'en direz tant",
+        "Pouvez-vous revenir au sujet central ? Je répondrai mieux quand nous aurons parlé d'un créneau, merci.",
+      ];
+
+      function answerNoDate(message) {
+        const matchedAnswer = savedAnswers.find((savedAnswer) => {
+          const match = savedAnswer.matchers.find((matcher) => {
+            return matcher.exec(message) != null;
+          });
+          return match !== undefined;
+        });
+
+        if (matchedAnswer === undefined) {
+          const randomIndex = Math.floor(Math.random() * defaultAnswers.length);
+          return defaultAnswers[randomIndex];
+        }
+
+        const randomIndex = Math.floor(
+          Math.random() * matchedAnswer.answers.length,
+        );
+        return matchedAnswer.answers[randomIndex];
+      }
+
+      function answer(message) {
+        const parseDate = chrono.fr.parse(message);
+        if (parseDate.length === 0) {
+          return answerNoDate(message);
+        }
+
+        const formattedDate = new Intl.DateTimeFormat("fr-FR", {
+          dateStyle: "full",
+          timeStyle: "short",
+          timeZone: "Europe/Paris",
+        }).format(parseDate[0].start.date());
+
+        return `D'accord. Votre rendez-vous est enregistré pour ${formattedDate}. Vous avez besoin d'autre chose ?`;
+
+        // if (message.includes("demain")) {
+        //    return "Demain ça marche. Disons 10h"
+        //}
+
+        //return "J'ai pas compris, frère"
+      }
+      function sendBotMessage(content) {
+        const affichageGrid = document.createElement("div");
+        affichageGrid.classList.add("affichageGrid");
+        const botIcon = document.createElement("div");
+        botIcon.classList.add("botIcon");
+        const profilePic = document.createElement("img");
+        profilePic.src = "img/psy1.jpg";
+        const bot = document.createElement("div");
+        bot.classList.add("bot");
+        const text = document.createElement("p");
+        text.innerHTML = content;
+
+        affichageGrid.appendChild(botIcon);
+        affichageGrid.appendChild(bot);
+        botIcon.appendChild(profilePic);
+        bot.appendChild(text);
+
+        document.querySelector("#conversation").appendChild(affichageGrid);
+
+        affichageGrid.scrollIntoView(false);
+      }
+
+      function sendMessage(who, content) {
+        const messageContainer = document.createElement("div");
+        messageContainer.classList.add(who);
+
+        const messageContent = document.createElement("p");
+        messageContent.innerHTML = content;
+        messageContainer.appendChild(messageContent);
+
+        document.querySelector("#conversation").appendChild(messageContainer);
+        messageContainer.scrollIntoView(false);
+      }
+
+      const textInput = document.querySelector("#input input");
+
+      document
+        .querySelector("#input form")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const userText = textInput.value;
+          if (userText === "") {
+            return;
+          }
+
+          sendMessage("user", userText);
+
+          textInput.value = "";
+
+          const randomDelay = Math.random() * 500 + 300;
+          console.debug(randomDelay);
+          setTimeout(() => {
+            const botAnswer = answer(userText);
+            sendBotMessage(botAnswer);
+          }, randomDelay);
+        });
+
+      function revealChatBot() {
+        const chatBox = document.getElementById("chatBox");
+
+        if (window.getComputedStyle(chatBox).display === "none") {
+          chatBox.style.display = "block";
+        } else {
+          chatBox.style.display = "none";
+        }
+      }
+
+      document
+        .getElementById("btnChatBot")
+        .addEventListener("click", revealChatBot);
+    </script>
+    <div id="chatBox">
+      <div id="chatbot">
+        <div id="headerChatBox">
+          <!-- <div class="botIcon"><img src="img/psy1.jpg" /></div> -->
+          <div>
+            <h1>Dr. Doute</h1>
+            <p>Nous répondons dans l'instant</p>
+          </div>
+        </div>
+        <div id="conversation">
+          <div class="affichageGrid">
+            <div class="botIcon"><img src="img/psy1.jpg" /></div>
+            <div class="bot">
+              <p>
+                Bonjour, quand vous arrangerait-il de me rencontrer ? Proposez
+                l'heure que vous voulez 😊
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="input">
+          <form>
+            <input type="text" placeholder="Proposez un créneau" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

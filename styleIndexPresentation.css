@@ -1,151 +1,345 @@
 @font-face {
   font-family: "dragonlauphing";
-  src:
-    url("fonts/dragonlauphing.tff") format("tff"),
-    url("fonts/dragonlauphing.tff") format("tff");
-  font-weight: normal;
-  font-style: normal;
+  src: url("fonts/dragonlauphing.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "dragonlie";
-  src:
-    url("fonts/dragonlie.tff") format("tff"),
-    url("fonts/dragonlie.tff") format("tff");
-  font-weight: normal;
-  font-style: normal;
+  src: url("fonts/dragonlie.ttf") format("truetype");
 }
-/* général : */
+
+/* général */
 body {
   font-family: "arial";
   background-color: white;
   background-image: url("teaser/img/exemple2.png");
   background-size: 100%;
+  overflow-x: hidden;
 }
+
 a {
   color: blue;
 }
 
-/* corps */
-main {
+h1 {
+  font-weight: 100;
+  font-size: 25pt;
   margin: 5px;
 }
-li:hover {
-  cursor: pointer;
-  background-color: white;
+
+h3 {
+  font-weight: 100;
 }
-.deuxColonne {
+
+.visible {
+  display: none;
+}
+
+/* sections */
+section {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.box {
+  background-color: white;
+  box-shadow: 0px 0px 200px rgb(0, 34, 255);
+  margin-top: 170px;
+  margin-bottom: 100px;
+}
+
+/* HAUT DE PAGE */
+.hautDePage {
   display: flex;
   position: relative;
   margin-bottom: 50px;
-  align-items: center;
-}
-.titreGauche {
-  flex: 1;
 }
 
-#titreDrDoute {
-  color: rgba(255, 0, 166, 0.123);
-  position: absolute;
-  animation: blink 20s infinite;
-  top: 10px;
-  left: 10px;
-  font-size: 50pt;
-
-  z-index: 0;
-}
-.invitation {
-  font-size: 48pt;
-  width: fit-content;
-}
-ul {
-  width: fit-content;
-}
-.menuRecherche {
-  display: flex;
+.hautDePage #menuRecherche {
   z-index: 1000;
-  width: 100%;
-  gap: 5px;
+  display: contents;
   flex: 1;
 }
-.menuRecherche button {
-  font-size: 15pt;
+
+.hautDePage #menuRecherche button {
+  font-size: 17px;
+  border-left: solid 4px blue;
+  border-top: blue solid 2px;
+  border-radius: 10px 10px 10px 10px;
 }
 
-button {
-  border: none;
-  width: 100%;
-  background-color: rgb(229, 229, 255);
-  padding: 20px;
-  font-family: arial;
-  text-decoration: underline;
+.hautDePage #menuRecherche ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.hautDePage .titreGauche {
+  flex: 1;
+  border-bottom: rgb(236, 246, 255) solid 3px;
+}
+
+.invitation {
+  font-size: 35px;
+  color: rgb(132, 132, 131);
+  display: inline-block;
+  min-width: 250px;
+}
+
+/* CONTACT */
+#contact img {
+  margin: 150px;
+  margin-left: 260px;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 100px blue;
+}
+
+.textRight {
+  margin-left: 700px;
+  width: fit-content;
+  border-top: solid blue 3px;
+  border-left: solid 4px blue;
+  border-radius: 10px 10px 10px 10px;
+  padding: 15px;
+  box-shadow: 40px 30px 4px rgb(0, 208, 255);
+}
+
+.textRight summary {
   color: blue;
 }
-button:hover {
+
+#meContacter {
+  text-decoration: underline;
+}
+
+#meContacter:hover {
+  text-decoration: none;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0);
+}
+
+#images {
+  grid-column: 4/5;
+  grid-row: 3/4;
+  text-align: center;
+  align-items: center;
+  /* background-image: url("img/imgDessin/couveuse.jpg");
+  background-position: bottom;
+  background-size: 200%; */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: blue 0px 0px 10px;
+
+  animation: tourner 12s linear infinite;
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 52%,
+    rgba(2, 39, 247, 1) 1%
+  );
+}
+#images:hover {
+  opacity: 0.1;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+#images a {
+  animation: blink 4s infinite ease;
+  color: white;
   text-decoration: none;
 }
 
-.menu2 {
-  display: flex;
-  width: fit-content;
-  flex-direction: row;
-  gap: 5px;
-}
-.menu2 img {
-  max-width: 100%;
-  cursor: pointer;
+/* GRID */
+#autresProjets {
+  margin-top: 200px;
+  border: 50px solid transparent;
+  border-image: url("img/fear.png") 300 round;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(235, 235, 235, 1) 6%,
+    rgba(29, 29, 38, 1) 89%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, 200px);
+  gap: 10px;
 }
 
-.menu2 img:hover {
-  opacity: 0.8 ease 1s;
+#autresProjets h1 {
+  color: rgb(39, 240, 12);
+}
+
+#autresProjets button {
+  font-size: 16px;
+  background-color: transparent;
+}
+
+#autresProjets article {
+  margin: 0 auto;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
+
+  display: flex;
+  flex-direction: column;
+}
+/* 
+#autresProjets article:hover {
+  width: 98%;
+  transition: 0.2s ease;
+} */
+
+#autresProjets img {
+  max-width: 100%;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* placements grid */
+#titreGrid {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+#paint {
+  box-shadow: 0px 0px 100px rgba(60, 201, 244, 0.473);
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 150px;
+}
+
+#capu {
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+
+#chili {
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}
+
+#starFinch {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}
+#grass {
+  grid-column: 2/4;
+  grid-row: 3/5;
+}
+
+#labyrinthe {
+  width: auto;
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+#myHeart {
+  grid-column: 4/5;
+  grid-row: 5/6;
+  box-shadow: none;
+}
+
+#sons {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  border-radius: 50%;
+  background-color: chartreuse;
+
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 30px greenyellow;
+  background-image: url("img/1253.png");
+}
+
+/* inspirations */
+#inspirations {
+  width: fit-content;
+  padding: 20px;
+  padding-right: 40px;
+  box-shadow: 0px 0px 50px black;
+  margin-bottom: 200px;
+}
+
+#inspirations li:hover {
+  cursor: pointer;
+  background-color: rgb(199, 199, 199);
+}
+
+#inspirations ul {
+  width: fit-content;
+}
+
+#inspirations h1 {
+  color: red;
+  font-weight: 100;
+}
+
+/* boutons */
+button {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-family: arial;
+  text-decoration: underline;
+  color: blue;
+  background-color: rgb(236, 246, 255);
+}
+
+button:hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 li {
   list-style-type: none;
+  color: blue;
 }
 
-.dottedBorder {
+/* dotted */
+#dottedBorder {
   display: flex;
   flex-direction: column;
   border: dotted black 3px;
-  border-radius: 500px;
+  border-radius: 400px;
   width: 70%;
   margin: 10px auto;
+  padding: 30px;
+  background-color: transparent;
 }
 
-.drawingBox {
-  display: flex;
-  flex-direction: column;
-  animation: none;
-  text-decoration: none;
-  margin: 25px;
-  text-align: center;
-  margin-top: 45px;
-  margin-bottom: 80px;
-  position: absolute;
-}
-.border {
-  display: flex;
-  border: dotted rgb(0, 0, 0) 10px;
-  margin: 10px auto;
-}
-.qr {
+#dottedBorder .qr {
   padding: 10px;
 }
-.qr img {
+
+#dottedBorder .qr img {
   width: 10%;
 }
-.ENORME {
-  font-family: helvetica;
-  text-align: justify-all;
-  /* animation: blink 7s infinite; */
-  font-size: 35pt;
-  width: 70%;
-  color: blue;
-  margin: 5px;
+
+.EXEMPLES img {
+  max-width: 100%;
 }
 
+/* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 12pt;
+  text-align: center;
+  padding: 100px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+/* animation */
 @keyframes blink {
   0% {
     opacity: 1;
@@ -157,99 +351,125 @@ li {
     opacity: 1;
   }
 }
-.borderTopRed {
-  border-top: red 10px dotted;
-}
-.EXEMPLES {
-  background-image: url("teaser/img/exemple.png");
-}
-.EXEMPLES img {
-  width: 100%;
-}
-
-.cacheCache {
-  z-index: 1;
-  text-align: center;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.weight {
-  font-style: oblique;
-  color: rgb(255, 2, 2);
-  font-size: 13pt;
-}
-.crass {
-  font-size: 30pt;
-}
-
-.dragaulauphing {
-  font-family: "dragonlauphing", sans-serif;
-  font-size: 30pt;
-  color: rgb(0, 0, 0);
-}
-.dragonlie {
-  font-family: "dragonlie", sans-serif;
-  font-size: 13pt;
-}
-
-.castle {
-  color: blue;
-  text-align: center;
-}
-
-li {
-  color: blue;
-}
-footer {
-  display: flex;
-  flex-direction: column;
-  font-family: arial;
-  font-size: 12pt;
-  text-align: center;
-  padding: 10px;
-}
-
-@media only screen and (max-width: 820px) {
-  body {
-    overflow-x: hidden;
+/* tourner */
+@keyframes tourner {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
   .none {
     display: none;
   }
-  .invitation {
-    font-size: 15pt;
-  }
-  #titreDrDoute {
-    font-size: 30pt;
+
+  .visible {
+    display: block;
+    margin: 5px;
   }
 
-  .menuRecherche,
-  .menu2 {
+  section {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hautDePage {
     flex-direction: column;
-    margin-top: 30px;
+    gap: 30px;
   }
 
-  .menuRecherche button,
-  .menu2 button {
-    padding: 10px;
-    font-size: 13pt;
-    font-family: arial;
+  .hautDePage #menuRecherche ul {
+    flex-direction: column;
+    gap: 0;
   }
-  .menu2 img {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-  }
-  div .flex-column {
+
+  #autresProjets {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
+    border: 10px solid transparent;
+    border-top: 55px solid transparent;
+    border-bottom: 1505px solid transparent;
+    border-image: url("img/fear.png") 30 round;
+    box-shadow: 0px 0px 100px black;
   }
 
-  .box img {
-    max-width: 100%;
+  #autresProjets h1 {
+    margin-bottom: 40px;
   }
-  .ENORME {
-    font-size: 20pt;
+
+  #autresProjets {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #autresProjets article {
+    background-color: white;
+  }
+  #paint {
+    padding-bottom: 30px;
+  }
+  #capu {
+    width: fit-content;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    box-shadow: 0px 100px 100px rgb(172, 164, 165);
+  }
+  #chili {
+    padding-top: 300px;
+    box-shadow: 0px 100px 10px rgb(21, 255, 0);
+    background-image: url("img/1243.png");
+    background-position: right;
+  }
+  #starFinch {
+    padding-bottom: 30px;
+  }
+  #grass {
+    padding-bottom: 50px;
+  }
+
+  #labyrinthe {
+    width: auto;
+    grid-column: 1/3;
+    grid-row: 2/4;
+  }
+
+  #myHeart {
+    background-color: transparent;
+  }
+
+  button {
+    color: black;
+    background-color: transparent;
+  }
+
+  .textRight {
+    margin: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  footer {
+    padding: 0;
+    padding-top: 100px;
+    font-size: 15px;
+  }
+
+  #dottedBorder {
+    display: none;
+  }
+
+  #inspirations {
+    margin: 10px;
   }
 }

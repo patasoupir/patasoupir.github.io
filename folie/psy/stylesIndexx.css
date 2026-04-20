@@ -20,7 +20,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   color: #2c2952;
-  background: #4d8ee9;
+  /* background: #4d8ee9; */
 }
 
 /* VARIABLES */
@@ -35,46 +35,77 @@ body {
 
 /* CONTAINER */
 .container {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
+@font-face {
+  font-family: "Doctor";
+  src:
+    url("/fonts/Doctor.ttf") format("ttf"),
+    url("/fonts/Doctor.ttf") format("truetype");
+}
+@font-face {
+  font-family: "medicall";
+  src:
+    url("/fonts/medicall.ttf") format("ttf"),
+    url("/fonts/medicall.ttf") format("truetype");
+}
 
 /* HEADER */
-.header {
+.header1 {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #eee;
+  left: 0;
+  width: 100%;
+
   z-index: 1000;
-}
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
+  .headerViteLePsy {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-.logo a {
-  font-weight: bold;
-  color: var(--blue-dark);
-  text-decoration: none;
-  font-size: 1.2rem;
+    background: rgba(52, 76, 234, 0.9);
+    backdrop-filter: blur(10px);
+
+    font-size: 2rem;
+    border-radius: 0;
+    padding: 25px;
+  }
+
+  .logo a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    padding-bottom: 100px;
+    font-family: "medicall", sans-serif;
+  }
+  p {
+    font-size: 1rem;
+    color: white;
+    font-style: italic;
+  }
 }
 
 #topnav_menu ul {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 40px;
+
+  font-family: arial;
+  font-weight: 600;
 }
 
 #topnav_menu a {
   text-decoration: none;
-  color: #333;
+  color: white;
   position: relative;
-  font-size: 0.95rem;
+
+  font-size: 1rem;
+  font-weight: 0;
 }
 
 #topnav_menu a::after {
@@ -84,7 +115,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: var(--blue-main);
+  background: white;
   transition: 0.3s;
 }
 
@@ -98,31 +129,36 @@ body {
 }
 
 /* HERO */
+#big {
+  font-size: 30pt;
+  color: white;
+  font-family: "medicall", sans-serif;
+}
 .hero {
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
+  flex-direction: column;
+
+  background: rgba(77, 101, 253, 0.9);
+
+  margin: 0 auto;
+  text-align: center;
   align-items: center;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)),
-    url("") center/cover no-repeat; /* image de fond */
+
+  border-radius: 0 0 20px 20px;
 }
 
 .hero-content {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  flex-direction: column;
+
+  h2 {
+    color: white;
+    font-size: 2rem;
+  }
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  color: var(--blue-dark);
-}
-
-.hero-text p {
-  margin-top: 15px;
-  font-size: 1.1rem;
-}
-
+/* 
 .hero-image img {
   width: 220px;
   height: 220px;
@@ -130,32 +166,35 @@ body {
   object-fit: cover;
   box-shadow: var(--shadow);
   transition: transform 0.4s ease;
-}
-
+} */
+/* 
 .hero-image img:hover {
   transform: scale(1.05);
-}
+} */
 
 /* SECTIONS GENERALES */
 section {
   padding: 80px 0;
 }
 
-/* ABOUT */
+/* ABOUT ---- A PROPOS aPropos*/
+#aPropos {
+  border: #2c2952 solid 3px;
+  border-radius: 20px;
+  margin: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  img {
+    max-width: 100%;
+    size-adjust: fill;
+  }
+}
 .about {
   background: var(--white);
 }
 
-.about-grid {
-  display: flex;
-  gap: 50px;
-  margin-top: 40px;
-}
-
 .about-card {
   background: var(--blue-light);
-  padding: 25px;
-  border-radius: 15px;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
@@ -166,6 +205,7 @@ section {
 
 /* SERVICES */
 h2 {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .services {
@@ -291,20 +331,6 @@ h2 {
   background: var(--accent);
   transform: translateY(-2px);
 }
-/* TESTIMONIALS */
-h4 {
-  text-align: center;
-  color: var(--blue-main);
-  font-weight: 500;
-}
-.testimonials {
-  background: linear-gradient(180deg, #eaf5f2 0%, #f3f8f6 100%);
-}
-
-.testimonials h2 {
-  text-align: center;
-}
-
 /* LISTE EN BLOC  */
 .testimonials-list {
   margin-top: 40px;
@@ -373,6 +399,7 @@ h4 {
   background: #201f2d;
   color: #cfd8d8;
   padding: 50px 0;
+  margin-top: 20px;
 }
 
 .footer-container {
@@ -391,6 +418,11 @@ h4 {
 }
 #mentionsLegales {
   text-align: center;
+}
+#mentionsLegales ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 #mentionsLegales li {
   line-height: 1;
