@@ -472,4 +472,29 @@ footer a {
   #inspirations {
     margin: 10px;
   }
+  @media screen and (max-width: 768px) {
+    /* 🔧 corrige les images */
+    #autresProjets img {
+      width: 100%;
+      max-width: 300px; /* limite la taille */
+      height: auto;
+      margin: 0 auto; /* centre */
+      display: block;
+    }
+
+    /* 🔧 évite que les articles débordent */
+    #autresProjets article {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    /* 🔧 corrige tes gros blocs ronds */
+    #images,
+    #sons {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+  }
 }
