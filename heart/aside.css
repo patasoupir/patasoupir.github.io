@@ -1,21 +1,25 @@
-aside
-{
-    display: inline-block;
-position: absolute;
-    right:2px;
-   
+aside {
+  display: inline-block;
+  position: absolute;
+  right: 2px;
 }
 
-aside img {width:50px; border-radius:0.4em; animation:blink 6s infinite;}
+aside img {
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+  animation: blink 6s infinite;
+  box-shadow: 3px 3px 10px white;
+}
 
 @keyframes blink {
-    0% {
-      opacity: 0.6;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 0.6;
-    }
+  0% {
+    opacity: 0.6;
   }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

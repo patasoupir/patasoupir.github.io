@@ -14,7 +14,24 @@
         font-family: arial;
         color: white;
         text-align: center;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 3px 3px 10px red;
+        margin-bottom: 20px;
       }
+      header .patasoupir {
+        background-color: white;
+        width: fit-content;
+        text-align: left;
+        padding: 10px;
+
+        width: fit-content;
+      }
+      header .patasoupir a {
+        color: red;
+      }
+
       a {
         color: white;
         text-decoration: none;
@@ -24,16 +41,19 @@
       }
 
       div.center {
+        z-index: 0;
         position: absolute;
         top: 50%;
         left: 50%;
         width: 50%;
         transform: translate(-50%, -50%);
         font-family: arial;
+        height: 50px;
       }
 
       .donc {
         position: relative;
+
         color: white;
         text-align: center;
       }
@@ -48,24 +68,43 @@
         position: relative;
         text-align: right;
         font-weight: bold;
+        margin-bottom: 100px;
+      }
+      @media only screen and (max-width: 820px) {
+        header {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
 
   <body>
     <header>
-      attention : vous entrez dans un labyrinthe de pages jamais terminé.
-      conseils : regardez sur un ordinateur, utilisez ctrl+A parfois, et surtout
-      servez-vous des flèches avant-arrière de votre navigateur.
-    </header>
-    <div class="center">
-      <p class="donc">
-        <a href="6finaltobe.html">Quand est-ce qu'on s'amuse ?</a>
+      <p class="patasoupir">
+        <a href="../index.html">< revenir à l'index</a>
       </p>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <div class="pourquoi"><a href="2parfoiscacophonie.html">parfois</a></div>
-      <br /><br /><br /><br /><br /><br />
-      <div class="miam"><a href="3souvent.html">souvent</a></div>
-    </div>
+
+      <p>
+        <strong>attention</strong><br />
+        vous entrez dans un labyrinthe de pages jamais terminé.<br />
+        <strong>conseils </strong>: regardez sur un ordinateur, utilisez ctrl+A
+        parfois, et surtout servez-vous des boutons "précédent" / "suivant" de
+        votre navigateur.
+      </p>
+    </header>
+    <main>
+      <div class="center">
+        <p class="donc">
+          <a href="6finaltobe.html">Quand est-ce qu'on s'amuse ?</a>
+        </p>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div class="pourquoi">
+          <a href="2parfoiscacophonie.html">parfois</a>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <div class="miam"><a href="3souvent.html">souvent</a></div>
+        <br /><br /><br /><br /><br /><br />
+      </div>
+    </main>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -14,7 +14,29 @@
       }
       body {
         background-color: black;
+
+        font-family: arial;
+      }
+      header .patasoupir {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: fit-content;
+        text-align: left;
+        padding: 5px;
+        box-shadow: 3px 3px 13px red;
+        color: black;
+        font-size: 13px;
+        width: 150px;
+      }
+      header .patasoupir a {
         color: white;
+        background-color: red;
+        font-size: 17px;
+      }
+      header .patasoupir img {
+        max-width: 100px;
+        width: 100%;
       }
 
       main {
@@ -57,8 +79,16 @@
         border-radius: 1px;
         box-shadow: 3px 2px 3px #212427;
       }
-      @media (orientation: portrait) {
-        img {
+
+      @media only screen and (max-width: 820px) {
+        header .patasoupir {
+          display: flex;
+          width: 100%;
+        }
+        #left img {
+          margin-top: 100px;
+        }
+        #right img {
           width: 100%;
         }
         .piou img {
@@ -69,6 +99,17 @@
   </head>
 
   <body>
+    <header>
+      <div class="patasoupir">
+        <p>
+          vous entrez autre part.<br /><br />pour vous promener, cliquez un peu
+          partout. <br /><br />pour revenir à l'entrée, touchez le couple en
+          haut de chaque page
+        </p>
+
+        <a href="../index.html">< je m'en fous je retourne à l'index</a>
+      </div>
+    </header>
     <main>
       <div id="left">
         <a href="egg.html"

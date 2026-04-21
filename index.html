@@ -30,23 +30,32 @@
       <section class="hautDePage">
         <div class="titreGauche">
           <h1>le docteur doute</h1>
-          <p class="visible">
-            un site internet<br />lisible sur téléphone <br />parfois
-          </p>
+          <p class="visible" id="paragrapheMove"></p>
           <!-- <div class="invitation"></div> -->
           <!-- <div id="titreDrDoute">
             MAIS DOCTEUR <br />
             VIENDREZ-VOUS NOUS AIDER ?
           </div> -->
         </div>
+        <div class="visible" id="informations">
+          <details>
+            <summary>informations</summary>
+            <p>
+              <a href="https://madaaam.hotglue.me">
+                allez voir ailleurs si j'y suis</a
+              >
+            </p>
+          </details>
+        </div>
 
         <nav role="navigation" aria-label="menu1" id="menuRecherche">
           <ul>
-            <li>
+            <li class="none">
               <a href="https://madaaam.hotglue.me">
-                <button>informations</button></a
-              >
+                <button>informations</button>
+              </a>
             </li>
+
             <li>
               <a href="folie/genSanteMentale.html"
                 ><button>diagnostic fait main</button></a
@@ -90,7 +99,11 @@
           </div>
         </article>
       </section>
-
+      <section id="imgTransition">
+        <div>
+          <img src="grass/img/diner.png" />
+        </div>
+      </section>
       <section id="autresProjets">
         <h1 class="titreAutresProjets" id="titreGrid"></h1>
         <article class="flex-column" id="paint">
@@ -99,9 +112,9 @@
           </a>
           <a href="paint.html"> <button>redessiner un lit ?</button></a>
         </article>
-        <article class="flex-column" id="chili">
+        <!-- <article class="flex-column" id="chili">
           <a href="chili/indexBlog.html"> <img src="img/blogChili.png" /></a>
-        </article>
+        </article> -->
         <article class="flex-column" id="capu">
           <a href="capu/generateurDeCapu.html">
             <img src="img/capuProjet.png" /></a
@@ -218,53 +231,67 @@
     </main>
 
     <footer>
-      <div class="léa">au revoir léa !</div>
-      <div class="fin"><a href="dieu.html">et que dieu vous bénisse</a></div>
+      <div id="white">
+        <div class="léa">au revoir léa !</div>
+        <div class="fin"><a href="dieu.html">et que dieu vous bénisse</a></div>
+        <img src="grass/img/OKko.png" />
+      </div>
     </footer>
 
     <script>
-      const texts = [
-        "d'autres choses",
+      function typeWriter(targetSelector, texts) {
+        let textIndex = 0;
+        let i = 0;
+
+        function loop() {
+          const element = document.querySelector(targetSelector);
+          const currentText = texts[textIndex];
+
+          if (i < currentText.length) {
+            element.innerHTML += currentText.charAt(i);
+            i++;
+
+            const randomSpeed = Math.random() * 150 + 50;
+            setTimeout(loop, randomSpeed);
+          } else {
+            setTimeout(() => {
+              element.innerHTML = "";
+              i = 0;
+              textIndex = (textIndex + 1) % texts.length;
+              loop();
+            }, 1200);
+          }
+        }
+
+        loop();
+      }
+
+      /* 👉 premier bloc (ton original) */
+      typeWriter(".titreAutresProjets", [
+        "↓ d'autres choses",
         "drôles",
         "des fois",
-        "travaux vieux",
+        "↓ travaux vieux",
         "ou bien récents",
-        "VRAC",
+        "↓ VRAC",
         "réalisé",
         "il y a longtemps",
         "ou non",
-        "afin de parler",
-        "de choses",
-      ];
+        "↓ afin de parler",
+        "↓ de choses",
+      ]);
 
-      let textIndex = 0;
-      let i = 0;
+      /* 👉 deuxième bloc (ton <p id="paragrapheMove">) */
+      typeWriter("#paragrapheMove", [
+        "d'un site internet",
+        "lisible sur téléphone",
+        "enfin la plupart du temps",
+        "ça dépend des liens",
+        "il faut essayer",
 
-      function typeWriter() {
-        const element = document.querySelector(".titreAutresProjets");
-        const currentText = texts[textIndex];
-
-        if (i < currentText.length) {
-          element.innerHTML += currentText.charAt(i);
-          i++;
-
-          const randomSpeed = Math.random() * 150 + 50;
-          setTimeout(typeWriter, randomSpeed);
-        } else {
-          // ⬇️ pause puis reset
-          setTimeout(() => {
-            element.innerHTML = ""; // disparaît d’un coup
-            i = 0;
-
-            // passe au texte suivant
-            textIndex = (textIndex + 1) % texts.length;
-
-            typeWriter();
-          }, 1200);
-        }
-      }
-
-      typeWriter();
+        "prenez un ordi si ça vous chante",
+        "pour bien profiter",
+      ]);
     </script>
   </body>
 </html>

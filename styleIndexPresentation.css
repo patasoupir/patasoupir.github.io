@@ -30,7 +30,9 @@ h1 {
 h3 {
   font-weight: 100;
 }
-
+.none {
+  display: block;
+}
 .visible {
   display: none;
 }
@@ -57,7 +59,6 @@ section {
   position: relative;
   margin-bottom: 50px;
 }
-
 .hautDePage #menuRecherche {
   z-index: 1000;
   display: contents;
@@ -113,13 +114,21 @@ section {
   color: blue;
 }
 
-#meContacter {
+#meContacter,
+#informations {
   text-decoration: underline;
+  color: blue;
 }
 
+#informations:hover,
 #meContacter:hover {
   text-decoration: none;
   cursor: pointer;
+  color: black;
+}
+#informations a {
+  text-decoration: none;
+  color: black;
 }
 
 #images {
@@ -154,10 +163,12 @@ section {
   color: white;
   text-decoration: none;
 }
-
+/* img de transition */
+#imgTransition img {
+  width: 170px;
+}
 /* GRID */
 #autresProjets {
-  margin-top: 200px;
   border: 50px solid transparent;
   border-image: url("img/fear.png") 300 round;
   box-shadow: 0px 0px 20px rgb(0, 0, 0);
@@ -175,7 +186,10 @@ section {
 }
 
 #autresProjets h1 {
-  color: rgb(39, 240, 12);
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
 }
 
 #autresProjets button {
@@ -190,18 +204,10 @@ section {
   display: flex;
   flex-direction: column;
 }
-/* 
-#autresProjets article:hover {
-  width: 98%;
-  transition: 0.2s ease;
-} */
-
 #autresProjets img {
-  max-width: 100%;
-  cursor: pointer;
   width: 100%;
+  max-width: 500px;
 }
-
 /* placements grid */
 #titreGrid {
   grid-column: 1/3;
@@ -388,7 +394,7 @@ footer a {
 
   .hautDePage #menuRecherche ul {
     flex-direction: column;
-    gap: 0;
+    gap: 3px;
   }
 
   #autresProjets {
@@ -412,40 +418,53 @@ footer a {
     gap: 60px;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: right;
   }
+
+  /* 🔧 corrige les images */
+  #autresProjets img {
+    width: 100%;
+    max-width: 300px; /* limite la taille */
+    height: auto;
+    margin: 0 auto; /* centre */
+    display: block;
+  }
+
+  /* 🔧 évite que les articles débordent */
   #autresProjets article {
-    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
   }
-  #paint {
-    padding-bottom: 30px;
-  }
+
   #capu {
-    width: fit-content;
-    margin-top: 200px;
-    margin-bottom: 100px;
     box-shadow: 0px 100px 100px rgb(172, 164, 165);
   }
   #chili {
-    padding-top: 300px;
     box-shadow: 0px 100px 10px rgb(21, 255, 0);
     background-image: url("img/1243.png");
     background-position: right;
   }
-  #starFinch {
-    padding-bottom: 30px;
+  /* #starFinch {
+  
   }
   #grass {
-    padding-bottom: 50px;
-  }
+  
+  } */
 
-  #labyrinthe {
-    width: auto;
-    grid-column: 1/3;
-    grid-row: 2/4;
+  #labyrinthe button {
+    color: white;
   }
 
   #myHeart {
     background-color: transparent;
+  }
+  #images,
+  #sons {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
   }
 
   button {
@@ -456,13 +475,34 @@ footer a {
   .textRight {
     margin: 10px;
     margin-top: 30px;
+    margin-bottom: 70px;
     font-size: 20px;
   }
 
   footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 0;
-    padding-top: 100px;
-    font-size: 15px;
+    margin-top: 30px;
+    height: 500px;
+    margin: 0;
+
+    text-align: center;
+    background-image: url("img/fear.png");
+    gap: 10px;
+  }
+
+  footer #white {
+    background-color: white;
+    /* border-top: solid 77px blue; */
+    padding: 5px;
+    padding-top: 30px;
+    box-shadow: 3px 4px 16px black;
+  }
+  footer #white img {
+    width: 100%;
+    max-width: 200px;
   }
 
   #dottedBorder {
@@ -471,30 +511,5 @@ footer a {
 
   #inspirations {
     margin: 10px;
-  }
-  @media screen and (max-width: 768px) {
-    /* 🔧 corrige les images */
-    #autresProjets img {
-      width: 100%;
-      max-width: 300px; /* limite la taille */
-      height: auto;
-      margin: 0 auto; /* centre */
-      display: block;
-    }
-
-    /* 🔧 évite que les articles débordent */
-    #autresProjets article {
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-    }
-
-    /* 🔧 corrige tes gros blocs ronds */
-    #images,
-    #sons {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-    }
   }
 }
