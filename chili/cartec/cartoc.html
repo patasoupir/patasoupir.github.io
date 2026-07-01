@@ -12,6 +12,53 @@
     />
 
     <style>
+      #index a:hover {
+        color: red;
+      }
+      .welcome-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 1000;
+      }
+
+      .popup-content {
+        background-color: rgba(255, 255, 255, 0.849);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-family: "Arial", sans-serif;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+        color: rgb(0, 0, 255);
+        display: block;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+      }
+
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: red;
+        border-radius: 0;
+        box-shadow: 0px 0px 500px rgb(1, 35, 255);
+      }
+      .close-popup:hover {
+        color: white;
+      }
+
       #grand-espace {
         position: relative;
         width: 2000px;
@@ -20,9 +67,9 @@
         background: radial-gradient(
           circle,
           rgb(255, 255, 255) 0%,
-          rgb(187, 211, 213) 13%,
-          rgb(201, 165, 89) 93%,
-          rgb(108, 103, 103) 100%
+          rgb(191, 193, 247) 13%,
+          rgb(255, 247, 2) 93%,
+          rgb(243, 101, 6) 100%
         );
       }
       #centre {
@@ -54,12 +101,14 @@
   </head>
 
   <body>
-    <header>
-      <div class="patasoupir">
-        <a href="../../index.html">< retour</a>
+    <div class="welcome-popup" id="welcomePopup">
+      <div id="#triangle-top"></div>
+      <div class="popup-content">
+        <button class="close-popup" onclick="closePopup()">&times;</button>
+        <p>c'est trop le bazar ici</p>
+        <p id="index"><a href="../../index.html">< retourner à l'index</a></p>
       </div>
-    </header>
-
+    </div>
     <div id="grand-espace">
       <a href="cartuc.html"><div id="centre"></div></a>
     </div>
@@ -70,6 +119,49 @@
           document.getElementById("centre").offsetTop - window.innerHeight / 2,
         );
       };
+      // sélection des popups
+      const popups = document.querySelectorAll(".popup");
+
+      // bouton fermer
+      popups.forEach((p) => {
+        const btn = p.querySelector(".closeBtn");
+        if (btn) {
+          btn.addEventListener("click", () => {
+            p.style.display = "none";
+          });
+        }
+      });
+
+      // fonction pour tout fermer
+      function closeAllPopups() {
+        popups.forEach((p) => {
+          p.style.display = "none";
+        });
+      }
+
+      // fermer en cliquant dehors
+      document.addEventListener("click", (e) => {
+        if (e.target.tagName.toLowerCase() === "area") return;
+        if (e.target.closest && e.target.closest(".popup")) return;
+        closeAllPopups();
+      });
+
+      // popup au chargement
+      function checkFirstVisit() {
+        const popup = document.getElementById("welcomePopup");
+        if (popup) {
+          popup.style.display = "flex";
+        }
+      }
+
+      function closePopup() {
+        const popup = document.getElementById("welcomePopup");
+        if (popup) {
+          popup.style.display = "none";
+        }
+      }
+
+      window.addEventListener("load", checkFirstVisit);
     </script>
   </body>
 </html>
