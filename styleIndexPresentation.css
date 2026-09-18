@@ -163,10 +163,7 @@ section {
   color: white;
   text-decoration: none;
 }
-/* img de transition */
-#imgTransition img {
-  width: 170px;
-}
+/* 
 /* GRID */
 #autresProjets {
   border: 50px solid transparent;
@@ -368,11 +365,13 @@ footer a {
 }
 
 /* MEDIA QUERY */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   body {
     font-size: 18px;
   }
-
+  .tableDiner img {
+    width: 370px;
+  }
   .none {
     display: none;
   }
