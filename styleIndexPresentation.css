@@ -17,10 +17,10 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: blue;
+details {
+  color: black;
+  text-decoration: none;
 }
-
 h1 {
   font-weight: 100;
   font-size: 25pt;
@@ -35,6 +35,20 @@ h3 {
 }
 .visible {
   display: none;
+}
+#web-art {
+  display: flex;
+  align-items: flex-end;
+}
+
+#web-art img {
+  width: 100px;
+  opacity: 1;
+}
+
+#web-art img:hover {
+  opacity: 0.7;
+  cursor: wait;
 }
 
 /* sections */
@@ -55,34 +69,9 @@ section {
 
 /* HAUT DE PAGE */
 .hautDePage {
-  display: flex;
+  display: block;
   position: relative;
   margin-bottom: 50px;
-}
-.hautDePage #menuRecherche {
-  z-index: 1000;
-  display: contents;
-  flex: 1;
-}
-
-.hautDePage #menuRecherche button {
-  font-size: 17px;
-  border-left: solid 4px blue;
-  border-top: blue solid 2px;
-  border-radius: 10px 10px 10px 10px;
-}
-
-.hautDePage #menuRecherche ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.hautDePage .titreGauche {
-  flex: 1;
-  border-bottom: rgb(236, 246, 255) solid 3px;
 }
 
 .invitation {
@@ -120,7 +109,6 @@ section {
   color: blue;
 }
 
-#informations:hover,
 #meContacter:hover {
   text-decoration: none;
   cursor: pointer;
@@ -163,6 +151,9 @@ section {
   color: white;
   text-decoration: none;
 }
+#images:hover {
+  opacity: 0.7;
+}
 /* 
 /* GRID */
 #autresProjets {
@@ -182,13 +173,6 @@ section {
   gap: 10px;
 }
 
-#autresProjets h1 {
-  color: rgb(0, 0, 0);
-  font-size: 35px;
-  font-weight: 300;
-  text-align: center;
-}
-
 #autresProjets button {
   font-size: 16px;
   background-color: transparent;
@@ -197,19 +181,15 @@ section {
 #autresProjets article {
   margin: 0 auto;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
-
   display: flex;
   flex-direction: column;
 }
 #autresProjets img {
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
 }
 /* placements grid */
-#titreGrid {
-  grid-column: 1/3;
-  grid-row: 1/2;
-}
+
 #paint {
   box-shadow: 0px 0px 100px rgba(60, 201, 244, 0.473);
   grid-column: 2/3;
@@ -218,7 +198,7 @@ section {
 }
 
 #capu {
-  grid-column: 3/5;
+  grid-column: 4/5;
   grid-row: 1/3;
 }
 
@@ -228,12 +208,12 @@ section {
 }
 
 #starFinch {
-  grid-column: 4/5;
-  grid-row: 4/5;
+  grid-column: 3/4;
+  grid-row: 3/4;
 }
 #grass {
-  grid-column: 2/4;
-  grid-row: 3/5;
+  grid-column: 2/3;
+  grid-row: 4/5;
 }
 
 #labyrinthe {
@@ -249,39 +229,21 @@ section {
 }
 
 #sons {
-  grid-column: 2/3;
+  grid-column: 4/5;
   grid-row: 4/5;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
   background-color: chartreuse;
-
-  width: 300px;
-  height: 300px;
   box-shadow: 0px 0px 30px greenyellow;
   background-image: url("img/1253.png");
 }
 
-/* inspirations */
-#inspirations {
-  width: fit-content;
-  padding: 20px;
-  padding-right: 40px;
-  box-shadow: 0px 0px 50px black;
-  margin-bottom: 200px;
-}
-
+/* jolis styles
 #inspirations li:hover {
   cursor: pointer;
   background-color: rgb(199, 199, 199);
-}
-
-#inspirations ul {
-  width: fit-content;
-}
-
-#inspirations h1 {
-  color: red;
-  font-weight: 100;
-}
+} */
 
 /* boutons */
 button {
@@ -303,30 +265,6 @@ button:hover {
 li {
   list-style-type: none;
   color: blue;
-}
-
-/* dotted */
-#dottedBorder {
-  display: flex;
-  flex-direction: column;
-  border: dotted black 3px;
-  border-radius: 400px;
-  width: 70%;
-  margin: 10px auto;
-  padding: 30px;
-  background-color: transparent;
-}
-
-#dottedBorder .qr {
-  padding: 10px;
-}
-
-#dottedBorder .qr img {
-  width: 10%;
-}
-
-.EXEMPLES img {
-  max-width: 100%;
 }
 
 /* footer */
@@ -409,6 +347,7 @@ footer a {
 
   #autresProjets h1 {
     margin-bottom: 40px;
+    text-align: left;
   }
 
   #autresProjets {
@@ -427,9 +366,12 @@ footer a {
     height: auto;
     margin: 0 auto; /* centre */
     display: block;
+    opacity: 1;
+  }
+  #autresProjets img:hover {
+    opacity: 0.7;
   }
 
-  /* 🔧 évite que les articles débordent */
   #autresProjets article {
     width: 100%;
     max-width: 300px;
@@ -437,6 +379,10 @@ footer a {
     padding: 0;
   }
 
+  #autreProjets article:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
   #capu {
     box-shadow: 0px 100px 100px rgb(172, 164, 165);
   }
@@ -445,12 +391,6 @@ footer a {
     background-image: url("img/1243.png");
     background-position: right;
   }
-  /* #starFinch {
-  
-  }
-  #grass {
-  
-  } */
 
   #labyrinthe button {
     color: white;
