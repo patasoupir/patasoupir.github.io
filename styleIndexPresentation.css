@@ -15,6 +15,8 @@ body {
   background-image: url("teaser/img/exemple2.png");
   background-size: 100%;
   overflow-x: hidden;
+  background-color: black;
+  color: white;
 }
 
 details {
@@ -114,10 +116,6 @@ section {
   cursor: pointer;
   color: black;
 }
-#informations a {
-  text-decoration: none;
-  color: black;
-}
 
 #images {
   grid-column: 4/5;
@@ -183,6 +181,7 @@ section {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
   display: flex;
   flex-direction: column;
+  color: white;
 }
 #autresProjets img {
   width: 100%;
@@ -249,13 +248,15 @@ section {
 button {
   border: none;
   width: 100%;
-  padding: 10px;
+  font-size: 16pt;
   font-family: arial;
-  text-decoration: underline;
+
   color: blue;
   background-color: rgb(236, 246, 255);
 }
-
+button a {
+  text-decoration: none;
+}
 button:hover {
   cursor: pointer;
   text-decoration: none;
@@ -353,12 +354,12 @@ footer a {
   #autresProjets {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+
     text-align: right;
   }
-
+  #autresProjets a {
+    color: white;
+  }
   /* 🔧 corrige les images */
   #autresProjets img {
     width: 100%;
@@ -407,7 +408,10 @@ footer a {
   }
 
   button {
-    color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 15pt;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
   }
 
